@@ -117,3 +117,49 @@ WHERE evidence_type = 'IPI'
 
 CREATE VIEW IF NOT EXISTS gorule_view AS select * from duckdb_views() where view_name like 'GORULE%';
 
+CREATE VIEW IF NOT EXISTS gorule_violations AS
+SELECT *
+FROM GORULE_0000002_violations
+UNION
+SELECT *
+FROM GORULE_0000004_violations
+UNION
+SELECT *
+FROM GORULE_0000005_violations
+UNION
+SELECT *
+FROM GORULE_0000006_violations
+UNION
+SELECT *
+FROM GORULE_0000007_violations
+UNION
+SELECT *
+FROM GORULE_0000013_violations
+UNION
+SELECT *
+FROM GORULE_0000014_violations
+UNION
+SELECT *
+FROM GORULE_0000016_violations
+UNION
+SELECT *
+FROM GORULE_0000017_violations
+UNION
+SELECT *
+FROM GORULE_0000022_violations
+UNION
+SELECT *
+FROM GORULE_0000029_violations
+UNION
+SELECT *
+FROM GORULE_0000015_violations
+UNION
+SELECT *
+FROM GORULE_0000018_violations;
+
+--- each violation turned into a list
+CREATE VIEW IF NOT EXISTS gaf_association_plus_violations AS
+SELECT a.*, string_agg(v.rule, ',') AS violations
+FROM gaf_association a
+LEFT JOIN gorule_violations v ON a.internal_id = v.internal_id
+GROUP BY a.*;
