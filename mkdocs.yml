@@ -1,0 +1,19 @@
+site_name: "Go-db"
+theme:
+  name: material
+#  name: windmill
+  features:
+    - content.tabs.link
+plugins:
+  - search
+  - mermaid2
+  - mknotebooks:
+      execute: false
+  - mkdocstrings
+nav:
+  - Index: index.md
+  - Code: code.md
+  - Examples:
+      Dashboard: dashboard/Dashboard.ipynb
+site_url: https://geneontology.github.io/go-db/
+repo_url: https://github.com/geneontology/go-db/

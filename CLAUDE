@@ -1,0 +1,49 @@
+Based on the existing SQL views and the additional rule descriptions, here are the remaining SQL views to cover the other rules:
+
+```sql
+CREATE VIEW IF NOT EXISTS GORULE_0000013_violations AS
+SELECT internal_id, 'GORULE:0000013' AS rule  
+FROM gaf_association
+WHERE ontology_class_ref NOT IN (SELECT subject FROM entailed_is_a)
+  AND qualifiers NOT LIKE '%NOT%'
+  AND evidence_type IN ('IBA', 'IKR', 'IRD', 'IC', 'ISA', 'ISM', 'ISO', 'ISS', 'NAS', 'RCA', 'TAS', 'IEA');
+
+CREATE VIEW IF NOT EXISTS GORULE_0000014_violations AS
+SELECT internal_id, 'GORULE:0000014' AS rule
+FROM gaf_association 
+WHERE ontology_class_ref IN (SELECT term_id FROM term WHERE is_obsolete);
+
+CREATE VIEW IF NOT EXISTS GORULE_0000016_violations AS  
+SELECT internal_id, 'GORULE:0000016' AS rule
+FROM gaf_association
+WHERE evidence_type = 'IC'
+  AND with_or_from IS NULL;
+
+CREATE VIEW IF NOT EXISTS GORULE_0000017_violations AS
+SELECT internal_id, 'GORULE:0000017' AS rule  
+FROM gaf_association
+WHERE evidence_type = 'IDA'
+  AND with_or_from IS NOT NULL;
+
+CREATE VIEW IF NOT EXISTS GORULE_0000022_violations AS
+SELECT internal_id, 'GORULE:0000022' AS rule
+FROM gaf_association  
+WHERE supporting_references_list && (SELECT accession FROM retracted_publication);
+
+CREATE VIEW IF NOT EXISTS GORULE_0000029_violations AS
+SELECT internal_id, 'GORULE:0000029' AS rule
+FROM gaf_association
+WHERE evidence_type = 'IEA'  
+  AND annotation_date < NOW() - INTERVAL '1 year';
+```
+
+This implements rules:
+
+- GORULE_0000013: Filters non-experimental annotations failing taxon constraints
+- GORULE_0000014: Checks for annotations to obsolete terms 
+- GORULE_0000016: Checks IC annotations have with/from
+- GORULE_0000017: Checks IDA annotations don't have with/from
+- GORULE_0000022: Checks for annotations to retracted publications
+- GORULE_0000029: Checks IEA annotations are less than 1 year old
+
+Let me know if you have any other specific rules you'd like me to write SQL for!

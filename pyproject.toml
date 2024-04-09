@@ -1,0 +1,86 @@
+[tool.poetry]
+name = "go-db"
+version = "0.0.0"
+description = "go-db"
+authors = ["Author 1 <author@org.org>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+click = "*"
+duckdb = "^0.10.1"
+duckdb-engine = "^0.11.2"
+pydantic = "^2.6.4"
+pandas = "^2.2.1"
+toml = "*"
+scipy = "^1.13.0"
+oaklib = "^0.6.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-cov = "*"
+linkml = ">=1.7.0"
+mkdocs = "*"
+mkdocstrings = {extras = ["python"], version = "*"}
+mkdocs-mermaid2-plugin = "*"
+mknotebooks = "*"
+mkdocs-windmill = "*"
+mkdocs-material = "*"
+tox = "*"
+pre-commit = {version = ">=3.3.3"}
+jupysql = "*"
+jupyter = "*"
+matplotlib = "*"
+seaborn = "*"
+
+[tool.poetry.scripts]
+go-db = "go_db.cli:main"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "pep440"
+
+[tool.black]
+line-length = 120
+target-version = ["py38", "py39", "py310"]
+
+[tool.ruff]
+extend-ignore = [
+    "D211",  # `no-blank-line-before-class`
+    "D212",  # `multi-line-summary-first-line`
+    "D203",  # `blank-line-before-docstring`
+    ]
+line-length = 120
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+
+# Select or ignore from https://beta.ruff.rs/docs/rules/
+select = [
+    "B",  # bugbear
+    "D",  # pydocstyle
+    "E",  # pycodestyle errors
+    "F",  # Pyflakes
+    "I",  # isort
+    "S",  # flake8-bandit
+    "W",  # Warning
+]
+
+unfixable = []
+target-version = "py310"
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
+
+[tool.codespell]
+skip = "*.po,*.ts,.git,pyproject.toml"
+count = ""
+quiet-level = 3
+# ignore-words-list = ""
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
