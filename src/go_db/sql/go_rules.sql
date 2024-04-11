@@ -8,6 +8,11 @@ CREATE VIEW IF NOT EXISTS obsolete_term AS
     FROM statements
     WHERE predicate = 'owl:deprecated' AND value = 'true';
 
+CREATE TABLE IF NOT EXISTS term_label AS
+    SELECT DISTINCT subject AS id, value AS label
+        FROM statements
+        WHERE predicate = 'rdfs:label';
+
 CREATE VIEW IF NOT EXISTS GORULE_0000002_violations AS
 SELECT internal_id, 'GORULE:0000002' AS rule
 FROM gaf_association

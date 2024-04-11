@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS gaf_association_flat (
         gene_product_form TEXT
 );
 
+--- TODO: have a direct negation column
 CREATE VIEW gaf_association AS
 SELECT
  nextval('gaf_sequence') AS internal_id,
@@ -42,6 +43,8 @@ SELECT
         gene_product_form,
 strptime(annotation_date_string, '%Y%m%d') AS annotation_date,
 concat_ws(':', db, db_object_id) AS subject,
+str_split(qualifiers, '|') AS qualifiers_list,
+CASE WHEN qualifiers_list[1] = 'NOT' THEN true ELSE false END AS is_negation,
 str_split(with_or_from, '|') AS with_or_from_list,
 str_split(supporting_references, '|') AS supporting_references_list,
 str_split(db_object_synonyms, '|') AS db_object_synonyms_list,
@@ -62,6 +65,8 @@ CREATE TABLE IF NOT EXISTS gpi_version_1_2_flat (
 );
 
 
+--- TODO: make a union of 1.2 and 2.0 files
+--- TODO make a column for OBO NCBITaxon ID for taxon
 CREATE VIEW gpi AS
 SELECT
   *,

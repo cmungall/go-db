@@ -41,7 +41,8 @@ def main(verbose: int, quiet: bool):
 @click.option("--force/--no-force",
               "-f",
               default=False,
-              show_default=True)
+              show_default=True,
+              help="")
 @click.option("--go-db-path",
                 "-g",
               default="db/go.db",
