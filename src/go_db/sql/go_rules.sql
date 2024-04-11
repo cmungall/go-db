@@ -17,14 +17,14 @@ WHERE (ontology_class_ref = 'GO:0005488' OR ontology_class_ref = 'GO:0005515')
 CREATE VIEW IF NOT EXISTS GORULE_0000004_violations  AS
 SELECT DISTINCT a.internal_id, 'GORULE:0000004' AS rule
 FROM gaf_association a
-JOIN gaf_association b ON a.with_or_from = b.local_id AND a.db = b.db
+JOIN gaf_association b ON a.with_or_from = b.db_object_id AND a.db = b.db
 WHERE a.ontology_class_ref = 'GO:0005515'
   AND NOT EXISTS (
     SELECT 1
     FROM gaf_association r
     WHERE r.db = b.db
-      AND r.local_id = b.local_id
-      AND r.with_or_from = a.local_id
+      AND r.db_object_id = b.db_object_id
+      AND r.with_or_from = a.db_object_id
       AND r.ontology_class_ref IN (
         'GO:0005515',
         'GO:0042803',

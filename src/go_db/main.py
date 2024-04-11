@@ -10,52 +10,26 @@ from go_db.sql import GAF_DDL_PATH, GO_RULES_PATH
 
 logger = logging.getLogger(__name__)
 
-
-DERIVED = """
-INSERT INTO gaf_association
-SELECT
- nextval('gaf_sequence') AS internal_id,
-        db,
-        local_id,
-        db_object_symbol,
-        qualifiers,
-        ontology_class_ref,
-        supporting_references,
-        evidence_type,
-        with_or_from,
-        aspect,
-        db_object_name,
-        db_object_synonyms,
-        db_object_type,
-        db_object_taxon,
-        annotation_date_string,
-        assigned_by,
-        annotation_extensions,
-        gene_product_form,
-strptime(annotation_date_string, '%Y%m%d') AS annotation_date,
-concat_ws(':', db, local_id) AS subject,
-str_split(with_or_from, '|') AS with_or_from_list,
-str_split(supporting_references, '|') AS supporting_references_list,
-str_split(db_object_synonyms, '|') AS db_object_synonyms_list,
-str_split(annotation_extensions, ',') AS annotation_extensions_list
-FROM gaf_association_flat;
-"""
-
-
 class LoaderConfiguration(BaseModel):
-    """Configuration model."""
+    """Configuration for loading GO database."""
+
     db: str
     """Path to duckdb database."""
 
     sources: Optional[List[str]] = None
     """Names of GAF sources"""
 
+    gpi_sources: Optional[List[str]] = None
+    """Names of GPI sources"""
+
     go_db_path: Optional[str] = None
     """Path to GO sqlite database (from semsql)."""
 
     append: Optional[bool] = False
+    """If true, subsequent load calls will append"""
 
     force: Optional[bool] = False
+    """If true, force overwrite of database if present."""
 
     _connection: Optional[duckdb.DuckDBPyConnection] = None
 
@@ -68,7 +42,7 @@ class LoaderConfiguration(BaseModel):
 
     @property
     def name(self) -> str:
-        """Get name."""
+        """Get name/handle."""
         db = self.db
         if db == ":memory:":
             return "memory"
@@ -81,7 +55,11 @@ class LoaderConfiguration(BaseModel):
         return self.db == ":memory:"
 
     def check(self) -> None:
-        """Check configuration."""
+        """
+        Check/validate configuration.
+
+        Ensures that the database is not present if force is not set.
+        """
         if self.is_memory:
             return
         path = Path(self.db)
@@ -95,9 +73,19 @@ class LoaderConfiguration(BaseModel):
                 raise ValueError(f"Database exists: {self.db}. Use --force to overwrite.")
 
 
+def materialize_view(config: LoaderConfiguration, view_name: str) -> None:
+    """Converts a view into a table."""
+    logger.info(f"Materializing view {view_name}.")
+    v_tmp = f"{view_name}__tmp"
+    config.connection.sql(f"CREATE TABLE {v_tmp} AS SELECT * FROM {view_name}")
+    config.connection.sql(f"DROP VIEW {view_name}")
+    config.connection.sql(f"ALTER TABLE {v_tmp} RENAME TO {view_name}")
+
 
 def load_ddl(config: LoaderConfiguration) -> None:
-    """Load DDL data.
+    """Load SQL DDL (CREATE TABLE statements).
+
+    Example:
 
     >>> config = LoaderConfiguration(db=":memory:")
     >>> from go_db import LoaderConfiguration, load_ddl
@@ -116,7 +104,7 @@ def load_ddl(config: LoaderConfiguration) -> None:
 
 
 def load_gaf(config: LoaderConfiguration) -> None:
-    """Load GAF data.
+    """Load GAF data from a configuration
     
     >>> config = LoaderConfiguration(db=":memory:", sources=["tests/input/test-uniprot.gaf"])
     >>> from go_db import LoaderConfiguration, load_ddl
@@ -132,8 +120,17 @@ def load_gaf(config: LoaderConfiguration) -> None:
     MAP2K7
     ...
     """
+    logger.info(f"Loading GAF data: {config.sources}")
     for source in config.sources:
         load_gaf_source(config, source)
+
+
+def load_gpi(config: LoaderConfiguration) -> None:
+    """Load GPI data from configuration.
+    """
+    logger.info(f"Loading GPI data: {config.gpi_sources}")
+    for source in config.gpi_sources:
+        load_gpi_source(config, source)
 
 
 def load_gaf_source(config: LoaderConfiguration, source: str) -> None:
@@ -144,12 +141,16 @@ def load_gaf_source(config: LoaderConfiguration, source: str) -> None:
     config.connection.sql(sql)
 
 
+def load_gpi_source(config: LoaderConfiguration, source: str) -> None:
+    """Load GPI data from a source."""
+    logger.info(f"Loading GPI data from {source}.")
+    sql = f"INSERT INTO gpi_version_1_2_flat SELECT * FROM read_csv('{source}', delim='\t', header=false)"
+    logger.debug(f"SQL: {sql}")
+    config.connection.sql(sql)
+
 def load_derived_tables(config: LoaderConfiguration) -> None:
     """
     Load derived tables.
-
-    TODO: drop and reload - this can lead to doubling up at the moment...
-
     >>> config = LoaderConfiguration(db=":memory:", sources=["tests/input/test-uniprot.gaf"])
     >>> from go_db import LoaderConfiguration, load_ddl
     >>> load_ddl(config)
@@ -163,17 +164,20 @@ def load_derived_tables(config: LoaderConfiguration) -> None:
     xxx
     """
     logger.info("Loading derived tables.")
-    config.connection.sql(DERIVED)
+    #config.connection.sql(DERIVED_GAF)
+    materialize_view(config, "gaf_association")
+    materialize_view(config, "gpi")
 
 
 def load_all(config: LoaderConfiguration) -> None:
     """
-    Load all steps
+    Execute all steps to load the GO database.
     """
     config.check()
     bulk_load_go_db(config)
     load_ddl(config)
     load_gaf(config)
+    load_gpi(config)
     load_derived_tables(config)
     logger.info("All steps completed.")
 
@@ -181,6 +185,8 @@ def load_all(config: LoaderConfiguration) -> None:
 def validate_db_iter(config: LoaderConfiguration) -> Iterator[str]:
     """
     Validate the database.
+
+    :return: Iterator of validation messages
     """
     print("Validating the database.")
     logger.info("Validating the database.")
@@ -209,7 +215,14 @@ def validate_db(config: LoaderConfiguration) -> None:
 
 
 def bulk_load_sqlite_to_duckdb(config: LoaderConfiguration, sqlite_db: str, tables: List[str]):
-    # Create a DuckDB connection
+    """
+    Bulk load SQLite database to DuckDB.
+
+    :param config:
+    :param sqlite_db:
+    :param tables:
+    :return:
+    """
     con = config.connection
 
     if not sqlite_db:
@@ -235,6 +248,12 @@ def bulk_load_sqlite_to_duckdb(config: LoaderConfiguration, sqlite_db: str, tabl
 
 
 def bulk_load_go_db(config: LoaderConfiguration):
+    """
+    Bulk load GO Sqlite ontology database.
+
+    :param config:
+    :return:
+    """
     # Define the SQLite database and tables
     tables = ["edge", "entailed_edge", "statements", "rdfs_subclass_of_statement"]
 

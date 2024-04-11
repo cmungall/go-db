@@ -18,29 +18,8 @@ doctest:
 %-doctest: %
 	$(RUN) python -m doctest --option ELLIPSIS --option NORMALIZE_WHITESPACE $<
 
+data/gpi/uniprot_reviewed.gpi:
+	curl -L -s http://ftp.ebi.ac.uk/pub/contrib/goa/uniprot_reviewed.gpi.gz | gzip -dc > $@
 
-$(DM)/%.py: $(DM)/%.yaml
-	$(RUN) gen-pydantic --pydantic-version 2 $< > $@.tmp && mv $@.tmp $@
-
-
-trigger:
-	touch tests/input/cjm.paperpile.csv
-integration-test: tests/output/cjm.html
-
-tests/output/%.json: tests/input/%.paperpile.csv
-	$(RUN) go_db export --repair -a "Mungall CJ?" --annotate-position -i $< -O json -o $@
-.PRECIOUS: tests/output/%.json
-
-tests/output/%-merged.json: tests/output/%.json tests/input/cjm.roles.csv
-	$(RUN) go_db merge -i $< -f json -s bibm -m tests/input/cjm.roles.csv -c role -O json -o $@
-.PRECIOUS: tests/output/%-merged.json
-
-
-tests/output/%.md: tests/output/%-merged.json $(CODE)/templates/default.markdown.jinja2
-	$(RUN) go_db export -f json -s bibm  --repair -a "Mungall CJ?" --annotate-position -i $< -O markdown -o $@
-
-tests/output/%.html: tests/output/%.md
-	pandoc $< -o $@
-
-#src/go_db/datamodel/z2cls-typeMap.xml: https://aurimasv.github.io/z2csl/typeMap.xml
-#	curl -L -s $< > $@
+data/gpi/gcrp.gpi.gz:
+	curl -L -s https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpi.gz > $@

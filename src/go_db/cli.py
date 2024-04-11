@@ -2,7 +2,7 @@
 import click
 import logging
 
-from go_db.main import load_all, LoaderConfiguration, validate_db_iter, validate_db
+from go_db.main import load_all, LoaderConfiguration, validate_db_iter, validate_db, materialize_view
 
 __all__ = [
     "main",
@@ -58,7 +58,12 @@ def load(sources, validate, **kwargs):
 
         go-db load --g db/mgi.db data/mgi.gaf
     """
-    config = LoaderConfiguration(**kwargs, sources=list(sources))
+    gaf_sources = [s for s in sources if ".gaf" in s]
+    gpi_sources = [s for s in sources if ".gpi" in s]
+    unrecognized = [s for s in sources if s not in gaf_sources + gpi_sources]
+    if unrecognized:
+        raise ValueError(f"Unknown source file type: {unrecognized}")
+    config = LoaderConfiguration(**kwargs, sources=gaf_sources, gpi_sources=gpi_sources)
     load_all(config)
     if validate:
         validate_db(config)
@@ -77,6 +82,29 @@ def validate(**kwargs):
     for x in validate_db_iter(config):
         print(x)
 
+
+@main.command()
+@click.option("--db",
+                "-d",
+              show_default=True,
+              default=":memory:", help="Database connection string.")
+@click.option("--append/--no-append", default=False, show_default=True)
+@click.option("--force/--no-force",
+              "-f",
+              default=False,
+              show_default=True)
+@click.option("--go-db-path",
+                "-g",
+              default="db/go.db",
+              show_default=True,
+              help="Path to semsql/sqlite version of GO ontology.")
+@click.argument("view_name")
+def materialize(view_name, **kwargs):
+    """
+    Materialize a view.
+    """
+    config = LoaderConfiguration(**kwargs)
+    materialize_view(config, view_name)
 
 if __name__ == "__main__":
     main()
