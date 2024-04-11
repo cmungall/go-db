@@ -68,17 +68,39 @@ SELECT internal_id, 'GORULE:0000014' AS rule
 FROM gaf_association
 WHERE ontology_class_ref IN (SELECT id FROM obsolete_term);
 
+
+
+
+CREATE VIEW IF NOT EXISTS GORULE_0000015_violations AS
+SELECT internal_id, 'GORULE:0000015' AS rule
+FROM gaf_association
+WHERE (ontology_class_ref IN ('GO:0044419', 'GO:0043903', 'GO:0018995')
+       OR ontology_class_ref LIKE 'GO:0044419%'
+       OR ontology_class_ref LIKE 'GO:0043903%'
+       OR ontology_class_ref LIKE 'GO:0018995%')
+  AND db_object_taxon IS NOT NULL
+  AND array_length(regexp_split_to_array(db_object_taxon, '\|'), 1) > 1
+  AND array_length(array_distinct(regexp_split_to_array(db_object_taxon, '\|')), 1) < array_length(regexp_split_to_array(db_object_taxon, '\|'), 1);
+
 CREATE VIEW IF NOT EXISTS GORULE_0000016_violations AS
 SELECT internal_id, 'GORULE:0000016' AS rule
 FROM gaf_association
 WHERE evidence_type = 'IC'
   AND with_or_from IS NULL;
 
+
 CREATE VIEW IF NOT EXISTS GORULE_0000017_violations AS
 SELECT internal_id, 'GORULE:0000017' AS rule
 FROM gaf_association
 WHERE evidence_type = 'IDA'
   AND with_or_from IS NOT NULL;
+
+
+CREATE VIEW IF NOT EXISTS GORULE_0000018_violations AS
+SELECT internal_id, 'GORULE:0000018' AS rule
+FROM gaf_association
+WHERE evidence_type = 'IPI'
+  AND with_or_from IS NULL;
 
 
 --- TODO
@@ -96,23 +118,6 @@ FROM gaf_association
 WHERE evidence_type = 'IEA'
   AND annotation_date < (NOW() - INTERVAL '1 year')::DATE;
 
-
-CREATE VIEW IF NOT EXISTS GORULE_0000015_violations AS
-SELECT internal_id, 'GORULE:0000015' AS rule
-FROM gaf_association
-WHERE (ontology_class_ref IN ('GO:0044419', 'GO:0043903', 'GO:0018995')
-       OR ontology_class_ref LIKE 'GO:0044419%'
-       OR ontology_class_ref LIKE 'GO:0043903%'
-       OR ontology_class_ref LIKE 'GO:0018995%')
-  AND db_object_taxon IS NOT NULL
-  AND array_length(regexp_split_to_array(db_object_taxon, '\|'), 1) > 1
-  AND array_length(array_distinct(regexp_split_to_array(db_object_taxon, '\|')), 1) < array_length(regexp_split_to_array(db_object_taxon, '\|'), 1);
-
-CREATE VIEW IF NOT EXISTS GORULE_0000018_violations AS
-SELECT internal_id, 'GORULE:0000018' AS rule
-FROM gaf_association
-WHERE evidence_type = 'IPI'
-  AND with_or_from IS NULL;
 
 
 CREATE VIEW IF NOT EXISTS gorule_view AS select * from duckdb_views() where view_name like 'GORULE%';

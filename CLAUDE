@@ -1,49 +1,96 @@
-Based on the existing SQL views and the additional rule descriptions, here are the remaining SQL views to cover the other rules:
+Here are some SQL views to implement the remaining GO rules:
 
 ```sql
-CREATE VIEW IF NOT EXISTS GORULE_0000013_violations AS
-SELECT internal_id, 'GORULE:0000013' AS rule  
-FROM gaf_association
-WHERE ontology_class_ref NOT IN (SELECT subject FROM entailed_is_a)
-  AND qualifiers NOT LIKE '%NOT%'
-  AND evidence_type IN ('IBA', 'IKR', 'IRD', 'IC', 'ISA', 'ISM', 'ISO', 'ISS', 'NAS', 'RCA', 'TAS', 'IEA');
+-- GORULE:0000013 - Taxon-appropriate annotation check
+CREATE VIEW IF NOT EXISTS GORULE_0000013_violations AS 
+SELECT internal_id, 'GORULE:0000013' AS rule
+FROM gaf_association a
+WHERE NOT EXISTS (
+  SELECT 1 
+  FROM only_in_taxon_edge ot
+  WHERE ot.ontology_class = a.ontology_class_ref
+    AND a.db_object_taxon LIKE ot.taxon || '%'  
+) 
+AND qualifiers NOT LIKE '%NOT%'
+AND evidence_type IN ('IBA', 'IKR', 'IRD', 'IC', 'ISA', 'ISM', 'ISO', 'ISS', 'NAS', 'RCA', 'TAS', 'IEA');
 
-CREATE VIEW IF NOT EXISTS GORULE_0000014_violations AS
-SELECT internal_id, 'GORULE:0000014' AS rule
-FROM gaf_association 
-WHERE ontology_class_ref IN (SELECT term_id FROM term WHERE is_obsolete);
+-- GORULE:0000019 - Generic Reasoner Validation Check
+-- This cannot be implemented as a SQL view, it requires running an external reasoner
 
-CREATE VIEW IF NOT EXISTS GORULE_0000016_violations AS  
-SELECT internal_id, 'GORULE:0000016' AS rule
-FROM gaf_association
-WHERE evidence_type = 'IC'
-  AND with_or_from IS NULL;
+-- GORULE:0000023 - Materialize annotations for inter-branch links in the GO
+CREATE VIEW IF NOT EXISTS GORULE_0000023_violations AS
+SELECT a.internal_id, 'GORULE:0000023' AS rule  
+FROM gaf_association a
+JOIN entailment e ON a.ontology_class_ref = e.subject
+JOIN term t1 ON a.ontology_class_ref = t1.id  
+JOIN term t2 ON e.object = t2.id
+WHERE e.predicate = 'BFO:0000050' 
+  AND t1.namespace = 'molecular_function'
+  AND t2.namespace = 'biological_process' 
+  AND NOT EXISTS (
+    SELECT 1 FROM gaf_association a2
+    WHERE a.db = a2.db AND a.db_object_id = a2.db_object_id
+      AND a2.ontology_class_ref = e.object
+      AND a2.evidence_type = a.evidence_type
+  )
+UNION  
+SELECT a.internal_id, 'GORULE:0000023' AS rule
+FROM gaf_association a   
+JOIN entailment e ON a.ontology_class_ref = e.subject
+JOIN term t1 ON a.ontology_class_ref = t1.id
+JOIN term t2 ON e.object = t2.id  
+WHERE e.predicate = 'BFO:0000066'
+  AND t1.namespace = 'biological_process'
+  AND t2.namespace = 'cellular_component'
+  AND NOT EXISTS (
+    SELECT 1 FROM gaf_association a2 
+    WHERE a.db = a2.db AND a.db_object_id = a2.db_object_id
+      AND a2.ontology_class_ref = e.object
+      AND a2.evidence_type = a.evidence_type  
+  );
 
-CREATE VIEW IF NOT EXISTS GORULE_0000017_violations AS
-SELECT internal_id, 'GORULE:0000017' AS rule  
-FROM gaf_association
-WHERE evidence_type = 'IDA'
-  AND with_or_from IS NOT NULL;
+-- GORULE:0000025 - Creating more specific annotations by reasoning over extensions
+-- This requires implementing the annotation extension folding algorithm, which is better suited for a procedural language
 
-CREATE VIEW IF NOT EXISTS GORULE_0000022_violations AS
-SELECT internal_id, 'GORULE:0000022' AS rule
-FROM gaf_association  
-WHERE supporting_references_list && (SELECT accession FROM retracted_publication);
+-- GORULE:0000036 - Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X'  
+CREATE VIEW IF NOT EXISTS GORULE_0000036_violations AS
+SELECT a1.internal_id, 'GORULE:0000036' AS rule
+FROM gaf_association a1 
+JOIN gaf_association a2 ON a1.db = a2.db AND a1.db_object_id = a2.db_object_id
+JOIN entailment e ON a1.ontology_class_ref = e.subject  
+                  AND a2.ontology_class_ref = e.object
+WHERE e.predicate = 'RO:0002211';
 
-CREATE VIEW IF NOT EXISTS GORULE_0000029_violations AS
-SELECT internal_id, 'GORULE:0000029' AS rule
-FROM gaf_association
-WHERE evidence_type = 'IEA'  
-  AND annotation_date < NOW() - INTERVAL '1 year';
+-- GORULE:0000048 - Gene products having ND annotations and other annotations in the same aspect should be reviewed 
+-- DEPRECATED per rule text
+
+-- GORULE:0000062 - Infer annotations on molecular function via has_part
+CREATE VIEW IF NOT EXISTS GORULE_0000062_inferences AS 
+SELECT nextval('gaf_sequence') AS internal_id,
+       a.db, a.db_object_id, a.db_object_symbol, 
+       a.qualifiers, e.object AS ontology_class_ref,
+       a.supporting_references, a.evidence_type, a.with_or_from,
+       a.aspect, a.db_object_name, a.db_object_synonyms, 
+       a.db_object_type, a.db_object_taxon, a.annotation_date_string,
+       a.assigned_by, a.annotation_extensions, a.gene_product_form
+FROM gaf_association a
+JOIN entailment e ON a.ontology_class_ref = e.subject
+JOIN term t1 ON a.ontology_class_ref = t1.id
+JOIN term t2 ON e.object = t2.id  
+WHERE e.predicate = 'BFO:0000051'
+  AND t1.namespace = 'molecular_function'
+  AND t2.namespace = 'molecular_function'  
+  AND a.qualifiers NOT LIKE '%contributes_to%'; 
 ```
 
-This implements rules:
+In summary:
 
-- GORULE_0000013: Filters non-experimental annotations failing taxon constraints
-- GORULE_0000014: Checks for annotations to obsolete terms 
-- GORULE_0000016: Checks IC annotations have with/from
-- GORULE_0000017: Checks IDA annotations don't have with/from
-- GORULE_0000022: Checks for annotations to retracted publications
-- GORULE_0000029: Checks IEA annotations are less than 1 year old
+- GORULE:0000013 checks taxon constraints on annotations
+- GORULE:0000019 requires an external reasoner, so cannot be implemented in SQL 
+- GORULE:0000023 materializes implied annotations across GO aspects based on inter-ontology links
+- GORULE:0000025 requires the annotation extension folding algorithm, better suited for a procedural language
+- GORULE:0000036 reports gene products annotated to both a term and its regulation 
+- GORULE:0000048 is deprecated per the rule documentation
+- GORULE:0000062 infers molecular function annotations based on `has_part` relations
 
-Let me know if you have any other specific rules you'd like me to write SQL for!
+Let me know if you have any other questions! Implementing these rules just requires careful translation of the logic into the appropriate SQL constructs.
