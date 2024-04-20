@@ -87,3 +87,24 @@ CREATE VIEW gpi_db_xref_with_db AS
 
 CREATE VIEW gpi_db_xref_count_by_db AS
   SELECT db, count(*) AS count FROM gpi_db_xref_with_db GROUP BY db ORDER BY count DESC;
+
+CREATE VIEW iba_term AS
+  SELECT DISTINCT ontology_class_ref AS term FROM gaf_association
+  WHERE evidence_type = 'IBA';
+
+--- genes with no IBA annotations in each aspect
+CREATE VIEW genes_with_no_iba_annotations AS
+  SELECT db, db_object_id, db_object_symbol, db_object_taxon, db_object_type, aspect FROM gaf_association
+  WHERE evidence_type != 'IBA'
+  GROUP BY db, db_object_id, db_object_symbol, db_object_taxon, db_object_type, aspect
+  HAVING count(*) = 1;
+
+--- pivoted view with number of IBAs per gene in each of F, P, C
+CREATE VIEW iba_count_by_gene AS
+  SELECT db, db_object_id, db_object_symbol, db_object_taxon, db_object_type,
+    count(*) FILTER (WHERE aspect = 'F') AS iba_count_F,
+    count(*) FILTER (WHERE aspect = 'P') AS iba_count_P,
+    count(*) FILTER (WHERE aspect = 'C') AS iba_count_C
+  FROM gaf_association
+  WHERE evidence_type = 'IBA'
+  GROUP BY db, db_object_id, db_object_symbol, db_object_taxon, db_object_type;
