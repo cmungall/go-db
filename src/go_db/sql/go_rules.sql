@@ -13,6 +13,53 @@ CREATE TABLE IF NOT EXISTS term_label AS
         FROM statements
         WHERE predicate = 'rdfs:label';
 
+CREATE TABLE IF NOT EXISTS term_xref AS
+    SELECT DISTINCT subject AS id, value AS xref
+        FROM statements
+        WHERE predicate = 'oio:hasDbXref';
+
+CREATE VIEW IF NOT EXISTS term_ec AS
+  WITH split_xref AS (
+    SELECT
+        id,
+        xref,
+        STRING_SPLIT(xref[4:], '.') AS parts
+    FROM
+        term_xref
+    WHERE xref LIKE 'EC:%'
+  )
+  SELECT
+    id,
+    xref,
+    parts[1] AS l1,
+    parts[2] AS l2,
+    parts[3] AS l3,
+    parts[4] AS l4,
+    ARRAY_LENGTH(FILTER(parts, x -> x != '-')) AS level
+  FROM
+    split_xref;
+
+--- associations where the same gene is annotated two different l4 ECs
+CREATE VIEW IF NOT EXISTS EC_rule_violation AS
+SELECT DISTINCT a.internal_id, 'EC_rule' AS rule, a.db, a.db_object_id, a.ontology_class_ref AS t1, b.ontology_class_ref AS t2, e.xref AS ec1, e2.xref AS ec2, a.db_object_symbol, a.db_object_taxon
+FROM gaf_association AS a,
+    gaf_association AS b,
+    term_ec AS e,
+    term_ec AS e2
+WHERE e.level = 4
+ AND e2.level = 4
+ AND a.db_object_id = b.db_object_id
+    AND a.ontology_class_ref != b.ontology_class_ref
+    AND a.db = b.db
+    AND b.ontology_class_ref = e2.id
+    AND a.ontology_class_ref = e.id
+    AND a.ontology_class_ref IN (SELECT id FROM term_ec WHERE level = 4)
+    AND b.ontology_class_ref IN (SELECT id FROM term_ec WHERE level = 4);
+
+CREATE VIEW EC_rule_violation_by_taxon_summary AS
+SELECT t1, t2, ec1, ec2, COUNT(distinct db_object_taxon) AS taxon_count
+FROM EC_rule_violation GROUP BY t1, t2, ec1, ec2;
+
 CREATE VIEW IF NOT EXISTS GORULE_0000002_violations AS
 SELECT internal_id, 'GORULE:0000002' AS rule
 FROM gaf_association
