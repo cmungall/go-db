@@ -1,7 +1,8 @@
 """Main python file."""
+
 import logging
 from pathlib import Path
-from typing import List, Optional, Iterator
+from typing import Iterator, List, Optional
 
 import duckdb
 from pydantic import BaseModel
@@ -9,6 +10,7 @@ from pydantic import BaseModel
 from go_db.sql import GAF_DDL_PATH, GO_RULES_PATH
 
 logger = logging.getLogger(__name__)
+
 
 class LoaderConfiguration(BaseModel):
     """Configuration for loading GO database."""
@@ -83,14 +85,16 @@ def materialize_view(config: LoaderConfiguration, view_name: str) -> None:
 
 
 def load_ddl(config: LoaderConfiguration) -> None:
-    """Load SQL DDL (CREATE TABLE statements).
+    """
+    Load SQL DDL (CREATE TABLE statements).
 
     Example:
-
+    -------
     >>> config = LoaderConfiguration(db=":memory:")
     >>> from go_db import LoaderConfiguration, load_ddl
     >>> load_ddl(config)
     >>> connection = config.connection
+
     """
     connection = config.connection
     # load from GAF_DDL_PATH
@@ -104,8 +108,9 @@ def load_ddl(config: LoaderConfiguration) -> None:
 
 
 def load_gaf(config: LoaderConfiguration) -> None:
-    """Load GAF data from a configuration
-    
+    """
+    Load GAF data from a configuration
+
     >>> config = LoaderConfiguration(db=":memory:", sources=["tests/input/test-uniprot.gaf"])
     >>> from go_db import LoaderConfiguration, load_ddl
     >>> load_ddl(config)
@@ -126,17 +131,25 @@ def load_gaf(config: LoaderConfiguration) -> None:
 
 
 def load_gpi(config: LoaderConfiguration) -> None:
-    """Load GPI data from configuration.
-    """
+    """Load GPI data from configuration."""
     logger.info(f"Loading GPI data: {config.gpi_sources}")
     for source in config.gpi_sources:
         load_gpi_source(config, source)
 
 
 def load_gaf_source(config: LoaderConfiguration, source: str) -> None:
-    """Load GAF data from a source."""
+    """Load GAF data from a source, supporting both regular and gzipped files."""
     logger.info(f"Loading GAF data from {source}.")
-    sql = f"INSERT INTO gaf_association_flat SELECT * FROM read_csv('{source}', delim='\t', header=false)"
+
+    # Check if the file is gzipped (ends with .gz)
+    is_gzipped = source.endswith(".gz")
+
+    # Adjust the SQL query based on whether the file is gzipped
+    if is_gzipped:
+        sql = f"INSERT INTO gaf_association_flat SELECT * FROM read_csv_auto('{source}', delim='\t', header=false, compression='gzip')"
+    else:
+        sql = f"INSERT INTO gaf_association_flat SELECT * FROM read_csv('{source}', delim='\t', header=false)"
+
     logger.debug(f"SQL: {sql}")
     config.connection.sql(sql)
 
@@ -148,9 +161,11 @@ def load_gpi_source(config: LoaderConfiguration, source: str) -> None:
     logger.debug(f"SQL: {sql}")
     config.connection.sql(sql)
 
+
 def load_derived_tables(config: LoaderConfiguration) -> None:
     """
     Load derived tables.
+
     >>> config = LoaderConfiguration(db=":memory:", sources=["tests/input/test-uniprot.gaf"])
     >>> from go_db import LoaderConfiguration, load_ddl
     >>> load_ddl(config)
@@ -164,7 +179,7 @@ def load_derived_tables(config: LoaderConfiguration) -> None:
     xxx
     """
     logger.info("Loading derived tables.")
-    #config.connection.sql(DERIVED_GAF)
+    # config.connection.sql(DERIVED_GAF)
     materialize_view(config, "gaf_association")
     materialize_view(config, "gpi")
 
@@ -205,6 +220,7 @@ def validate_db_iter(config: LoaderConfiguration) -> Iterator[str]:
         for _, row in df.iterrows():
             row = row.to_dict()
             yield f"{view}: {row}"
+
 
 def validate_db(config: LoaderConfiguration) -> None:
     """
