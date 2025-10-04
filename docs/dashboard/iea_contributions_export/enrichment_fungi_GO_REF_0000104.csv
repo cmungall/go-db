@@ -1,0 +1,725 @@
+go_term,go_term_label,method_count,method_total,term_total,total_annotations,fold_enrichment,p_value,p_adjusted,method_name
+GO:0006253,dCTP catabolic process,26,2467055,26,56717546,22.989980361199894,3.9805370267702215e-36,5.617791553071735e-36,Manual Transfer
+GO:0046041,ITP metabolic process,841,2467055,841,56717546,22.989980361199894,0.0,0.0,Manual Transfer
+GO:0046039,GTP metabolic process,841,2467055,841,56717546,22.989980361199894,0.0,0.0,Manual Transfer
+GO:0140938,histone H3 methyltransferase activity,478,2467055,478,56717546,22.989980361199894,0.0,0.0,Manual Transfer
+GO:0070407,oxidation-dependent protein catabolic process,1016,2467055,1016,56717546,22.989980361199894,0.0,0.0,Manual Transfer
+GO:0016886,"ligase activity, forming phosphoric ester bonds",2,2467055,2,56717546,22.989980361199894,0.0018920065250306994,0.0024254472536157437,Manual Transfer
+GO:0016785,selenotransferase activity,6,2467055,6,56717546,22.98998036119989,6.7727628914080164e-09,8.90492898685128e-09,Manual Transfer
+GO:0002191,cap-dependent translational initiation,925,2467055,925,56717546,22.98998036119989,0.0,0.0,Manual Transfer
+GO:0102389,polyprenol reductase activity,637,2467055,637,56717546,22.98998036119989,0.0,0.0,Manual Transfer
+GO:0070143,mitochondrial alanyl-tRNA aminoacylation,1155,2467055,1155,56717546,22.98998036119989,0.0,0.0,Manual Transfer
+GO:1903373,positive regulation of endoplasmic reticulum tubular network organization,1088,2467055,1088,56717546,22.98998036119989,0.0,0.0,Manual Transfer
+GO:0098826,endoplasmic reticulum tubular network membrane,1088,2467055,1088,56717546,22.98998036119989,0.0,0.0,Manual Transfer
+GO:0097354,prenylation,2024,2467055,2024,56717546,22.98998036119989,0.0,0.0,Manual Transfer
+GO:0009204,deoxyribonucleoside triphosphate catabolic process,1080,2467055,1080,56717546,22.98998036119989,0.0,0.0,Manual Transfer
+GO:1903599,positive regulation of autophagy of mitochondrion,1038,2467055,1039,56717546,22.967853334865723,0.0,0.0,Manual Transfer
+GO:1990838,"poly(U)-specific exoribonuclease activity, producing 3' uridine cyclic phosphate ends",613,2467055,615,56717546,22.915216197423632,0.0,0.0,Manual Transfer
+GO:0071788,endoplasmic reticulum tubular network maintenance,1088,2467055,1095,56717546,22.843012450215053,0.0,0.0,Manual Transfer
+GO:0051012,microtubule sliding,1095,2467055,1112,56717546,22.63851483409522,0.0,0.0,Manual Transfer
+GO:1990074,polyuridylation-dependent mRNA catabolic process,318,2467055,328,56717546,22.289066325797457,0.0,0.0,Manual Transfer
+GO:0045131,pre-mRNA branch point binding,1050,2467055,1092,56717546,22.105750347307588,0.0,0.0,Manual Transfer
+GO:0098803,respiratory chain complex,1209,2467055,1266,56717546,21.954886458681415,0.0,0.0,Manual Transfer
+GO:0098808,mRNA cap binding,925,2467055,969,56717546,21.946059684323945,0.0,0.0,Manual Transfer
+GO:0070534,protein K63-linked ubiquitination,1103,2467055,1175,56717546,21.581232628428495,0.0,0.0,Manual Transfer
+GO:0070039,rRNA (guanosine-2'-O-)-methyltransferase activity,14,2467055,15,56717546,21.457315003786565,1.2489254752490344e-18,1.697729327915845e-18,Manual Transfer
+GO:0016540,protein autoprocessing,2021,2467055,2196,56717546,21.157900869756364,0.0,0.0,Manual Transfer
+GO:0033263,CORVET complex,847,2467055,923,56717546,21.096980894838904,0.0,0.0,Manual Transfer
+GO:0031314,extrinsic component of mitochondrial inner membrane,4891,2467055,5373,56717546,20.927599841174143,0.0,0.0,Manual Transfer
+GO:0016282,eukaryotic 43S preinitiation complex,12791,2467055,14354,56717546,20.48661270726681,0.0,0.0,Manual Transfer
+GO:0043647,inositol phosphate metabolic process,549,2467055,622,56717546,20.29179938633238,0.0,0.0,Manual Transfer
+GO:0033290,eukaryotic 48S preinitiation complex,12791,2467055,14591,56717546,20.153850921808502,0.0,0.0,Manual Transfer
+GO:1904047,S-adenosyl-L-methionine binding,1036,2467055,1209,56717546,19.700264395536053,0.0,0.0,Manual Transfer
+GO:0052837,thiazole biosynthetic process,805,2467055,958,56717546,19.31830291311682,0.0,0.0,Manual Transfer
+GO:0001732,formation of cytoplasmic translation initiation complex,12791,2467055,15313,56717546,19.20360731405393,0.0,0.0,Manual Transfer
+GO:0042183,formate catabolic process,1012,2467055,1224,56717546,19.00805565811625,0.0,0.0,Manual Transfer
+GO:0106004,tRNA (guanine-N7)-methylation,2020,2467055,2462,56717546,18.862615893429645,0.0,0.0,Manual Transfer
+GO:0051391,tRNA acetylation,1058,2467055,1291,56717546,18.84074300708713,0.0,0.0,Manual Transfer
+GO:0046496,nicotinamide nucleotide metabolic process,1059,2467055,1297,56717546,18.771310102167067,0.0,0.0,Manual Transfer
+GO:0031078,"histone H3K14 deacetylase activity, hydrolytic mechanism",586,2467055,750,56717546,17.962837988884182,0.0,0.0,Manual Transfer
+GO:0019805,quinolinate biosynthetic process,3426,2467055,4426,56717546,17.795678426902583,0.0,0.0,Manual Transfer
+GO:0055056,D-glucose transmembrane transporter activity,991,2467055,1347,56717546,16.913935069004523,0.0,0.0,Manual Transfer
+GO:0033567,"DNA replication, Okazaki fragment processing",581,2467055,799,56717546,16.71736994975862,0.0,0.0,Manual Transfer
+GO:0003774,cytoskeletal motor activity,16317,2467055,22744,56717546,16.49347122554074,0.0,0.0,Manual Transfer
+GO:0002183,cytoplasmic translational initiation,12791,2467055,18099,56717546,16.2475738328144,0.0,0.0,Manual Transfer
+GO:0043420,anthranilate metabolic process,3426,2467055,4913,56717546,16.031685877767316,0.0,0.0,Manual Transfer
+GO:0002128,tRNA nucleoside ribose methylation,823,2467055,1189,56717546,15.913165548584955,0.0,0.0,Manual Transfer
+GO:0180010,"co-transcriptional mRNA 3'-end processing, cleavage and polyadenylation pathway",1042,2467055,1532,56717546,15.636788209118986,0.0,0.0,Manual Transfer
+GO:1990140,molybdopterin synthase complex,1164,2467055,1755,56717546,15.248055350676168,0.0,0.0,Manual Transfer
+GO:0032447,protein urmylation,2920,2467055,4412,56717546,15.215490175590137,0.0,0.0,Manual Transfer
+GO:0036222,XTP diphosphatase activity,1080,2467055,1684,56717546,14.744167927610384,0.0,0.0,Manual Transfer
+GO:0035870,dITP diphosphatase activity,1080,2467055,1724,56717546,14.40207586432476,0.0,0.0,Manual Transfer
+GO:0046033,AMP metabolic process,1855,2467055,3043,56717546,14.014595323702203,0.0,0.0,Manual Transfer
+GO:0006172,ADP biosynthetic process,1855,2467055,3076,56717546,13.864243683363394,0.0,0.0,Manual Transfer
+GO:0006505,GPI anchor metabolic process,3992,2467055,6810,56717546,13.476652217607926,0.0,0.0,Manual Transfer
+GO:0016884,"carbon-nitrogen ligase activity, with glutamine as amido-N-donor",3027,2467055,5183,56717546,13.42671629429907,0.0,0.0,Manual Transfer
+GO:0097053,L-kynurenine catabolic process,1417,2467055,2449,56717546,13.302083369465189,0.0,0.0,Manual Transfer
+GO:0019303,D-ribose catabolic process,1105,2467055,1910,56717546,13.300486020484755,0.0,0.0,Manual Transfer
+GO:0160225,G-quadruplex unwinding activity,23,2467055,40,56717546,13.21923870768994,2.0820647930805067e-21,2.8344333392526662e-21,Manual Transfer
+GO:0061598,molybdopterin adenylyltransferase activity,1038,2467055,1810,56717546,13.184309179516845,0.0,0.0,Manual Transfer
+GO:0044210,'de novo' CTP biosynthetic process,1204,2467055,2106,56717546,13.143369589213993,0.0,0.0,Manual Transfer
+GO:0019381,atrazine catabolic process,37,2467055,65,56717546,13.086604205606092,2.4569988519056585e-33,3.441289742502159e-33,Manual Transfer
+GO:0046279,"3,4-dihydroxybenzoate biosynthetic process",671,2467055,1212,56717546,12.727951173568588,0.0,0.0,Manual Transfer
+GO:0070840,dynein complex binding,1095,2467055,2041,56717546,12.334163888051878,0.0,0.0,Manual Transfer
+GO:0071819,DUBm complex,342,2467055,659,56717546,11.93106719807339,8.061010427818407e-276,1.6534028055280867e-275,Manual Transfer
+GO:0034354,'de novo' NAD+ biosynthetic process from L-tryptophan,4128,2467055,7993,56717546,11.873218932945472,0.0,0.0,Manual Transfer
+GO:0006569,L-tryptophan catabolic process,3426,2467055,6681,56717546,11.789204118765278,0.0,0.0,Manual Transfer
+GO:0097036,regulation of plasma membrane sterol distribution,1018,2467055,1999,56717546,11.70775388079114,0.0,0.0,Manual Transfer
+GO:0008774,acetaldehyde dehydrogenase (acetylating) activity,4,2467055,8,56717546,11.494990180599947,0.00021754936772587963,0.00028005309122871257,Manual Transfer
+GO:0043175,RNA polymerase core enzyme binding,856,2467055,1722,56717546,11.428236462942571,0.0,0.0,Manual Transfer
+GO:0030628,pre-mRNA 3'-splice site binding,1053,2467055,2119,56717546,11.424468768449026,0.0,0.0,Manual Transfer
+GO:0019500,cyanide catabolic process,307,2467055,620,56717546,11.383748340142528,1.2804730039016055e-239,2.467383262215411e-239,Manual Transfer
+GO:0019569,L-arabinose catabolic process to D-xylulose 5-phosphate,524,2467055,1082,56717546,11.133779768270557,0.0,0.0,Manual Transfer
+GO:0004239,initiator methionyl aminopeptidase activity,3054,2467055,6332,56717546,11.088344918367731,0.0,0.0,Manual Transfer
+GO:0090522,vesicle tethering involved in exocytosis,2042,2467055,4238,56717546,11.077286431706035,0.0,0.0,Manual Transfer
+GO:0120330,rixosome complex,1924,2467055,4019,56717546,11.005902516782433,0.0,0.0,Manual Transfer
+GO:0006213,pyrimidine nucleoside metabolic process,10,2467055,21,56717546,10.947609695809472,5.490768394575079e-09,7.229642265610268e-09,Manual Transfer
+GO:0102704,"GDP-Man:Man(2)GlcNAc(2)-PP-Dol alpha-1,6-mannosyltransferase activity",1049,2467055,2208,56717546,10.922323097327304,0.0,0.0,Manual Transfer
+GO:0009349,riboflavin synthase complex,1011,2467055,2129,56717546,10.917271087446261,0.0,0.0,Manual Transfer
+GO:0046168,glycerol-3-phosphate catabolic process,1371,2467055,2904,56717546,10.853740728376396,0.0,0.0,Manual Transfer
+GO:0071782,endoplasmic reticulum tubular network,1088,2467055,2322,56717546,10.772221633499347,0.0,0.0,Manual Transfer
+GO:0006685,sphingomyelin catabolic process,737,2467055,1576,56717546,10.751025080078882,0.0,0.0,Manual Transfer
+GO:0009311,oligosaccharide metabolic process,1918,2467055,4128,56717546,10.681875565111772,0.0,0.0,Manual Transfer
+GO:0016300,tRNA (uridine) methyltransferase activity,1015,2467055,2198,56717546,10.616392205012689,0.0,0.0,Manual Transfer
+GO:0016095,polyprenol catabolic process,637,2467055,1381,56717546,10.604357342566496,0.0,0.0,Manual Transfer
+GO:0033494,ferulate metabolic process,529,2467055,1148,56717546,10.593814992225386,0.0,0.0,Manual Transfer
+GO:0043021,ribonucleoprotein complex binding,3029,2467055,6575,56717546,10.591125553471404,0.0,0.0,Manual Transfer
+GO:0046281,cinnamic acid catabolic process,529,2467055,1153,56717546,10.547874771096916,0.0,0.0,Manual Transfer
+GO:0045703,ketoreductase activity,988,2467055,2158,56717546,10.525533177416818,0.0,0.0,Manual Transfer
+GO:1990131,Gtr1-Gtr2 GTPase complex,2106,2467055,4625,56717546,10.468518625013399,0.0,0.0,Manual Transfer
+GO:0030975,thiamine binding,854,2467055,1897,56717546,10.349732856333532,0.0,0.0,Manual Transfer
+GO:0034227,tRNA thio-modification,3768,2467055,8472,56717546,10.22500542976879,0.0,0.0,Manual Transfer
+GO:0015112,nitrate transmembrane transporter activity,764,2467055,1723,56717546,10.194048169446733,0.0,0.0,Manual Transfer
+GO:0015099,nickel cation transmembrane transporter activity,780,2467055,1762,56717546,10.177176323346151,0.0,0.0,Manual Transfer
+GO:0030366,molybdopterin synthase activity,1164,2467055,2633,56717546,10.16343985584378,0.0,0.0,Manual Transfer
+GO:0000349,generation of catalytic spliceosome for first transesterification step,992,2467055,2247,56717546,10.149559643217755,0.0,0.0,Manual Transfer
+GO:0070330,aromatase activity,977,2467055,2264,56717546,9.92102951099483,0.0,0.0,Manual Transfer
+GO:0000387,spliceosomal snRNP assembly,4621,2467055,10850,56717546,9.791400852452046,0.0,0.0,Manual Transfer
+GO:0005471,ATP:ADP antiporter activity,1323,2467055,3132,56717546,9.711284807748232,0.0,0.0,Manual Transfer
+GO:0070681,glutaminyl-tRNAGln biosynthesis via transamidation,2005,2467055,4810,56717546,9.583141501913884,0.0,0.0,Manual Transfer
+GO:0051013,microtubule severing,49,2467055,118,56717546,9.546686760159277,4.2965653392021986e-35,6.045319829395776e-35,Manual Transfer
+GO:0000466,"maturation of 5.8S rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)",3029,2467055,7357,56717546,9.465359591419665,0.0,0.0,Manual Transfer
+GO:0000703,oxidized pyrimidine nucleobase lesion DNA N-glycosylase activity,983,2467055,2409,56717546,9.381133538837481,0.0,0.0,Manual Transfer
+GO:0045048,protein insertion into ER membrane,1964,2467055,5024,56717546,8.987325125277984,0.0,0.0,Manual Transfer
+GO:0010308,acireductone dioxygenase (Ni2+-requiring) activity,1040,2467055,2662,56717546,8.98181050925916,0.0,0.0,Manual Transfer
+GO:0140053,mitochondrial gene expression,688,2467055,1782,56717546,8.876041800508153,0.0,0.0,Manual Transfer
+GO:0046899,nucleoside triphosphate adenylate kinase activity,841,2467055,2180,56717546,8.869070405398674,0.0,0.0,Manual Transfer
+GO:0047710,bis(5'-adenosyl)-triphosphatase activity,724,2467055,1888,56717546,8.816072977494025,0.0,0.0,Manual Transfer
+GO:0016106,sesquiterpenoid biosynthetic process,41,2467055,107,56717546,8.809244811300893,5.788489443335115e-28,8.022185820117585e-28,Manual Transfer
+GO:0070814,hydrogen sulfide biosynthetic process,1002,2467055,2622,56717546,8.78564466892536,0.0,0.0,Manual Transfer
+GO:0030131,clathrin adaptor complex,2734,2467055,7158,56717546,8.781029101357992,0.0,0.0,Manual Transfer
+GO:0036220,ITP diphosphatase activity,1080,2467055,2833,56717546,8.764270663641328,0.0,0.0,Manual Transfer
+GO:0045905,positive regulation of translational termination,1061,2467055,2807,56717546,8.689835825875699,0.0,0.0,Manual Transfer
+GO:0061599,molybdopterin molybdotransferase activity,1038,2467055,2748,56717546,8.683988215038386,0.0,0.0,Manual Transfer
+GO:0018753,cyanuric acid amidohydrolase activity,37,2467055,98,56717546,8.679890544534654,4.0529637281439305e-25,5.583411225487833e-25,Manual Transfer
+GO:0048288,nuclear membrane fusion involved in karyogamy,546,2467055,1447,56717546,8.674864738918549,0.0,0.0,Manual Transfer
+GO:0000773,phosphatidyl-N-methylethanolamine N-methyltransferase activity,1082,2467055,2870,56717546,8.667302700633549,0.0,0.0,Manual Transfer
+GO:0007029,endoplasmic reticulum organization,1075,2467055,2861,56717546,8.638318381086991,0.0,0.0,Manual Transfer
+GO:0000455,enzyme-directed rRNA pseudouridine synthesis,1036,2467055,2813,56717546,8.466981746961638,0.0,0.0,Manual Transfer
+GO:0141152,glycerol-3-phosphate dehydrogenase (NAD+) activity,1371,2467055,3742,56717546,8.423106113095953,0.0,0.0,Manual Transfer
+GO:0031533,mRNA capping enzyme complex,1104,2467055,3021,56717546,8.401502257121708,0.0,0.0,Manual Transfer
+GO:0061617,MICOS complex,2921,2467055,8188,56717546,8.201481758068502,0.0,0.0,Manual Transfer
+GO:0003400,regulation of COPII vesicle coating,708,2467055,1989,56717546,8.18346208935622,0.0,0.0,Manual Transfer
+GO:0001717,conversion of seryl-tRNAsec to selenocys-tRNAsec,6,2467055,17,56717546,8.114110715717608,5.528310486053353e-05,7.156564626405674e-05,Manual Transfer
+GO:0043103,hypoxanthine salvage,628,2467055,1806,56717546,7.994301033684126,0.0,0.0,Manual Transfer
+GO:0004651,polynucleotide 5'-phosphatase activity,1104,2467055,3195,56717546,7.943955655325409,0.0,0.0,Manual Transfer
+GO:0000179,"rRNA (adenine-N6,N6-)-dimethyltransferase activity",1454,2467055,4211,56717546,7.938121929514282,0.0,0.0,Manual Transfer
+GO:0070973,protein localization to endoplasmic reticulum exit site,1221,2467055,3541,56717546,7.9273555552174715,0.0,0.0,Manual Transfer
+GO:0030956,glutamyl-tRNA(Gln) amidotransferase complex,2005,2467055,5815,56717546,7.926897785761958,0.0,0.0,Manual Transfer
+GO:0005254,chloride channel activity,2222,2467055,6539,56717546,7.812163383175739,0.0,0.0,Manual Transfer
+GO:0047840,dCTP diphosphatase activity,26,2467055,77,56717546,7.76285051157399,1.0456842423304621e-16,1.4008222868955247e-16,Manual Transfer
+GO:0000132,establishment of mitotic spindle orientation,1095,2467055,3248,56717546,7.750624536796146,0.0,0.0,Manual Transfer
+GO:0000811,GINS complex,2901,2467055,8645,56717546,7.714740662561121,0.0,0.0,Manual Transfer
+GO:0106050,tRNA 2'-O-methyltransferase activity,215,2467055,641,56717546,7.711147859060806,1.5688074419911516e-125,2.5493120932356213e-125,Manual Transfer
+GO:0009916,alternative oxidase activity,1209,2467055,3613,56717546,7.693021382975552,0.0,0.0,Manual Transfer
+GO:0019310,inositol catabolic process,1023,2467055,3095,56717546,7.598949889986265,0.0,0.0,Manual Transfer
+GO:0016783,sulfurtransferase activity,1918,2467055,5814,56717546,7.5842418873033015,0.0,0.0,Manual Transfer
+GO:0009308,amine metabolic process,4451,2467055,13516,56717546,7.5709087442809055,0.0,0.0,Manual Transfer
+GO:0033557,Slx1-Slx4 complex,1325,2467055,4024,56717546,7.570010929073026,0.0,0.0,Manual Transfer
+GO:0045040,protein insertion into mitochondrial outer membrane,2916,2467055,8863,56717546,7.563892895549913,0.0,0.0,Manual Transfer
+GO:0031144,proteasome localization,1055,2467055,3234,56717546,7.4998235253759695,0.0,0.0,Manual Transfer
+GO:0009107,lipoate biosynthetic process,1057,2467055,3279,56717546,7.410920781271207,0.0,0.0,Manual Transfer
+GO:0047874,dolichyldiphosphatase activity,789,2467055,2450,56717546,7.40371204285172,0.0,0.0,Manual Transfer
+GO:0015292,uniporter activity,355,2467055,1107,56717546,7.372577261270064,1.5820780765683086e-198,2.8745237493554107e-198,Manual Transfer
+GO:0045275,respiratory chain complex III,1808,2467055,5661,56717546,7.3424985855943135,0.0,0.0,Manual Transfer
+GO:0006147,guanine catabolic process,791,2467055,2486,56717546,7.314993751290874,0.0,0.0,Manual Transfer
+GO:0046081,dUTP catabolic process,955,2467055,3008,56717546,7.299013046857014,0.0,0.0,Manual Transfer
+GO:0008810,cellulase activity,3646,2467055,11547,56717546,7.259155486008037,0.0,0.0,Manual Transfer
+GO:0004378,"GDP-Man:Man(1)GlcNAc(2)-PP-Dol alpha-1,3-mannosyltransferase activity",1049,2467055,3326,56717546,7.250898797023058,0.0,0.0,Manual Transfer
+GO:0071596,ubiquitin-dependent protein catabolic process via the N-end rule pathway,1340,2467055,4260,56717546,7.231590066668511,0.0,0.0,Manual Transfer
+GO:0042545,cell wall modification,1066,2467055,3453,56717546,7.09739909210515,0.0,0.0,Manual Transfer
+GO:0019773,"proteasome core complex, alpha-subunit complex",7622,2467055,24739,56717546,7.08313312231964,0.0,0.0,Manual Transfer
+GO:0071540,"eukaryotic translation initiation factor 3 complex, eIF3e",974,2467055,3162,56717546,7.081670104936336,0.0,0.0,Manual Transfer
+GO:0010833,telomere maintenance via telomere lengthening,868,2467055,2818,56717546,7.08137081388272,0.0,0.0,Manual Transfer
+GO:0005852,eukaryotic translation initiation factor 3 complex,10895,2467055,35389,56717546,7.0777879011916935,0.0,0.0,Manual Transfer
+GO:0004396,hexokinase activity,4263,2467055,13867,56717546,7.067591135775232,0.0,0.0,Manual Transfer
+GO:0006399,tRNA metabolic process,969,2467055,3156,56717546,7.058710700254339,0.0,0.0,Manual Transfer
+GO:0004169,dolichyl-phosphate-mannose-protein mannosyltransferase activity,3610,2467055,11806,56717546,7.029800872770761,0.0,0.0,Manual Transfer
+GO:0031251,PAN complex,1880,2467055,6184,56717546,6.989191959743823,0.0,0.0,Manual Transfer
+GO:0071528,tRNA re-export from nucleus,1083,2467055,3584,56717546,6.9470281057978465,0.0,0.0,Manual Transfer
+GO:0046373,L-arabinose metabolic process,1405,2467055,4680,56717546,6.901906497326036,0.0,0.0,Manual Transfer
+GO:0015187,glycine transmembrane transporter activity,897,2467055,2988,56717546,6.901610570279887,0.0,0.0,Manual Transfer
+GO:1904983,glycine import into mitochondrion,897,2467055,2988,56717546,6.901610570279887,0.0,0.0,Manual Transfer
+GO:0006659,phosphatidylserine biosynthetic process,610,2467055,2041,56717546,6.871086732156753,5.647e-320,1.2744e-319,Manual Transfer
+GO:0006636,unsaturated fatty acid biosynthetic process,1867,2467055,6325,56717546,6.786133333495684,0.0,0.0,Manual Transfer
+GO:0006048,UDP-N-acetylglucosamine biosynthetic process,2535,2467055,8591,56717546,6.783797021958064,0.0,0.0,Manual Transfer
+GO:0140042,lipid droplet formation,630,2467055,2140,56717546,6.768078330633613,0.0,0.0,Manual Transfer
+GO:0004067,asparaginase activity,1858,2467055,6329,56717546,6.749152079492716,0.0,0.0,Manual Transfer
+GO:0005375,copper ion transmembrane transporter activity,3945,2467055,13621,56717546,6.6585032321366695,0.0,0.0,Manual Transfer
+GO:0019509,L-methionine salvage from methylthioadenosine,4209,2467055,14549,56717546,6.650960707972393,0.0,0.0,Manual Transfer
+GO:0031120,snRNA pseudouridine synthesis,1386,2467055,4794,56717546,6.646665160747403,0.0,0.0,Manual Transfer
+GO:0006177,GMP biosynthetic process,2237,2467055,7748,56717546,6.637659533815715,0.0,0.0,Manual Transfer
+GO:0042721,TIM22 mitochondrial import inner membrane insertion complex,1040,2467055,3623,56717546,6.59938713100963,0.0,0.0,Manual Transfer
+GO:0051907,S-(hydroxymethyl)glutathione synthase activity,374,2467055,1312,56717546,6.553546231012774,4.442594663637908e-189,7.9932063831146e-189,Manual Transfer
+GO:0006829,zinc ion transport,1267,2467055,4464,56717546,6.525157956460632,0.0,0.0,Manual Transfer
+GO:0002949,tRNA threonylcarbamoyladenosine modification,1883,2467055,6638,56717546,6.521562672512714,0.0,0.0,Manual Transfer
+GO:0003918,"DNA topoisomerase type II (double strand cut, ATP-hydrolyzing) activity",1962,2467055,6944,56717546,6.495728898138564,0.0,0.0,Manual Transfer
+GO:0120029,proton export across plasma membrane,2100,2467055,7451,56717546,6.479527413571302,0.0,0.0,Manual Transfer
+GO:0030196,cyanide hydratase activity,307,2467055,1092,56717546,6.4633003396413615,1.0901441335029682e-153,1.839493665856014e-153,Manual Transfer
+GO:0019781,NEDD8 activating enzyme activity,2069,2467055,7389,56717546,6.437443411466041,0.0,0.0,Manual Transfer
+GO:0031429,box H/ACA snoRNP complex,1386,2467055,4963,56717546,6.420333020476134,0.0,0.0,Manual Transfer
+GO:0008479,tRNA-guanosine(34) queuine transglycosylase activity,1409,2467055,5059,56717546,6.403020820108845,0.0,0.0,Manual Transfer
+GO:0004358,"L-glutamate N-acetyltransferase activity, acting on acetyl-L-ornithine as donor",1093,2467055,3940,56717546,6.377677293094285,0.0,0.0,Manual Transfer
+GO:0046488,phosphatidylinositol metabolic process,3168,2467055,11421,56717546,6.377047349993981,0.0,0.0,Manual Transfer
+GO:0017172,cysteine dioxygenase activity,977,2467055,3527,56717546,6.368361443972864,0.0,0.0,Manual Transfer
+GO:0032865,ERMES complex,3905,2467055,14123,56717546,6.356714105394433,0.0,0.0,Manual Transfer
+GO:0009229,thiamine diphosphate biosynthetic process,1588,2467055,5744,56717546,6.3558650441478814,0.0,0.0,Manual Transfer
+GO:0005795,Golgi stack,972,2467055,3517,56717546,6.353784734457292,0.0,0.0,Manual Transfer
+GO:0008776,acetate kinase activity,758,2467055,2743,56717546,6.353045976591147,0.0,0.0,Manual Transfer
+GO:0004409,homoaconitate hydratase activity,1080,2467055,3909,56717546,6.35179810439905,0.0,0.0,Manual Transfer
+GO:0043295,glutathione binding,1167,2467055,4226,56717546,6.348629219479479,0.0,0.0,Manual Transfer
+GO:0005849,mRNA cleavage factor complex,1480,2467055,5368,56717546,6.338519175591625,0.0,0.0,Manual Transfer
+GO:0008496,"mannan endo-1,6-alpha-mannosidase activity",3240,2467055,11819,56717546,6.302355222124347,0.0,0.0,Manual Transfer
+GO:0032585,multivesicular body membrane,1061,2467055,3883,56717546,6.281835993621706,0.0,0.0,Manual Transfer
+GO:0008824,cyanate hydratase activity,822,2467055,3019,56717546,6.259610419644357,0.0,0.0,Manual Transfer
+GO:0047453,ATP-dependent NAD(P)H-hydrate dehydratase activity,1059,2467055,3894,56717546,6.252282794686874,0.0,0.0,Manual Transfer
+GO:0000011,vacuole inheritance,724,2467055,2669,56717546,6.236322885540923,0.0,0.0,Manual Transfer
+GO:0009032,thymidine phosphorylase activity,10,2467055,37,56717546,6.2135082057297,2.8560329617410453e-06,3.71807958206909e-06,Manual Transfer
+GO:0006011,UDP-alpha-D-glucose metabolic process,1099,2467055,4071,56717546,6.206334663954479,0.0,0.0,Manual Transfer
+GO:0044209,AMP salvage,1076,2467055,3988,56717546,6.202913457535377,0.0,0.0,Manual Transfer
+GO:0050567,glutaminyl-tRNA synthase (glutamine-hydrolyzing) activity,2005,2467055,7451,56717546,6.186405935338314,0.0,0.0,Manual Transfer
+GO:0052906,tRNA (guanine(37)-N1)-methyltransferase activity,1052,2467055,3914,56717546,6.179218022478867,0.0,0.0,Manual Transfer
+GO:0008425,"2-methoxy-6-polyprenyl-1,4-benzoquinol methyltransferase activity",1051,2467055,3913,56717546,6.174921891035289,0.0,0.0,Manual Transfer
+GO:0042759,long-chain fatty acid biosynthetic process,1039,2467055,3878,56717546,6.159512531017712,0.0,0.0,Manual Transfer
+GO:0032324,molybdopterin cofactor biosynthetic process,1038,2467055,3900,56717546,6.1188716961347405,0.0,0.0,Manual Transfer
+GO:0045901,positive regulation of translational elongation,1061,2467055,3997,56717546,6.102669292777854,0.0,0.0,Manual Transfer
+GO:0009013,succinate-semialdehyde dehydrogenase [NAD(P)+] activity,1170,2467055,4409,56717546,6.100765938444971,0.0,0.0,Manual Transfer
+GO:0046570,methylthioribulose 1-phosphate dehydratase activity,915,2467055,3463,56717546,6.074453372941929,0.0,0.0,Manual Transfer
+GO:0160104,tRNA (guanine(26)-N2)-dimethyltransferase activity,552,2467055,2097,56717546,6.051725874765064,7.475707333867857e-259,1.4902975959308927e-258,Manual Transfer
+GO:0008420,RNA polymerase II CTD heptapeptide repeat phosphatase activity,1899,2467055,7227,56717546,6.040953743727493,0.0,0.0,Manual Transfer
+GO:0006419,alanyl-tRNA aminoacylation,1155,2467055,4407,56717546,6.025284165460829,0.0,0.0,Manual Transfer
+GO:0061542,3-demethylubiquinol 3-O-methyltransferase activity,912,2467055,3482,56717546,6.021499738487738,0.0,0.0,Manual Transfer
+GO:0019343,cysteine biosynthetic process via cystathionine,791,2467055,3023,56717546,6.015572102450914,0.0,0.0,Manual Transfer
+GO:0005744,TIM23 mitochondrial import inner membrane translocase complex,2972,2467055,11373,56717546,6.007757111886581,0.0,0.0,Manual Transfer
+GO:0016423,tRNA (guanine) methyltransferase activity,1026,2467055,3933,56717546,5.997386181182581,0.0,0.0,Manual Transfer
+GO:0004318,enoyl-[acyl-carrier-protein] reductase (NADH) activity,965,2467055,3740,56717546,5.931906697475373,0.0,0.0,Manual Transfer
+GO:0006146,adenine catabolic process,628,2467055,2436,56717546,5.92680938704168,1.4103184136998644e-288,2.978773217036556e-288,Manual Transfer
+GO:0031124,mRNA 3'-end processing,4094,2467055,15893,56717546,5.922165708094908,0.0,0.0,Manual Transfer
+GO:0016556,mRNA modification,142,2467055,552,56717546,5.914089150888378,1.1893161791904817e-66,1.773406839083707e-66,Manual Transfer
+GO:0004483,methyltransferase cap1 activity,142,2467055,554,56717546,5.8927386485386,1.970082370435019e-66,2.9328806901798755e-66,Manual Transfer
+GO:0004365,glyceraldehyde-3-phosphate dehydrogenase (NAD+) (phosphorylating) activity,1253,2467055,4906,56717546,5.871676598569805,0.0,0.0,Manual Transfer
+GO:0004663,Rab geranylgeranyltransferase activity,2117,2467055,8291,56717546,5.87019520258837,0.0,0.0,Manual Transfer
+GO:0043023,ribosomal large subunit binding,2113,2467055,8281,56717546,5.866179024660714,0.0,0.0,Manual Transfer
+GO:0042732,D-xylose metabolic process,1482,2467055,5844,56717546,5.830107956074305,0.0,0.0,Manual Transfer
+GO:0030248,cellulose binding,3646,2467055,14383,56717546,5.827815365148773,0.0,0.0,Manual Transfer
+GO:0008290,F-actin capping protein complex,1944,2467055,7746,56717546,5.769754947349934,0.0,0.0,Manual Transfer
+GO:0000243,commitment complex,766,2467055,3059,56717546,5.756889492212854,0.0,0.0,Manual Transfer
+GO:0004252,serine-type endopeptidase activity,19763,2467055,79286,56717546,5.730532274025597,0.0,0.0,Manual Transfer
+GO:0006226,dUMP biosynthetic process,955,2467055,3842,56717546,5.7145838742701445,0.0,0.0,Manual Transfer
+GO:0005956,protein kinase CK2 complex,2221,2467055,8946,56717546,5.707662238120385,0.0,0.0,Manual Transfer
+GO:0052856,NAD(P)HX epimerase activity,897,2467055,3623,56717546,5.691971400495805,0.0,0.0,Manual Transfer
+GO:0000154,rRNA modification,1058,2467055,4321,56717546,5.629113451087592,0.0,0.0,Manual Transfer
+GO:0004636,phosphoribosyl-ATP diphosphatase activity,915,2467055,3752,56717546,5.606565040111382,0.0,0.0,Manual Transfer
+GO:0004665,prephenate dehydrogenase (NADP+) activity,742,2467055,3046,56717546,5.600316949445279,0.0,0.0,Manual Transfer
+GO:0000439,transcription factor TFIIH core complex,2836,2467055,11657,56717546,5.59317013848871,0.0,0.0,Manual Transfer
+GO:0071630,nuclear protein quality control by the ubiquitin-proteasome system,1055,2467055,4337,56717546,5.592443920005969,0.0,0.0,Manual Transfer
+GO:0000107,imidazoleglycerol-phosphate synthase activity,918,2467055,3788,56717546,5.571489432835666,0.0,0.0,Manual Transfer
+GO:0047938,glucose-6-phosphate 1-epimerase activity,961,2467055,3969,56717546,5.566483025223758,0.0,0.0,Manual Transfer
+GO:0004357,glutamate-cysteine ligase activity,1285,2467055,5334,56717546,5.538456086265816,0.0,0.0,Manual Transfer
+GO:0019464,glycine decarboxylation via glycine cleavage system,1094,2467055,4551,56717546,5.5264861602181234,0.0,0.0,Manual Transfer
+GO:0016042,lipid catabolic process,10126,2467055,42232,56717546,5.512325751503838,0.0,0.0,Manual Transfer
+GO:0004122,cystathionine beta-synthase activity,791,2467055,3302,56717546,5.507290873927654,0.0,0.0,Manual Transfer
+GO:0071885,N-terminal protein N-methyltransferase activity,788,2467055,3301,56717546,5.488065593646021,0.0,0.0,Manual Transfer
+GO:0004506,squalene monooxygenase activity,1205,2467055,5050,56717546,5.4857279871774,0.0,0.0,Manual Transfer
+GO:0097361,cytosolic [4Fe-4S] assembly targeting complex,1174,2467055,4927,56717546,5.478026576831475,0.0,0.0,Manual Transfer
+GO:0034477,U6 snRNA 3'-end processing,613,2467055,2576,56717546,5.470829953965658,4.52810444500966e-261,9.046407798147006e-261,Manual Transfer
+GO:0036054,protein-malonyllysine demalonylase activity,191,2467055,803,56717546,5.46835149313721,1.067365367006781e-82,1.631089790972283e-82,Manual Transfer
+GO:0071586,CAAX-box protein processing,1029,2467055,4335,56717546,5.457137206845372,0.0,0.0,Manual Transfer
+GO:0004573,Glc3Man9GlcNAc2 oligosaccharide glucosidase activity,1918,2467055,8182,56717546,5.389242524172745,0.0,0.0,Manual Transfer
+GO:0046523,S-methyl-5-thioribose-1-phosphate isomerase activity,923,2467055,3941,56717546,5.384357237601497,0.0,0.0,Manual Transfer
+GO:0004865,protein serine/threonine phosphatase inhibitor activity,988,2467055,4231,56717546,5.368494586827108,0.0,0.0,Manual Transfer
+GO:0030942,endoplasmic reticulum signal peptide binding,993,2467055,4258,56717546,5.361449154220642,0.0,0.0,Manual Transfer
+GO:0042176,regulation of protein catabolic process,1002,2467055,4307,56717546,5.348493225428904,0.0,0.0,Manual Transfer
+GO:0071786,endoplasmic reticulum tubular network organization,1088,2467055,4701,56717546,5.320803793445114,0.0,0.0,Manual Transfer
+GO:0016433,rRNA (adenine) methyltransferase activity,927,2467055,4020,56717546,5.301420844485647,0.0,0.0,Manual Transfer
+GO:0004343,glucosamine 6-phosphate N-acetyltransferase activity,1517,2467055,6593,56717546,5.289822570596122,0.0,0.0,Manual Transfer
+GO:0004775,succinate-CoA ligase (ADP-forming) activity,2094,2467055,9160,56717546,5.2555697463266995,0.0,0.0,Manual Transfer
+GO:0004185,serine-type carboxypeptidase activity,7041,2467055,30882,56717546,5.241644055540717,0.0,0.0,Manual Transfer
+GO:0005960,glycine cleavage complex,1094,2467055,4805,56717546,5.2343472456093,0.0,0.0,Manual Transfer
+GO:0003856,3-dehydroquinate synthase activity,995,2467055,4381,56717546,5.221417589453068,0.0,0.0,Manual Transfer
+GO:0000288,"nuclear-transcribed mRNA catabolic process, deadenylation-dependent decay",1880,2467055,8289,56717546,5.214279536621523,0.0,0.0,Manual Transfer
+GO:0045254,pyruvate dehydrogenase complex,1019,2467055,4496,56717546,5.210584961757716,0.0,0.0,Manual Transfer
+GO:0003942,N-acetyl-gamma-glutamyl-phosphate reductase activity,876,2467055,3877,56717546,5.194537734436706,0.0,0.0,Manual Transfer
+GO:0004001,adenosine kinase activity,1076,2467055,4767,56717546,5.189263450524667,0.0,0.0,Manual Transfer
+GO:0005965,protein farnesyltransferase complex,926,2467055,4127,56717546,5.158401215040247,0.0,0.0,Manual Transfer
+GO:0048476,Holliday junction resolvase complex,882,2467055,3931,56717546,5.158270841663268,0.0,0.0,Manual Transfer
+GO:0004856,D-xylulokinase activity,958,2467055,4330,56717546,5.086466786611893,0.0,0.0,Manual Transfer
+GO:0045116,protein neddylation,2069,2467055,9377,56717546,5.072653233158001,0.0,0.0,Manual Transfer
+GO:0030234,enzyme regulator activity,2964,2467055,13503,56717546,5.04645647564219,0.0,0.0,Manual Transfer
+GO:0044208,'de novo' AMP biosynthetic process,1180,2467055,5385,56717546,5.0377301441440805,0.0,0.0,Manual Transfer
+GO:0070125,mitochondrial translational elongation,1070,2467055,4892,56717546,5.028470765838897,0.0,0.0,Manual Transfer
+GO:0004089,carbonate dehydratase activity,3418,2467055,15646,56717546,5.022354140009027,0.0,0.0,Manual Transfer
+GO:0008265,molybdenum cofactor sulfurtransferase activity,663,2467055,3040,56717546,5.01393321693274,1.3700196897373197e-258,2.7252762362662633e-258,Manual Transfer
+GO:0004042,L-glutamate N-acetyltransferase activity,1093,2467055,5020,56717546,5.005587357528183,0.0,0.0,Manual Transfer
+GO:0050113,inositol oxygenase activity,1023,2467055,4700,56717546,5.003989342448402,0.0,0.0,Manual Transfer
+GO:0003920,GMP reductase activity,5,2467055,23,56717546,4.99782181765215,0.002712999906592297,0.0034682810440231165,Manual Transfer
+GO:0004767,sphingomyelin phosphodiesterase activity,737,2467055,3391,56717546,4.996642738485497,3.453154964908532e-286,7.260277978611789e-286,Manual Transfer
+GO:0045727,positive regulation of translation,1042,2467055,4799,56717546,4.991781524561427,0.0,0.0,Manual Transfer
+GO:0008553,P-type proton-exporting transporter activity,2100,2467055,9695,56717546,4.979779139610085,0.0,0.0,Manual Transfer
+GO:0019135,deoxyhypusine monooxygenase activity,1083,2467055,5012,56717546,4.967707248838684,0.0,0.0,Manual Transfer
+GO:0006646,phosphatidylethanolamine biosynthetic process,2631,2467055,12238,56717546,4.942526420192589,0.0,0.0,Manual Transfer
+GO:0016024,CDP-diacylglycerol biosynthetic process,806,2467055,3751,56717546,4.939995780092539,4.21965474542341e-309,9.273193642918585e-309,Manual Transfer
+GO:0004455,ketol-acid reductoisomerase activity,1159,2467055,5394,56717546,4.9398196586263765,0.0,0.0,Manual Transfer
+GO:0045482,trichodiene synthase activity,41,2467055,191,56717546,4.93502196235181,2.1971129485697418e-17,2.9561738360493754e-17,Manual Transfer
+GO:0004747,ribokinase activity,1105,2467055,5150,56717546,4.932801611480754,0.0,0.0,Manual Transfer
+GO:0016992,lipoate synthase activity,1057,2467055,4927,56717546,4.932090367726464,0.0,0.0,Manual Transfer
+GO:0006777,Mo-molybdopterin cofactor biosynthetic process,3419,2467055,15956,56717546,4.926218529389724,0.0,0.0,Manual Transfer
+GO:0007023,post-chaperonin tubulin folding pathway,1052,2467055,4915,56717546,4.920744524920099,0.0,0.0,Manual Transfer
+GO:0019287,"isopentenyl diphosphate biosynthetic process, mevalonate pathway",1926,2467055,9007,56717546,4.9160322166838,0.0,0.0,Manual Transfer
+GO:0071985,multivesicular body sorting pathway,648,2467055,3031,56717546,4.915046939642867,1.2594927827631052e-247,2.45255662128765e-247,Manual Transfer
+GO:0017061,S-methyl-5-thioadenosine phosphorylase activity,1032,2467055,4866,56717546,4.875803479810581,0.0,0.0,Manual Transfer
+GO:0004334,fumarylacetoacetase activity,1478,2467055,6980,56717546,4.868078936082155,0.0,0.0,Manual Transfer
+GO:0000287,magnesium ion binding,13836,2467055,65516,56717546,4.855140244788474,0.0,0.0,Manual Transfer
+GO:0006265,DNA topological change,2325,2467055,11011,56717546,4.854391457614182,0.0,0.0,Manual Transfer
+GO:0006031,chitin biosynthetic process,3199,2467055,15168,56717546,4.8486911376238435,0.0,0.0,Manual Transfer
+GO:0016279,protein-lysine N-methyltransferase activity,3488,2467055,16621,56717546,4.824562390943098,0.0,0.0,Manual Transfer
+GO:0003883,CTP synthase activity,1204,2467055,5743,56717546,4.819769520265483,0.0,0.0,Manual Transfer
+GO:0000814,ESCRT II complex,1748,2467055,8352,56717546,4.811600295902468,0.0,0.0,Manual Transfer
+GO:0000054,ribosomal subunit export from nucleus,1102,2467055,5266,56717546,4.811044124200965,0.0,0.0,Manual Transfer
+GO:0005687,U4 snRNP,991,2467055,4742,56717546,4.804527738917987,0.0,0.0,Manual Transfer
+GO:0036055,protein-succinyllysine desuccinylase activity,191,2467055,917,56717546,4.788534622670861,1.9511990532707197e-72,2.947556016643002e-72,Manual Transfer
+GO:0004502,kynurenine 3-monooxygenase activity,982,2467055,4727,56717546,4.776001843600231,0.0,0.0,Manual Transfer
+GO:0031510,SUMO activating enzyme complex,722,2467055,3476,56717546,4.7752490853815655,2.1016121217168016e-267,4.253921027071508e-267,Manual Transfer
+GO:0010309,acireductone dioxygenase [iron(II)-requiring] activity,1040,2467055,5011,56717546,4.771418793783254,0.0,0.0,Manual Transfer
+GO:0004462,lactoylglutathione lyase activity,737,2467055,3557,56717546,4.763456712455531,3.3867165972420935e-272,6.885329117300556e-272,Manual Transfer
+GO:0004019,adenylosuccinate synthase activity,1180,2467055,5700,56717546,4.759329267757171,0.0,0.0,Manual Transfer
+GO:0004608,phosphatidylethanolamine N-methyltransferase activity,1053,2467055,5095,56717546,4.751413016750439,0.0,0.0,Manual Transfer
+GO:0005968,Rab-protein geranylgeranyltransferase complex,1053,2467055,5097,56717546,4.749548620824698,0.0,0.0,Manual Transfer
+GO:0000214,tRNA-intron endonuclease complex,1377,2467055,6667,56717546,4.748343026454514,0.0,0.0,Manual Transfer
+GO:0051131,chaperone-mediated protein complex assembly,1016,2467055,4923,56717546,4.744631331907189,0.0,0.0,Manual Transfer
+GO:0000334,"3-hydroxyanthranilate 3,4-dioxygenase activity",1028,2467055,4982,56717546,4.743817706004314,0.0,0.0,Manual Transfer
+GO:0004401,histidinol-phosphatase activity,1080,2467055,5235,56717546,4.742918584545537,0.0,0.0,Manual Transfer
+GO:0003842,L-glutamate gamma-semialdehyde dehydrogenase activity,1563,2467055,7589,56717546,4.7349241408031935,0.0,0.0,Manual Transfer
+GO:0006782,protoporphyrinogen IX biosynthetic process,1853,2467055,9009,56717546,4.728652859285536,0.0,0.0,Manual Transfer
+GO:0008863,formate dehydrogenase (NAD+) activity,1012,2467055,4933,56717546,4.716371401892213,0.0,0.0,Manual Transfer
+GO:0016151,nickel cation binding,1040,2467055,5081,56717546,4.705683836970653,0.0,0.0,Manual Transfer
+GO:0004729,oxygen-dependent protoporphyrinogen oxidase activity,958,2467055,4704,56717546,4.682058075261373,0.0,0.0,Manual Transfer
+GO:0035101,FACT complex,1176,2467055,5787,56717546,4.671888181228801,0.0,0.0,Manual Transfer
+GO:0004352,glutamate dehydrogenase (NAD+) activity,1066,2467055,5274,56717546,4.646818176912985,0.0,0.0,Manual Transfer
+GO:0005784,Sec61 translocon complex,321,2467055,1589,56717546,4.6442943335086,1.4967323296061732e-116,2.3859826256070774e-116,Manual Transfer
+GO:0016226,iron-sulfur cluster assembly,7139,2467055,35403,56717546,4.63591983161331,0.0,0.0,Manual Transfer
+GO:0003987,acetate-CoA ligase activity,1322,2467055,6572,56717546,4.624582172475085,0.0,0.0,Manual Transfer
+GO:0004791,thioredoxin-disulfide reductase (NADPH) activity,1009,2467055,5017,56717546,4.623657601046579,0.0,0.0,Manual Transfer
+GO:0004739,pyruvate dehydrogenase (acetyl-transferring) activity,2177,2467055,10837,56717546,4.618361838731398,0.0,0.0,Manual Transfer
+GO:0003938,IMP dehydrogenase activity,1116,2467055,5563,56717546,4.612047111827985,0.0,0.0,Manual Transfer
+GO:0004768,stearoyl-CoA 9-desaturase activity,1867,2467055,9312,56717546,4.609352806524936,0.0,0.0,Manual Transfer
+GO:0006538,L-glutamate catabolic process,1066,2467055,5321,56717546,4.605773175162391,0.0,0.0,Manual Transfer
+GO:0032211,negative regulation of telomere maintenance via telomerase,23,2467055,115,56717546,4.597996072239979,8.888930534985781e-10,1.1737457630603544e-09,Manual Transfer
+GO:0043137,"DNA replication, removal of RNA primer",1101,2467055,5509,56717546,4.594657538152311,0.0,0.0,Manual Transfer
+GO:0004163,diphosphomevalonate decarboxylase activity,1008,2467055,5045,56717546,4.593439089016748,0.0,0.0,Manual Transfer
+GO:1990112,RQC complex,1126,2467055,5668,56717546,4.567169704783183,0.0,0.0,Manual Transfer
+GO:0004638,phosphoribosylaminoimidazole carboxylase activity,980,2467055,4938,56717546,4.562612546370169,0.0,0.0,Manual Transfer
+GO:0004017,AMP kinase activity,2027,2467055,10241,56717546,4.550404276159768,0.0,0.0,Manual Transfer
+GO:0031167,rRNA methylation,2484,2467055,12567,56717546,4.544211921478518,0.0,0.0,Manual Transfer
+GO:0016480,negative regulation of transcription by RNA polymerase III,609,2467055,3082,56717546,4.542796249179343,4.910749243900798e-214,9.17534727149886e-214,Manual Transfer
+GO:0004765,shikimate kinase activity,995,2467055,5057,56717546,4.523438888549316,0.0,0.0,Manual Transfer
+GO:0070096,mitochondrial outer membrane translocase complex assembly,997,2467055,5070,56717546,4.520909353080136,0.0,0.0,Manual Transfer
+GO:0004170,dUTP diphosphatase activity,955,2467055,4861,56717546,4.516649093796729,0.0,0.0,Manual Transfer
+GO:0030008,TRAPP complex,2001,2467055,10186,56717546,4.516292038362555,0.0,0.0,Manual Transfer
+GO:0030497,fatty acid elongation,988,2467055,5044,56717546,4.503192029513381,0.0,0.0,Manual Transfer
+GO:0004635,phosphoribosyl-AMP cyclohydrolase activity,915,2467055,4676,56717546,4.4986809303887725,4.7949214e-317,1.06901265e-316,Manual Transfer
+GO:0017040,N-acylsphingosine amidohydrolase activity,1098,2467055,5621,56717546,4.490837651058083,0.0,0.0,Manual Transfer
+GO:0004375,glycine dehydrogenase (decarboxylating) activity,1012,2467055,5181,56717546,4.490611875223758,0.0,0.0,Manual Transfer
+GO:0038066,p38MAPK cascade,599,2467055,3067,56717546,4.490054853719835,7.3443323175940015e-208,1.3530576305667192e-207,Manual Transfer
+GO:0000395,mRNA 5'-splice site recognition,766,2467055,3927,56717546,4.484421939566874,7.704173648978426e-265,1.5560070630212444e-264,Manual Transfer
+GO:0030570,pectate lyase activity,2130,2467055,10939,56717546,4.47652053838155,0.0,0.0,Manual Transfer
+GO:0004377,"GDP-Man:Man(3)GlcNAc(2)-PP-Dol alpha-1,2-mannosyltransferase activity",980,2467055,5046,56717546,4.464958532298037,0.0,0.0,Manual Transfer
+GO:0003882,CDP-diacylglycerol-serine O-phosphatidyltransferase activity,610,2467055,3144,56717546,4.4605241794948896,4.3002560656668305e-210,7.938272697220969e-210,Manual Transfer
+GO:0051560,mitochondrial calcium ion homeostasis,355,2467055,1832,56717546,4.454936150778363,5.714844801876976e-123,9.254038161635875e-123,Manual Transfer
+GO:0005673,transcription factor TFIIE complex,846,2467055,4371,56717546,4.449673618296753,9.5553177384798e-290,2.0228344661965265e-289,Manual Transfer
+GO:0000742,karyogamy involved in conjugation with cellular fusion,546,2467055,2824,56717546,4.444946627909045,1.5279027109590562e-187,2.743685218317527e-187,Manual Transfer
+GO:0005835,fatty acid synthase complex,965,2467055,4994,56717546,4.4423970862150375,0.0,0.0,Manual Transfer
+GO:0036374,glutathione hydrolase activity,1444,2467055,7477,56717546,4.439953409331636,0.0,0.0,Manual Transfer
+GO:0004640,phosphoribosylanthranilate isomerase activity,774,2467055,4009,56717546,4.438574407475359,1.5604515391028604e-264,3.14475277421821e-264,Manual Transfer
+GO:0030659,cytoplasmic vesicle membrane,1957,2467055,10208,56717546,4.4074639074126365,0.0,0.0,Manual Transfer
+GO:0004342,glucosamine-6-phosphate deaminase activity,988,2467055,5174,56717546,4.390046501133647,0.0,0.0,Manual Transfer
+GO:0004176,ATP-dependent peptidase activity,2228,2467055,11696,56717546,4.379418283580144,0.0,0.0,Manual Transfer
+GO:0010133,L-proline catabolic process to L-glutamate,1563,2467055,8256,56717546,4.352390904137043,0.0,0.0,Manual Transfer
+GO:0006656,phosphatidylcholine biosynthetic process,2135,2467055,11301,56717546,4.34329776755701,0.0,0.0,Manual Transfer
+GO:0102210,rhamnogalacturonan endolyase activity,358,2467055,1904,56717546,4.322695887242417,6.99334756733407e-120,1.1206353827516227e-119,Manual Transfer
+GO:0002098,tRNA wobble uridine modification,3768,2467055,20109,56717546,4.307834601472037,0.0,0.0,Manual Transfer
+GO:0051996,squalene synthase [NAD(P)H] activity,991,2467055,5290,56717546,4.306818627211548,0.0,0.0,Manual Transfer
+GO:0005875,microtubule associated complex,1095,2467055,5866,56717546,4.291515256650849,0.0,0.0,Manual Transfer
+GO:0005688,U6 snRNP,1830,2467055,9824,56717546,4.282539094156739,0.0,0.0,Manual Transfer
+GO:0010420,polyprenyldihydroxybenzoate methyltransferase activity,912,2467055,4912,56717546,4.268497982372619,8.803353791436768e-298,1.894054906642456e-297,Manual Transfer
+GO:0016560,"protein import into peroxisome matrix, docking",1698,2467055,9201,56717546,4.2426895612778415,0.0,0.0,Manual Transfer
+GO:0034314,Arp2/3 complex-mediated actin nucleation,2675,2467055,14522,56717546,4.2348297387556615,0.0,0.0,Manual Transfer
+GO:0003872,6-phosphofructokinase activity,1140,2467055,6191,56717546,4.233335101238553,0.0,0.0,Manual Transfer
+GO:0008409,5'-3' exonuclease activity,1101,2467055,5983,56717546,4.230648232940177,0.0,0.0,Manual Transfer
+GO:0005381,iron ion transmembrane transporter activity,893,2467055,4856,56717546,4.2277702764727145,2.087758355594798e-288,4.399545575831047e-288,Manual Transfer
+GO:0006744,ubiquinone biosynthetic process,6917,2467055,37634,56717546,4.225479464272191,0.0,0.0,Manual Transfer
+GO:0003972,RNA ligase (ATP) activity,781,2467055,4255,56717546,4.219782529282519,5.897416002418176e-252,1.1631014893658069e-251,Manual Transfer
+GO:0004813,alanine-tRNA ligase activity,1155,2467055,6312,56717546,4.206816748603592,0.0,0.0,Manual Transfer
+GO:0000221,"vacuolar proton-transporting V-type ATPase, V1 domain",923,2467055,5071,56717546,4.184530047995958,1.8007879920215446e-294,3.856443890106463e-294,Manual Transfer
+GO:0030126,COPI vesicle coat,3210,2467055,17747,56717546,4.158327433338123,0.0,0.0,Manual Transfer
+GO:0008526,phosphatidylinositol transfer activity,852,2467055,4733,56717546,4.138487907826391,1.776932017592054e-268,3.6046335214010233e-268,Manual Transfer
+GO:0030915,Smc5-Smc6 complex,2135,2467055,11861,56717546,4.138235230685589,0.0,0.0,Manual Transfer
+GO:0000159,protein phosphatase type 2A complex,2082,2467055,11608,56717546,4.123461329429547,0.0,0.0,Manual Transfer
+GO:0004582,dolichyl-phosphate beta-D-mannosyltransferase activity,1126,2467055,6286,56717546,4.118154293145255,0.0,0.0,Manual Transfer
+GO:0070006,metalloaminopeptidase activity,3054,2467055,17084,56717546,4.1097752296361785,0.0,0.0,Manual Transfer
+GO:0003866,3-phosphoshikimate 1-carboxyvinyltransferase activity,1060,2467055,5939,56717546,4.103279875883463,0.0,0.0,Manual Transfer
+GO:0004631,phosphomevalonate kinase activity,918,2467055,5151,56717546,4.0972242227881,1.0812473152885908e-285,2.263018757395395e-285,Manual Transfer
+GO:0032366,intracellular sterol transport,1018,2467055,5724,56717546,4.0887141872294706,8.6319393e-316,1.91521153e-315,Manual Transfer
+GO:0003855,3-dehydroquinate dehydratase activity,1666,2467055,9391,56717546,4.078512116042916,0.0,0.0,Manual Transfer
+GO:0031176,"endo-1,4-beta-xylanase activity",1946,2467055,10982,56717546,4.073802748396921,0.0,0.0,Manual Transfer
+GO:0030041,actin filament polymerization,813,2467055,4589,56717546,4.072968845860865,1.756153382087864e-251,3.4561398116569267e-251,Manual Transfer
+GO:0046034,ATP metabolic process,1014,2467055,5732,56717546,4.066964425376255,1.46420659362e-312,3.23316432036e-312,Manual Transfer
+GO:0030429,kynureninase activity,1417,2467055,8021,56717546,4.061438994117971,0.0,0.0,Manual Transfer
+GO:0004065,arylsulfatase activity,857,2467055,4853,56717546,4.059841988367671,5.9310288048794635e-264,1.1926665766674827e-263,Manual Transfer
+GO:0007618,mating,18,2467055,102,56717546,4.057055357858804,4.188157732119706e-07,5.475452672445451e-07,Manual Transfer
+GO:0051539,"4 iron, 4 sulfur cluster binding",10788,2467055,61416,56717546,4.03829471370041,0.0,0.0,Manual Transfer
+GO:0071541,"eukaryotic translation initiation factor 3 complex, eIF3m",922,2467055,5251,56717546,4.036709558755723,7.236975041777456e-282,1.5010624637214813e-281,Manual Transfer
+GO:0000463,"maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)",3029,2467055,17279,56717546,4.030131981831962,0.0,0.0,Manual Transfer
+GO:0003723,RNA binding,120914,2467055,694562,56717546,4.002249598155562,0.0,0.0,Manual Transfer
+GO:0045493,xylan catabolic process,4417,2467055,25419,56717546,3.9949149555615846,0.0,0.0,Manual Transfer
+GO:0019799,tubulin N-acetyltransferase activity,30,2467055,173,56717546,3.9867017967398657,1.1240841790684344e-10,1.4928484852952014e-10,Manual Transfer
+GO:0004610,phosphoacetylglucosamine mutase activity,1018,2467055,5873,56717546,3.98498212288464,3.590031992248005e-306,7.870782728847765e-306,Manual Transfer
+GO:0004363,glutathione synthase activity,1167,2467055,6735,56717546,3.9835645258382,0.0,0.0,Manual Transfer
+GO:0051016,barbed-end actin filament capping,1944,2467055,11269,56717546,3.9659705228656126,0.0,0.0,Manual Transfer
+GO:0006085,acetyl-CoA biosynthetic process,758,2467055,4397,56717546,3.9632488318829924,5.085540936514617e-227,9.638509824236121e-227,Manual Transfer
+GO:0006572,L-tyrosine catabolic process,1478,2467055,8575,56717546,3.9625878686709552,0.0,0.0,Manual Transfer
+GO:0004742,dihydrolipoyllysine-residue acetyltransferase activity,1019,2467055,5935,56717546,3.9472266197241264,6.253395685518474e-303,1.3580904041726003e-302,Manual Transfer
+GO:0006886,intracellular protein transport,16884,2467055,98881,56717546,3.925555247403434,0.0,0.0,Manual Transfer
+GO:0001405,"PAM complex, Tim23 associated import motor",1066,2467055,6256,56717546,3.91741033648323,7.3150360187e-314,1.61913147366e-313,Manual Transfer
+GO:0006614,SRP-dependent cotranslational protein targeting to membrane,2687,2467055,15838,56717546,3.9003710841358825,0.0,0.0,Manual Transfer
+GO:0031902,late endosome membrane,1100,2467055,6507,56717546,3.886426678549237,0.0,0.0,Manual Transfer
+GO:0030619,U1 snRNA binding,766,2467055,4541,56717546,3.8780720010304153,2.3733029093691818e-223,4.488849560138841e-223,Manual Transfer
+GO:0019948,SUMO activating enzyme activity,722,2467055,4282,56717546,3.876404909104699,1.5582867992165137e-210,2.8823621556650144e-210,Manual Transfer
+GO:0004781,sulfate adenylyltransferase (ATP) activity,1002,2467055,5966,56717546,3.861206892712419,6.502333612072119e-290,1.3796905572281762e-289,Manual Transfer
+GO:0070390,transcription export complex 2,380,2467055,2276,56717546,3.838397424101915,1.8875883826774298e-110,2.9781950037799445e-110,Manual Transfer
+GO:0004325,ferrochelatase activity,995,2467055,5975,56717546,3.8284569806516973,7.469683194865993e-285,1.5598456083396635e-284,Manual Transfer
+GO:0042273,ribosomal large subunit biogenesis,5205,2467055,31406,56717546,3.810190657200708,0.0,0.0,Manual Transfer
+GO:1990116,ribosome-associated ubiquitin-dependent protein catabolic process,1126,2467055,6807,56717546,3.802955470355675,2.29805e-319,5.1608e-319,Manual Transfer
+GO:0030897,HOPS complex,1124,2467055,6815,56717546,3.7917443765207164,1.292449e-317,2.8884515e-317,Manual Transfer
+GO:0004777,succinate-semialdehyde dehydrogenase (NAD+) activity,1170,2467055,7095,56717546,3.7911595521640415,0.0,0.0,Manual Transfer
+GO:0005675,transcription factor TFIIH holo complex,1926,2467055,11693,56717546,3.7867700483768916,0.0,0.0,Manual Transfer
+GO:0003841,1-acylglycerol-3-phosphate O-acyltransferase activity,1125,2467055,6836,56717546,3.7834593192436916,5.13435e-317,1.14192894e-316,Manual Transfer
+GO:0005885,Arp2/3 protein complex,2675,2467055,16318,56717546,3.768733758194001,0.0,0.0,Manual Transfer
+GO:0003881,CDP-diacylglycerol-inositol 3-phosphatidyltransferase activity,383,2467055,2346,56717546,3.753266188550537,3.126695092109834e-108,4.916421754714441e-108,Manual Transfer
+GO:0008176,tRNA (guanine(46)-N7)-methyltransferase activity,1055,2467055,6469,56717546,3.749332088586472,5.088280533400905e-294,1.0871488269280174e-293,Manual Transfer
+GO:0000213,tRNA-intron lyase activity,1377,2467055,8474,56717546,3.735803983640813,0.0,0.0,Manual Transfer
+GO:0008312,7S RNA binding,1965,2467055,12103,56717546,3.732571379803172,0.0,0.0,Manual Transfer
+GO:0006121,"mitochondrial electron transport, succinate to ubiquinone",1008,2467055,6214,56717546,3.7293048284662844,4.220104781101143e-279,8.694546234277578e-279,Manual Transfer
+GO:0005786,"signal recognition particle, endoplasmic reticulum targeting",2687,2467055,16583,56717546,3.7251448610350426,0.0,0.0,Manual Transfer
+GO:0051377,mannose-ethanolamine phosphotransferase activity,1101,2467055,6811,56717546,3.7163365699135347,2.7484645904124334e-303,5.997240702011054e-303,Manual Transfer
+GO:0016303,1-phosphatidylinositol-3-kinase activity,1008,2467055,6262,56717546,3.700718652840864,2.363579154870766e-276,4.8587607125739796e-276,Manual Transfer
+GO:0051604,protein maturation,1174,2467055,7298,56717546,3.6983059665728515,3.14e-321,7.11e-321,Manual Transfer
+GO:0000076,DNA replication checkpoint signaling,944,2467055,5875,56717546,3.6940496103783316,2.4100390841757573e-258,4.783798010095106e-258,Manual Transfer
+GO:0004399,histidinol dehydrogenase activity,1175,2467055,7349,56717546,3.6757690739433766,5.7843e-319,1.295855e-318,Manual Transfer
+GO:0004660,protein farnesyltransferase activity,926,2467055,5798,56717546,3.671735394010193,1.7628521004518932e-251,3.4619414653555264e-251,Manual Transfer
+GO:0004788,thiamine diphosphokinase activity,854,2467055,5353,56717546,3.6677457927264543,9.051659128150447e-232,1.7297476967459344e-231,Manual Transfer
+GO:0004609,phosphatidylserine decarboxylase activity,2021,2467055,12679,56717546,3.6645437581816376,0.0,0.0,Manual Transfer
+GO:0000145,exocyst,3145,2467055,19732,56717546,3.6642757062626017,0.0,0.0,Manual Transfer
+GO:0005742,mitochondrial outer membrane translocase complex,680,2467055,4269,56717546,3.6620254498983194,1.2940802273043342e-184,2.3192933005862145e-184,Manual Transfer
+GO:0042256,cytosolic ribosome assembly,1102,2467055,6928,56717546,3.6568935274310452,2.7482472068522995e-297,5.899144585871331e-297,Manual Transfer
+GO:0016712,"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, reduced flavin or flavoprotein as one donor, and incorporation of one atom of oxygen",922,2467055,5801,56717546,3.6539841222248404,7.869310706410543e-249,1.5355969940839178e-248,Manual Transfer
+GO:0045277,respiratory chain complex IV,2026,2467055,12749,56717546,3.6534395020622,0.0,0.0,Manual Transfer
+GO:0046540,U4/U6 x U5 tri-snRNP complex,4213,2467055,26545,56717546,3.648777067686387,0.0,0.0,Manual Transfer
+GO:0003950,NAD+ poly-ADP-ribosyltransferase activity,1070,2467055,6773,56717546,3.631962053223665,3.7842898465499927e-286,7.938408019012825e-286,Manual Transfer
+GO:0003952,NAD+ synthase (glutamine-hydrolyzing) activity,1060,2467055,6721,56717546,3.6258561498098327,7.189222107559399e-283,1.494516217404803e-282,Manual Transfer
+GO:0000289,nuclear-transcribed mRNA poly(A) tail shortening,1880,2467055,11935,56717546,3.621379394977444,0.0,0.0,Manual Transfer
+GO:0043022,ribosome binding,3992,2467055,25367,56717546,3.6179288682899027,0.0,0.0,Manual Transfer
+GO:0004844,uracil DNA N-glycosylase activity,1131,2467055,7236,56717546,3.5933758690598503,4.12692667554345e-298,8.899890938146273e-298,Manual Transfer
+GO:0004425,indole-3-glycerol-phosphate synthase activity,774,2467055,4952,56717546,3.593345072610807,1.0595106225271511e-204,1.9403339376836517e-204,Manual Transfer
+GO:0047429,nucleoside triphosphate diphosphatase activity,1080,2467055,6928,56717546,3.5838883934895907,8.993015897003153e-284,1.8737141473891444e-283,Manual Transfer
+GO:0006612,protein targeting to membrane,1073,2467055,6890,56717546,3.5802973770054405,1.424039374451805e-281,2.947059064168197e-281,Manual Transfer
+GO:0000034,adenine deaminase activity,628,2467055,4035,56717546,3.57811838087572,1.4536576100376083e-165,2.5220413046329184e-165,Manual Transfer
+GO:0009249,protein lipoylation,1057,2467055,6836,56717546,3.554770222613851,8.882689349964367e-275,1.8178985077643264e-274,Manual Transfer
+GO:0000049,tRNA binding,7548,2467055,48948,56717546,3.545157550182577,0.0,0.0,Manual Transfer
+GO:0042284,sphingolipid delta-4 desaturase activity,635,2467055,4119,56717546,3.544218870930306,2.758850788185226e-165,4.77752209661344e-165,Manual Transfer
+GO:0004126,cytidine deaminase activity,844,2467055,5481,56717546,3.540146583625745,1.2149432479340638e-218,2.28389535202269e-218,Manual Transfer
+GO:0071006,U2-type catalytic step 1 spliceosome,992,2467055,6514,56717546,3.501083899034432,8.518338584188754e-253,1.6836031077529378e-252,Manual Transfer
+GO:0006515,protein quality control for misfolded or incompletely synthesized proteins,1653,2467055,10891,56717546,3.4893432684843835,0.0,0.0,Manual Transfer
+GO:0034045,phagophore assembly site membrane,2987,2467055,19754,56717546,3.4763122070924406,0.0,0.0,Manual Transfer
+GO:0008250,oligosaccharyltransferase complex,1783,2467055,11807,56717546,3.471765476752724,0.0,0.0,Manual Transfer
+GO:0006308,DNA catabolic process,882,2467055,5844,56717546,3.469740362521955,2.7919965419135215e-222,5.269964842916524e-222,Manual Transfer
+GO:0004520,DNA endonuclease activity,803,2467055,5330,56717546,3.463593664173267,4.454566924897494e-202,8.141713409268093e-202,Manual Transfer
+GO:0003746,translation elongation factor activity,5647,2467055,37719,56717546,3.441883907306551,0.0,0.0,Manual Transfer
+GO:0017108,5'-flap endonuclease activity,1685,2467055,11276,56717546,3.4354484665326193,0.0,0.0,Manual Transfer
+GO:0005793,endoplasmic reticulum-Golgi intermediate compartment,1013,2467055,6798,56717546,3.425838497483891,1.4698579832606915e-250,2.8804223323771085e-250,Manual Transfer
+GO:0034553,mitochondrial respiratory chain complex II assembly,972,2467055,6554,56717546,3.4095607127077043,6.245167659273487e-239,1.2008936978144643e-238,Manual Transfer
+GO:0006284,base-excision repair,2548,2467055,17224,56717546,3.400979444980105,0.0,0.0,Manual Transfer
+GO:0003958,NADPH-hemoprotein reductase activity,2053,2467055,13878,56717546,3.400953284446129,0.0,0.0,Manual Transfer
+GO:1990456,mitochondrion-endoplasmic reticulum membrane tethering,997,2467055,6770,56717546,3.38567362187833,1.2188228809666738e-242,2.3584350505916976e-242,Manual Transfer
+GO:0045053,protein retention in Golgi apparatus,573,2467055,3893,56717546,3.3838321980394395,2.9285576059813727e-140,4.826890482715727e-140,Manual Transfer
+GO:0006878,intracellular copper ion homeostasis,757,2467055,5144,56717546,3.3832455547100153,1.429761188396053e-184,2.5574991800185213e-184,Manual Transfer
+GO:0106310,protein serine kinase activity,1348,2467055,9216,56717546,3.3626837594289776,0.0,0.0,Manual Transfer
+GO:0000813,ESCRT I complex,925,2467055,6370,56717546,3.3384194402056355,6.923211886163169e-221,1.304107055291552e-220,Manual Transfer
+GO:0042555,MCM complex,3817,2467055,26295,56717546,3.337241111949039,0.0,0.0,Manual Transfer
+GO:0050525,cutinase activity,1803,2467055,12468,56717546,3.3245857067086466,0.0,0.0,Manual Transfer
+GO:0006596,polyamine biosynthetic process,1355,2467055,9394,56717546,3.3160978698558496,1.7168e-319,3.86483e-319,Manual Transfer
+GO:0051287,NAD binding,5882,2467055,40787,56717546,3.315445227267947,0.0,0.0,Manual Transfer
+GO:0015079,potassium ion transmembrane transporter activity,1299,2467055,9026,56717546,3.308662141502178,2.1145948242808626e-305,4.625049817088238e-305,Manual Transfer
+GO:0016272,prefoldin complex,1848,2467055,12897,56717546,3.2942144458011478,0.0,0.0,Manual Transfer
+GO:0004630,phospholipase D activity,1634,2467055,11412,56717546,3.29176550212063,0.0,0.0,Manual Transfer
+GO:0008198,ferrous iron binding,1028,2467055,7193,56717546,3.285652691688237,9.464517204895517e-240,1.8275626318239673e-239,Manual Transfer
+GO:0031222,arabinan catabolic process,643,2467055,4506,56717546,3.2806385646363805,1.9273315609395083e-150,3.234412783176666e-150,Manual Transfer
+GO:0008821,crossover junction DNA endonuclease activity,882,2467055,6183,56717546,3.279502293155152,1.849405917717747e-205,3.3936414752554283e-205,Manual Transfer
+GO:0005732,sno(s)RNA-containing ribonucleoprotein complex,825,2467055,5812,56717546,3.263374707155869,5.74130818388403e-191,1.0350053620556563e-190,Manual Transfer
+GO:0019441,L-tryptophan catabolic process to kynurenine,2036,2467055,14453,56717546,3.2386079025394716,0.0,0.0,Manual Transfer
+GO:0052381,tRNA dimethylallyltransferase activity,569,2467055,4041,56717546,3.237143980579742,7.580904288804715e-131,1.240633804710417e-130,Manual Transfer
+GO:0007021,tubulin complex assembly,1052,2467055,7516,56717546,3.2178631373047217,5.1156998822513975e-238,9.816613287563494e-238,Manual Transfer
+GO:0019430,removal of superoxide radicals,1009,2467055,7211,56717546,3.21687563229104,2.8203077242517063e-228,5.367307277287268e-228,Manual Transfer
+GO:0008061,chitin binding,6224,2467055,44773,56717546,3.1958912239096806,0.0,0.0,Manual Transfer
+GO:0000028,ribosomal small subunit assembly,1123,2467055,8108,56717546,3.1842313697123186,4.752916045842961e-250,9.294367606595451e-250,Manual Transfer
+GO:0003885,"D-arabinono-1,4-lactone oxidase activity",808,2467055,5849,56717546,3.175911118456063,7.895381209359042e-180,1.4014301646612298e-179,Manual Transfer
+GO:0005789,endoplasmic reticulum membrane,45860,2467055,332157,56717546,3.1741631197434557,0.0,0.0,Manual Transfer
+GO:0045047,protein targeting to ER,972,2467055,7083,56717546,3.1549147128457284,8.863142642559573e-214,1.649330778040824e-213,Manual Transfer
+GO:0072344,rescue of stalled ribosome,1126,2467055,8268,56717546,3.1309528164865843,1.6695960609393237e-244,3.2442887668357804e-244,Manual Transfer
+GO:0008193,tRNA guanylyltransferase activity,791,2467055,5820,56717546,3.1245832415307757,6.948275930687126e-172,1.223904329012255e-171,Manual Transfer
+GO:0030007,intracellular potassium ion homeostasis,1299,2467055,9574,56717546,3.119279766993802,3.7356826633685673e-280,7.713725052101091e-280,Manual Transfer
+GO:0045332,phospholipid translocation,1223,2467055,9014,56717546,3.1192307501383922,6.919547942865031e-264,1.3884223372313966e-263,Manual Transfer
+GO:0006072,glycerol-3-phosphate metabolic process,1011,2467055,7452,56717546,3.1190110232384716,1.679844277929785e-218,3.151415179937381e-218,Manual Transfer
+GO:0008705,methionine synthase activity,77,2467055,570,56717546,3.1056640137059506,3.0889298556236657e-18,4.186611243378332e-18,Manual Transfer
+GO:0004144,diacylglycerol O-acyltransferase activity,807,2467055,5985,56717546,3.0999021138660505,3.044847096979189e-173,5.37360204686767e-173,Manual Transfer
+GO:0006123,"mitochondrial electron transport, cytochrome c to oxygen",2026,2467055,15047,56717546,3.0954808408181687,0.0,0.0,Manual Transfer
+GO:0006122,"mitochondrial electron transport, ubiquinol to cytochrome c",1808,2467055,13443,56717546,3.0920095583611844,0.0,0.0,Manual Transfer
+GO:0005524,ATP binding,203047,2467055,1512052,56717546,3.087226194866681,0.0,0.0,Manual Transfer
+GO:0003743,translation initiation factor activity,16247,2467055,121161,56717546,3.082825421781057,0.0,0.0,Manual Transfer
+GO:0015369,calcium:proton antiporter activity,2336,2467055,17638,56717546,3.0448233429959717,0.0,0.0,Manual Transfer
+GO:0008175,tRNA methyltransferase activity,823,2467055,6222,56717546,3.0409440432766814,1.5030774367651237e-171,2.6425532840651606e-171,Manual Transfer
+GO:0008540,"proteasome regulatory particle, base subcomplex",2043,2467055,15468,56717546,3.0364966303291556,0.0,0.0,Manual Transfer
+GO:0034979,NAD-dependent protein lysine deacetylase activity,194,2467055,1477,56717546,3.0196724374223285,1.615906553878457e-41,2.312374805007466e-41,Manual Transfer
+GO:0032446,protein modification by small protein conjugation,1110,2467055,8456,56717546,3.0178427389938367,6.532224818016658e-228,1.2405850837509002e-227,Manual Transfer
+GO:0009097,isoleucine biosynthetic process,2252,2467055,17234,56717546,3.004145048939431,0.0,0.0,Manual Transfer
+GO:0006751,glutathione catabolic process,1444,2467055,11057,56717546,3.0023995334695344,1.8086797112171132e-293,3.855453518368119e-293,Manual Transfer
+GO:0042128,nitrate assimilation,764,2467055,5862,56717546,2.9963058676145886,8.362867820445186e-156,1.4215335171769626e-155,Manual Transfer
+GO:0004719,protein-L-isoaspartate (D-aspartate) O-methyltransferase activity,473,2467055,3666,56717546,2.966246784191912,9.539299810557162e-96,1.4773110277087685e-95,Manual Transfer
+GO:0006465,signal peptide processing,2071,2467055,16082,56717546,2.960592546203518,0.0,0.0,Manual Transfer
+GO:0003978,UDP-glucose 4-epimerase activity,917,2467055,7153,56717546,2.9472685574193065,8.544687012947043e-182,1.519604260684031e-181,Manual Transfer
+GO:0004764,shikimate 3-dehydrogenase (NADP+) activity,995,2467055,7764,56717546,2.946294495027549,5.706302783706053e-197,1.0347578525266576e-196,Manual Transfer
+GO:0005682,U5 snRNP,1997,2467055,15658,56717546,2.9321107920115077,0.0,0.0,Manual Transfer
+GO:0046556,alpha-L-arabinofuranosidase activity,1405,2467055,11032,56717546,2.9279298774008202,1.7924224279200781e-274,3.652110156667179e-274,Manual Transfer
+GO:0009423,chorismate biosynthetic process,1060,2467055,8327,56717546,2.926549679701199,1.8496717432091146e-207,3.4008904760597864e-207,Manual Transfer
+GO:0018279,protein N-linked glycosylation via asparagine,1097,2467055,8636,56717546,2.9203344669101763,6.784696168714642e-214,1.2651059724694171e-213,Manual Transfer
+GO:0030976,thiamine pyrophosphate binding,1222,2467055,9630,56717546,2.91731630336306,1.2701037515181594e-237,2.4321696320565584e-237,Manual Transfer
+GO:0004843,cysteine-type deubiquitinase activity,9545,2467055,75343,56717546,2.912538159452809,0.0,0.0,Manual Transfer
+GO:0019432,triglyceride biosynthetic process,807,2467055,6382,56717546,2.907068967641541,8.927967166055727e-157,1.523200313173648e-156,Manual Transfer
+GO:0004106,chorismate mutase activity,837,2467055,6674,56717546,2.883220491807658,2.2246464181986705e-160,3.816633167281362e-160,Manual Transfer
+GO:0031262,Ndc80 complex,1045,2467055,8336,56717546,2.8820212904815126,1.4613761124889827e-199,2.6604539483773785e-199,Manual Transfer
+GO:0004049,anthranilate synthase activity,774,2467055,6189,56717546,2.8751405395974663,8.533007279752405e-148,1.4268053839151215e-147,Manual Transfer
+GO:0000379,tRNA-type intron splice site recognition and cleavage,776,2467055,6218,56717546,2.8691258861838396,1.1424916167667782e-147,1.9069073458874073e-147,Manual Transfer
+GO:0004709,MAP kinase kinase kinase activity,599,2467055,4834,56717546,2.848779113851621,3.758066839929864e-113,5.959958235833788e-113,Manual Transfer
+GO:0016763,pentosyltransferase activity,825,2467055,6658,56717546,2.8487133971147363,4.865653321978021e-155,8.255511059164914e-155,Manual Transfer
+GO:0030687,"preribosome, large subunit precursor",3043,2467055,24585,56717546,2.8455769875587253,0.0,0.0,Manual Transfer
+GO:0015293,symporter activity,364,2467055,2953,56717546,2.8338479009403184,5.719513859081112e-69,8.569985863525756e-69,Manual Transfer
+GO:0034457,Mpp10 complex,825,2467055,6694,56717546,2.8333931577517046,1.1360880718031478e-153,1.9135206026903382e-153,Manual Transfer
+GO:0004794,threonine deaminase activity,1076,2467055,8735,56717546,2.8319655258902214,1.3382184007291018e-199,2.4410584661520967e-199,Manual Transfer
+GO:0005759,mitochondrial matrix,9893,2467055,80439,56717546,2.8274826354548233,0.0,0.0,Manual Transfer
+GO:0005092,GDP-dissociation inhibitor activity,658,2467055,5378,56717546,2.812831364386301,1.5884231334864621e-121,2.558664139979066e-121,Manual Transfer
+GO:0004516,nicotinate phosphoribosyltransferase activity,669,2467055,5487,56717546,2.8030429855372203,8.256408340807048e-123,1.3346173202390375e-122,Manual Transfer
+GO:0072546,EMC complex,1056,2467055,8697,56717546,2.7914705371308592,2.7747218697994392e-191,5.0118753147257975e-191,Manual Transfer
+GO:0003847,1-alkyl-2-acetylglycerophosphocholine esterase activity,892,2467055,7367,56717546,2.783638181375092,3.764045967079796e-161,6.469673049561735e-161,Manual Transfer
+GO:0009228,thiamine biosynthetic process,1539,2467055,12757,56717546,2.773503157159727,9.414921864997765e-275,1.9225603719895879e-274,Manual Transfer
+GO:0045271,respiratory chain complex I,969,2467055,8036,56717546,2.7721865318569807,1.1546956513118245e-173,2.041731965825314e-173,Manual Transfer
+GO:0006535,cysteine biosynthetic process from serine,803,2467055,6672,56717546,2.76692959083386,8.057739685463201e-144,1.3376427571371465e-143,Manual Transfer
+GO:0000938,GARP complex,919,2467055,7642,56717546,2.764694052858244,4.6206999209966294e-164,7.971786966504464e-164,Manual Transfer
+GO:0031965,nuclear membrane,1654,2467055,13777,56717546,2.76006587191875,1.091575225028898e-292,2.321483715902472e-292,Manual Transfer
+GO:0031297,replication fork processing,944,2467055,7889,56717546,2.7509876360720877,4.750777135224011e-167,8.304862302673791e-167,Manual Transfer
+GO:0008892,guanine deaminase activity,791,2467055,6614,56717546,2.7494820782747373,3.423611143169889e-140,5.632786248031742e-140,Manual Transfer
+GO:0005664,nuclear origin of replication recognition complex,1041,2467055,8721,56717546,2.7442460217875344,3.1879358644020318e-183,5.691421282094923e-183,Manual Transfer
+GO:0003917,"DNA topoisomerase type I (single strand cut, ATP-independent) activity",1106,2467055,9283,56717546,2.7390841623922313,6.686768478592674e-194,1.2101739815178507e-193,Manual Transfer
+GO:0016125,sterol metabolic process,1018,2467055,8549,56717546,2.7376067385309963,1.758744542763389e-178,3.115779679406157e-178,Manual Transfer
+GO:0004535,poly(A)-specific ribonuclease activity,884,2467055,7446,56717546,2.7294040611470187,1.7826533731483425e-154,3.019062501680588e-154,Manual Transfer
+GO:0031593,polyubiquitin modification-dependent protein binding,1059,2467055,8982,56717546,2.710575506848217,1.9576958833408138e-182,3.4883268346014884e-182,Manual Transfer
+GO:0042578,phosphoric ester hydrolase activity,549,2467055,4664,56717546,2.70615334869184,2.5092179684025366e-95,3.8794106948669034e-95,Manual Transfer
+GO:0032790,ribosome disassembly,515,2467055,4378,56717546,2.704394674741422,1.8875235057713525e-89,2.913351498038392e-89,Manual Transfer
+GO:0006402,mRNA catabolic process,926,2467055,7878,56717546,2.7023003064827495,5.979164043178088e-159,1.0219941503432177e-158,Manual Transfer
+GO:0005685,U1 snRNP,1757,2467055,14958,56717546,2.700454305029296,2.8417398749152166e-299,6.157103062316302e-299,Manual Transfer
+GO:0000166,nucleotide binding,118245,2467055,1008496,56717546,2.6955488448244527,0.0,0.0,Manual Transfer
+GO:0003688,DNA replication origin binding,2152,2467055,18363,56717546,2.694245915008559,0.0,0.0,Manual Transfer
+GO:0017057,6-phosphogluconolactonase activity,977,2467055,8354,56717546,2.688677377650502,4.074341213613953e-166,7.082141130255516e-166,Manual Transfer
+GO:0000398,"mRNA splicing, via spliceosome",12954,2467055,111072,56717546,2.681253651676241,0.0,0.0,Manual Transfer
+GO:0003689,DNA clamp loader activity,931,2467055,8089,56717546,2.6460219701170846,5.351095018176143e-154,9.045898721202529e-154,Manual Transfer
+GO:0042274,ribosomal small subunit biogenesis,2147,2467055,18792,56717546,2.6266223837535208,0.0,0.0,Manual Transfer
+GO:0045039,protein insertion into mitochondrial inner membrane,1040,2467055,9204,56717546,2.597737893920892,3.5032722549153687e-166,6.100981681673369e-166,Manual Transfer
+GO:0003906,DNA-(apurinic or apyrimidinic site) endonuclease activity,983,2467055,8724,56717546,2.590457438681739,2.158364224002613e-156,3.675590735709247e-156,Manual Transfer
+GO:0030983,mismatched DNA binding,1674,2467055,14897,56717546,2.5834213012451244,1.776300121493125e-263,3.556453388586018e-263,Manual Transfer
+GO:0004174,electron-transferring-flavoprotein dehydrogenase activity,1067,2467055,9520,56717546,2.5767131350210386,6.245503691965232e-168,1.0938519748925825e-167,Manual Transfer
+GO:0070588,calcium ion transmembrane transport,2336,2467055,20853,56717546,2.57538935039385,0.0,0.0,Manual Transfer
+GO:0006352,DNA-templated transcription initiation,2051,2467055,18388,56717546,2.56430551015994,0.0,0.0,Manual Transfer
+GO:0070072,vacuolar proton-transporting V-type ATPase complex assembly,726,2467055,6510,56717546,2.5638595610186052,6.743907434262242e-114,1.0732114761765603e-113,Manual Transfer
+GO:0043248,proteasome assembly,1044,2467055,9370,56717546,2.5615303625499135,1.3984159903073539e-162,2.408093207189716e-162,Manual Transfer
+GO:0030245,cellulose catabolic process,3646,2467055,32905,56717546,2.547377857375317,0.0,0.0,Manual Transfer
+GO:0051315,attachment of mitotic spindle microtubules to kinetochore,1045,2467055,9469,56717546,2.537177049049941,7.100998376522762e-160,1.2159965680019495e-159,Manual Transfer
+GO:0004430,1-phosphatidylinositol 4-kinase activity,927,2467055,8422,56717546,2.530481096512978,2.2921329577410754e-141,3.791467240134431e-141,Manual Transfer
+GO:0005787,signal peptidase complex,987,2467055,9007,56717546,2.5192750767740972,3.938638695901526e-149,6.597755927980233e-149,Manual Transfer
+GO:0004605,phosphatidate cytidylyltransferase activity,806,2467055,7369,56717546,2.514577849250524,9.544008223915891e-122,1.540055872495519e-121,Manual Transfer
+GO:0004061,arylformamidase activity,702,2467055,6492,56717546,2.4859775436787315,4.8629327154330095e-104,7.60760490905876e-104,Manual Transfer
+GO:0006383,transcription by RNA polymerase III,1590,2467055,14760,56717546,2.476562925088606,3.0706039559444225e-231,5.855717874662607e-231,Manual Transfer
+GO:0006888,endoplasmic reticulum to Golgi vesicle-mediated transport,6410,2467055,60096,56717546,2.4521727588407103,0.0,0.0,Manual Transfer
+GO:0090560,2-(3-amino-3-carboxypropyl)histidine synthase activity,542,2467055,5108,56717546,2.439422348428023,6.225511030932661e-78,9.482090233582254e-78,Manual Transfer
+GO:0004534,5'-3' RNA exonuclease activity,739,2467055,7084,56717546,2.398305404704506,4.8002769261567646e-102,7.496879192627231e-102,Manual Transfer
+GO:0006270,DNA replication initiation,3811,2467055,36673,56717546,2.3890822991446785,0.0,0.0,Manual Transfer
+GO:0015078,proton transmembrane transporter activity,1271,2467055,12300,56717546,2.3756313039906556,1.111860278171348e-170,1.951039993825388e-170,Manual Transfer
+GO:0042149,cellular response to glucose starvation,509,2467055,4927,56717546,2.3750558156790635,1.4343885214668593e-69,2.1527489517299366e-69,Manual Transfer
+GO:0032266,phosphatidylinositol-3-phosphate binding,1100,2467055,10668,56717546,2.370545406572917,2.2852550774801824e-147,3.807383459411928e-147,Manual Transfer
+GO:0000956,nuclear-transcribed mRNA catabolic process,1232,2467055,11951,56717546,2.369982077231886,1.0309649719063701e-164,1.7819862716658795e-164,Manual Transfer
+GO:0006370,7-methylguanosine mRNA capping,1246,2467055,12089,56717546,2.3695521159777537,1.688276407716519e-166,2.945707229342811e-166,Manual Transfer
+GO:0016818,"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides",629,2467055,6132,56717546,2.358235102282246,2.799382457485331e-84,4.292076425679336e-84,Manual Transfer
+GO:0008448,N-acetylglucosamine-6-phosphate deacetylase activity,426,2467055,4195,56717546,2.3346201749394884,1.4225588890387754e-56,2.071012388931845e-56,Manual Transfer
+GO:0005198,structural molecule activity,1928,2467055,19173,56717546,2.3118282030143114,1.1455875144640228e-243,2.2213808316182624e-243,Manual Transfer
+GO:0006890,"retrograde vesicle-mediated transport, Golgi to endoplasmic reticulum",3134,2467055,31286,56717546,2.3029661334782476,0.0,0.0,Manual Transfer
+GO:0030870,Mre11 complex,913,2467055,9182,56717546,2.2859782258522654,8.325367360898171e-114,1.3226013896917404e-113,Manual Transfer
+GO:0007017,microtubule-based process,1095,2467055,11025,56717546,2.2833585936974043,9.741103159191987e-136,1.599828864045232e-135,Manual Transfer
+GO:0005576,extracellular region,17693,2467055,178811,56717546,2.2748137560368753,0.0,0.0,Manual Transfer
+GO:0030015,CCR4-NOT core complex,1038,2467055,10511,56717546,2.2703453158524867,3.173306896720683e-127,5.184004010041045e-127,Manual Transfer
+GO:0009099,L-valine biosynthetic process,1176,2467055,12024,56717546,2.2485210333309276,6.853850311232733e-141,1.1316822606919165e-140,Manual Transfer
+GO:0030599,pectinesterase activity,1066,2467055,10928,56717546,2.2426170447510145,3.482956154909686e-127,5.679803058271449e-127,Manual Transfer
+GO:0006571,tyrosine biosynthetic process,742,2467055,7638,56717546,2.233381176749191,2.2548012437384045e-88,3.4744266243247865e-88,Manual Transfer
+GO:0032543,mitochondrial translation,3243,2467055,33714,56717546,2.2114405383926927,0.0,0.0,Manual Transfer
+GO:0009060,aerobic respiration,664,2467055,6930,56717546,2.202791769096209,6.031256064263608e-77,9.156002215979129e-77,Manual Transfer
+GO:0006487,protein N-linked glycosylation,3383,2467055,35332,56717546,2.2012652428942387,0.0,0.0,Manual Transfer
+GO:0005666,RNA polymerase III complex,2706,2467055,28402,56717546,2.1903699337161786,3.7624211045824716e-303,8.190364810211371e-303,Manual Transfer
+GO:0016709,"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, NAD(P)H as one donor, and incorporation of one atom of oxygen",978,2467055,10366,56717546,2.1690334548768564,1.6072816877045024e-108,2.5316057982103337e-108,Manual Transfer
+GO:0016485,protein processing,637,2467055,6772,56717546,2.16252473273543,6.378353670682992e-71,9.619641238628106e-71,Manual Transfer
+GO:0004096,catalase activity,2016,2467055,21553,56717546,2.1504106346299348,4.667187361613782e-217,8.737959299735336e-217,Manual Transfer
+GO:0043328,protein transport to vacuole involved in ubiquitin-dependent protein catabolic process via the multivesicular body sorting pathway,1100,2467055,11775,56717546,2.147683940324406,4.5790001092992426e-119,7.324812999797575e-119,Manual Transfer
+GO:0019774,"proteasome core complex, beta-subunit complex",1009,2467055,10928,56717546,2.1227022496752097,1.8459656963765155e-106,2.897663839720279e-106,Manual Transfer
+GO:0030151,molybdenum ion binding,663,2467055,7187,56717546,2.1208232891993224,1.6175352428359928e-70,2.431571708693194e-70,Manual Transfer
+GO:0030150,protein import into mitochondrial matrix,2049,2467055,22224,56717546,2.119621569478878,3.038467716278079e-213,5.6315375544672024e-213,Manual Transfer
+GO:0006750,glutathione biosynthetic process,1285,2467055,14076,56717546,2.098758508393142,2.0205225795219558e-131,3.3125085983992277e-131,Manual Transfer
+GO:0017119,Golgi transport complex,1038,2467055,11413,56717546,2.0909138364080864,1.2776533823073429e-105,2.002163110135276e-105,Manual Transfer
+GO:0004100,chitin synthase activity,3199,2467055,35715,56717546,2.0592173365666655,3.098897189958083e-309,6.82644894112485e-309,Manual Transfer
+GO:0030896,checkpoint clamp complex,533,2467055,5964,56717546,2.054604214037482,5.69423597543446e-53,8.2250075200719985e-53,Manual Transfer
+GO:0008441,"3'(2'),5'-bisphosphate nucleotidase activity",549,2467055,6158,56717546,2.0496101361316565,3.502913140644505e-54,5.0756496527706095e-54,Manual Transfer
+GO:0006388,"tRNA splicing, via endonucleolytic cleavage and ligation",783,2467055,8797,56717546,2.046283349189441,4.0992573800050055e-76,6.212831792684106e-76,Manual Transfer
+GO:0008320,protein transmembrane transporter activity,1040,2467055,11715,56717546,2.0409372237002037,9.09163276395921e-100,1.4151057404948314e-99,Manual Transfer
+GO:0003755,peptidyl-prolyl cis-trans isomerase activity,9135,2467055,102936,56717546,2.040233451849314,0.0,0.0,Manual Transfer
+GO:0022627,cytosolic small ribosomal subunit,2261,2467055,25498,56717546,2.0386048159335224,9.031869063213659e-214,1.6773471117396795e-213,Manual Transfer
+GO:0000105,L-histidine biosynthetic process,3173,2467055,35808,56717546,2.0371762646918916,1.3362457829759742e-298,2.8884188704609466e-298,Manual Transfer
+GO:0005385,zinc ion transmembrane transporter activity,1267,2467055,14449,56717546,2.0159391734819203,2.1423404472161214e-117,3.421073067094256e-117,Manual Transfer
+GO:0106073,"dolichyl pyrophosphate Glc2Man9GlcNAc2 alpha-1,2-glucosyltransferase activity",319,2467055,3641,56717546,2.0142278866308065,5.7186304790963554e-31,7.949240861755927e-31,Manual Transfer
+GO:0016409,palmitoyltransferase activity,710,2467055,8115,56717546,2.011446217677378,2.5154268867932486e-66,3.738710171513959e-66,Manual Transfer
+GO:0004659,prenyltransferase activity,1616,2467055,18548,56717546,2.003008856140771,1.0344366217694054e-146,1.7203333367444344e-146,Manual Transfer
+GO:0030968,endoplasmic reticulum unfolded protein response,697,2467055,8020,56717546,1.9980070214160006,4.6685188636228234e-64,6.905517485775427e-64,Manual Transfer
+GO:0009435,NAD+ biosynthetic process,1729,2467055,20066,56717546,1.9809466781877112,2.2036712202298233e-152,3.7048971516796483e-152,Manual Transfer
+GO:0006289,nucleotide-excision repair,2985,2467055,34847,56717546,1.9693256629891147,1.7697953784600847e-257,3.5054101594820996e-257,Manual Transfer
+GO:0000139,Golgi membrane,9605,2467055,112243,56717546,1.967327685194845,0.0,0.0,Manual Transfer
+GO:0004556,alpha-amylase activity,655,2467055,7673,56717546,1.9625227598834785,1.3008132899713638e-57,1.9027744320817256e-57,Manual Transfer
+GO:0006559,L-phenylalanine catabolic process,1478,2467055,17668,56717546,1.9232052849135977,1.1619873705111911e-120,1.865242335620573e-120,Manual Transfer
+GO:0008080,N-acetyltransferase activity,1058,2467055,12650,56717546,1.9227983574821728,6.383547804951899e-87,9.803684898453583e-87,Manual Transfer
+GO:0000055,ribosomal large subunit export from nucleus,1074,2467055,12902,56717546,1.9137528218825517,4.454511276745024e-87,6.852523180726096e-87,Manual Transfer
+GO:0046835,carbohydrate phosphorylation,1105,2467055,13645,56717546,1.8617756173782252,6.928007064609562e-83,1.0604561394087274e-82,Manual Transfer
+GO:0005788,endoplasmic reticulum lumen,754,2467055,9427,56717546,1.838808230862917,3.307929034529768e-55,4.80065801709273e-55,Manual Transfer
+GO:0000266,mitochondrial fission,930,2467055,11642,56717546,1.8365127758044923,2.2388765951336355e-67,3.34382378205234e-67,Manual Transfer
+GO:0006406,mRNA export from nucleus,1424,2467055,17839,56717546,1.8351775342983714,7.587872582631298e-102,1.1830416205690353e-101,Manual Transfer
+GO:0006198,cAMP catabolic process,82,2467055,1035,56717546,1.8214283957665616,2.391644463347136e-07,3.1356361358940437e-07,Manual Transfer
+GO:0030488,tRNA methylation,2067,2467055,26150,56717546,1.8172194801759152,1.3037636311982993e-142,2.1604557120215985e-142,Manual Transfer
+GO:0008541,"proteasome regulatory particle, lid subcomplex",1044,2467055,13346,56717546,1.7984069756550791,8.108527528098596e-71,1.2209087941982061e-70,Manual Transfer
+GO:0006285,"base-excision repair, AP site formation",983,2467055,12627,56717546,1.7897482137530285,7.964160155785367e-66,1.1818199073617193e-65,Manual Transfer
+GO:0006488,dolichol-linked oligosaccharide biosynthetic process,956,2467055,12389,56717546,1.7740270583022921,2.340986241607866e-62,3.4516458482492974e-62,Manual Transfer
+GO:0006401,RNA catabolic process,1063,2467055,13803,56717546,1.7705099705828795,1.1067678017832795e-68,1.6556672302203677e-68,Manual Transfer
+GO:0046294,formaldehyde catabolic process,374,2467055,4879,56717546,1.7622981461546956,4.611688380065593e-25,6.3436488447101975e-25,Manual Transfer
+GO:0000103,sulfate assimilation,1002,2467055,13093,56717546,1.7594103965418386,1.3620253234131078e-63,2.0114389976164778e-63,Manual Transfer
+GO:0020037,heme binding,13579,2467055,177588,56717546,1.7578943584292483,0.0,0.0,Manual Transfer
+GO:0051301,cell division,5936,2467055,78945,56717546,1.728653156299735,0.0,0.0,Manual Transfer
+GO:0015986,proton motive force-driven ATP synthesis,2175,2467055,29054,56717546,1.7210438247955449,3.68006423831009e-126,5.990651308571804e-126,Manual Transfer
+GO:0006893,Golgi to plasma membrane transport,1103,2467055,14755,56717546,1.7186003618030148,1.0573765792472953e-64,1.566546681613569e-64,Manual Transfer
+GO:0019888,protein phosphatase regulator activity,984,2467055,13206,56717546,1.7130198906118956,2.5383870664101931e-57,3.707169718823747e-57,Manual Transfer
+GO:0009055,electron transfer activity,1049,2467055,14121,56717546,1.7078457190637126,2.3000150366193225e-60,3.375061810492265e-60,Manual Transfer
+GO:0000932,P-body,2290,2467055,31101,56717546,1.6927769212291486,1.8596849815145532e-125,3.016677043827649e-125,Manual Transfer
+GO:1990817,poly(A) RNA polymerase activity,1084,2467055,14734,56717546,1.6914034689521298,2.590423317265922e-60,3.795175748946739e-60,Manual Transfer
+GO:0006913,nucleocytoplasmic transport,1097,2467055,14938,56717546,1.688312254400608,1.2401605029655703e-60,1.822719974900034e-60,Manual Transfer
+GO:0005794,Golgi apparatus,7526,2467055,102589,56717546,1.6865608612852292,0.0,0.0,Manual Transfer
+GO:0006071,glycerol metabolic process,807,2467055,11065,56717546,1.6767206643911716,4.3573442238388744e-44,6.254788053815367e-44,Manual Transfer
+GO:0045324,late endosome to vacuole transport,573,2467055,7868,56717546,1.6742830130868758,1.0459378234482047e-31,1.460515296585012e-31,Manual Transfer
+GO:0031011,Ino80 complex,1148,2467055,15791,56717546,1.6713632736785178,3.449576019393622e-61,5.078083996651217e-61,Manual Transfer
+GO:0019878,lysine biosynthetic process via aminoadipic acid,1080,2467055,14937,56717546,1.6622600783354011,1.3615771784556106e-56,1.9853645113973594e-56,Manual Transfer
+GO:0043332,mating projection tip,1088,2467055,15139,56717546,1.6522292511384822,8.666299732432613e-56,1.259684197328394e-55,Manual Transfer
+GO:0071004,U2-type prespliceosome,766,2467055,10703,56717546,1.6453634454525945,2.785125372106488e-39,3.9548780283912136e-39,Manual Transfer
+GO:0006526,L-arginine biosynthetic process,1969,2467055,27570,56717546,1.6419032038883783,4.657427311472685e-97,7.224883039477795e-97,Manual Transfer
+GO:0045490,pectin catabolic process,1066,2467055,14959,56717546,1.6382992890593682,4.596518150590789e-53,6.649821713158775e-53,Manual Transfer
+GO:0005730,nucleolus,18307,2467055,256924,56717546,1.638140346843761,0.0,0.0,Manual Transfer
+GO:0030246,carbohydrate binding,2066,2467055,29262,56717546,1.6231733793397232,1.7016892930776132e-97,2.6442074368865944e-97,Manual Transfer
+GO:0035267,NuA4 histone acetyltransferase complex,1037,2467055,14749,56717546,1.6164221055369374,3.441628381182889e-49,4.9634734309871976e-49,Manual Transfer
+GO:0005686,U2 snRNP,991,2467055,14162,56717546,1.6087466839393512,2.8790344072964575e-46,4.139172520147399e-46,Manual Transfer
+GO:0005783,endoplasmic reticulum,12673,2467055,181343,56717546,1.606635056867297,0.0,0.0,Manual Transfer
+GO:0006221,pyrimidine nucleotide biosynthetic process,1049,2467055,15060,56717546,1.6013605178551584,5.113468959694041e-48,7.363076208732605e-48,Manual Transfer
+GO:0008239,dipeptidyl-peptidase activity,867,2467055,12467,56717546,1.598805885390255,8.679290222214426e-40,1.2362630980098634e-39,Manual Transfer
+GO:0008418,protein-N-terminal asparagine amidohydrolase activity,192,2467055,2790,56717546,1.5821061753944012,7.881866020815823e-10,1.0422582145004306e-09,Manual Transfer
+GO:0009073,aromatic amino acid family biosynthetic process,1897,2467055,27898,56717546,1.5632659239083875,1.9441926937204632e-77,2.9563259576671953e-77,Manual Transfer
+GO:0007030,Golgi organization,919,2467055,13648,56717546,1.5480504067953327,4.609609147566485e-37,6.515573113635323e-37,Manual Transfer
+GO:0016558,protein import into peroxisome matrix,841,2467055,12540,56717546,1.5418320162495305,1.5768264417029384e-33,2.2118705253674958e-33,Manual Transfer
+GO:0010181,FMN binding,2941,2467055,43924,56717546,1.5393300301040178,1.78970466524067e-111,2.8285914486594833e-111,Manual Transfer
+GO:0031047,regulatory ncRNA-mediated gene silencing,926,2467055,13875,56717546,1.534322292934854,5.431029633627265e-36,7.653191376851856e-36,Manual Transfer
+GO:0031515,tRNA (m1A) methyltransferase complex,415,2467055,6219,56717546,1.534144050474024,3.867643556029129e-17,5.1887136660100085e-17,Manual Transfer
+GO:0003924,GTPase activity,9904,2467055,150765,56717546,1.5102494975446803,0.0,0.0,Manual Transfer
+GO:0019829,ATPase-coupled monoatomic cation transmembrane transporter activity,1122,2467055,17190,56717546,1.5005676535931518,2.8769543472992605e-39,4.0789997888743745e-39,Manual Transfer
+GO:0030145,manganese ion binding,913,2467055,14104,56717546,1.488219800749823,3.6891199197735622e-31,5.13583361380241e-31,Manual Transfer
+GO:0006511,ubiquitin-dependent protein catabolic process,3739,2467055,57782,56717546,1.487652496807421,3.282362602527946e-121,5.278084812078909e-121,Manual Transfer
+GO:0005525,GTP binding,16462,2467055,257750,56717546,1.4683261171913584,0.0,0.0,Manual Transfer
+GO:0016925,protein sumoylation,722,2467055,11326,56717546,1.4655452781905636,2.2305195380557744e-23,3.050028938704414e-23,Manual Transfer
+GO:0004806,triacylglycerol lipase activity,1030,2467055,16250,56717546,1.4572110628945163,1.0816532456243343e-31,1.5081056581741096e-31,Manual Transfer
+GO:0012507,ER to Golgi transport vesicle membrane,726,2467055,11487,56717546,1.453009988877089,1.3732038788061855e-22,1.8749514499084454e-22,Manual Transfer
+GO:0043139,5'-3' DNA helicase activity,702,2467055,11124,56717546,1.4508240033766922,9.463953326691143e-22,1.2902849217926033e-21,Manual Transfer
+GO:0003677,DNA binding,43535,2467055,693164,56717546,1.4439134101379143,0.0,0.0,Manual Transfer
+GO:0005743,mitochondrial inner membrane,14747,2467055,236610,56717546,1.4328779019763105,0.0,0.0,Manual Transfer
+GO:0042744,hydrogen peroxide catabolic process,1324,2467055,21528,56717546,1.4139136937118477,1.3380532862215532e-34,1.8797917552244956e-34,Manual Transfer
+GO:0008180,COP9 signalosome,898,2467055,14611,56717546,1.4129766863566835,5.37581482806698e-24,7.383745664145569e-24,Manual Transfer
+GO:0005684,U2-type spliceosomal complex,665,2467055,10924,56717546,1.399518211296039,2.1645082083906634e-17,2.9165563158315074e-17,Manual Transfer
+GO:0004521,RNA endonuclease activity,974,2467055,16134,56717546,1.3878914634813868,1.4541278411695437e-23,1.9942942011879477e-23,Manual Transfer
+GO:0051028,mRNA transport,1636,2467055,27111,56717546,1.3873190908090083,3.3552756248231756e-38,4.749876382993545e-38,Manual Transfer
+GO:0004523,RNA-DNA hybrid ribonuclease activity,1398,2467055,23235,56717546,1.3832576950702582,2.1218765652889795e-32,2.9674122269117093e-32,Manual Transfer
+GO:0070773,protein-N-terminal glutamine amidohydrolase activity,192,2467055,3226,56717546,1.368281534206565,1.2960232767523687e-05,1.6824605969654517e-05,Manual Transfer
+GO:0016592,mediator complex,2067,2467055,34927,56717546,1.360560294517141,1.0547701533582163e-42,1.511728030356574e-42,Manual Transfer
+GO:0005741,mitochondrial outer membrane,3661,2467055,61962,56717546,1.3583537991406476,2.2940343617641346e-73,3.4711372391939285e-73,Manual Transfer
+GO:0003725,double-stranded RNA binding,481,2467055,8177,56717546,1.3523517859529348,5.783723296612426e-11,7.692185306589725e-11,Manual Transfer
+GO:0031966,mitochondrial membrane,2064,2467055,35183,56717546,1.348700209348736,1.8176294067436048e-40,2.5970153907497633e-40,Manual Transfer
+GO:0000727,double-strand break repair via break-induced replication,882,2467055,15074,56717546,1.345174650297088,4.319216871062449e-18,5.8369504714357835e-18,Manual Transfer
+GO:0031419,cobalamin binding,77,2467055,1316,56717546,1.3451584253893554,0.0062183560487816735,0.007927545073239619,Manual Transfer
+GO:0016853,isomerase activity,6089,2467055,104242,56717546,1.3428943268485463,2.279889925853154e-112,3.6094998311534493e-112,Manual Transfer
+GO:0019843,rRNA binding,2123,2467055,36366,56717546,1.3421252902938836,2.4247531082132665e-40,3.459114557775649e-40,Manual Transfer
+GO:0043130,ubiquitin binding,2163,2467055,37271,56717546,1.3342096407736677,1.4106897551560719e-39,2.0062660154222717e-39,Manual Transfer
+GO:0006189,'de novo' IMP biosynthetic process,980,2467055,16945,56717546,1.3296064180570017,1.4396301434848267e-18,1.954086209465434e-18,Manual Transfer
+GO:0005634,nucleus,115405,2467055,1997151,56717546,1.3284717497997265,0.0,0.0,Manual Transfer
+GO:0003684,damaged DNA binding,1623,2467055,28366,56717546,1.3154035862027578,1.4147270216704112e-27,1.9577107061496097e-27,Manual Transfer
+GO:0006623,protein targeting to vacuole,1061,2467055,18627,56717546,1.3095167854852143,3.830443303090656e-18,5.1840163764701985e-18,Manual Transfer
+GO:0000175,3'-5'-RNA exonuclease activity,931,2467055,16382,56717546,1.3065359367767733,6.580017558847724e-16,8.801965517125289e-16,Manual Transfer
+GO:0005758,mitochondrial intermembrane space,2063,2467055,36908,56717546,1.2850419823657575,2.058822797651728e-29,2.8575841236579627e-29,Manual Transfer
+GO:0045292,"mRNA cis splicing, via spliceosome",694,2467055,12557,56717546,1.2706097292882637,2.7749884611372104e-10,3.680049352916157e-10,Manual Transfer
+GO:0005782,peroxisomal matrix,637,2467055,11555,56717546,1.2673835993149574,2.0472622509117256e-09,2.6994615108450324e-09,Manual Transfer
+GO:0005737,cytoplasm,79324,2467055,1439899,56717546,1.2665174447456524,0.0,0.0,Manual Transfer
+GO:0006302,double-strand break repair,937,2467055,17160,56717546,1.2553386712380128,3.4513062022478673e-12,4.5967613631670726e-12,Manual Transfer
+GO:0017116,single-stranded DNA helicase activity,581,2467055,10701,56717546,1.248217791781809,7.021110136662863e-08,9.218328102617101e-08,Manual Transfer
+GO:0000974,Prp19 complex,1103,2467055,20323,56717546,1.2477463139498834,2.0458710479024857e-13,2.728813550887275e-13,Manual Transfer
+GO:0008234,cysteine-type peptidase activity,2315,2467055,42730,56717546,1.2455371995361046,8.487791138873893e-26,1.1727891049671563e-25,Manual Transfer
+GO:0006364,rRNA processing,7865,2467055,145463,56717546,1.2430390926959924,1.4151741800504673e-81,2.159017798655506e-81,Manual Transfer
+GO:0000812,Swr1 complex,417,2467055,7769,56717546,1.2339840147535532,1.1629509618178976e-05,1.5118362503632668e-05,Manual Transfer
+GO:0017150,tRNA dihydrouridine synthase activity,695,2467055,13221,56717546,1.2085346305902676,3.8303212003872303e-07,5.014732578662998e-07,Manual Transfer
+GO:0034058,endosomal vesicle fusion,277,2467055,5286,56717546,1.204734120327728,0.0011171534810183999,0.0014341205326564438,Manual Transfer
+GO:0016567,protein ubiquitination,3080,2467055,59168,56717546,1.1967472199921523,1.9014213240048027e-23,2.6038751959294258e-23,Manual Transfer
+GO:0004557,alpha-galactosidase activity,458,2467055,8822,56717546,1.1935401275707946,8.866595197086213e-05,0.00011445968345329476,Manual Transfer
+GO:0030170,pyridoxal phosphate binding,3988,2467055,77856,56717546,1.1776104819213056,3.8405249582881565e-25,5.298661489536574e-25,Manual Transfer
+GO:0046854,phosphatidylinositol phosphate biosynthetic process,927,2467055,18128,56717546,1.1756239957431764,4.790751213142622e-07,6.254403634696804e-07,Manual Transfer
+GO:0004601,peroxidase activity,2722,2467055,53292,56717546,1.1742611750954384,3.3005576310934255e-17,4.434373644103685e-17,Manual Transfer
+GO:0000776,kinetochore,2095,2467055,42159,56717546,1.1424371749024829,5.379306701440795e-10,7.123529534332646e-10,Manual Transfer
+GO:0006665,sphingolipid metabolic process,1018,2467055,20897,56717546,1.1199598032110585,0.00014721762850255024,0.00018977914959197469,Manual Transfer
+GO:0008324,monoatomic cation transmembrane transporter activity,1267,2467055,26219,56717546,1.1109617116457633,8.576897273666004e-05,0.00011087501657694289,Manual Transfer
+GO:0050661,NADP binding,1964,2467055,41112,56717546,1.0982759639374535,1.464411876918041e-05,1.8983878685327977e-05,Manual Transfer
+GO:0004402,histone acetyltransferase activity,928,2467055,19445,56717546,1.09718188609892,0.0022869245313902778,0.0029276440256216733,Manual Transfer
+GO:0006281,DNA repair,11203,2467055,237855,56717546,1.082830926348079,7.988873381509541e-18,1.0780307209259221e-17,Manual Transfer
+GO:0006367,transcription initiation at RNA polymerase II promoter,1777,2467055,38338,56717546,1.0656057984728522,0.0034262524456382753,0.00437404012078026,Manual Transfer
+GO:0016746,acyltransferase activity,6287,2467055,136317,56717546,1.0603080065645791,1.268735078559264e-06,1.6540147987432213e-06,Manual Transfer
+GO:0006310,DNA recombination,3119,2467055,67634,56717546,1.0602026901644508,0.00047800724337126814,0.0006144856345845132,Manual Transfer
+GO:0046872,metal ion binding,62662,2467055,1397913,56717546,1.030534911252351,4.3285403868339e-15,5.7818274631659765e-15,Manual Transfer

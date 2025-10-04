@@ -1,0 +1,5 @@
+evidence_type,supporting_references,count_star(),label,reference_name
+IEA,GO_REF:0000002,5783,"GO_REF:0000002
+(InterPro2GO)",InterPro2GO
+IEA,GO_REF:0000115,413,"GO_REF:0000115
+(Rfam)",Rfam

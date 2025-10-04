@@ -1,0 +1,7 @@
+evidence_type,unique_ref_id,unique_ref_title,comparator_ref_id,comparator_ref_title,association_count,unique_ref,comparator_ref
+IEA,GO_REF:0000002,Gene Ontology annotation through association of InterPro records with GO terms.,GO_REF:0000115,Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms,19756,"GO_REF:0000002
+Gene Ontology annotation through association of InterPro records with GO terms.","GO_REF:0000115
+Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms"
+IEA,GO_REF:0000115,Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms,GO_REF:0000002,Gene Ontology annotation through association of InterPro records with GO terms.,1031,"GO_REF:0000115
+Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms","GO_REF:0000002
+Gene Ontology annotation through association of InterPro records with GO terms."

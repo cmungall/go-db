@@ -1,0 +1,2417 @@
+evidence_type,supporting_references,go_term,go_term_label,association_count,method_name
+IEA,GO_REF:0000002,GO:0003677,DNA binding,7076,InterPro2GO
+IEA,GO_REF:0000002,GO:0003676,nucleic acid binding,3208,InterPro2GO
+IEA,GO_REF:0000002,GO:0005524,ATP binding,2620,InterPro2GO
+IEA,GO_REF:0000002,GO:0005198,structural molecule activity,2527,InterPro2GO
+IEA,GO_REF:0000002,GO:0006351,DNA-templated transcription,1934,InterPro2GO
+IEA,GO_REF:0000002,GO:0039694,viral RNA genome replication,1732,InterPro2GO
+IEA,GO_REF:0000002,GO:0008270,zinc ion binding,1518,InterPro2GO
+IEA,GO_REF:0000002,GO:0006355,regulation of DNA-templated transcription,1380,InterPro2GO
+IEA,GO_REF:0000002,GO:0003723,RNA binding,1360,InterPro2GO
+IEA,GO_REF:0000002,GO:0019079,viral genome replication,1350,InterPro2GO
+IEA,GO_REF:0000002,GO:0006260,DNA replication,1313,InterPro2GO
+IEA,GO_REF:0000002,GO:0009253,peptidoglycan catabolic process,968,InterPro2GO
+IEA,GO_REF:0000002,GO:0016787,hydrolase activity,913,InterPro2GO
+IEA,GO_REF:0000002,GO:0016887,ATP hydrolysis activity,902,InterPro2GO
+IEA,GO_REF:0000002,GO:0006261,DNA-templated DNA replication,799,InterPro2GO
+IEA,GO_REF:0000002,GO:0006310,DNA recombination,771,InterPro2GO
+IEA,GO_REF:0000002,GO:0006281,DNA repair,732,InterPro2GO
+IEA,GO_REF:0000002,GO:0004519,endonuclease activity,685,InterPro2GO
+IEA,GO_REF:0000002,GO:0016998,cell wall macromolecule catabolic process,673,InterPro2GO
+IEA,GO_REF:0000002,GO:0016020,membrane,670,InterPro2GO
+IEA,GO_REF:0000002,GO:0019031,viral envelope,617,InterPro2GO
+IEA,GO_REF:0000002,GO:0019069,viral capsid assembly,613,InterPro2GO
+IEA,GO_REF:0000002,GO:0019028,viral capsid,571,InterPro2GO
+IEA,GO_REF:0000002,GO:0004482,mRNA 5'-cap (guanine-N7-)-methyltransferase activity,561,InterPro2GO
+IEA,GO_REF:0000002,GO:0016032,viral process,553,InterPro2GO
+IEA,GO_REF:0000002,GO:0016788,"hydrolase activity, acting on ester bonds",545,InterPro2GO
+IEA,GO_REF:0000002,GO:0000166,nucleotide binding,519,InterPro2GO
+IEA,GO_REF:0000002,GO:0000287,magnesium ion binding,502,InterPro2GO
+IEA,GO_REF:0000002,GO:0015074,DNA integration,478,InterPro2GO
+IEA,GO_REF:0000002,GO:0003700,DNA-binding transcription factor activity,435,InterPro2GO
+IEA,GO_REF:0000002,GO:0005576,extracellular region,431,InterPro2GO
+IEA,GO_REF:0000002,GO:0008408,3'-5' exonuclease activity,415,InterPro2GO
+IEA,GO_REF:0000002,GO:0006396,RNA processing,414,InterPro2GO
+IEA,GO_REF:0000002,GO:0051276,chromosome organization,414,InterPro2GO
+IEA,GO_REF:0000002,GO:0003697,single-stranded DNA binding,410,InterPro2GO
+IEA,GO_REF:0000002,GO:0009263,deoxyribonucleotide biosynthetic process,384,InterPro2GO
+IEA,GO_REF:0000002,GO:0003910,DNA ligase (ATP) activity,380,InterPro2GO
+IEA,GO_REF:0000002,GO:0008745,N-acetylmuramoyl-L-alanine amidase activity,377,InterPro2GO
+IEA,GO_REF:0000002,GO:0003899,DNA-directed RNA polymerase activity,368,InterPro2GO
+IEA,GO_REF:0000002,GO:0008170,N-methyltransferase activity,346,InterPro2GO
+IEA,GO_REF:0000002,GO:0009307,DNA restriction-modification system,338,InterPro2GO
+IEA,GO_REF:0000002,GO:0016556,mRNA modification,302,InterPro2GO
+IEA,GO_REF:0000002,GO:0016888,"DNA endonuclease activity, producing 5'-phosphomonoesters",289,InterPro2GO
+IEA,GO_REF:0000002,GO:0044659,viral release from host cell by cytolysis,282,InterPro2GO
+IEA,GO_REF:0000002,GO:0019058,viral life cycle,280,InterPro2GO
+IEA,GO_REF:0000002,GO:0043139,5'-3' DNA helicase activity,279,InterPro2GO
+IEA,GO_REF:0000002,GO:0003724,RNA helicase activity,276,InterPro2GO
+IEA,GO_REF:0000002,GO:0005506,iron ion binding,270,InterPro2GO
+IEA,GO_REF:0000002,GO:0003824,catalytic activity,255,InterPro2GO
+IEA,GO_REF:0000002,GO:0005975,carbohydrate metabolic process,255,InterPro2GO
+IEA,GO_REF:0000002,GO:0004252,serine-type endopeptidase activity,250,InterPro2GO
+IEA,GO_REF:0000002,GO:0003678,DNA helicase activity,240,InterPro2GO
+IEA,GO_REF:0000002,GO:0006352,DNA-templated transcription initiation,235,InterPro2GO
+IEA,GO_REF:0000002,GO:0019073,viral DNA genome packaging,233,InterPro2GO
+IEA,GO_REF:0000002,GO:0019068,virion assembly,223,InterPro2GO
+IEA,GO_REF:0000002,GO:0006259,DNA metabolic process,222,InterPro2GO
+IEA,GO_REF:0000002,GO:0008061,chitin binding,217,InterPro2GO
+IEA,GO_REF:0000002,GO:0031418,L-ascorbic acid binding,211,InterPro2GO
+IEA,GO_REF:0000002,GO:0016705,"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen",202,InterPro2GO
+IEA,GO_REF:0000002,GO:0016747,"acyltransferase activity, transferring groups other than amino-acyl groups",197,InterPro2GO
+IEA,GO_REF:0000002,GO:0016817,"hydrolase activity, acting on acid anhydrides",195,InterPro2GO
+IEA,GO_REF:0000002,GO:0004672,protein kinase activity,191,InterPro2GO
+IEA,GO_REF:0000002,GO:0003909,DNA ligase activity,185,InterPro2GO
+IEA,GO_REF:0000002,GO:0008233,peptidase activity,175,InterPro2GO
+IEA,GO_REF:0000002,GO:0019083,viral transcription,175,InterPro2GO
+IEA,GO_REF:0000002,GO:0004197,cysteine-type endopeptidase activity,172,InterPro2GO
+IEA,GO_REF:0000002,GO:0039686,bidirectional double-stranded viral DNA replication,171,InterPro2GO
+IEA,GO_REF:0000002,GO:0046782,regulation of viral transcription,170,InterPro2GO
+IEA,GO_REF:0000002,GO:0006302,double-strand break repair,169,InterPro2GO
+IEA,GO_REF:0000002,GO:0016539,intein-mediated protein splicing,160,InterPro2GO
+IEA,GO_REF:0000002,GO:0006508,proteolysis,154,InterPro2GO
+IEA,GO_REF:0000002,GO:0019076,viral release from host cell,152,InterPro2GO
+IEA,GO_REF:0000002,GO:0004553,"hydrolase activity, hydrolyzing O-glycosyl compounds",151,InterPro2GO
+IEA,GO_REF:0000002,GO:0006220,pyrimidine nucleotide metabolic process,151,InterPro2GO
+IEA,GO_REF:0000002,GO:0009055,electron transfer activity,148,InterPro2GO
+IEA,GO_REF:0000002,GO:0033567,"DNA replication, Okazaki fragment processing",144,InterPro2GO
+IEA,GO_REF:0000002,GO:0017108,5'-flap endonuclease activity,144,InterPro2GO
+IEA,GO_REF:0000002,GO:0009007,site-specific DNA-methyltransferase (adenine-specific) activity,144,InterPro2GO
+IEA,GO_REF:0000002,GO:0008833,deoxyribonuclease IV (phage-T4-induced) activity,142,InterPro2GO
+IEA,GO_REF:0000002,GO:0003688,DNA replication origin binding,137,InterPro2GO
+IEA,GO_REF:0000002,GO:0006265,DNA topological change,136,InterPro2GO
+IEA,GO_REF:0000002,GO:0003690,double-stranded DNA binding,133,InterPro2GO
+IEA,GO_REF:0000002,GO:0008094,"ATP-dependent activity, acting on DNA",133,InterPro2GO
+IEA,GO_REF:0000002,GO:0004523,RNA-DNA hybrid ribonuclease activity,125,InterPro2GO
+IEA,GO_REF:0000002,GO:0005507,copper ion binding,124,InterPro2GO
+IEA,GO_REF:0000002,GO:0019082,viral protein processing,122,InterPro2GO
+IEA,GO_REF:0000002,GO:0046718,symbiont entry into host cell,122,InterPro2GO
+IEA,GO_REF:0000002,GO:0050660,flavin adenine dinucleotide binding,117,InterPro2GO
+IEA,GO_REF:0000002,GO:0019064,fusion of virus membrane with host plasma membrane,115,InterPro2GO
+IEA,GO_REF:0000002,GO:0009772,photosynthetic electron transport in photosystem II,115,InterPro2GO
+IEA,GO_REF:0000002,GO:0019684,"photosynthesis, light reaction",115,InterPro2GO
+IEA,GO_REF:0000002,GO:0046789,host cell surface receptor binding,113,InterPro2GO
+IEA,GO_REF:0000002,GO:0004040,amidase activity,108,InterPro2GO
+IEA,GO_REF:0000002,GO:0004568,chitinase activity,104,InterPro2GO
+IEA,GO_REF:0000002,GO:0051536,iron-sulfur cluster binding,102,InterPro2GO
+IEA,GO_REF:0000002,GO:0030430,host cell cytoplasm,101,InterPro2GO
+IEA,GO_REF:0000002,GO:0006457,protein folding,101,InterPro2GO
+IEA,GO_REF:0000002,GO:0060967,negative regulation of gene silencing by regulatory ncRNA,97,InterPro2GO
+IEA,GO_REF:0000002,GO:0030527,structural constituent of chromatin,97,InterPro2GO
+IEA,GO_REF:0000002,GO:0046872,metal ion binding,96,InterPro2GO
+IEA,GO_REF:0000002,GO:0140664,ATP-dependent DNA damage sensor activity,96,InterPro2GO
+IEA,GO_REF:0000002,GO:0044003,symbiont-mediated perturbation of host process,96,InterPro2GO
+IEA,GO_REF:0000002,GO:0032549,ribonucleoside binding,94,InterPro2GO
+IEA,GO_REF:0000002,GO:0008409,5'-3' exonuclease activity,94,InterPro2GO
+IEA,GO_REF:0000002,GO:0019013,viral nucleocapsid,91,InterPro2GO
+IEA,GO_REF:0000002,GO:0032259,methylation,90,InterPro2GO
+IEA,GO_REF:0000002,GO:0006275,regulation of DNA replication,89,InterPro2GO
+IEA,GO_REF:0000002,GO:0046654,tetrahydrofolate biosynthetic process,88,InterPro2GO
+IEA,GO_REF:0000002,GO:0007155,cell adhesion,87,InterPro2GO
+IEA,GO_REF:0000002,GO:0140662,ATP-dependent protein folding chaperone,87,InterPro2GO
+IEA,GO_REF:0000002,GO:0003887,DNA-directed DNA polymerase activity,86,InterPro2GO
+IEA,GO_REF:0000002,GO:0008234,cysteine-type peptidase activity,81,InterPro2GO
+IEA,GO_REF:0000002,GO:0019867,outer membrane,81,InterPro2GO
+IEA,GO_REF:0000002,GO:0003968,RNA-directed RNA polymerase activity,81,InterPro2GO
+IEA,GO_REF:0000002,GO:0006313,DNA transposition,80,InterPro2GO
+IEA,GO_REF:0000002,GO:0032897,negative regulation of viral transcription,79,InterPro2GO
+IEA,GO_REF:0000002,GO:0019072,viral genome packaging,79,InterPro2GO
+IEA,GO_REF:0000002,GO:0045893,positive regulation of DNA-templated transcription,78,InterPro2GO
+IEA,GO_REF:0000002,GO:0000175,3'-5'-RNA exonuclease activity,77,InterPro2GO
+IEA,GO_REF:0000002,GO:0031423,hexon binding,76,InterPro2GO
+IEA,GO_REF:0000002,GO:0004803,transposase activity,75,InterPro2GO
+IEA,GO_REF:0000002,GO:0004520,DNA endonuclease activity,75,InterPro2GO
+IEA,GO_REF:0000002,GO:0016757,glycosyltransferase activity,75,InterPro2GO
+IEA,GO_REF:0000002,GO:0043657,host cell,72,InterPro2GO
+IEA,GO_REF:0000002,GO:0044423,virion component,72,InterPro2GO
+IEA,GO_REF:0000002,GO:0046765,viral budding from nuclear membrane,71,InterPro2GO
+IEA,GO_REF:0000002,GO:0042025,host cell nucleus,71,InterPro2GO
+IEA,GO_REF:0000002,GO:0046802,exit of virus from host cell nucleus by nuclear egress,71,InterPro2GO
+IEA,GO_REF:0000002,GO:0050797,thymidylate synthase (FAD) activity,70,InterPro2GO
+IEA,GO_REF:0000002,GO:0006231,dTMP biosynthetic process,70,InterPro2GO
+IEA,GO_REF:0000002,GO:0019033,viral tegument,68,InterPro2GO
+IEA,GO_REF:0000002,GO:0008242,omega peptidase activity,67,InterPro2GO
+IEA,GO_REF:0000002,GO:0006229,dUTP biosynthetic process,66,InterPro2GO
+IEA,GO_REF:0000002,GO:0006139,nucleobase-containing compound metabolic process,66,InterPro2GO
+IEA,GO_REF:0000002,GO:0008168,methyltransferase activity,66,InterPro2GO
+IEA,GO_REF:0000002,GO:0006629,lipid metabolic process,65,InterPro2GO
+IEA,GO_REF:0000002,GO:0006032,chitin catabolic process,64,InterPro2GO
+IEA,GO_REF:0000002,GO:0051260,protein homooligomerization,64,InterPro2GO
+IEA,GO_REF:0000002,GO:0004651,polynucleotide 5'-phosphatase activity,64,InterPro2GO
+IEA,GO_REF:0000002,GO:0034258,nicotinamide riboside transport,63,InterPro2GO
+IEA,GO_REF:0000002,GO:0003924,GTPase activity,63,InterPro2GO
+IEA,GO_REF:0000002,GO:0006955,immune response,63,InterPro2GO
+IEA,GO_REF:0000002,GO:0034257,nicotinamide riboside transmembrane transporter activity,63,InterPro2GO
+IEA,GO_REF:0000002,GO:0000723,telomere maintenance,63,InterPro2GO
+IEA,GO_REF:0000002,GO:0016818,"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides",62,InterPro2GO
+IEA,GO_REF:0000002,GO:0005509,calcium ion binding,62,InterPro2GO
+IEA,GO_REF:0000002,GO:0016746,acyltransferase activity,62,InterPro2GO
+IEA,GO_REF:0000002,GO:0070008,serine-type exopeptidase activity,61,InterPro2GO
+IEA,GO_REF:0000002,GO:0046080,dUTP metabolic process,59,InterPro2GO
+IEA,GO_REF:0000002,GO:0000270,peptidoglycan metabolic process,59,InterPro2GO
+IEA,GO_REF:0000002,GO:0016832,aldehyde-lyase activity,58,InterPro2GO
+IEA,GO_REF:0000002,GO:0008174,mRNA methyltransferase activity,57,InterPro2GO
+IEA,GO_REF:0000002,GO:0006230,TMP biosynthetic process,56,InterPro2GO
+IEA,GO_REF:0000002,GO:0044183,protein folding chaperone,56,InterPro2GO
+IEA,GO_REF:0000002,GO:0006353,DNA-templated transcription termination,56,InterPro2GO
+IEA,GO_REF:0000002,GO:0003779,actin binding,54,InterPro2GO
+IEA,GO_REF:0000002,GO:0004386,helicase activity,53,InterPro2GO
+IEA,GO_REF:0000002,GO:0008083,growth factor activity,53,InterPro2GO
+IEA,GO_REF:0000002,GO:0030246,carbohydrate binding,52,InterPro2GO
+IEA,GO_REF:0000002,GO:0075733,intracellular transport of virus,52,InterPro2GO
+IEA,GO_REF:0000002,GO:0009360,DNA polymerase III complex,51,InterPro2GO
+IEA,GO_REF:0000002,GO:0016491,oxidoreductase activity,51,InterPro2GO
+IEA,GO_REF:0000002,GO:0039679,viral occlusion body,51,InterPro2GO
+IEA,GO_REF:0000002,GO:0031012,extracellular matrix,50,InterPro2GO
+IEA,GO_REF:0000002,GO:0008253,5'-nucleotidase activity,49,InterPro2GO
+IEA,GO_REF:0000002,GO:0020037,heme binding,49,InterPro2GO
+IEA,GO_REF:0000002,GO:0009264,deoxyribonucleotide catabolic process,49,InterPro2GO
+IEA,GO_REF:0000002,GO:0052031,symbiont-mediated perturbation of host defense response,49,InterPro2GO
+IEA,GO_REF:0000002,GO:0050661,NADP binding,48,InterPro2GO
+IEA,GO_REF:0000002,GO:0140911,pore-forming activity,48,InterPro2GO
+IEA,GO_REF:0000002,GO:0039693,viral DNA genome replication,47,InterPro2GO
+IEA,GO_REF:0000002,GO:0001907,symbiont-mediated killing of host cell,47,InterPro2GO
+IEA,GO_REF:0000002,GO:0043565,sequence-specific DNA binding,47,InterPro2GO
+IEA,GO_REF:0000002,GO:0043365,[formate-C-acetyltransferase]-activating enzyme activity,47,InterPro2GO
+IEA,GO_REF:0000002,GO:0051027,DNA transport,46,InterPro2GO
+IEA,GO_REF:0000002,GO:0045892,negative regulation of DNA-templated transcription,46,InterPro2GO
+IEA,GO_REF:0000002,GO:0004222,metalloendopeptidase activity,44,InterPro2GO
+IEA,GO_REF:0000002,GO:0004497,monooxygenase activity,44,InterPro2GO
+IEA,GO_REF:0000002,GO:0006400,tRNA modification,44,InterPro2GO
+IEA,GO_REF:0000002,GO:0004170,dUTP diphosphatase activity,44,InterPro2GO
+IEA,GO_REF:0000002,GO:0006269,"DNA replication, synthesis of primer",43,InterPro2GO
+IEA,GO_REF:0000002,GO:0042262,DNA protection,43,InterPro2GO
+IEA,GO_REF:0000002,GO:0004842,ubiquitin-protein transferase activity,42,InterPro2GO
+IEA,GO_REF:0000002,GO:0003727,single-stranded RNA binding,41,InterPro2GO
+IEA,GO_REF:0000002,GO:0005525,GTP binding,41,InterPro2GO
+IEA,GO_REF:0000002,GO:0046983,protein dimerization activity,41,InterPro2GO
+IEA,GO_REF:0000002,GO:0009254,peptidoglycan turnover,41,InterPro2GO
+IEA,GO_REF:0000002,GO:0004532,RNA exonuclease activity,41,InterPro2GO
+IEA,GO_REF:0000002,GO:0016884,"carbon-nitrogen ligase activity, with glutamine as amido-N-donor",40,InterPro2GO
+IEA,GO_REF:0000002,GO:0000400,four-way junction DNA binding,40,InterPro2GO
+IEA,GO_REF:0000002,GO:0008009,chemokine activity,40,InterPro2GO
+IEA,GO_REF:0000002,GO:0004797,thymidine kinase activity,39,InterPro2GO
+IEA,GO_REF:0000002,GO:0004146,dihydrofolate reductase activity,38,InterPro2GO
+IEA,GO_REF:0000002,GO:0016987,sigma factor activity,38,InterPro2GO
+IEA,GO_REF:0000002,GO:0000150,DNA strand exchange activity,37,InterPro2GO
+IEA,GO_REF:0000002,GO:0006270,DNA replication initiation,36,InterPro2GO
+IEA,GO_REF:0000002,GO:0004308,exo-alpha-sialidase activity,35,InterPro2GO
+IEA,GO_REF:0000002,GO:0046677,response to antibiotic,35,InterPro2GO
+IEA,GO_REF:0000002,GO:0008237,metallopeptidase activity,35,InterPro2GO
+IEA,GO_REF:0000002,GO:0060567,negative regulation of termination of DNA-templated transcription,35,InterPro2GO
+IEA,GO_REF:0000002,GO:0004525,ribonuclease III activity,35,InterPro2GO
+IEA,GO_REF:0000002,GO:0017111,ribonucleoside triphosphate phosphatase activity,34,InterPro2GO
+IEA,GO_REF:0000002,GO:0019062,virion attachment to host cell,33,InterPro2GO
+IEA,GO_REF:0000002,GO:0004867,serine-type endopeptidase inhibitor activity,33,InterPro2GO
+IEA,GO_REF:0000002,GO:0003729,mRNA binding,33,InterPro2GO
+IEA,GO_REF:0000002,GO:0008829,dCTP deaminase activity,33,InterPro2GO
+IEA,GO_REF:0000002,GO:0006801,superoxide metabolic process,32,InterPro2GO
+IEA,GO_REF:0000002,GO:0003796,lysozyme activity,32,InterPro2GO
+IEA,GO_REF:0000002,GO:0022900,electron transport chain,32,InterPro2GO
+IEA,GO_REF:0000002,GO:0051715,cytolysis in another organism,31,InterPro2GO
+IEA,GO_REF:0000002,GO:0008199,ferric iron binding,30,InterPro2GO
+IEA,GO_REF:0000002,GO:0004722,protein serine/threonine phosphatase activity,29,InterPro2GO
+IEA,GO_REF:0000002,GO:0006307,DNA alkylation repair,29,InterPro2GO
+IEA,GO_REF:0000002,GO:0035556,intracellular signal transduction,29,InterPro2GO
+IEA,GO_REF:0000002,GO:0044384,host outer membrane,29,InterPro2GO
+IEA,GO_REF:0000002,GO:0097367,carbohydrate derivative binding,29,InterPro2GO
+IEA,GO_REF:0000002,GO:0016614,"oxidoreductase activity, acting on CH-OH group of donors",29,InterPro2GO
+IEA,GO_REF:0000002,GO:0039653,symbiont-mediated suppression of host transcription,29,InterPro2GO
+IEA,GO_REF:0000002,GO:0046982,protein heterodimerization activity,29,InterPro2GO
+IEA,GO_REF:0000002,GO:0016616,"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor",29,InterPro2GO
+IEA,GO_REF:0000002,GO:0098025,"virus tail, baseplate",29,InterPro2GO
+IEA,GO_REF:0000002,GO:0016567,protein ubiquitination,29,InterPro2GO
+IEA,GO_REF:0000002,GO:0051287,NAD binding,28,InterPro2GO
+IEA,GO_REF:0000002,GO:0019784,deNEDDylase activity,28,InterPro2GO
+IEA,GO_REF:0000002,GO:0006308,DNA catabolic process,27,InterPro2GO
+IEA,GO_REF:0000002,GO:0046813,receptor-mediated virion attachment to host cell,27,InterPro2GO
+IEA,GO_REF:0000002,GO:0006511,ubiquitin-dependent protein catabolic process,27,InterPro2GO
+IEA,GO_REF:0000002,GO:0008081,phosphoric diester hydrolase activity,27,InterPro2GO
+IEA,GO_REF:0000002,GO:0006304,DNA modification,27,InterPro2GO
+IEA,GO_REF:0000002,GO:0039654,fusion of virus membrane with host endosome membrane,26,InterPro2GO
+IEA,GO_REF:0000002,GO:0039704,viral translational shunt,26,InterPro2GO
+IEA,GO_REF:0000002,GO:0050355,inorganic triphosphate phosphatase activity,25,InterPro2GO
+IEA,GO_REF:0000002,GO:0006098,pentose-phosphate shunt,25,InterPro2GO
+IEA,GO_REF:0000002,GO:0075509,endocytosis involved in viral entry into host cell,25,InterPro2GO
+IEA,GO_REF:0000002,GO:0004190,aspartic-type endopeptidase activity,25,InterPro2GO
+IEA,GO_REF:0000002,GO:0009190,cyclic nucleotide biosynthetic process,25,InterPro2GO
+IEA,GO_REF:0000002,GO:0008757,S-adenosylmethionine-dependent methyltransferase activity,25,InterPro2GO
+IEA,GO_REF:0000002,GO:0003735,structural constituent of ribosome,25,InterPro2GO
+IEA,GO_REF:0000002,GO:0071897,DNA biosynthetic process,25,InterPro2GO
+IEA,GO_REF:0000002,GO:0051259,protein complex oligomerization,24,InterPro2GO
+IEA,GO_REF:0000002,GO:0004616,phosphogluconate dehydrogenase (decarboxylating) activity,24,InterPro2GO
+IEA,GO_REF:0000002,GO:0004518,nuclease activity,24,InterPro2GO
+IEA,GO_REF:0000002,GO:0009318,exodeoxyribonuclease VII complex,23,InterPro2GO
+IEA,GO_REF:0000002,GO:0010468,regulation of gene expression,23,InterPro2GO
+IEA,GO_REF:0000002,GO:0016829,lyase activity,23,InterPro2GO
+IEA,GO_REF:0000002,GO:0008855,exodeoxyribonuclease VII activity,22,InterPro2GO
+IEA,GO_REF:0000002,GO:0007154,cell communication,22,InterPro2GO
+IEA,GO_REF:0000002,GO:0016706,2-oxoglutarate-dependent dioxygenase activity,22,InterPro2GO
+IEA,GO_REF:0000002,GO:0044660,viral release via pore formation in host cell membrane,22,InterPro2GO
+IEA,GO_REF:0000002,GO:0007165,signal transduction,22,InterPro2GO
+IEA,GO_REF:0000002,GO:0030908,protein splicing,22,InterPro2GO
+IEA,GO_REF:0000002,GO:0060703,deoxyribonuclease inhibitor activity,22,InterPro2GO
+IEA,GO_REF:0000002,GO:0016810,"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds",22,InterPro2GO
+IEA,GO_REF:0000002,GO:0003684,damaged DNA binding,21,InterPro2GO
+IEA,GO_REF:0000002,GO:0008610,lipid biosynthetic process,21,InterPro2GO
+IEA,GO_REF:0000002,GO:0055085,transmembrane transport,21,InterPro2GO
+IEA,GO_REF:0000002,GO:0002151,G-quadruplex RNA binding,21,InterPro2GO
+IEA,GO_REF:0000002,GO:0006289,nucleotide-excision repair,21,InterPro2GO
+IEA,GO_REF:0000002,GO:0006298,mismatch repair,21,InterPro2GO
+IEA,GO_REF:0000002,GO:0004483,methyltransferase cap1 activity,20,InterPro2GO
+IEA,GO_REF:0000002,GO:0016791,phosphatase activity,20,InterPro2GO
+IEA,GO_REF:0000002,GO:0019836,symbiont-mediated hemolysis of host erythrocyte,20,InterPro2GO
+IEA,GO_REF:0000002,GO:0051213,dioxygenase activity,19,InterPro2GO
+IEA,GO_REF:0000002,GO:0030337,DNA polymerase processivity factor activity,19,InterPro2GO
+IEA,GO_REF:0000002,GO:0071949,FAD binding,19,InterPro2GO
+IEA,GO_REF:0000002,GO:0003911,DNA ligase (NAD+) activity,19,InterPro2GO
+IEA,GO_REF:0000002,GO:0070897,transcription preinitiation complex assembly,19,InterPro2GO
+IEA,GO_REF:0000002,GO:0004843,cysteine-type deubiquitinase activity,18,InterPro2GO
+IEA,GO_REF:0000002,GO:0047846,deoxynucleotide 3'-phosphatase activity,18,InterPro2GO
+IEA,GO_REF:0000002,GO:0009435,NAD+ biosynthetic process,18,InterPro2GO
+IEA,GO_REF:0000002,GO:0051082,unfolded protein binding,17,InterPro2GO
+IEA,GO_REF:0000002,GO:0016799,"hydrolase activity, hydrolyzing N-glycosyl compounds",17,InterPro2GO
+IEA,GO_REF:0000002,GO:0030983,mismatched DNA binding,17,InterPro2GO
+IEA,GO_REF:0000002,GO:0003726,double-stranded RNA adenosine deaminase activity,17,InterPro2GO
+IEA,GO_REF:0000002,GO:0009411,response to UV,17,InterPro2GO
+IEA,GO_REF:0000002,GO:0035435,phosphate ion transmembrane transport,17,InterPro2GO
+IEA,GO_REF:0000002,GO:0008641,ubiquitin-like modifier activating enzyme activity,17,InterPro2GO
+IEA,GO_REF:0000002,GO:1901135,carbohydrate derivative metabolic process,17,InterPro2GO
+IEA,GO_REF:0000002,GO:0042301,phosphate ion binding,17,InterPro2GO
+IEA,GO_REF:0000002,GO:0000309,nicotinamide-nucleotide adenylyltransferase activity,16,InterPro2GO
+IEA,GO_REF:0000002,GO:0042026,protein refolding,16,InterPro2GO
+IEA,GO_REF:0000002,GO:0009166,nucleotide catabolic process,16,InterPro2GO
+IEA,GO_REF:0000002,GO:0050262,ribosylnicotinamide kinase activity,16,InterPro2GO
+IEA,GO_REF:0000002,GO:0016722,"oxidoreductase activity, acting on metal ions",16,InterPro2GO
+IEA,GO_REF:0000002,GO:0035494,SNARE complex disassembly,15,InterPro2GO
+IEA,GO_REF:0000002,GO:0016779,nucleotidyltransferase activity,15,InterPro2GO
+IEA,GO_REF:0000002,GO:0008933,peptidoglycan lytic transglycosylase activity,15,InterPro2GO
+IEA,GO_REF:0000002,GO:0006364,rRNA processing,15,InterPro2GO
+IEA,GO_REF:0000002,GO:0016798,"hydrolase activity, acting on glycosyl bonds",15,InterPro2GO
+IEA,GO_REF:0000002,GO:0006402,mRNA catabolic process,15,InterPro2GO
+IEA,GO_REF:0000002,GO:0006109,regulation of carbohydrate metabolic process,15,InterPro2GO
+IEA,GO_REF:0000002,GO:0006694,steroid biosynthetic process,14,InterPro2GO
+IEA,GO_REF:0000002,GO:0001848,complement binding,14,InterPro2GO
+IEA,GO_REF:0000002,GO:0002161,aminoacyl-tRNA deacylase activity,14,InterPro2GO
+IEA,GO_REF:0000002,GO:0000271,polysaccharide biosynthetic process,14,InterPro2GO
+IEA,GO_REF:0000002,GO:0016579,protein deubiquitination,14,InterPro2GO
+IEA,GO_REF:0000002,GO:0009295,nucleoid,14,InterPro2GO
+IEA,GO_REF:0000002,GO:0045916,negative regulation of complement activation,14,InterPro2GO
+IEA,GO_REF:0000002,GO:0000209,protein polyubiquitination,14,InterPro2GO
+IEA,GO_REF:0000002,GO:0008173,RNA methyltransferase activity,14,InterPro2GO
+IEA,GO_REF:0000002,GO:0004810,CCA tRNA nucleotidyltransferase activity,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0010181,FMN binding,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0004176,ATP-dependent peptidase activity,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0003972,RNA ligase (ATP) activity,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0004896,cytokine receptor activity,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0030170,pyridoxal phosphate binding,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0030544,Hsp70 protein binding,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0009116,nucleoside metabolic process,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0010024,phytochromobilin biosynthetic process,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0033668,symbiont-mediated suppression of host apoptosis,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0060333,type II interferon-mediated signaling pathway,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0050897,cobalt ion binding,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0016636,"oxidoreductase activity, acting on the CH-CH group of donors, iron-sulfur protein as acceptor",13,InterPro2GO
+IEA,GO_REF:0000002,GO:0001680,tRNA 3'-terminal CCA addition,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0043039,tRNA aminoacylation,13,InterPro2GO
+IEA,GO_REF:0000002,GO:0098024,"virus tail, fiber",13,InterPro2GO
+IEA,GO_REF:0000002,GO:0039695,DNA-templated viral transcription,12,InterPro2GO
+IEA,GO_REF:0000002,GO:0039690,positive stranded viral RNA replication,12,InterPro2GO
+IEA,GO_REF:0000002,GO:0016740,transferase activity,12,InterPro2GO
+IEA,GO_REF:0000002,GO:0004725,protein tyrosine phosphatase activity,12,InterPro2GO
+IEA,GO_REF:0000002,GO:0031072,heat shock protein binding,12,InterPro2GO
+IEA,GO_REF:0000002,GO:0008146,sulfotransferase activity,12,InterPro2GO
+IEA,GO_REF:0000002,GO:0003950,NAD+ poly-ADP-ribosyltransferase activity,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0043027,cysteine-type endopeptidase inhibitor activity involved in apoptotic process,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0004540,RNA nuclease activity,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0006952,defense response,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0000976,transcription cis-regulatory region binding,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0015979,photosynthesis,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0009966,regulation of signal transduction,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0044163,host cytoskeleton,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0030163,protein catabolic process,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0106300,protein-DNA covalent cross-linking repair,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0001882,nucleoside binding,11,InterPro2GO
+IEA,GO_REF:0000002,GO:0004649,poly(ADP-ribose) glycohydrolase activity,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0046812,host cell surface binding,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0000160,phosphorelay signal transduction system,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0003682,chromatin binding,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0009036,type II site-specific deoxyribonuclease activity,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0030414,peptidase inhibitor activity,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0070988,demethylation,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0016192,vesicle-mediated transport,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0046417,chorismate metabolic process,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0006979,response to oxidative stress,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0050482,arachidonate secretion,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0006644,phospholipid metabolic process,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0006282,regulation of DNA repair,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0004623,phospholipase A2 activity,10,InterPro2GO
+IEA,GO_REF:0000002,GO:0016407,acetyltransferase activity,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0055036,virion membrane,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0006370,7-methylguanosine mRNA capping,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0004550,nucleoside diphosphate kinase activity,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0003689,DNA clamp loader activity,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0016462,pyrophosphatase activity,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0001070,RNA-binding transcription regulator activity,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0016996,"endo-alpha-(2,8)-sialidase activity",9,InterPro2GO
+IEA,GO_REF:0000002,GO:0050434,positive regulation of viral transcription,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0016881,acid-amino acid ligase activity,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0140359,ABC-type transporter activity,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0008821,crossover junction DNA endonuclease activity,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0046760,viral budding from Golgi membrane,9,InterPro2GO
+IEA,GO_REF:0000002,GO:0047153,deoxycytidylate 5-hydroxymethyltransferase activity,8,InterPro2GO
+IEA,GO_REF:0000002,GO:0008998,ribonucleoside-triphosphate reductase (thioredoxin) activity,8,InterPro2GO
+IEA,GO_REF:0000002,GO:0019752,carboxylic acid metabolic process,8,InterPro2GO
+IEA,GO_REF:0000002,GO:0015969,guanosine tetraphosphate metabolic process,8,InterPro2GO
+IEA,GO_REF:0000002,GO:0004601,peroxidase activity,8,InterPro2GO
+IEA,GO_REF:0000002,GO:0000049,tRNA binding,8,InterPro2GO
+IEA,GO_REF:0000002,GO:0003725,double-stranded RNA binding,8,InterPro2GO
+IEA,GO_REF:0000002,GO:0030247,polysaccharide binding,8,InterPro2GO
+IEA,GO_REF:0000002,GO:0008907,integrase activity,8,InterPro2GO
+IEA,GO_REF:0000002,GO:0015035,protein-disulfide reductase activity,8,InterPro2GO
+IEA,GO_REF:0000002,GO:0030638,polyketide metabolic process,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0006226,dUMP biosynthetic process,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0006520,amino acid metabolic process,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0016972,thiol oxidase activity,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0042330,taxis,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0003918,"DNA topoisomerase type II (double strand cut, ATP-hydrolyzing) activity",7,InterPro2GO
+IEA,GO_REF:0000002,GO:0016899,"oxidoreductase activity, acting on the CH-OH group of donors, oxygen as acceptor",7,InterPro2GO
+IEA,GO_REF:0000002,GO:0009143,nucleoside triphosphate catabolic process,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0046081,dUTP catabolic process,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0031440,regulation of mRNA 3'-end processing,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0007156,homophilic cell adhesion via plasma membrane adhesion molecules,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0042834,peptidoglycan binding,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0016301,kinase activity,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0047429,nucleoside triphosphate diphosphatase activity,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0006465,signal peptide processing,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0044403,biological process involved in symbiotic interaction,7,InterPro2GO
+IEA,GO_REF:0000002,GO:0004359,glutaminase activity,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0006241,CTP biosynthetic process,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0022857,transmembrane transporter activity,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0033739,preQ1 synthase activity,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0007186,G protein-coupled receptor signaling pathway,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0006276,plasmid maintenance,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0031625,ubiquitin protein ligase binding,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0008076,voltage-gated potassium channel complex,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0005886,plasma membrane,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0019074,viral RNA genome packaging,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0016780,"phosphotransferase activity, for other substituted phosphate groups",6,InterPro2GO
+IEA,GO_REF:0000002,GO:0008374,O-acyltransferase activity,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0006228,UTP biosynthetic process,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0061929,gamma-glutamylaminecyclotransferase activity,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0008654,phospholipid biosynthetic process,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0050792,regulation of viral process,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0098632,cell-cell adhesion mediator activity,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0016977,chitosanase activity,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0008962,phosphatidylglycerophosphatase activity,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0006183,GTP biosynthetic process,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0019966,interleukin-1 binding,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0004484,mRNA guanylyltransferase activity,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0007015,actin filament organization,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0015288,porin activity,6,InterPro2GO
+IEA,GO_REF:0000002,GO:0006189,'de novo' IMP biosynthetic process,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0006338,chromatin remodeling,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0006760,folic acid-containing compound metabolic process,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0008289,lipid binding,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0008417,fucosyltransferase activity,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0004150,dihydroneopterin aldolase activity,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0061630,ubiquitin protein ligase activity,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0007166,cell surface receptor signaling pathway,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0034220,monoatomic ion transmembrane transport,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0003952,NAD+ synthase (glutamine-hydrolyzing) activity,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0004930,G protein-coupled receptor activity,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0016758,hexosyltransferase activity,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0006862,nucleotide transport,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0005216,monoatomic ion channel activity,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0052151,symbiont-mediated activation of host apoptosis,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0043022,ribosome binding,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0004066,asparagine synthase (glutamine-hydrolyzing) activity,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0008236,serine-type peptidase activity,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0019087,symbiont-mediated transformation of host cell,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0008017,microtubule binding,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0016765,"transferase activity, transferring alkyl or aryl (other than methyl) groups",5,InterPro2GO
+IEA,GO_REF:0000002,GO:0006796,phosphate-containing compound metabolic process,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0007018,microtubule-based movement,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0006529,asparagine biosynthetic process,5,InterPro2GO
+IEA,GO_REF:0000002,GO:0042254,ribosome biogenesis,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0009294,DNA-mediated transformation,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0008616,tRNA queuosine(34) biosynthetic process,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0070005,cysteine-type aminopeptidase activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0005839,proteasome core complex,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0004857,enzyme inhibitor activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0030655,beta-lactam antibiotic catabolic process,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0009446,putrescine biosynthetic process,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0004888,transmembrane signaling receptor activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0003777,microtubule motor activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0003885,"D-arabinono-1,4-lactone oxidase activity",4,InterPro2GO
+IEA,GO_REF:0000002,GO:0006535,cysteine biosynthetic process from serine,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0008810,cellulase activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0033897,ribonuclease T2 activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0017001,antibiotic catabolic process,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0016628,"oxidoreductase activity, acting on the CH-CH group of donors, NAD or NADP as acceptor",4,InterPro2GO
+IEA,GO_REF:0000002,GO:0008460,"dTDP-glucose 4,6-dehydratase activity",4,InterPro2GO
+IEA,GO_REF:0000002,GO:0000155,phosphorelay sensor kinase activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0042742,defense response to bacterium,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0046797,viral procapsid maturation,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0046740,"transport of virus in host, cell to cell",4,InterPro2GO
+IEA,GO_REF:0000002,GO:0006303,double-strand break repair via nonhomologous end joining,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0062122,histone H3K37 methyltransferase activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0004427,inorganic diphosphate phosphatase activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0009410,response to xenobiotic stimulus,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0050832,defense response to fungus,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0030001,metal ion transport,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0051603,proteolysis involved in protein catabolic process,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0042007,interleukin-18 binding,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0004668,protein-arginine deiminase activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0004908,interleukin-1 receptor activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:1990904,ribonucleoprotein complex,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0006207,'de novo' pyrimidine nucleobase biosynthetic process,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0051537,"2 iron, 2 sulfur cluster binding",4,InterPro2GO
+IEA,GO_REF:0000002,GO:0140818,mRNA 5'-triphosphate monophosphatase activity,4,InterPro2GO
+IEA,GO_REF:0000002,GO:0043484,regulation of RNA splicing,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0019430,removal of superoxide radicals,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0015976,carbon utilization,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0005164,tumor necrosis factor receptor binding,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0002949,tRNA threonylcarbamoyladenosine modification,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0051539,"4 iron, 4 sulfur cluster binding",3,InterPro2GO
+IEA,GO_REF:0000002,GO:0005125,cytokine activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0005976,polysaccharide metabolic process,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0004045,peptidyl-tRNA hydrolase activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0016226,iron-sulfur cluster assembly,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0030674,protein-macromolecule adaptor activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0016760,cellulose synthase (UDP-forming) activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0004609,phosphatidylserine decarboxylase activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0004812,aminoacyl-tRNA ligase activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0019825,oxygen binding,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0051726,regulation of cell cycle,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0005615,extracellular space,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0016051,carbohydrate biosynthetic process,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0019205,nucleobase-containing compound kinase activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0005102,signaling receptor binding,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0016627,"oxidoreductase activity, acting on the CH-CH group of donors",3,InterPro2GO
+IEA,GO_REF:0000002,GO:0030244,cellulose biosynthetic process,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0019042,viral latency,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0050776,regulation of immune response,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0009214,cyclic nucleotide catabolic process,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0016714,"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, reduced pteridine as one donor, and incorporation of one atom of oxygen",3,InterPro2GO
+IEA,GO_REF:0000002,GO:0006011,UDP-alpha-D-glucose metabolic process,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0009372,quorum sensing,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0030145,manganese ion binding,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0016298,lipase activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0033821,DNA beta-glucosyltransferase activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0099122,RNA polymerase II C-terminal domain binding,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0017025,TBP-class protein binding,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0016070,RNA metabolic process,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0004650,polygalacturonase activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0016279,protein-lysine N-methyltransferase activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0006284,base-excision repair,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0099018,symbiont-mediated evasion of host restriction-modification system,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0000302,response to reactive oxygen species,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0051087,protein-folding chaperone binding,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0016422,mRNA (2'-O-methyladenosine-N6-)-methyltransferase activity,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0042732,D-xylose metabolic process,3,InterPro2GO
+IEA,GO_REF:0000002,GO:0003917,"DNA topoisomerase type I (single strand cut, ATP-independent) activity",3,InterPro2GO
+IEA,GO_REF:0000002,GO:0007264,small GTPase-mediated signal transduction,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0004020,adenylylsulfate kinase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0003905,alkylbase DNA N-glycosylase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0003713,transcription coactivator activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0035999,tetrahydrofolate interconversion,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0004820,glycine-tRNA ligase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0019956,chemokine binding,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0005138,interleukin-6 receptor binding,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0003879,ATP phosphoribosyltransferase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0051015,actin filament binding,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0003848,2-amino-4-hydroxy-6-hydroxymethyldihydropteridine diphosphokinase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0019646,aerobic electron transport chain,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0031221,arabinan metabolic process,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0035438,cyclic-di-GMP binding,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0004435,"phosphatidylinositol-4,5-bisphosphate phospholipase C activity",2,InterPro2GO
+IEA,GO_REF:0000002,GO:0007017,microtubule-based process,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0030435,sporulation resulting in formation of a cellular spore,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0052150,symbiont-mediated perturbation of host apoptosis,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0004175,endopeptidase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0001522,pseudouridine synthesis,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0008142,oxysterol binding,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0009001,serine O-acetyltransferase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0046857,"oxidoreductase activity, acting on other nitrogenous compounds as donors, with NAD or NADP as acceptor",2,InterPro2GO
+IEA,GO_REF:0000002,GO:0016209,antioxidant activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0016597,amino acid binding,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0019346,transsulfuration,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0005044,scavenger receptor activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0006633,fatty acid biosynthetic process,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0009231,riboflavin biosynthetic process,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0009451,RNA modification,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0006366,transcription by RNA polymerase II,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0030570,pectate lyase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0008137,NADH dehydrogenase (ubiquinone) activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0033644,host cell membrane,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0006974,DNA damage response,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0004018,"N6-(1,2-dicarboxyethyl)AMP AMP-lyase (fumarate-forming) activity",2,InterPro2GO
+IEA,GO_REF:0000002,GO:0039641,viral inner membrane,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0004527,exonuclease activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0003830,"beta-1,4-mannosylglycoprotein 4-beta-N-acetylglucosaminyltransferase activity",2,InterPro2GO
+IEA,GO_REF:0000002,GO:0060261,positive regulation of transcription initiation by RNA polymerase II,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0008194,UDP-glycosyltransferase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0008800,beta-lactamase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0032963,collagen metabolic process,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0015276,ligand-gated monoatomic ion channel activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0016540,protein autoprocessing,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0007010,cytoskeleton organization,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0008897,holo-[acyl-carrier-protein] synthase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0009982,pseudouridine synthase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0002100,tRNA wobble adenosine to inosine editing,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0006388,"tRNA splicing, via endonucleolytic cleavage and ligation",2,InterPro2GO
+IEA,GO_REF:0000002,GO:0016651,"oxidoreductase activity, acting on NAD(P)H",2,InterPro2GO
+IEA,GO_REF:0000002,GO:0004767,sphingomyelin phosphodiesterase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0046556,alpha-L-arabinofuranosidase activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0042558,pteridine-containing compound metabolic process,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0009229,thiamine diphosphate biosynthetic process,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0015891,siderophore transport,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0016055,Wnt signaling pathway,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0046873,metal ion transmembrane transporter activity,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0006233,dTDP biosynthetic process,2,InterPro2GO
+IEA,GO_REF:0000002,GO:0046961,"proton-transporting ATPase activity, rotational mechanism",1,InterPro2GO
+IEA,GO_REF:0000002,GO:0048038,quinone binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009225,nucleotide-sugar metabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0015109,chromate transmembrane transporter activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0043546,molybdopterin cofactor binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009873,ethylene-activated signaling pathway,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0042276,error-prone translesion synthesis,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004459,L-lactate dehydrogenase (NAD+) activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004014,adenosylmethionine decarboxylase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0003983,UTP:glucose-1-phosphate uridylyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0018580,nitronate monooxygenase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004124,cysteine synthase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004618,phosphoglycerate kinase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004198,calcium-dependent cysteine-type endopeptidase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008107,galactoside 2-alpha-L-fucosyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0050242,"pyruvate, phosphate dikinase activity",1,InterPro2GO
+IEA,GO_REF:0000002,GO:0003998,acylphosphatase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006354,DNA-templated transcription elongation,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006301,postreplication repair,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0036297,interstrand cross-link repair,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0030798,trans-aconitate 2-methyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0046761,viral budding from plasma membrane,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006072,glycerol-3-phosphate metabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006188,IMP biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006534,cysteine metabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008420,RNA polymerase II CTD heptapeptide repeat phosphatase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006278,RNA-templated DNA biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0032801,receptor catabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0019901,protein kinase binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0000981,"DNA-binding transcription factor activity, RNA polymerase II-specific",1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004392,heme oxygenase (decyclizing) activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0051301,cell division,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0019674,NAD+ metabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0051908,double-stranded DNA 5'-3' DNA exonuclease activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004526,ribonuclease P activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004788,thiamine diphosphokinase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0050829,defense response to Gram-negative bacterium,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0019509,L-methionine salvage from methylthioadenosine,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0005540,hyaluronic acid binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008381,mechanosensitive monoatomic ion channel activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009389,dimethyl sulfoxide reductase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009408,response to heat,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009156,ribonucleoside monophosphate biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0001784,phosphotyrosine residue binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0000310,xanthine phosphoribosyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0106274,NAD+-protein-arginine ADP-ribosyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0097602,cullin family protein binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0071555,cell wall organization,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0070569,uridylyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0070403,NAD+ binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004813,alanine-tRNA ligase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0005201,extracellular matrix structural constituent,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0005200,structural constituent of cytoskeleton,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0005230,extracellular ligand-gated monoatomic ion channel activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004549,tRNA-specific ribonuclease activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009374,biotin binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006000,fructose metabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006091,generation of precursor metabolites and energy,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006096,glycolytic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0003873,6-phosphofructo-2-kinase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008643,carbohydrate transport,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004089,carbonate dehydratase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009298,GDP-mannose biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004114,"3',5'-cyclic-nucleotide phosphodiesterase activity",1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004754,"saccharopine dehydrogenase (NAD+, L-lysine-forming) activity",1,InterPro2GO
+IEA,GO_REF:0000002,GO:0001872,(1->3)-beta-D-glucan binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0001510,RNA methylation,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0000156,phosphorelay response regulator activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0017004,cytochrome complex assembly,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0017064,fatty acid amide hydrolase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0005154,epidermal growth factor receptor binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0031388,organic acid phosphorylation,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0016717,"oxidoreductase activity, acting on paired donors, with oxidation of a pair of donors resulting in the reduction of molecular oxygen to two molecules of water",1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008033,tRNA processing,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006631,fatty acid metabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0030151,molybdenum ion binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0031145,anaphase-promoting complex-dependent catabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0031992,energy transducer activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0060340,positive regulation of type I interferon-mediated signaling pathway,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008218,bioluminescence,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009378,four-way junction helicase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009584,detection of visible light,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006541,glutamine metabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0000183,rDNA heterochromatin formation,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0048039,ubiquinone binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008930,methylthioadenosine nucleosidase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0031419,cobalamin binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0015078,proton transmembrane transporter activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008080,N-acetyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0045333,cellular respiration,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0039675,exit of virus from host cell nucleus through nuclear pore,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0016615,malate dehydrogenase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0016730,"oxidoreductase activity, acting on iron-sulfur proteins as donors",1,InterPro2GO
+IEA,GO_REF:0000002,GO:0016846,carbon-sulfur lyase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0016868,intramolecular phosphotransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0016172,antifreeze activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008373,sialyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0018551,dissimilatory sulfite reductase (NADH) activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0000151,ubiquitin ligase complex,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0042609,CD4 receptor binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008299,isoprenoid biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009246,enterobacterial common antigen biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0043161,proteasome-mediated ubiquitin-dependent protein catabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0016891,"RNA endonuclease activity producing 5'-phosphomonoesters, hydrolytic mechanism",1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004713,protein tyrosine kinase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0017000,antibiotic biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0030975,thiamine binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0031124,mRNA 3'-end processing,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0030248,cellulose binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006788,heme oxidation,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0050825,ice binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008251,tRNA-specific adenosine deaminase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009306,protein secretion,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0047126,N5-(carboxyethyl)ornithine synthase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0046856,phosphatidylinositol dephosphorylation,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0042803,protein homodimerization activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0043937,regulation of sporulation,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0001671,ATPase activator activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004596,protein-N-terminal amino-acid acetyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009773,photosynthetic electron transport in photosystem I,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0005548,phospholipid transporter activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008609,alkylglycerone-phosphate synthase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009691,cytokinin biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008312,7S RNA binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008295,spermidine biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0031177,phosphopantetheine binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008324,monoatomic cation transmembrane transporter activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006813,potassium ion transport,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006274,DNA replication termination,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009767,photosynthetic electron transport chain,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0003908,methylated-DNA-[protein]-cysteine S-methyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0005261,monoatomic cation channel activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0007059,chromosome segregation,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0004671,protein C-terminal S-isoprenylcysteine carboxyl O-methyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0050194,phosphonoacetaldehyde hydrolase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0015267,channel activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0017076,purine nucleotide binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009916,alternative oxidase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0015703,chromate transport,1,InterPro2GO
+IEA,GO_REF:0000002,GO:1990817,poly(A) RNA polymerase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0005978,glycogen biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0007283,spermatogenesis,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0043093,FtsZ-dependent cytokinesis,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0019645,anaerobic electron transport chain,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0042121,alginic acid biosynthetic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0110001,toxin-antitoxin complex,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0019700,organic phosphonate catabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0015914,phospholipid transport,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0016772,"transferase activity, transferring phosphorus-containing groups",1,InterPro2GO
+IEA,GO_REF:0000002,GO:0015031,protein transport,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006108,malate metabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0009379,Holliday junction helicase complex,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008171,O-methyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006397,mRNA processing,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0016702,"oxidoreductase activity, acting on single donors with incorporation of molecular oxygen, incorporation of two atoms of oxygen",1,InterPro2GO
+IEA,GO_REF:0000002,GO:0106050,tRNA 2'-O-methyltransferase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0097351,toxin sequestering activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0006513,protein monoubiquitination,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0090161,Golgi ribbon formation,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0003964,RNA-directed DNA polymerase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0005149,interleukin-1 receptor binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0019229,regulation of vasoconstriction,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0051262,protein tetramerization,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0071226,cellular response to molecule of fungal origin,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0031640,killing of cells of another organism,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0070006,metalloaminopeptidase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0043531,ADP binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0042853,L-alanine catabolic process,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0008835,diaminohydroxyphosphoribosylaminopyrimidine deaminase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0044877,protein-containing complex binding,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0030600,feruloyl esterase activity,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0000731,DNA synthesis involved in DNA repair,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0043571,maintenance of CRISPR repeat elements,1,InterPro2GO
+IEA,GO_REF:0000002,GO:0017017,MAP kinase tyrosine/serine/threonine phosphatase activity,1,InterPro2GO
+IEA,GO_REF:0000003,GO:0004748,"ribonucleoside-diphosphate reductase activity, thioredoxin disulfide as acceptor",464,EC2GO
+IEA,GO_REF:0000003,GO:0003724,RNA helicase activity,341,EC2GO
+IEA,GO_REF:0000003,GO:0043138,3'-5' DNA helicase activity,95,EC2GO
+IEA,GO_REF:0000003,GO:0043139,5'-3' DNA helicase activity,93,EC2GO
+IEA,GO_REF:0000003,GO:0004843,cysteine-type deubiquitinase activity,75,EC2GO
+IEA,GO_REF:0000003,GO:0170057,RNA ligase (GTP) activity,70,EC2GO
+IEA,GO_REF:0000003,GO:0051908,double-stranded DNA 5'-3' DNA exonuclease activity,65,EC2GO
+IEA,GO_REF:0000003,GO:0004484,mRNA guanylyltransferase activity,59,EC2GO
+IEA,GO_REF:0000003,GO:0140818,mRNA 5'-triphosphate monophosphatase activity,56,EC2GO
+IEA,GO_REF:0000003,GO:0004784,superoxide dismutase activity,52,EC2GO
+IEA,GO_REF:0000003,GO:0003678,DNA helicase activity,51,EC2GO
+IEA,GO_REF:0000003,GO:0009007,site-specific DNA-methyltransferase (adenine-specific) activity,44,EC2GO
+IEA,GO_REF:0000003,GO:0008745,N-acetylmuramoyl-L-alanine amidase activity,42,EC2GO
+IEA,GO_REF:0000003,GO:0061631,ubiquitin conjugating enzyme activity,39,EC2GO
+IEA,GO_REF:0000003,GO:0004533,exoribonuclease H activity,38,EC2GO
+IEA,GO_REF:0000003,GO:0004722,protein serine/threonine phosphatase activity,36,EC2GO
+IEA,GO_REF:0000003,GO:0003886,DNA (cytosine-5-)-methyltransferase activity,30,EC2GO
+IEA,GO_REF:0000003,GO:0004523,RNA-DNA hybrid ribonuclease activity,28,EC2GO
+IEA,GO_REF:0000003,GO:0061630,ubiquitin protein ligase activity,22,EC2GO
+IEA,GO_REF:0000003,GO:0003887,DNA-directed DNA polymerase activity,21,EC2GO
+IEA,GO_REF:0000003,GO:0004714,transmembrane receptor protein tyrosine kinase activity,21,EC2GO
+IEA,GO_REF:0000003,GO:0008821,crossover junction DNA endonuclease activity,16,EC2GO
+IEA,GO_REF:0000003,GO:0003910,DNA ligase (ATP) activity,15,EC2GO
+IEA,GO_REF:0000003,GO:0004674,protein serine/threonine kinase activity,15,EC2GO
+IEA,GO_REF:0000003,GO:0004725,protein tyrosine phosphatase activity,14,EC2GO
+IEA,GO_REF:0000003,GO:0008534,oxidized purine nucleobase lesion DNA N-glycosylase activity,14,EC2GO
+IEA,GO_REF:0000003,GO:1990817,poly(A) RNA polymerase activity,11,EC2GO
+IEA,GO_REF:0000003,GO:0003854,3-beta-hydroxy-Delta5-steroid dehydrogenase (NAD+) activity,10,EC2GO
+IEA,GO_REF:0000003,GO:0004769,steroid Delta-isomerase activity,10,EC2GO
+IEA,GO_REF:0000003,GO:0004482,mRNA 5'-cap (guanine-N7-)-methyltransferase activity,10,EC2GO
+IEA,GO_REF:0000003,GO:0032267,tRNA(Ile)-lysidine synthase activity,9,EC2GO
+IEA,GO_REF:0000003,GO:0017111,ribonucleoside triphosphate phosphatase activity,9,EC2GO
+IEA,GO_REF:0000003,GO:0004252,serine-type endopeptidase activity,9,EC2GO
+IEA,GO_REF:0000003,GO:0004801,transaldolase activity,8,EC2GO
+IEA,GO_REF:0000003,GO:0061711,tRNA N(6)-L-threonylcarbamoyladenine synthase activity,8,EC2GO
+IEA,GO_REF:0000003,GO:0045437,uridine nucleosidase activity,8,EC2GO
+IEA,GO_REF:0000003,GO:0004170,dUTP diphosphatase activity,7,EC2GO
+IEA,GO_REF:0000003,GO:0003977,UDP-N-acetylglucosamine diphosphorylase activity,7,EC2GO
+IEA,GO_REF:0000003,GO:0003899,DNA-directed RNA polymerase activity,7,EC2GO
+IEA,GO_REF:0000003,GO:0047507,"deoxynucleoside phosphate kinase activity, ATP as phosphate donor",7,EC2GO
+IEA,GO_REF:0000003,GO:0106261,tRNA uridine(34) acetyltransferase activity,6,EC2GO
+IEA,GO_REF:0000003,GO:0004844,uracil DNA N-glycosylase activity,6,EC2GO
+IEA,GO_REF:0000003,GO:1990003,IDP phosphatase activity,5,EC2GO
+IEA,GO_REF:0000003,GO:0140933,5'-(N(7)-methylguanosine 5'-triphospho)-[mRNA] hydrolase activity,5,EC2GO
+IEA,GO_REF:0000003,GO:0003796,lysozyme activity,4,EC2GO
+IEA,GO_REF:0000003,GO:0047631,ADP-ribose diphosphatase activity,4,EC2GO
+IEA,GO_REF:0000003,GO:0033892,deoxyribonuclease (pyrimidine dimer) activity,4,EC2GO
+IEA,GO_REF:0000003,GO:0008998,ribonucleoside-triphosphate reductase (thioredoxin) activity,4,EC2GO
+IEA,GO_REF:0000003,GO:0001681,sialate O-acetylesterase activity,4,EC2GO
+IEA,GO_REF:0000003,GO:0004138,deoxyguanosine kinase activity,4,EC2GO
+IEA,GO_REF:0000003,GO:0141221,"histone deacetylase activity, hydrolytic mechanism",4,EC2GO
+IEA,GO_REF:0000003,GO:0008475,procollagen-lysine 5-dioxygenase activity,4,EC2GO
+IEA,GO_REF:0000003,GO:0008936,nicotinamidase activity,4,EC2GO
+IEA,GO_REF:0000003,GO:0008486,diphosphoinositol-polyphosphate diphosphatase activity,3,EC2GO
+IEA,GO_REF:0000003,GO:0003978,UDP-glucose 4-epimerase activity,3,EC2GO
+IEA,GO_REF:0000003,GO:0000309,nicotinamide-nucleotide adenylyltransferase activity,3,EC2GO
+IEA,GO_REF:0000003,GO:0070497,6-carboxytetrahydropterin synthase activity,3,EC2GO
+IEA,GO_REF:0000003,GO:0004630,phospholipase D activity,3,EC2GO
+IEA,GO_REF:0000003,GO:0004849,uridine kinase activity,3,EC2GO
+IEA,GO_REF:0000003,GO:0008843,endochitinase activity,3,EC2GO
+IEA,GO_REF:0000003,GO:0008833,deoxyribonuclease IV (phage-T4-induced) activity,3,EC2GO
+IEA,GO_REF:0000003,GO:0016996,"endo-alpha-(2,8)-sialidase activity",2,EC2GO
+IEA,GO_REF:0000003,GO:0008885,glutathionylspermidine synthase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0052717,tRNA-specific adenosine-34 deaminase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0009046,zinc D-Ala-D-Ala carboxypeptidase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0008716,D-alanine-D-alanine ligase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0004810,CCA tRNA nucleotidyltransferase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0047840,dCTP diphosphatase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0008728,GTP diphosphokinase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0004642,phosphoribosylformylglycinamidine synthase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0009036,type II site-specific deoxyribonuclease activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0004322,ferroxidase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0160148,tRNA pseudouridine(55) synthase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0003829,"beta-1,3-galactosyl-O-glycosyl-glycoprotein beta-1,6-N-acetylglucosaminyltransferase activity",2,EC2GO
+IEA,GO_REF:0000003,GO:0019797,procollagen-proline 3-dioxygenase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0004136,deoxyadenosine kinase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0043365,[formate-C-acetyltransferase]-activating enzyme activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0140078,class I DNA-(apurinic or apyrimidinic site) endonuclease activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0019146,arabinose-5-phosphate isomerase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0008712,ADP-glyceromanno-heptose 6-epimerase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0047429,nucleoside triphosphate diphosphatase activity,2,EC2GO
+IEA,GO_REF:0000003,GO:0090486,small RNA 2'-O-methyltransferase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0033918,kappa-carrageenase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0050355,inorganic triphosphate phosphatase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004311,geranylgeranyl diphosphate synthase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0001760,aminocarboxymuconate-semialdehyde decarboxylase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004161,dimethylallyltranstransferase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0015667,site-specific DNA-methyltransferase (cytosine-N4-specific) activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0008889,glycerophosphodiester phosphodiesterase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004360,glutamine-fructose-6-phosphate transaminase (isomerizing) activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0008854,exodeoxyribonuclease V activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004747,ribokinase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004749,ribose phosphate diphosphokinase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0042781,3'-tRNA processing endoribonuclease activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0050262,ribosylnicotinamide kinase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004467,long-chain fatty acid-CoA ligase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0015068,glycine amidinotransferase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0008310,single-stranded DNA 3'-5' DNA exonuclease activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0033925,mannosyl-glycoprotein endo-beta-N-acetylglucosaminidase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004799,thymidylate synthase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0008109,"N-acetyllactosaminide beta-1,6-N-acetylglucosaminyltransferase activity",1,EC2GO
+IEA,GO_REF:0000003,GO:0004337,"(2E,6E)-farnesyl diphosphate synthase activity",1,EC2GO
+IEA,GO_REF:0000003,GO:0016760,cellulose synthase (UDP-forming) activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004693,cyclin-dependent protein serine/threonine kinase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004715,non-membrane spanning protein tyrosine kinase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0050053,levansucrase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0102009,proline dipeptidase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004145,diamine N-acetyltransferase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0003920,GMP reductase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004115,"3',5'-cyclic-AMP phosphodiesterase activity",1,EC2GO
+IEA,GO_REF:0000003,GO:0052621,diguanylate cyclase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0003972,RNA ligase (ATP) activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0106274,NAD+-protein-arginine ADP-ribosyltransferase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0033959,deoxyribodipyrimidine endonucleosidase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004826,phenylalanine-tRNA ligase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0051734,ATP-dependent polynucleotide 5'-hydroxyl-kinase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004069,L-aspartate:2-oxoglutarate aminotransferase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004636,phosphoribosyl-ATP diphosphatase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004555,"alpha,alpha-trehalase activity",1,EC2GO
+IEA,GO_REF:0000003,GO:0004631,phosphomevalonate kinase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0003755,peptidyl-prolyl cis-trans isomerase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0003911,DNA ligase (NAD+) activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004622,phosphatidylcholine lysophospholipase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004604,phosphoadenylyl-sulfate reductase (thioredoxin) activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0047407,ADP-ribosyl-[dinitrogen reductase] hydrolase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0097363,protein O-acetylglucosaminyltransferase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004839,ubiquitin activating enzyme activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0008810,cellulase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0004530,deoxyribonuclease I activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0045148,tripeptide aminopeptidase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0008859,exoribonuclease II activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0002953,5'-deoxynucleotidase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0047693,ATP diphosphatase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0047296,homospermidine synthase activity,1,EC2GO
+IEA,GO_REF:0000003,GO:0008253,5'-nucleotidase activity,1,EC2GO
+IEA,GO_REF:0000041,GO:0016567,protein ubiquitination,60,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0006189,'de novo' IMP biosynthetic process,15,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0006235,dTTP biosynthetic process,13,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0044205,'de novo' UMP biosynthetic process,11,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0006065,UDP-glucuronate biosynthetic process,6,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0006414,translational elongation,4,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0006226,dUMP biosynthetic process,4,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0006048,UDP-N-acetylglucosamine biosynthetic process,3,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0006646,phosphatidylethanolamine biosynthetic process,3,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0044206,UMP salvage,2,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0033384,geranyl diphosphate biosynthetic process,2,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0045337,farnesyl diphosphate biosynthetic process,2,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0006304,DNA modification,2,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0033386,geranylgeranyl diphosphate biosynthetic process,2,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0006094,gluconeogenesis,1,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0001516,prostaglandin biosynthetic process,1,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0016925,protein sumoylation,1,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0033320,UDP-D-xylose biosynthetic process,1,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0045490,pectin catabolic process,1,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0043161,proteasome-mediated ubiquitin-dependent protein catabolic process,1,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0044208,'de novo' AMP biosynthetic process,1,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0008611,ether lipid biosynthetic process,1,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0000050,urea cycle,1,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0070981,L-asparagine biosynthetic process,1,UniProt UniPathway
+IEA,GO_REF:0000041,GO:0044210,'de novo' CTP biosynthetic process,1,UniProt UniPathway
+IEA,GO_REF:0000043,GO:0044423,virion component,5850,UniProt Keywords
+IEA,GO_REF:0000043,GO:0046872,metal ion binding,5207,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016787,hydrolase activity,5084,UniProt Keywords
+IEA,GO_REF:0000043,GO:0000166,nucleotide binding,3498,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004519,endonuclease activity,3396,UniProt Keywords
+IEA,GO_REF:0000043,GO:0046718,symbiont entry into host cell,3008,UniProt Keywords
+IEA,GO_REF:0000043,GO:0003677,DNA binding,2796,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016740,transferase activity,2615,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019028,viral capsid,2338,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004386,helicase activity,2324,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008270,zinc ion binding,2213,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006508,proteolysis,1830,UniProt Keywords
+IEA,GO_REF:0000043,GO:0005524,ATP binding,1785,UniProt Keywords
+IEA,GO_REF:0000043,GO:0032259,methylation,1535,UniProt Keywords
+IEA,GO_REF:0000043,GO:0052170,symbiont-mediated suppression of host innate immune response,1493,UniProt Keywords
+IEA,GO_REF:0000043,GO:0042742,defense response to bacterium,1489,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008233,peptidase activity,1411,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039693,viral DNA genome replication,1378,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004527,exonuclease activity,1329,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006260,DNA replication,1287,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004518,nuclease activity,1155,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019031,viral envelope,1081,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098003,viral tail assembly,1072,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098015,virus tail,1058,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016779,nucleotidyltransferase activity,1057,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019062,virion attachment to host cell,941,UniProt Keywords
+IEA,GO_REF:0000043,GO:0000428,DNA-directed RNA polymerase complex,920,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016301,kinase activity,918,UniProt Keywords
+IEA,GO_REF:0000043,GO:0044826,viral genome integration into host DNA,821,UniProt Keywords
+IEA,GO_REF:0000043,GO:0075713,establishment of integrated proviral latency,820,UniProt Keywords
+IEA,GO_REF:0000043,GO:0075732,viral penetration into host nucleus,763,UniProt Keywords
+IEA,GO_REF:0000043,GO:0031640,killing of cells of another organism,727,UniProt Keywords
+IEA,GO_REF:0000043,GO:0003723,RNA binding,709,UniProt Keywords
+IEA,GO_REF:0000043,GO:1990904,ribonucleoprotein complex,582,UniProt Keywords
+IEA,GO_REF:0000043,GO:0075523,viral translational frameshifting,484,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019029,helical viral capsid,479,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016874,ligase activity,469,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019013,viral nucleocapsid,446,UniProt Keywords
+IEA,GO_REF:0000043,GO:0075509,endocytosis involved in viral entry into host cell,419,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006310,DNA recombination,415,UniProt Keywords
+IEA,GO_REF:0000043,GO:0046740,"transport of virus in host, cell to cell",390,UniProt Keywords
+IEA,GO_REF:0000043,GO:0052150,symbiont-mediated perturbation of host apoptosis,381,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008234,cysteine-type peptidase activity,379,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039663,membrane fusion involved in viral entry into host cell,369,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008168,methyltransferase activity,355,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019083,viral transcription,337,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039615,T=1 icosahedral viral capsid,328,UniProt Keywords
+IEA,GO_REF:0000043,GO:0046797,viral procapsid maturation,299,UniProt Keywords
+IEA,GO_REF:0000043,GO:0099002,"symbiont genome ejection through host cell envelope, short tail mechanism",260,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039502,symbiont-mediated suppression of host type I interferon-mediated signaling pathway,254,UniProt Keywords
+IEA,GO_REF:0000043,GO:0099000,"symbiont genome ejection through host cell envelope, contractile tail mechanism",248,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039648,symbiont-mediated perturbation of host ubiquitin-like protein modification,243,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098994,symbiont entry into host cell via disruption of host cell envelope,240,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098027,"virus tail, sheath",233,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098671,adhesion receptor-mediated virion attachment to host cell,228,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039657,symbiont-mediated suppression of host gene expression,221,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006269,"DNA replication, synthesis of primer",220,UniProt Keywords
+IEA,GO_REF:0000043,GO:0044071,symbiont-mediated perturbation of host cell cycle progression,211,UniProt Keywords
+IEA,GO_REF:0000043,GO:0071897,DNA biosynthetic process,210,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039660,structural constituent of virion,207,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016829,lyase activity,205,UniProt Keywords
+IEA,GO_REF:0000043,GO:0051213,dioxygenase activity,205,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016491,oxidoreductase activity,173,UniProt Keywords
+IEA,GO_REF:0000043,GO:0071555,cell wall organization,173,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098024,"virus tail, fiber",159,UniProt Keywords
+IEA,GO_REF:0000043,GO:0005525,GTP binding,148,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019064,fusion of virus membrane with host plasma membrane,146,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006281,DNA repair,140,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006974,DNA damage response,137,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006730,one-carbon metabolic process,136,UniProt Keywords
+IEA,GO_REF:0000043,GO:0099018,symbiont-mediated evasion of host restriction-modification system,125,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039645,symbiont-mediated perturbation of host cell cycle G1/S transition checkpoint,119,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039654,fusion of virus membrane with host endosome membrane,117,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004674,protein serine/threonine kinase activity,117,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016168,chlorophyll binding,117,UniProt Keywords
+IEA,GO_REF:0000043,GO:0034220,monoatomic ion transmembrane transport,110,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039606,symbiont-mediated suppression of host translation initiation,109,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098004,virus tail fiber assembly,106,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039620,T=7 icosahedral viral capsid,106,UniProt Keywords
+IEA,GO_REF:0000043,GO:0003968,RNA-directed RNA polymerase activity,102,UniProt Keywords
+IEA,GO_REF:0000043,GO:0051301,cell division,100,UniProt Keywords
+IEA,GO_REF:0000043,GO:0085034,symbiont-mediated suppression of host NF-kappaB cascade,99,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039624,viral outer capsid,93,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039520,symbiont-mediated activation of host autophagy,88,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016853,isomerase activity,87,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039702,viral budding via host ESCRT complex,86,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039617,T=3 icosahedral viral capsid,86,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039548,symbiont-mediated suppression of host cytoplasmic pattern recognition receptor signaling pathway via inhibition of IRF3 activity,84,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006811,monoatomic ion transport,84,UniProt Keywords
+IEA,GO_REF:0000043,GO:0046755,viral budding,82,UniProt Keywords
+IEA,GO_REF:0000043,GO:0030246,carbohydrate binding,80,UniProt Keywords
+IEA,GO_REF:0000043,GO:0051539,"4 iron, 4 sulfur cluster binding",76,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039622,T=16 icosahedral viral capsid,75,UniProt Keywords
+IEA,GO_REF:0000043,GO:0003887,DNA-directed DNA polymerase activity,75,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008236,serine-type peptidase activity,75,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039679,viral occlusion body,74,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016757,glycosyltransferase activity,74,UniProt Keywords
+IEA,GO_REF:0000043,GO:0032196,transposition,71,UniProt Keywords
+IEA,GO_REF:0000043,GO:0003824,catalytic activity,71,UniProt Keywords
+IEA,GO_REF:0000043,GO:0009635,response to herbicide,68,UniProt Keywords
+IEA,GO_REF:0000043,GO:0015267,channel activity,67,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098021,"viral capsid, decoration",65,UniProt Keywords
+IEA,GO_REF:0000043,GO:0015074,DNA integration,65,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006353,DNA-templated transcription termination,63,UniProt Keywords
+IEA,GO_REF:0000043,GO:0075606,transport of viral material towards nucleus,58,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098670,entry receptor-mediated virion attachment to host cell,58,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039563,symbiont-mediated suppression of host JAK-STAT cascade via inhibition of STAT1 activity,58,UniProt Keywords
+IEA,GO_REF:0000043,GO:0075521,microtubule-dependent intracellular transport of viral material towards nucleus,55,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016987,sigma factor activity,55,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039595,symbiont-mediated degradation of host mRNA,55,UniProt Keywords
+IEA,GO_REF:0000043,GO:0090729,toxin activity,53,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006397,mRNA processing,53,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039576,symbiont-mediated suppression of host JAK-STAT cascade via inhibition of JAK1 activity,52,UniProt Keywords
+IEA,GO_REF:0000043,GO:0030291,protein serine/threonine kinase inhibitor activity,51,UniProt Keywords
+IEA,GO_REF:0000043,GO:0075512,clathrin-dependent endocytosis of virus by host cell,50,UniProt Keywords
+IEA,GO_REF:0000043,GO:0031419,cobalamin binding,48,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039580,symbiont-mediated suppression of host PKR/eIFalpha signaling,48,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008237,metallopeptidase activity,47,UniProt Keywords
+IEA,GO_REF:0000043,GO:0030435,sporulation resulting in formation of a cellular spore,47,UniProt Keywords
+IEA,GO_REF:0000043,GO:0003964,RNA-directed DNA polymerase activity,46,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098996,symbiont entry into host cell via disruption of host cell glycocalyx,45,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004180,carboxypeptidase activity,44,UniProt Keywords
+IEA,GO_REF:0000043,GO:0033668,symbiont-mediated suppression of host apoptosis,44,UniProt Keywords
+IEA,GO_REF:0000043,GO:0140267,symbiont entry into host cell via permeabilization of host membrane,44,UniProt Keywords
+IEA,GO_REF:0000043,GO:0030420,establishment of competence for transformation,43,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039579,symbiont-mediated suppression of host ISG15-protein conjugation,41,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039625,viral inner capsid,41,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004721,phosphoprotein phosphatase activity,41,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004865,protein serine/threonine phosphatase inhibitor activity,37,UniProt Keywords
+IEA,GO_REF:0000043,GO:0099001,"symbiont genome ejection through host cell envelope, long flexible tail mechanism",35,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039618,T=pseudo3 icosahedral viral capsid,34,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039504,symbiont-mediated suppression of host adaptive immune response,33,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019042,viral latency,33,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098673,symbiont-mediated suppression of host DNA replication,32,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039540,symbiont-mediated suppression of host cytoplasmic pattern recognition receptor signaling pathway via inhibition of RIG-I activity,31,UniProt Keywords
+IEA,GO_REF:0000043,GO:0042784,symbiont-mediated suppression of host complement activation,31,UniProt Keywords
+IEA,GO_REF:0000043,GO:0060141,symbiont-mediated induction of syncytium formation,31,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004812,aminoacyl-tRNA ligase activity,31,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004190,aspartic-type endopeptidase activity,28,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039700,fusion of viral membrane with host outer nuclear membrane,28,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098676,symbiont-mediated modulation of host virulence,27,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008289,lipid binding,27,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039564,symbiont-mediated suppression of host JAK-STAT cascade via inhibition of STAT2 activity,26,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039592,symbiont-mediated arrest of host cell cycle during G2/M transition,26,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006370,7-methylguanosine mRNA capping,26,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039557,symbiont-mediated suppression of host cytoplasmic pattern recognition receptor signaling pathway via inhibition of IRF7 activity,25,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019046,release from viral latency,25,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019521,D-gluconate metabolic process,25,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039616,T=2 icosahedral viral capsid,24,UniProt Keywords
+IEA,GO_REF:0000043,GO:0052151,symbiont-mediated activation of host apoptosis,24,UniProt Keywords
+IEA,GO_REF:0000043,GO:0009307,DNA restriction-modification system,23,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039646,symbiont-mediated perturbation of host cell cycle G0/G1 transition checkpoint,23,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008033,tRNA processing,21,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008061,chitin binding,20,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039722,symbiont-mediated suppression of host toll-like receptor signaling pathway,20,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039554,symbiont-mediated suppression of host cytoplasmic pattern recognition receptor signaling pathway via inhibition of MDA-5 activity,19,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039523,symbiont-mediated suppression of host mRNA transcription via inhibition of RNA polymerase II activity,19,UniProt Keywords
+IEA,GO_REF:0000043,GO:0046776,symbiont-mediated suppression of host antigen processing and presentation of peptide antigen via MHC class I,18,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039723,symbiont-mediated suppression of host cytoplasmic pattern recognition receptor signaling pathway via inhibition of TBK1 activity,18,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008652,amino acid biosynthetic process,18,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098025,"virus tail, baseplate",18,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016746,acyltransferase activity,18,UniProt Keywords
+IEA,GO_REF:0000043,GO:0042245,RNA repair,18,UniProt Keywords
+IEA,GO_REF:0000043,GO:0015031,protein transport,18,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016042,lipid catabolic process,16,UniProt Keywords
+IEA,GO_REF:0000043,GO:0099045,viral extrusion,16,UniProt Keywords
+IEA,GO_REF:0000043,GO:0005615,extracellular space,16,UniProt Keywords
+IEA,GO_REF:0000043,GO:0032359,provirus excision,15,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039641,viral inner membrane,14,UniProt Keywords
+IEA,GO_REF:0000043,GO:0075526,cap snatching,14,UniProt Keywords
+IEA,GO_REF:0000043,GO:0051028,mRNA transport,14,UniProt Keywords
+IEA,GO_REF:0000043,GO:0051536,iron-sulfur cluster binding,14,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006629,lipid metabolic process,13,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039525,symbiont-mediated perturbation of host chromatin organization,13,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039621,T=13 icosahedral viral capsid,13,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039545,symbiont-mediated suppression of host cytoplasmic pattern recognition receptor signaling pathway via inhibition of MAVS activity,13,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006164,purine nucleotide biosynthetic process,12,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039593,symbiont-mediated perturbation of host exit from mitosis,12,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039527,symbiont-mediated suppression of host TRAF-mediated signal transduction,12,UniProt Keywords
+IEA,GO_REF:0000043,GO:0030261,chromosome condensation,12,UniProt Keywords
+IEA,GO_REF:0000043,GO:0017124,SH3 domain binding,11,UniProt Keywords
+IEA,GO_REF:0000043,GO:0044694,symbiont genome entry into host cell via pore formation in plasma membrane,11,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016798,"hydrolase activity, acting on glycosyl bonds",11,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098932,symbiont entry into host cell via disruption of host cell wall peptidoglycan,11,UniProt Keywords
+IEA,GO_REF:0000043,GO:0085033,symbiont-mediated activation of host NF-kappaB cascade,11,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006952,defense response,11,UniProt Keywords
+IEA,GO_REF:0000043,GO:0075513,caveolin-mediated endocytosis of virus by host cell,10,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098678,viral tropism switching,10,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004177,aminopeptidase activity,10,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039619,T=4 icosahedral viral capsid,10,UniProt Keywords
+IEA,GO_REF:0000043,GO:0140321,symbiont-mediated suppression of host autophagy,9,UniProt Keywords
+IEA,GO_REF:0000043,GO:0030245,cellulose catabolic process,9,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008483,transaminase activity,9,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039522,symbiont-mediated suppression of host mRNA export from nucleus,9,UniProt Keywords
+IEA,GO_REF:0000043,GO:0000049,tRNA binding,9,UniProt Keywords
+IEA,GO_REF:0000043,GO:0046656,folic acid biosynthetic process,8,UniProt Keywords
+IEA,GO_REF:0000043,GO:0099015,degradation of host chromosome by virus,8,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039666,virion attachment to host cell pilus,8,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098995,symbiont entry into host cell via disruption of host cell envelope lipopolysaccharide,8,UniProt Keywords
+IEA,GO_REF:0000043,GO:0000502,proteasome complex,8,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098026,"virus tail, tube",8,UniProt Keywords
+IEA,GO_REF:0000043,GO:0000272,polysaccharide catabolic process,7,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008083,growth factor activity,7,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039574,symbiont-mediated suppression of host JAK-STAT cascade via inhibition of host TYK2 activity,7,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039724,symbiont-mediated suppression of host cytoplasmic pattern recognition receptor signaling pathway via inhibition of IKBKE activity,7,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016831,carboxy-lyase activity,7,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039587,symbiont-mediated-mediated suppression of host tetherin activity,6,UniProt Keywords
+IEA,GO_REF:0000043,GO:0009117,nucleotide metabolic process,6,UniProt Keywords
+IEA,GO_REF:0000043,GO:0009165,nucleotide biosynthetic process,6,UniProt Keywords
+IEA,GO_REF:0000043,GO:0031564,transcription antitermination,6,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039671,symbiont-mediated perturbation of host natural killer cell mediated immune response,6,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039701,microtubule-dependent intracellular transport of viral material towards cell periphery,6,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019065,receptor-mediated endocytosis of virus by host cell,6,UniProt Keywords
+IEA,GO_REF:0000043,GO:0099016,symbiont-mediated evasion of DNA end degradation by host,6,UniProt Keywords
+IEA,GO_REF:0000043,GO:0046677,response to antibiotic,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0007186,G protein-coupled receptor signaling pathway,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0030414,peptidase inhibitor activity,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039524,symbiont-mediated suppression of host mRNA processing,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006314,intron homing,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0007165,signal transduction,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004930,G protein-coupled receptor activity,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0005125,cytokine activity,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0051607,defense response to virus,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0007059,chromosome segregation,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006166,purine ribonucleoside salvage,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004497,monooxygenase activity,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098689,latency-replication decision,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0099009,viral genome circularization,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039588,symbiont-mediated suppression of host antigen processing and presentation,5,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039626,viral intermediate capsid,4,UniProt Keywords
+IEA,GO_REF:0000043,GO:0048038,quinone binding,4,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019363,pyridine nucleotide biosynthetic process,4,UniProt Keywords
+IEA,GO_REF:0000043,GO:0002376,immune system process,4,UniProt Keywords
+IEA,GO_REF:0000043,GO:1902600,proton transmembrane transport,4,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006364,rRNA processing,4,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004601,peroxidase activity,4,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039505,symbiont-mediated suppression of host antigen processing and presentation of peptide antigen via MHC class II,4,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039673,symbiont-mediated suppression of host dendritic cell mediated immune response,4,UniProt Keywords
+IEA,GO_REF:0000043,GO:0042254,ribosome biogenesis,3,UniProt Keywords
+IEA,GO_REF:0000043,GO:0033644,host cell membrane,3,UniProt Keywords
+IEA,GO_REF:0000043,GO:0140886,symbiont-mediated suppression of host interferon-mediated signaling pathway,3,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039680,actin-dependent intracellular transport of virus towards nucleus,3,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098672,symbiont-mediated suppression of host CRISPR-cas system,3,UniProt Keywords
+IEA,GO_REF:0000043,GO:0030541,plasmid partitioning,3,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008380,RNA splicing,2,UniProt Keywords
+IEA,GO_REF:0000043,GO:0042612,MHC class I protein complex,2,UniProt Keywords
+IEA,GO_REF:0000043,GO:0017000,antibiotic biosynthetic process,2,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004713,protein tyrosine kinase activity,2,UniProt Keywords
+IEA,GO_REF:0000043,GO:0002474,antigen processing and presentation of peptide antigen via MHC class I,2,UniProt Keywords
+IEA,GO_REF:0000043,GO:0045087,innate immune response,2,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016192,vesicle-mediated transport,2,UniProt Keywords
+IEA,GO_REF:0000043,GO:0005537,D-mannose binding,2,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098552,side of membrane,2,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098669,superinfection exclusion,2,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006816,calcium ion transport,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004867,serine-type endopeptidase inhibitor activity,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0008202,steroid metabolic process,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0039560,symbiont-mediated suppression of host JAK-STAT cascade via inhibition of host IRF9 activity,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0009881,photoreceptor activity,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006935,chemotaxis,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006865,amino acid transport,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006694,steroid biosynthetic process,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006631,fatty acid metabolic process,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0009432,SOS response,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0016126,sterol biosynthetic process,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0019253,reductive pentose-phosphate cycle,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0030244,cellulose biosynthetic process,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006004,fucose metabolic process,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0031427,response to methotrexate,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0009263,deoxyribonucleotide biosynthetic process,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006633,fatty acid biosynthetic process,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0052689,carboxylic ester hydrolase activity,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0098997,fusion of virus membrane with host outer membrane,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0015979,photosynthesis,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006071,glycerol metabolic process,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0007229,integrin-mediated signaling pathway,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0006325,chromatin organization,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0009968,negative regulation of signal transduction,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0004869,cysteine-type endopeptidase inhibitor activity,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0045493,xylan catabolic process,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0043213,bacteriocin transport,1,UniProt Keywords
+IEA,GO_REF:0000043,GO:0051726,regulation of cell cycle,1,UniProt Keywords
+IEA,GO_REF:0000044,GO:0030430,host cell cytoplasm,3249,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0042025,host cell nucleus,3121,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0055036,virion membrane,1567,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0033644,host cell membrane,899,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0016020,membrane,855,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0020002,host cell plasma membrane,843,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044167,host cell endoplasmic reticulum membrane,591,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044177,host cell Golgi apparatus,456,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0019033,viral tegument,368,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044178,host cell Golgi membrane,301,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044220,host cell perinuclear region of cytoplasm,219,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0005576,extracellular region,195,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044172,host cell endoplasmic reticulum-Golgi intermediate compartment,188,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0005886,plasma membrane,141,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0043657,host cell,133,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044175,host cell endosome membrane,116,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044201,host cell nuclear inner membrane,112,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044196,host cell nucleolus,104,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044219,host cell plasmodesma,90,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044229,host cell periplasmic space,86,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0033645,host cell endomembrane system,81,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044165,host cell endoplasmic reticulum,80,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0033650,host cell mitochondrion,58,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044156,host cell junction,55,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044200,host cell nuclear membrane,53,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044163,host cytoskeleton,46,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0072494,host multivesicular body,46,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044204,host cell nuclear matrix,45,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044162,host cell cytoplasmic vesicle membrane,43,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0009295,nucleoid,37,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044174,host cell endosome,36,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044173,host cell endoplasmic reticulum-Golgi intermediate compartment membrane,36,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044160,host thylakoid membrane,30,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044228,host cell surface,16,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0033648,host intracellular membrane-bounded organelle,13,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044161,host cell cytoplasmic vesicle,13,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044193,host cell mitochondrial outer membrane,12,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044199,host cell nuclear envelope,9,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044185,host cell late endosome membrane,9,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044203,host cell nuclear lamina,8,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044166,host cell endoplasmic reticulum lumen,7,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044192,host cell mitochondrial inner membrane,5,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044169,host cell rough endoplasmic reticulum membrane,5,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044095,host cell nucleoplasm,4,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044191,host cell mitochondrial membrane,4,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044188,host cell lysosomal membrane,4,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044158,host cell wall,3,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044171,host cell smooth endoplasmic reticulum membrane,3,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044164,host cell cytosol,3,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044176,host cell filopodium,3,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0005604,basement membrane,2,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0043655,host extracellular space,2,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0120149,host cell peroxisome,2,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044186,host cell lipid droplet,1,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044168,host cell rough endoplasmic reticulum,1,UniProt Subcellular
+IEA,GO_REF:0000044,GO:0044187,host cell lysosome,1,UniProt Subcellular
+IEA,GO_REF:0000104,GO:0006351,DNA-templated transcription,748,Manual Transfer
+IEA,GO_REF:0000104,GO:0019073,viral DNA genome packaging,425,Manual Transfer
+IEA,GO_REF:0000104,GO:0016020,membrane,391,Manual Transfer
+IEA,GO_REF:0000104,GO:0098009,"viral terminase, large subunit",327,Manual Transfer
+IEA,GO_REF:0000104,GO:0000166,nucleotide binding,272,Manual Transfer
+IEA,GO_REF:0000104,GO:0006355,regulation of DNA-templated transcription,269,Manual Transfer
+IEA,GO_REF:0000104,GO:0019076,viral release from host cell,265,Manual Transfer
+IEA,GO_REF:0000104,GO:0051276,chromosome organization,265,Manual Transfer
+IEA,GO_REF:0000104,GO:0039502,symbiont-mediated suppression of host type I interferon-mediated signaling pathway,232,Manual Transfer
+IEA,GO_REF:0000104,GO:0039693,viral DNA genome replication,228,Manual Transfer
+IEA,GO_REF:0000104,GO:0019904,protein domain specific binding,216,Manual Transfer
+IEA,GO_REF:0000104,GO:0039648,symbiont-mediated perturbation of host ubiquitin-like protein modification,215,Manual Transfer
+IEA,GO_REF:0000104,GO:0140911,pore-forming activity,166,Manual Transfer
+IEA,GO_REF:0000104,GO:0039686,bidirectional double-stranded viral DNA replication,157,Manual Transfer
+IEA,GO_REF:0000104,GO:0003899,DNA-directed RNA polymerase activity,151,Manual Transfer
+IEA,GO_REF:0000104,GO:0044659,viral release from host cell by cytolysis,150,Manual Transfer
+IEA,GO_REF:0000104,GO:0003697,single-stranded DNA binding,140,Manual Transfer
+IEA,GO_REF:0000104,GO:0019086,late viral transcription,127,Manual Transfer
+IEA,GO_REF:0000104,GO:0016032,viral process,122,Manual Transfer
+IEA,GO_REF:0000104,GO:0019072,viral genome packaging,115,Manual Transfer
+IEA,GO_REF:0000104,GO:0005198,structural molecule activity,90,Manual Transfer
+IEA,GO_REF:0000104,GO:0042802,identical protein binding,75,Manual Transfer
+IEA,GO_REF:0000104,GO:0039687,viral DNA strand displacement replication,73,Manual Transfer
+IEA,GO_REF:0000104,GO:0003689,DNA clamp loader activity,49,Manual Transfer
+IEA,GO_REF:0000104,GO:0046760,viral budding from Golgi membrane,48,Manual Transfer
+IEA,GO_REF:0000104,GO:0020002,host cell plasma membrane,47,Manual Transfer
+IEA,GO_REF:0000104,GO:0019060,intracellular transport of viral protein in host cell,45,Manual Transfer
+IEA,GO_REF:0000104,GO:0061507,"2',3'-cyclic GMP-AMP binding",42,Manual Transfer
+IEA,GO_REF:0000104,GO:0045740,positive regulation of DNA replication,40,Manual Transfer
+IEA,GO_REF:0000104,GO:0046761,viral budding from plasma membrane,40,Manual Transfer
+IEA,GO_REF:0000104,GO:0019028,viral capsid,38,Manual Transfer
+IEA,GO_REF:0000104,GO:0008408,3'-5' exonuclease activity,38,Manual Transfer
+IEA,GO_REF:0000104,GO:0006261,DNA-templated DNA replication,38,Manual Transfer
+IEA,GO_REF:0000104,GO:0003690,double-stranded DNA binding,36,Manual Transfer
+IEA,GO_REF:0000104,GO:0046782,regulation of viral transcription,34,Manual Transfer
+IEA,GO_REF:0000104,GO:0140537,transcription regulator activator activity,33,Manual Transfer
+IEA,GO_REF:0000104,GO:0019083,viral transcription,32,Manual Transfer
+IEA,GO_REF:0000104,GO:0052031,symbiont-mediated perturbation of host defense response,31,Manual Transfer
+IEA,GO_REF:0000104,GO:0039708,nuclear capsid assembly,31,Manual Transfer
+IEA,GO_REF:0000104,GO:0098035,viral DNA genome packaging via site-specific sequence recognition,31,Manual Transfer
+IEA,GO_REF:0000104,GO:0140975,disruption of cellular anatomical structure in another organism,28,Manual Transfer
+IEA,GO_REF:0000104,GO:0019064,fusion of virus membrane with host plasma membrane,28,Manual Transfer
+IEA,GO_REF:0000104,GO:0031564,transcription antitermination,24,Manual Transfer
+IEA,GO_REF:0000104,GO:0046798,viral portal complex,24,Manual Transfer
+IEA,GO_REF:0000104,GO:0051260,protein homooligomerization,23,Manual Transfer
+IEA,GO_REF:0000104,GO:0052151,symbiont-mediated activation of host apoptosis,23,Manual Transfer
+IEA,GO_REF:0000104,GO:0019082,viral protein processing,22,Manual Transfer
+IEA,GO_REF:0000104,GO:1903908,positive regulation of plasma membrane raft polarization,21,Manual Transfer
+IEA,GO_REF:0000104,GO:0044165,host cell endoplasmic reticulum,21,Manual Transfer
+IEA,GO_REF:0000104,GO:1903911,positive regulation of receptor clustering,21,Manual Transfer
+IEA,GO_REF:0000104,GO:0042805,actinin binding,19,Manual Transfer
+IEA,GO_REF:0000104,GO:0032968,positive regulation of transcription elongation by RNA polymerase II,19,Manual Transfer
+IEA,GO_REF:0000104,GO:0030332,cyclin binding,19,Manual Transfer
+IEA,GO_REF:0000104,GO:1990970,trans-activation response element binding,19,Manual Transfer
+IEA,GO_REF:0000104,GO:0030165,PDZ domain binding,16,Manual Transfer
+IEA,GO_REF:0000104,GO:0005216,monoatomic ion channel activity,16,Manual Transfer
+IEA,GO_REF:0000104,GO:0044694,symbiont genome entry into host cell via pore formation in plasma membrane,16,Manual Transfer
+IEA,GO_REF:0000104,GO:0051259,protein complex oligomerization,16,Manual Transfer
+IEA,GO_REF:0000104,GO:0046872,metal ion binding,15,Manual Transfer
+IEA,GO_REF:0000104,GO:0000287,magnesium ion binding,14,Manual Transfer
+IEA,GO_REF:0000104,GO:0039645,symbiont-mediated perturbation of host cell cycle G1/S transition checkpoint,12,Manual Transfer
+IEA,GO_REF:0000104,GO:0098021,"viral capsid, decoration",12,Manual Transfer
+IEA,GO_REF:0000104,GO:0009653,anatomical structure morphogenesis,11,Manual Transfer
+IEA,GO_REF:0000104,GO:0003968,RNA-directed RNA polymerase activity,11,Manual Transfer
+IEA,GO_REF:0000104,GO:0019065,receptor-mediated endocytosis of virus by host cell,11,Manual Transfer
+IEA,GO_REF:0000104,GO:0046729,viral procapsid,10,Manual Transfer
+IEA,GO_REF:0000104,GO:0030430,host cell cytoplasm,10,Manual Transfer
+IEA,GO_REF:0000104,GO:0039665,permeabilization of host organelle membrane involved in viral entry into host cell,8,Manual Transfer
+IEA,GO_REF:0000104,GO:0008933,peptidoglycan lytic transglycosylase activity,6,Manual Transfer
+IEA,GO_REF:0000104,GO:0046789,host cell surface receptor binding,6,Manual Transfer
+IEA,GO_REF:0000104,GO:0019031,viral envelope,6,Manual Transfer
+IEA,GO_REF:0000104,GO:0052170,symbiont-mediated suppression of host innate immune response,5,Manual Transfer
+IEA,GO_REF:0000104,GO:0075732,viral penetration into host nucleus,4,Manual Transfer
+IEA,GO_REF:0000104,GO:0046718,symbiont entry into host cell,4,Manual Transfer
+IEA,GO_REF:0000104,GO:0003677,DNA binding,4,Manual Transfer
+IEA,GO_REF:0000104,GO:0075521,microtubule-dependent intracellular transport of viral material towards nucleus,4,Manual Transfer
+IEA,GO_REF:0000104,GO:0003723,RNA binding,4,Manual Transfer
+IEA,GO_REF:0000104,GO:0039619,T=4 icosahedral viral capsid,4,Manual Transfer
+IEA,GO_REF:0000104,GO:0039615,T=1 icosahedral viral capsid,3,Manual Transfer
+IEA,GO_REF:0000104,GO:0006310,DNA recombination,3,Manual Transfer
+IEA,GO_REF:0000104,GO:0016817,"hydrolase activity, acting on acid anhydrides",2,Manual Transfer
+IEA,GO_REF:0000104,GO:0042609,CD4 receptor binding,1,Manual Transfer
+IEA,GO_REF:0000104,GO:0039689,negative stranded viral RNA replication,1,Manual Transfer
+IEA,GO_REF:0000104,GO:0039696,RNA-templated viral transcription,1,Manual Transfer
+IEA,GO_REF:0000108,GO:0043657,host cell,1707,Logical Inference
+IEA,GO_REF:0000108,GO:0016020,membrane,49,Logical Inference
+IEA,GO_REF:0000108,GO:0042025,host cell nucleus,2,Logical Inference
+IEA,GO_REF:0000108,GO:0005886,plasma membrane,2,Logical Inference
+IEA,GO_REF:0000108,GO:0030430,host cell cytoplasm,1,Logical Inference
+IEA,GO_REF:0000116,GO:0016887,ATP hydrolysis activity,371,Rhea Mappings
+IEA,GO_REF:0000116,GO:0003924,GTPase activity,110,Rhea Mappings
+IEA,GO_REF:0000116,GO:0106310,protein serine kinase activity,75,Rhea Mappings
+IEA,GO_REF:0000116,GO:0106330,sialate 9-O-acetylesterase activity,8,Rhea Mappings
+IEA,GO_REF:0000116,GO:0106331,sialate 4-O-acetylesterase activity,8,Rhea Mappings
+IEA,GO_REF:0000116,GO:0004722,protein serine/threonine phosphatase activity,5,Rhea Mappings
+IEA,GO_REF:0000116,GO:0046404,ATP-dependent polydeoxyribonucleotide 5'-hydroxyl-kinase activity,2,Rhea Mappings
+IEA,GO_REF:0000116,GO:0050316,dGMP kinase activity,2,Rhea Mappings
+IEA,GO_REF:0000116,GO:0034062,5'-3' RNA polymerase activity,2,Rhea Mappings
+IEA,GO_REF:0000116,GO:0004798,dTMP kinase activity,2,Rhea Mappings
+IEA,GO_REF:0000116,GO:0160260,protein asparagine deamidase activity,1,Rhea Mappings
+IEA,GO_REF:0000116,GO:0044687,geranylfarnesyl diphosphate synthase activity,1,Rhea Mappings
+IEA,GO_REF:0000117,GO:0001897,symbiont-mediated cytolysis of host cell,1065,ARBA
+IEA,GO_REF:0000117,GO:0019058,viral life cycle,404,ARBA
+IEA,GO_REF:0000117,GO:0051701,biological process involved in interaction with host,402,ARBA
+IEA,GO_REF:0000117,GO:0006950,response to stress,108,ARBA
+IEA,GO_REF:0000117,GO:0039708,nuclear capsid assembly,70,ARBA
+IEA,GO_REF:0000117,GO:0003678,DNA helicase activity,69,ARBA
+IEA,GO_REF:0000117,GO:0042802,identical protein binding,31,ARBA
+IEA,GO_REF:0000117,GO:0004540,RNA nuclease activity,19,ARBA
+IEA,GO_REF:0000117,GO:0043168,anion binding,16,ARBA
+IEA,GO_REF:0000117,GO:0016788,"hydrolase activity, acting on ester bonds",15,ARBA
+IEA,GO_REF:0000117,GO:0004518,nuclease activity,14,ARBA
+IEA,GO_REF:0000117,GO:0006575,modified amino acid metabolic process,13,ARBA
+IEA,GO_REF:0000117,GO:0039695,DNA-templated viral transcription,12,ARBA
+IEA,GO_REF:0000117,GO:0039686,bidirectional double-stranded viral DNA replication,12,ARBA
+IEA,GO_REF:0000117,GO:0003824,catalytic activity,11,ARBA
+IEA,GO_REF:0000117,GO:0098671,adhesion receptor-mediated virion attachment to host cell,11,ARBA
+IEA,GO_REF:0000117,GO:0016758,hexosyltransferase activity,10,ARBA
+IEA,GO_REF:0000117,GO:0006302,double-strand break repair,9,ARBA
+IEA,GO_REF:0000117,GO:1990204,oxidoreductase complex,9,ARBA
+IEA,GO_REF:0000117,GO:0039689,negative stranded viral RNA replication,9,ARBA
+IEA,GO_REF:0000117,GO:0008757,S-adenosylmethionine-dependent methyltransferase activity,9,ARBA
+IEA,GO_REF:0000117,GO:0006310,DNA recombination,9,ARBA
+IEA,GO_REF:0000117,GO:0098996,symbiont entry into host cell via disruption of host cell glycocalyx,9,ARBA
+IEA,GO_REF:0000117,GO:0009650,UV protection,8,ARBA
+IEA,GO_REF:0000117,GO:0006259,DNA metabolic process,8,ARBA
+IEA,GO_REF:0000117,GO:0016491,oxidoreductase activity,8,ARBA
+IEA,GO_REF:0000117,GO:0008289,lipid binding,7,ARBA
+IEA,GO_REF:0000117,GO:0080090,regulation of primary metabolic process,7,ARBA
+IEA,GO_REF:0000117,GO:0140096,"catalytic activity, acting on a protein",7,ARBA
+IEA,GO_REF:0000117,GO:0009100,glycoprotein metabolic process,7,ARBA
+IEA,GO_REF:0000117,GO:0004620,phospholipase activity,7,ARBA
+IEA,GO_REF:0000117,GO:0039621,T=13 icosahedral viral capsid,6,ARBA
+IEA,GO_REF:0000117,GO:0061578,K63-linked deubiquitinase activity,6,ARBA
+IEA,GO_REF:0000117,GO:0015937,coenzyme A biosynthetic process,6,ARBA
+IEA,GO_REF:0000117,GO:1990380,K48-linked deubiquitinase activity,6,ARBA
+IEA,GO_REF:0000117,GO:0019785,ISG15-specific peptidase activity,6,ARBA
+IEA,GO_REF:0000117,GO:0060255,regulation of macromolecule metabolic process,6,ARBA
+IEA,GO_REF:0000117,GO:0052775,"endo-1,3-alpha-L-rhamnosidase activity",6,ARBA
+IEA,GO_REF:0000117,GO:0062243,double membrane vesicle viral factory outer membrane,6,ARBA
+IEA,GO_REF:0000117,GO:0098552,side of membrane,5,ARBA
+IEA,GO_REF:0000117,GO:0046789,host cell surface receptor binding,4,ARBA
+IEA,GO_REF:0000117,GO:0097264,self proteolysis,4,ARBA
+IEA,GO_REF:0000117,GO:0016791,phosphatase activity,4,ARBA
+IEA,GO_REF:0000117,GO:0032574,5'-3' RNA helicase activity,4,ARBA
+IEA,GO_REF:0000117,GO:0016668,"oxidoreductase activity, acting on a sulfur group of donors, NAD(P) as acceptor",4,ARBA
+IEA,GO_REF:0000117,GO:0006631,fatty acid metabolic process,4,ARBA
+IEA,GO_REF:0000117,GO:0046598,positive regulation of viral entry into host cell,4,ARBA
+IEA,GO_REF:0000117,GO:0097506,deaminated base DNA N-glycosylase activity,3,ARBA
+IEA,GO_REF:0000117,GO:0080120,CAAX-box protein maturation,3,ARBA
+IEA,GO_REF:0000117,GO:0006564,L-serine biosynthetic process,3,ARBA
+IEA,GO_REF:0000117,GO:0004617,phosphoglycerate dehydrogenase activity,3,ARBA
+IEA,GO_REF:0000117,GO:0006139,nucleobase-containing compound metabolic process,3,ARBA
+IEA,GO_REF:0000117,GO:0006796,phosphate-containing compound metabolic process,3,ARBA
+IEA,GO_REF:0000117,GO:0047545,2-hydroxyglutarate dehydrogenase activity,3,ARBA
+IEA,GO_REF:0000117,GO:0016616,"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor",3,ARBA
+IEA,GO_REF:0000117,GO:0032991,protein-containing complex,3,ARBA
+IEA,GO_REF:0000117,GO:0004175,endopeptidase activity,3,ARBA
+IEA,GO_REF:0000117,GO:0075342,symbiont-mediated disruption of host cell PML body,2,ARBA
+IEA,GO_REF:0000117,GO:0070566,adenylyltransferase activity,2,ARBA
+IEA,GO_REF:0000117,GO:0008175,tRNA methyltransferase activity,2,ARBA
+IEA,GO_REF:0000117,GO:0006400,tRNA modification,2,ARBA
+IEA,GO_REF:0000117,GO:0010467,gene expression,2,ARBA
+IEA,GO_REF:0000117,GO:0008610,lipid biosynthetic process,2,ARBA
+IEA,GO_REF:0000117,GO:0009967,positive regulation of signal transduction,2,ARBA
+IEA,GO_REF:0000117,GO:0006636,unsaturated fatty acid biosynthetic process,2,ARBA
+IEA,GO_REF:0000117,GO:0003968,RNA-directed RNA polymerase activity,2,ARBA
+IEA,GO_REF:0000117,GO:0008173,RNA methyltransferase activity,2,ARBA
+IEA,GO_REF:0000117,GO:0042759,long-chain fatty acid biosynthetic process,2,ARBA
+IEA,GO_REF:0000117,GO:0016757,glycosyltransferase activity,2,ARBA
+IEA,GO_REF:0000117,GO:0003697,single-stranded DNA binding,2,ARBA
+IEA,GO_REF:0000117,GO:0046872,metal ion binding,2,ARBA
+IEA,GO_REF:0000117,GO:0051246,regulation of protein metabolic process,2,ARBA
+IEA,GO_REF:0000117,GO:0004888,transmembrane signaling receptor activity,2,ARBA
+IEA,GO_REF:0000117,GO:0009225,nucleotide-sugar metabolic process,1,ARBA
+IEA,GO_REF:0000117,GO:0006612,protein targeting to membrane,1,ARBA
+IEA,GO_REF:0000117,GO:0010557,positive regulation of macromolecule biosynthetic process,1,ARBA
+IEA,GO_REF:0000117,GO:0046349,amino sugar biosynthetic process,1,ARBA
+IEA,GO_REF:0000117,GO:0046576,rhamnogalacturonan alpha-L-rhamnopyranosyl-(1->4)-alpha-D-galactopyranosyluronide lyase activity,1,ARBA
+IEA,GO_REF:0000117,GO:0016614,"oxidoreductase activity, acting on CH-OH group of donors",1,ARBA
+IEA,GO_REF:0000117,GO:0046813,receptor-mediated virion attachment to host cell,1,ARBA
+IEA,GO_REF:0000117,GO:0016779,nucleotidyltransferase activity,1,ARBA
+IEA,GO_REF:0000117,GO:0060090,molecular adaptor activity,1,ARBA
+IEA,GO_REF:0000117,GO:0004527,exonuclease activity,1,ARBA
+IEA,GO_REF:0000117,GO:0044281,small molecule metabolic process,1,ARBA
+IEA,GO_REF:0000117,GO:0031090,organelle membrane,1,ARBA
+IEA,GO_REF:0000117,GO:0033013,tetrapyrrole metabolic process,1,ARBA
+IEA,GO_REF:0000117,GO:0010468,regulation of gene expression,1,ARBA
+IEA,GO_REF:0000117,GO:0006163,purine nucleotide metabolic process,1,ARBA
+IEA,GO_REF:0000117,GO:0009451,RNA modification,1,ARBA
+IEA,GO_REF:0000117,GO:0051604,protein maturation,1,ARBA
+IEA,GO_REF:0000118,GO:0006302,double-strand break repair,839,TreeGrafter
+IEA,GO_REF:0000118,GO:0006261,DNA-templated DNA replication,583,TreeGrafter
+IEA,GO_REF:0000118,GO:0006281,DNA repair,489,TreeGrafter
+IEA,GO_REF:0000118,GO:0004799,thymidylate synthase activity,378,TreeGrafter
+IEA,GO_REF:0000118,GO:0005615,extracellular space,340,TreeGrafter
+IEA,GO_REF:0000118,GO:0070402,NADPH binding,335,TreeGrafter
+IEA,GO_REF:0000118,GO:0009295,nucleoid,291,TreeGrafter
+IEA,GO_REF:0000118,GO:0004748,"ribonucleoside-diphosphate reductase activity, thioredoxin disulfide as acceptor",277,TreeGrafter
+IEA,GO_REF:0000118,GO:0031012,extracellular matrix,231,TreeGrafter
+IEA,GO_REF:0000118,GO:0045892,negative regulation of DNA-templated transcription,217,TreeGrafter
+IEA,GO_REF:0000118,GO:0047134,protein-disulfide reductase [NAD(P)H] activity,205,TreeGrafter
+IEA,GO_REF:0000118,GO:0006298,mismatch repair,194,TreeGrafter
+IEA,GO_REF:0000118,GO:0006515,protein quality control for misfolded or incompletely synthesized proteins,186,TreeGrafter
+IEA,GO_REF:0000118,GO:0030198,extracellular matrix organization,186,TreeGrafter
+IEA,GO_REF:0000118,GO:0043565,sequence-specific DNA binding,177,TreeGrafter
+IEA,GO_REF:0000118,GO:0051117,ATPase binding,175,TreeGrafter
+IEA,GO_REF:0000118,GO:0009368,endopeptidase Clp complex,175,TreeGrafter
+IEA,GO_REF:0000118,GO:0000819,sister chromatid segregation,170,TreeGrafter
+IEA,GO_REF:0000118,GO:0004222,metalloendopeptidase activity,170,TreeGrafter
+IEA,GO_REF:0000118,GO:1904047,S-adenosyl-L-methionine binding,166,TreeGrafter
+IEA,GO_REF:0000118,GO:0008270,zinc ion binding,159,TreeGrafter
+IEA,GO_REF:0000118,GO:0030020,extracellular matrix structural constituent conferring tensile strength,156,TreeGrafter
+IEA,GO_REF:0000118,GO:0003677,DNA binding,147,TreeGrafter
+IEA,GO_REF:0000118,GO:0006260,DNA replication,144,TreeGrafter
+IEA,GO_REF:0000118,GO:0046655,folic acid metabolic process,131,TreeGrafter
+IEA,GO_REF:0000118,GO:0046452,dihydrofolate metabolic process,131,TreeGrafter
+IEA,GO_REF:0000118,GO:0031297,replication fork processing,130,TreeGrafter
+IEA,GO_REF:0000118,GO:0006164,purine nucleotide biosynthetic process,130,TreeGrafter
+IEA,GO_REF:0000118,GO:0044027,negative regulation of gene expression via chromosomal CpG island methylation,129,TreeGrafter
+IEA,GO_REF:0000118,GO:0140291,peptidyl-glutamate ADP-deribosylation,128,TreeGrafter
+IEA,GO_REF:0000118,GO:0006269,"DNA replication, synthesis of primer",123,TreeGrafter
+IEA,GO_REF:0000118,GO:0097510,"base-excision repair, AP site formation via deaminated base removal",122,TreeGrafter
+IEA,GO_REF:0000118,GO:0009254,peptidoglycan turnover,122,TreeGrafter
+IEA,GO_REF:0000118,GO:0016020,membrane,115,TreeGrafter
+IEA,GO_REF:0000118,GO:0003723,RNA binding,113,TreeGrafter
+IEA,GO_REF:0000118,GO:0008235,metalloexopeptidase activity,111,TreeGrafter
+IEA,GO_REF:0000118,GO:0046104,thymidine metabolic process,108,TreeGrafter
+IEA,GO_REF:0000118,GO:0005886,plasma membrane,107,TreeGrafter
+IEA,GO_REF:0000118,GO:0043137,"DNA replication, removal of RNA primer",101,TreeGrafter
+IEA,GO_REF:0000118,GO:0009265,2'-deoxyribonucleotide biosynthetic process,100,TreeGrafter
+IEA,GO_REF:0000118,GO:0006015,5-phosphoribose 1-diphosphate biosynthetic process,91,TreeGrafter
+IEA,GO_REF:0000118,GO:0004674,protein serine/threonine kinase activity,90,TreeGrafter
+IEA,GO_REF:0000118,GO:1900378,positive regulation of secondary metabolite biosynthetic process,90,TreeGrafter
+IEA,GO_REF:0000118,GO:0002189,ribose phosphate diphosphokinase complex,89,TreeGrafter
+IEA,GO_REF:0000118,GO:0006955,immune response,88,TreeGrafter
+IEA,GO_REF:0000118,GO:0051726,regulation of cell cycle,86,TreeGrafter
+IEA,GO_REF:0000118,GO:0005524,ATP binding,84,TreeGrafter
+IEA,GO_REF:0000118,GO:0009263,deoxyribonucleotide biosynthetic process,83,TreeGrafter
+IEA,GO_REF:0000118,GO:0003690,double-stranded DNA binding,83,TreeGrafter
+IEA,GO_REF:0000118,GO:0016791,phosphatase activity,80,TreeGrafter
+IEA,GO_REF:0000118,GO:0061630,ubiquitin protein ligase activity,78,TreeGrafter
+IEA,GO_REF:0000118,GO:0008408,3'-5' exonuclease activity,77,TreeGrafter
+IEA,GO_REF:0000118,GO:0008094,"ATP-dependent activity, acting on DNA",76,TreeGrafter
+IEA,GO_REF:0000118,GO:0045004,DNA replication proofreading,74,TreeGrafter
+IEA,GO_REF:0000118,GO:0007059,chromosome segregation,73,TreeGrafter
+IEA,GO_REF:0000118,GO:0030145,manganese ion binding,73,TreeGrafter
+IEA,GO_REF:0000118,GO:0003700,DNA-binding transcription factor activity,71,TreeGrafter
+IEA,GO_REF:0000118,GO:0043139,5'-3' DNA helicase activity,70,TreeGrafter
+IEA,GO_REF:0000118,GO:0003909,DNA ligase activity,68,TreeGrafter
+IEA,GO_REF:0000118,GO:0042245,RNA repair,68,TreeGrafter
+IEA,GO_REF:0000118,GO:0110154,RNA decapping,64,TreeGrafter
+IEA,GO_REF:0000118,GO:0008803,bis(5'-nucleosyl)-tetraphosphatase (symmetrical) activity,64,TreeGrafter
+IEA,GO_REF:0000118,GO:0004132,dCMP deaminase activity,63,TreeGrafter
+IEA,GO_REF:0000118,GO:0006355,regulation of DNA-templated transcription,62,TreeGrafter
+IEA,GO_REF:0000118,GO:0007204,positive regulation of cytosolic calcium ion concentration,62,TreeGrafter
+IEA,GO_REF:0000118,GO:0019005,SCF ubiquitin ligase complex,59,TreeGrafter
+IEA,GO_REF:0000118,GO:0006227,dUDP biosynthetic process,58,TreeGrafter
+IEA,GO_REF:0000118,GO:0031146,SCF-dependent proteasomal ubiquitin-dependent protein catabolic process,58,TreeGrafter
+IEA,GO_REF:0000118,GO:0008296,3'-5'-DNA exonuclease activity,56,TreeGrafter
+IEA,GO_REF:0000118,GO:0019957,C-C chemokine binding,55,TreeGrafter
+IEA,GO_REF:0000118,GO:0050660,flavin adenine dinucleotide binding,55,TreeGrafter
+IEA,GO_REF:0000118,GO:0019722,calcium-mediated signaling,55,TreeGrafter
+IEA,GO_REF:0000118,GO:0006297,"nucleotide-excision repair, DNA gap filling",55,TreeGrafter
+IEA,GO_REF:0000118,GO:0060326,cell chemotaxis,55,TreeGrafter
+IEA,GO_REF:0000118,GO:0003689,DNA clamp loader activity,54,TreeGrafter
+IEA,GO_REF:0000118,GO:0016493,C-C chemokine receptor activity,54,TreeGrafter
+IEA,GO_REF:0000118,GO:0006287,"base-excision repair, gap-filling",53,TreeGrafter
+IEA,GO_REF:0000118,GO:0043027,cysteine-type endopeptidase inhibitor activity involved in apoptotic process,51,TreeGrafter
+IEA,GO_REF:0000118,GO:0016052,carbohydrate catabolic process,51,TreeGrafter
+IEA,GO_REF:0000118,GO:0031398,positive regulation of protein ubiquitination,50,TreeGrafter
+IEA,GO_REF:0000118,GO:0004749,ribose phosphate diphosphokinase activity,49,TreeGrafter
+IEA,GO_REF:0000118,GO:0035613,RNA stem-loop binding,49,TreeGrafter
+IEA,GO_REF:0000118,GO:0004622,phosphatidylcholine lysophospholipase activity,48,TreeGrafter
+IEA,GO_REF:0000118,GO:0006271,DNA strand elongation involved in DNA replication,47,TreeGrafter
+IEA,GO_REF:0000118,GO:0006366,transcription by RNA polymerase II,47,TreeGrafter
+IEA,GO_REF:0000118,GO:0009007,site-specific DNA-methyltransferase (adenine-specific) activity,47,TreeGrafter
+IEA,GO_REF:0000118,GO:0006231,dTMP biosynthetic process,46,TreeGrafter
+IEA,GO_REF:0000118,GO:0006273,lagging strand elongation,46,TreeGrafter
+IEA,GO_REF:0000118,GO:0042797,tRNA transcription by RNA polymerase III,45,TreeGrafter
+IEA,GO_REF:0000118,GO:0017108,5'-flap endonuclease activity,43,TreeGrafter
+IEA,GO_REF:0000118,GO:0006272,leading strand elongation,42,TreeGrafter
+IEA,GO_REF:0000118,GO:0004642,phosphoribosylformylglycinamidine synthase activity,41,TreeGrafter
+IEA,GO_REF:0000118,GO:0006729,tetrahydrobiopterin biosynthetic process,40,TreeGrafter
+IEA,GO_REF:0000118,GO:0005525,GTP binding,39,TreeGrafter
+IEA,GO_REF:0000118,GO:0035556,intracellular signal transduction,39,TreeGrafter
+IEA,GO_REF:0000118,GO:0004176,ATP-dependent peptidase activity,38,TreeGrafter
+IEA,GO_REF:0000118,GO:0046404,ATP-dependent polydeoxyribonucleotide 5'-hydroxyl-kinase activity,38,TreeGrafter
+IEA,GO_REF:0000118,GO:0046403,polynucleotide 3'-phosphatase activity,38,TreeGrafter
+IEA,GO_REF:0000118,GO:0004252,serine-type endopeptidase activity,38,TreeGrafter
+IEA,GO_REF:0000118,GO:0000018,regulation of DNA recombination,37,TreeGrafter
+IEA,GO_REF:0000118,GO:0008893,"guanosine-3',5'-bis(diphosphate) 3'-diphosphatase activity",36,TreeGrafter
+IEA,GO_REF:0000118,GO:0017136,"histone deacetylase activity, NAD-dependent",36,TreeGrafter
+IEA,GO_REF:0000118,GO:0006357,regulation of transcription by RNA polymerase II,35,TreeGrafter
+IEA,GO_REF:0000118,GO:0000030,mannosyltransferase activity,35,TreeGrafter
+IEA,GO_REF:0000118,GO:0051999,mannosyl-inositol phosphorylceramide biosynthetic process,35,TreeGrafter
+IEA,GO_REF:0000118,GO:0097550,transcription preinitiation complex,34,TreeGrafter
+IEA,GO_REF:0000118,GO:0044208,'de novo' AMP biosynthetic process,34,TreeGrafter
+IEA,GO_REF:0000118,GO:0004656,procollagen-proline 4-dioxygenase activity,34,TreeGrafter
+IEA,GO_REF:0000118,GO:0010468,regulation of gene expression,33,TreeGrafter
+IEA,GO_REF:0000118,GO:0016567,protein ubiquitination,33,TreeGrafter
+IEA,GO_REF:0000118,GO:0004081,bis(5'-nucleosyl)-tetraphosphatase (asymmetrical) activity,33,TreeGrafter
+IEA,GO_REF:0000118,GO:0006754,ATP biosynthetic process,33,TreeGrafter
+IEA,GO_REF:0000118,GO:0006167,AMP biosynthetic process,33,TreeGrafter
+IEA,GO_REF:0000118,GO:0009055,electron transfer activity,33,TreeGrafter
+IEA,GO_REF:0000118,GO:0000725,recombinational repair,32,TreeGrafter
+IEA,GO_REF:0000118,GO:0007165,signal transduction,32,TreeGrafter
+IEA,GO_REF:0000118,GO:0004534,5'-3' RNA exonuclease activity,32,TreeGrafter
+IEA,GO_REF:0000118,GO:0015035,protein-disulfide reductase activity,31,TreeGrafter
+IEA,GO_REF:0000118,GO:0000956,nuclear-transcribed mRNA catabolic process,31,TreeGrafter
+IEA,GO_REF:0000118,GO:0051059,NF-kappaB binding,31,TreeGrafter
+IEA,GO_REF:0000118,GO:0046040,IMP metabolic process,31,TreeGrafter
+IEA,GO_REF:0000118,GO:0000981,"DNA-binding transcription factor activity, RNA polymerase II-specific",30,TreeGrafter
+IEA,GO_REF:0000118,GO:0006362,transcription elongation by RNA polymerase I,30,TreeGrafter
+IEA,GO_REF:0000118,GO:0030574,collagen catabolic process,30,TreeGrafter
+IEA,GO_REF:0000118,GO:0071356,cellular response to tumor necrosis factor,30,TreeGrafter
+IEA,GO_REF:0000118,GO:0045881,positive regulation of sporulation resulting in formation of a cellular spore,29,TreeGrafter
+IEA,GO_REF:0000118,GO:0016579,protein deubiquitination,28,TreeGrafter
+IEA,GO_REF:0000118,GO:0004842,ubiquitin-protein transferase activity,28,TreeGrafter
+IEA,GO_REF:0000118,GO:0016491,oxidoreductase activity,28,TreeGrafter
+IEA,GO_REF:0000118,GO:0051015,actin filament binding,27,TreeGrafter
+IEA,GO_REF:0000118,GO:0015949,nucleobase-containing small molecule interconversion,27,TreeGrafter
+IEA,GO_REF:0000118,GO:0008861,formate C-acetyltransferase activity,27,TreeGrafter
+IEA,GO_REF:0000118,GO:0030041,actin filament polymerization,27,TreeGrafter
+IEA,GO_REF:0000118,GO:0090263,positive regulation of canonical Wnt signaling pathway,27,TreeGrafter
+IEA,GO_REF:0000118,GO:0009330,"DNA topoisomerase type II (double strand cut, ATP-hydrolyzing) complex",27,TreeGrafter
+IEA,GO_REF:0000118,GO:0003678,DNA helicase activity,26,TreeGrafter
+IEA,GO_REF:0000118,GO:0000724,double-strand break repair via homologous recombination,26,TreeGrafter
+IEA,GO_REF:0000118,GO:0033550,MAP kinase tyrosine phosphatase activity,25,TreeGrafter
+IEA,GO_REF:0000118,GO:0017017,MAP kinase tyrosine/serine/threonine phosphatase activity,25,TreeGrafter
+IEA,GO_REF:0000118,GO:0043138,3'-5' DNA helicase activity,25,TreeGrafter
+IEA,GO_REF:0000118,GO:0008330,protein tyrosine/threonine phosphatase activity,25,TreeGrafter
+IEA,GO_REF:0000118,GO:0010230,alternative respiration,25,TreeGrafter
+IEA,GO_REF:0000118,GO:0006487,protein N-linked glycosylation,24,TreeGrafter
+IEA,GO_REF:0000118,GO:0051603,proteolysis involved in protein catabolic process,24,TreeGrafter
+IEA,GO_REF:0000118,GO:0019985,translesion synthesis,24,TreeGrafter
+IEA,GO_REF:0000118,GO:0006974,DNA damage response,24,TreeGrafter
+IEA,GO_REF:0000118,GO:0006402,mRNA catabolic process,24,TreeGrafter
+IEA,GO_REF:0000118,GO:0003725,double-stranded RNA binding,24,TreeGrafter
+IEA,GO_REF:0000118,GO:0000049,tRNA binding,23,TreeGrafter
+IEA,GO_REF:0000118,GO:0016887,ATP hydrolysis activity,23,TreeGrafter
+IEA,GO_REF:0000118,GO:0008932,lytic endotransglycosylase activity,23,TreeGrafter
+IEA,GO_REF:0000118,GO:0006284,base-excision repair,23,TreeGrafter
+IEA,GO_REF:0000118,GO:0034976,response to endoplasmic reticulum stress,23,TreeGrafter
+IEA,GO_REF:0000118,GO:0004550,nucleoside diphosphate kinase activity,23,TreeGrafter
+IEA,GO_REF:0000118,GO:0003906,DNA-(apurinic or apyrimidinic site) endonuclease activity,22,TreeGrafter
+IEA,GO_REF:0000118,GO:0000271,polysaccharide biosynthetic process,22,TreeGrafter
+IEA,GO_REF:0000118,GO:0072354,histone H3T3 kinase activity,21,TreeGrafter
+IEA,GO_REF:0000118,GO:0006307,DNA alkylation repair,21,TreeGrafter
+IEA,GO_REF:0000118,GO:0006457,protein folding,21,TreeGrafter
+IEA,GO_REF:0000118,GO:0004843,cysteine-type deubiquitinase activity,21,TreeGrafter
+IEA,GO_REF:0000118,GO:0016117,carotenoid biosynthetic process,21,TreeGrafter
+IEA,GO_REF:0000118,GO:0008081,phosphoric diester hydrolase activity,21,TreeGrafter
+IEA,GO_REF:0000118,GO:0006303,double-strand break repair via nonhomologous end joining,21,TreeGrafter
+IEA,GO_REF:0000118,GO:0004385,GMP kinase activity,21,TreeGrafter
+IEA,GO_REF:0000118,GO:0006511,ubiquitin-dependent protein catabolic process,21,TreeGrafter
+IEA,GO_REF:0000118,GO:0000978,RNA polymerase II cis-regulatory region sequence-specific DNA binding,21,TreeGrafter
+IEA,GO_REF:0000118,GO:0003697,single-stranded DNA binding,20,TreeGrafter
+IEA,GO_REF:0000118,GO:0009432,SOS response,20,TreeGrafter
+IEA,GO_REF:0000118,GO:0000340,RNA 7-methylguanosine cap binding,20,TreeGrafter
+IEA,GO_REF:0000118,GO:0000719,photoreactive repair,19,TreeGrafter
+IEA,GO_REF:0000118,GO:0006203,dGTP catabolic process,19,TreeGrafter
+IEA,GO_REF:0000118,GO:0008832,dGTPase activity,18,TreeGrafter
+IEA,GO_REF:0000118,GO:0008198,ferrous iron binding,18,TreeGrafter
+IEA,GO_REF:0000118,GO:0043022,ribosome binding,17,TreeGrafter
+IEA,GO_REF:0000118,GO:0009223,pyrimidine deoxyribonucleotide catabolic process,17,TreeGrafter
+IEA,GO_REF:0000118,GO:0000209,protein polyubiquitination,17,TreeGrafter
+IEA,GO_REF:0000118,GO:0006367,transcription initiation at RNA polymerase II promoter,17,TreeGrafter
+IEA,GO_REF:0000118,GO:0009051,"pentose-phosphate shunt, oxidative branch",17,TreeGrafter
+IEA,GO_REF:0000118,GO:0071453,cellular response to oxygen levels,17,TreeGrafter
+IEA,GO_REF:0000118,GO:0019239,deaminase activity,17,TreeGrafter
+IEA,GO_REF:0000118,GO:0005576,extracellular region,16,TreeGrafter
+IEA,GO_REF:0000118,GO:0016075,rRNA catabolic process,16,TreeGrafter
+IEA,GO_REF:0000118,GO:0051087,protein-folding chaperone binding,16,TreeGrafter
+IEA,GO_REF:0000118,GO:0004725,protein tyrosine phosphatase activity,16,TreeGrafter
+IEA,GO_REF:0000118,GO:0004520,DNA endonuclease activity,16,TreeGrafter
+IEA,GO_REF:0000118,GO:0003756,protein disulfide isomerase activity,16,TreeGrafter
+IEA,GO_REF:0000118,GO:0017116,single-stranded DNA helicase activity,16,TreeGrafter
+IEA,GO_REF:0000118,GO:0030335,positive regulation of cell migration,16,TreeGrafter
+IEA,GO_REF:0000118,GO:0050829,defense response to Gram-negative bacterium,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0034113,heterotypic cell-cell adhesion,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0005102,signaling receptor binding,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0070062,extracellular exosome,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0006891,intra-Golgi vesicle-mediated transport,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0006388,"tRNA splicing, via endonucleolytic cleavage and ligation",15,TreeGrafter
+IEA,GO_REF:0000118,GO:0050830,defense response to Gram-positive bacterium,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0006513,protein monoubiquitination,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0006360,transcription by RNA polymerase I,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0015038,glutathione disulfide oxidoreductase activity,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0003682,chromatin binding,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0002720,positive regulation of cytokine production involved in immune response,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0043001,Golgi to plasma membrane protein transport,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0006002,fructose 6-phosphate metabolic process,15,TreeGrafter
+IEA,GO_REF:0000118,GO:0005243,gap junction channel activity,14,TreeGrafter
+IEA,GO_REF:0000118,GO:0008033,tRNA processing,14,TreeGrafter
+IEA,GO_REF:0000118,GO:0002476,antigen processing and presentation of endogenous peptide antigen via MHC class Ib,14,TreeGrafter
+IEA,GO_REF:0000118,GO:0004651,polynucleotide 5'-phosphatase activity,14,TreeGrafter
+IEA,GO_REF:0000118,GO:0000215,tRNA 2'-phosphotransferase activity,14,TreeGrafter
+IEA,GO_REF:0000118,GO:0006047,UDP-N-acetylglucosamine metabolic process,14,TreeGrafter
+IEA,GO_REF:0000118,GO:0002486,"antigen processing and presentation of endogenous peptide antigen via MHC class I via ER pathway, TAP-independent",14,TreeGrafter
+IEA,GO_REF:0000118,GO:0051747,cytosine C-5 DNA demethylase activity,13,TreeGrafter
+IEA,GO_REF:0000118,GO:0035516,broad specificity oxidative DNA demethylase activity,13,TreeGrafter
+IEA,GO_REF:0000118,GO:0000175,3'-5'-RNA exonuclease activity,13,TreeGrafter
+IEA,GO_REF:0000118,GO:0036503,ERAD pathway,13,TreeGrafter
+IEA,GO_REF:0000118,GO:0042605,peptide antigen binding,13,TreeGrafter
+IEA,GO_REF:0000118,GO:0004521,RNA endonuclease activity,13,TreeGrafter
+IEA,GO_REF:0000118,GO:0050919,negative chemotaxis,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0033387,"putrescine biosynthetic process from arginine, via ornithine",12,TreeGrafter
+IEA,GO_REF:0000118,GO:0007602,phototransduction,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0017101,aminoacyl-tRNA synthetase multienzyme complex,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0085020,protein K6-linked ubiquitination,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0008284,positive regulation of cell population proliferation,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0002376,immune system process,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0004637,phosphoribosylamine-glycine ligase activity,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0046084,adenine biosynthetic process,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0042351,'de novo' GDP-L-fucose biosynthetic process,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0071526,semaphorin-plexin signaling pathway,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0045499,chemorepellent activity,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0007166,cell surface receptor signaling pathway,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0043120,tumor necrosis factor binding,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0042781,3'-tRNA processing endoribonuclease activity,12,TreeGrafter
+IEA,GO_REF:0000118,GO:0003950,NAD+ poly-ADP-ribosyltransferase activity,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0022857,transmembrane transporter activity,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0051044,positive regulation of membrane protein ectodomain proteolysis,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0009378,four-way junction helicase activity,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0008409,5'-3' exonuclease activity,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0016042,lipid catabolic process,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0055088,lipid homeostasis,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0003904,deoxyribodipyrimidine photo-lyase activity,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0019136,deoxynucleoside kinase activity,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0000731,DNA synthesis involved in DNA repair,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0030687,"preribosome, large subunit precursor",11,TreeGrafter
+IEA,GO_REF:0000118,GO:0042744,hydrogen peroxide catabolic process,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0042761,very long-chain fatty acid biosynthetic process,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0005085,guanyl-nucleotide exchange factor activity,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0006386,termination of RNA polymerase III transcription,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0045944,positive regulation of transcription by RNA polymerase II,11,TreeGrafter
+IEA,GO_REF:0000118,GO:0000403,Y-form DNA binding,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0000035,acyl binding,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0030488,tRNA methylation,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0042802,identical protein binding,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0006189,'de novo' IMP biosynthetic process,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0061749,forked DNA-dependent helicase activity,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0030148,sphingolipid biosynthetic process,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0000036,acyl carrier activity,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0008171,O-methyltransferase activity,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0005178,integrin binding,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0034625,"fatty acid elongation, monounsaturated fatty acid",10,TreeGrafter
+IEA,GO_REF:0000118,GO:0005092,GDP-dissociation inhibitor activity,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0030170,pyridoxal phosphate binding,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0000976,transcription cis-regulatory region binding,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0036121,double-stranded DNA helicase activity,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0019367,"fatty acid elongation, saturated fatty acid",10,TreeGrafter
+IEA,GO_REF:0000118,GO:0032451,demethylase activity,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0000266,mitochondrial fission,10,TreeGrafter
+IEA,GO_REF:0000118,GO:0034626,"fatty acid elongation, polyunsaturated fatty acid",10,TreeGrafter
+IEA,GO_REF:0000118,GO:0071164,RNA cap trimethylguanosine synthase activity,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0051082,unfolded protein binding,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0035591,signaling adaptor activity,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0034605,cellular response to heat,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0071949,FAD binding,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0034272,"phosphatidylinositol 3-kinase complex, class III, type II",9,TreeGrafter
+IEA,GO_REF:0000118,GO:0006310,DNA recombination,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0019856,pyrimidine nucleobase biosynthetic process,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0034599,cellular response to oxidative stress,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0006897,endocytosis,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0008017,microtubule binding,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0055085,transmembrane transport,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0051400,BH domain binding,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0003727,single-stranded RNA binding,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0071222,cellular response to lipopolysaccharide,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0010181,FMN binding,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0034271,"phosphatidylinositol 3-kinase complex, class III, type I",9,TreeGrafter
+IEA,GO_REF:0000118,GO:0007229,integrin-mediated signaling pathway,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0016485,protein processing,9,TreeGrafter
+IEA,GO_REF:0000118,GO:0000307,cyclin-dependent protein kinase holoenzyme complex,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0030422,siRNA processing,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0032993,protein-DNA complex,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0008080,N-acetyltransferase activity,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0016616,"oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor",8,TreeGrafter
+IEA,GO_REF:0000118,GO:0048015,phosphatidylinositol-mediated signaling,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0016879,"ligase activity, forming carbon-nitrogen bonds",8,TreeGrafter
+IEA,GO_REF:0000118,GO:0008725,DNA-3-methyladenine glycosylase activity,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0016018,cyclosporin A binding,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0000390,spliceosomal complex disassembly,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0070212,protein poly-ADP-ribosylation,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0033785,heptose 7-phosphate kinase activity,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0009338,exodeoxyribonuclease V complex,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0005483,soluble NSF attachment protein activity,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0030332,cyclin binding,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0051787,misfolded protein binding,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0003729,mRNA binding,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0006629,lipid metabolic process,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0032131,alkylated DNA binding,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0033786,heptose-1-phosphate adenylyltransferase activity,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0006044,N-acetylglucosamine metabolic process,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0050684,regulation of mRNA processing,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0043916,DNA-7-methylguanine glycosylase activity,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0019905,syntaxin binding,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0052742,phosphatidylinositol kinase activity,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0009313,oligosaccharide catabolic process,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0007173,epidermal growth factor receptor signaling pathway,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0005125,cytokine activity,8,TreeGrafter
+IEA,GO_REF:0000118,GO:0006285,"base-excision repair, AP site formation",8,TreeGrafter
+IEA,GO_REF:0000118,GO:0070475,rRNA base methylation,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0030968,endoplasmic reticulum unfolded protein response,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0035197,siRNA binding,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0002430,complement receptor mediated signaling pathway,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0016303,1-phosphatidylinositol-3-kinase activity,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0042555,MCM complex,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0016442,RISC complex,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0016810,"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds",7,TreeGrafter
+IEA,GO_REF:0000118,GO:0036092,phosphatidylinositol-3-phosphate biosynthetic process,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0004875,complement receptor activity,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0006689,ganglioside catabolic process,7,TreeGrafter
+IEA,GO_REF:0000118,GO:1990404,NAD+-protein mono-ADP-ribosyltransferase activity,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0070920,regulation of regulatory ncRNA processing,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0000226,microtubule cytoskeleton organization,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0007200,phospholipase C-activating G protein-coupled receptor signaling pathway,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0016413,O-acetyltransferase activity,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0051231,spindle elongation,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0040029,epigenetic regulation of gene expression,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0000290,deadenylation-dependent decapping of nuclear-transcribed mRNA,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0070578,RISC-loading complex,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0009246,enterobacterial common antigen biosynthetic process,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0044689,"7,8-didemethyl-8-hydroxy-5-deazariboflavin synthase activity",7,TreeGrafter
+IEA,GO_REF:0000118,GO:0003887,DNA-directed DNA polymerase activity,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0001018,mitochondrial promoter sequence-specific DNA binding,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0032790,ribosome disassembly,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0050211,procollagen galactosyltransferase activity,7,TreeGrafter
+IEA,GO_REF:0000118,GO:0003972,RNA ligase (ATP) activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0097527,necroptotic signaling pathway,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0004352,glutamate dehydrogenase (NAD+) activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0033588,elongator holoenzyme complex,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0009435,NAD+ biosynthetic process,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0006235,dTTP biosynthetic process,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0006013,mannose metabolic process,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0000162,L-tryptophan biosynthetic process,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0015179,L-amino acid transmembrane transporter activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0016757,glycosyltransferase activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0016477,cell migration,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0035494,SNARE complex disassembly,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0070260,5'-tyrosyl-DNA phosphodiesterase activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:1990112,RQC complex,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0008413,"8-oxo-7,8-dihydroguanosine triphosphate pyrophosphatase activity",6,TreeGrafter
+IEA,GO_REF:0000118,GO:0001508,action potential,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0016811,"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides",6,TreeGrafter
+IEA,GO_REF:0000118,GO:0009245,lipid A biosynthetic process,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0030001,metal ion transport,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0005484,SNAP receptor activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0008574,plus-end-directed microtubule motor activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0006538,L-glutamate catabolic process,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0002926,tRNA wobble base 5-methoxycarbonylmethyl-2-thiouridinylation,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0000151,ubiquitin ligase complex,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0016846,carbon-sulfur lyase activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0008475,procollagen-lysine 5-dioxygenase activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0008297,single-stranded DNA exodeoxyribonuclease activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0046513,ceramide biosynthetic process,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0042626,ATPase-coupled transmembrane transporter activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0006152,purine nucleoside catabolic process,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0005200,structural constituent of cytoskeleton,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0006370,7-methylguanosine mRNA capping,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0006906,vesicle fusion,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0008153,4-aminobenzoate biosynthetic process,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0004586,ornithine decarboxylase activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0047974,guanosine deaminase activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0000149,SNARE binding,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0007163,establishment or maintenance of cell polarity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0008422,beta-glucosidase activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0046920,alpha-(1->3)-fucosyltransferase activity,6,TreeGrafter
+IEA,GO_REF:0000118,GO:0005031,tumor necrosis factor receptor activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0001510,RNA methylation,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0070694,5-hydroxymethyl-dUMP N-hydrolase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0006032,chitin catabolic process,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0008579,JUN kinase phosphatase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0042127,regulation of cell population proliferation,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0044715,8-oxo-dGDP phosphatase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0097503,sialylation,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0043161,proteasome-mediated ubiquitin-dependent protein catabolic process,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0006556,S-adenosylmethionine biosynthetic process,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0050501,hyaluronan synthase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0004568,chitinase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0070740,tubulin-glutamic acid ligase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:1901031,regulation of response to reactive oxygen species,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0015631,tubulin binding,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0000146,microfilament motor activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0016702,"oxidoreductase activity, acting on single donors with incorporation of molecular oxygen, incorporation of two atoms of oxygen",5,TreeGrafter
+IEA,GO_REF:0000118,GO:0046467,membrane lipid biosynthetic process,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0043130,ubiquitin binding,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0050126,N-carbamoylputrescine amidase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0045893,positive regulation of DNA-templated transcription,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0033388,putrescine biosynthetic process from arginine,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0016077,sno(s)RNA catabolic process,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0009927,histidine phosphotransfer kinase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0030515,snoRNA binding,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0045732,positive regulation of protein catabolic process,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0016891,"RNA endonuclease activity producing 5'-phosphomonoesters, hydrolytic mechanism",5,TreeGrafter
+IEA,GO_REF:0000118,GO:0031267,small GTPase binding,5,TreeGrafter
+IEA,GO_REF:0000118,GO:1990174,phosphodiesterase decapping endonuclease activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0008483,transaminase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0006790,sulfur compound metabolic process,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0044716,8-oxo-GDP phosphatase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0004013,adenosylhomocysteinase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0030213,hyaluronan biosynthetic process,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0031982,vesicle,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0033353,S-adenosylmethionine cycle,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0048269,methionine adenosyltransferase complex,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0004806,triacylglycerol lipase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0009159,deoxyribonucleoside monophosphate catabolic process,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0085029,extracellular matrix assembly,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0008053,mitochondrial fusion,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0048270,methionine adenosyltransferase regulator activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0015616,DNA translocase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0019104,DNA N-glycosylase activity,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0006518,peptide metabolic process,5,TreeGrafter
+IEA,GO_REF:0000118,GO:0004519,endonuclease activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0070098,chemokine-mediated signaling pathway,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0030149,sphingolipid catabolic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0004483,methyltransferase cap1 activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0004633,phosphopantothenoylcysteine decarboxylase activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0052621,diguanylate cyclase activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0004065,arylsulfatase activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0097039,protein linear polyubiquitination,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0001517,N-acetylglucosamine 6-O-sulfotransferase activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0016132,brassinosteroid biosynthetic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0006631,fatty acid metabolic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0009117,nucleotide metabolic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0019433,triglyceride catabolic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0010043,response to zinc ion,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0005942,phosphatidylinositol 3-kinase complex,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0032299,ribonuclease H2 complex,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0020037,heme binding,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0043171,peptide catabolic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0048009,insulin-like growth factor receptor signaling pathway,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0047280,nicotinamide phosphoribosyltransferase activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0009380,excinuclease repair complex,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0019693,ribose phosphate metabolic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0046854,phosphatidylinositol phosphate biosynthetic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0070626,(S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido) succinate lyase (fumarate-forming) activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0071944,cell periphery,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0004484,mRNA guanylyltransferase activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0001666,response to hypoxia,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0008528,G protein-coupled peptide receptor activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0034142,toll-like receptor 4 signaling pathway,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0007030,Golgi organization,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0009636,response to toxic substance,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0050930,induction of positive chemotaxis,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0004693,cyclin-dependent protein serine/threonine kinase activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0005159,insulin-like growth factor receptor binding,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0061844,antimicrobial humoral immune response mediated by antimicrobial peptide,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0001938,positive regulation of endothelial cell proliferation,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0098609,cell-cell adhesion,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0042594,response to starvation,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0015267,channel activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0004156,dihydropteroate synthase activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0048020,CCR chemokine receptor binding,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0015937,coenzyme A biosynthetic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0006753,nucleoside phosphate metabolic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0016540,protein autoprocessing,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0009306,protein secretion,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0006979,response to oxidative stress,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0008283,cell population proliferation,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0042056,chemoattractant activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0007265,Ras protein signal transduction,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0051897,positive regulation of phosphatidylinositol 3-kinase/protein kinase B signal transduction,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0048027,mRNA 5'-UTR binding,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0005172,vascular endothelial growth factor receptor binding,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0019305,dTDP-rhamnose biosynthetic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0042026,protein refolding,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0046935,1-phosphatidylinositol-3-kinase regulator activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0070478,"nuclear-transcribed mRNA catabolic process, 3'-5' exonucleolytic nonsense-mediated decay",4,TreeGrafter
+IEA,GO_REF:0000118,GO:0043023,ribosomal large subunit binding,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0004343,glucosamine 6-phosphate N-acetyltransferase activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0000225,N-acetylglucosaminylphosphatidylinositol deacetylase activity,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0043418,homocysteine catabolic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0042167,heme catabolic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0006031,chitin biosynthetic process,4,TreeGrafter
+IEA,GO_REF:0000118,GO:0000309,nicotinamide-nucleotide adenylyltransferase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0002161,aminoacyl-tRNA deacylase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0051959,dynein light intermediate chain binding,3,TreeGrafter
+IEA,GO_REF:0000118,GO:1990259,histone H2AQ104 methyltransferase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0034353,mRNA 5'-diphosphatase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004869,cysteine-type endopeptidase inhibitor activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004888,transmembrane signaling receptor activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004305,ethanolamine kinase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0061504,cyclic threonylcarbamoyladenosine biosynthetic process,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0005254,chloride channel activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004620,phospholipase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0008374,O-acyltransferase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0016758,hexosyltransferase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0045547,"ditrans,polycis-polyprenyl diphosphate synthase [(2E,6E)-farnesyl diphosphate specific] activity",3,TreeGrafter
+IEA,GO_REF:0000118,GO:0071277,cellular response to calcium ion,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004666,prostaglandin-endoperoxide synthase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0006646,phosphatidylethanolamine biosynthetic process,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004177,aminopeptidase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0000993,RNA polymerase II complex binding,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0019829,ATPase-coupled monoatomic cation transmembrane transporter activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0070828,heterochromatin organization,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0000302,response to reactive oxygen species,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004467,long-chain fatty acid-CoA ligase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0043039,tRNA aminoacylation,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0000494,box C/D sno(s)RNA 3'-end processing,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004817,cysteine-tRNA ligase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0042277,peptide binding,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0031167,rRNA methylation,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0008713,ADP-heptose-lipopolysaccharide heptosyltransferase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:1990904,ribonucleoprotein complex,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004818,glutamate-tRNA ligase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0046703,natural killer cell lectin-like receptor binding,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0061503,tRNA threonylcarbamoyladenosine dehydratase,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004018,"N6-(1,2-dicarboxyethyl)AMP AMP-lyase (fumarate-forming) activity",3,TreeGrafter
+IEA,GO_REF:0000118,GO:0031124,mRNA 3'-end processing,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004515,nicotinate-nucleotide adenylyltransferase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0004407,histone deacetylase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0031369,translation initiation factor binding,3,TreeGrafter
+IEA,GO_REF:0000118,GO:1990966,ATP generation from poly-ADP-D-ribose,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0005504,fatty acid binding,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0000155,phosphorelay sensor kinase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0002768,immune response-regulating cell surface receptor signaling pathway,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0008083,growth factor activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0016208,AMP binding,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0015421,ABC-type oligopeptide transporter activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0003713,transcription coactivator activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0033540,fatty acid beta-oxidation using acyl-CoA oxidase,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0038180,nerve growth factor signaling pathway,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0051865,protein autoubiquitination,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0006833,water transport,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0005667,transcription regulator complex,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0006308,DNA catabolic process,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0005154,epidermal growth factor receptor binding,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0046839,phospholipid dephosphorylation,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0015250,water channel activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0043235,receptor complex,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0008195,phosphatidate phosphatase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0051302,regulation of cell division,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0006633,fatty acid biosynthetic process,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0006401,RNA catabolic process,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0000722,telomere maintenance via recombination,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0002055,adenine binding,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0034040,ATPase-coupled lipid transmembrane transporter activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0035529,NADH pyrophosphatase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0008649,rRNA methyltransferase activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0005163,nerve growth factor receptor binding,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0035631,CD40 receptor complex,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0031122,cytoplasmic microtubule organization,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0030674,protein-macromolecule adaptor activity,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0035999,tetrahydrofolate interconversion,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0043122,regulation of canonical NF-kappaB signal transduction,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0042276,error-prone translesion synthesis,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0007169,cell surface receptor protein tyrosine kinase signaling pathway,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0016094,polyprenol biosynthetic process,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0009225,nucleotide-sugar metabolic process,3,TreeGrafter
+IEA,GO_REF:0000118,GO:0005385,zinc ion transmembrane transporter activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0051287,NAD binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004819,glutamine-tRNA ligase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0003724,RNA helicase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004477,methenyltetrahydrofolate cyclohydrolase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0030322,stabilization of membrane potential,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0061574,ASAP complex,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0070034,telomerase RNA binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004792,thiosulfate-cyanide sulfurtransferase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004512,inositol-3-phosphate synthase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004197,cysteine-type endopeptidase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0002223,stimulatory C-type lectin receptor signaling pathway,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0000122,negative regulation of transcription by RNA polymerase II,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0005388,P-type calcium transporter activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0046872,metal ion binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0033863,"ribose 1,5-bisphosphate phosphokinase activity",2,TreeGrafter
+IEA,GO_REF:0000118,GO:0001147,transcription termination site sequence-specific DNA binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0019464,glycine decarboxylation via glycine cleavage system,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0019948,SUMO activating enzyme activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0007186,G protein-coupled receptor signaling pathway,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006656,phosphatidylcholine biosynthetic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0046327,glycerol biosynthetic process from pyruvate,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0000727,double-strand break repair via break-induced replication,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0009247,glycolipid biosynthetic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0019287,"isopentenyl diphosphate biosynthetic process, mevalonate pathway",2,TreeGrafter
+IEA,GO_REF:0000118,GO:0010855,adenylate cyclase inhibitor activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0045087,innate immune response,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0008311,double-stranded DNA 3'-5' DNA exonuclease activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0043548,phosphatidylinositol 3-kinase binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0045134,UDP phosphatase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0000298,endopolyphosphatase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0008380,RNA splicing,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0016832,aldehyde-lyase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0019323,pentose catabolic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0001664,G protein-coupled receptor binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0120147,formylglycine-generating oxidase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0140326,ATPase-coupled intramembrane lipid transporter activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0010027,thylakoid membrane organization,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006995,cellular response to nitrogen starvation,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0008263,pyrimidine-specific mismatch base pair DNA N-glycosylase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0001671,ATPase activator activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0019901,protein kinase binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0030054,cell junction,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004439,"phosphatidylinositol-4,5-bisphosphate 5-phosphatase activity",2,TreeGrafter
+IEA,GO_REF:0000118,GO:0010134,sulfate assimilation via adenylyl sulfate reduction,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0009134,nucleoside diphosphate catabolic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0070979,protein K11-linked ubiquitination,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0032196,transposition,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004124,cysteine synthase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004528,phosphodiesterase I activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0016559,peroxisome fission,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0052572,response to host immune response,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0000014,single-stranded DNA endodeoxyribonuclease activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0043113,receptor clustering,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0002098,tRNA wobble uridine modification,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0007188,adenylate cyclase-modulating G protein-coupled receptor signaling pathway,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0017110,nucleoside diphosphate phosphatase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004103,choline kinase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0071269,L-homocysteine biosynthetic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0030295,protein kinase activator activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0042923,neuropeptide binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0008138,protein tyrosine/serine/threonine phosphatase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006086,pyruvate decarboxylation to acetyl-CoA,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0005319,lipid transporter activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006233,dTDP biosynthetic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0016925,protein sumoylation,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0015271,outward rectifier potassium channel activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0045197,establishment or maintenance of epithelial cell apical/basal polarity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0043709,cell adhesion involved in single-species biofilm formation,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0044209,AMP salvage,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006085,acetyl-CoA biosynthetic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0031177,phosphopantetheine binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0015024,glucuronate-2-sulfatase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0007005,mitochondrion organization,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0005834,heterotrimeric G-protein complex,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0030150,protein import into mitochondrial matrix,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004553,"hydrolase activity, hydrolyzing O-glycosyl compounds",2,TreeGrafter
+IEA,GO_REF:0000118,GO:0000977,RNA polymerase II transcription regulatory region sequence-specific DNA binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006749,glutathione metabolic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0001971,negative regulation of activation of membrane attack complex,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006107,oxaloacetate metabolic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004575,sucrose alpha-glucosidase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0030203,glycosaminoglycan metabolic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0031428,box C/D methylation guide snoRNP complex,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0070733,AMPylase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0003844,"1,4-alpha-glucan branching enzyme activity",2,TreeGrafter
+IEA,GO_REF:0000118,GO:0071577,zinc ion transmembrane transport,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0019543,propionate catabolic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0001965,G-protein alpha-subunit binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0031032,actomyosin structure organization,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004475,mannose-1-phosphate guanylyltransferase (GTP) activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006400,tRNA modification,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004739,pyruvate dehydrogenase (acetyl-transferring) activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0008831,dTDP-4-dehydrorhamnose reductase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0036297,interstrand cross-link repair,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0007218,neuropeptide signaling pathway,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0003720,telomerase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0009298,GDP-mannose biosynthetic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006535,cysteine biosynthetic process from serine,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0003684,damaged DNA binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004803,transposase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0008967,phosphoglycolate phosphatase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0048018,receptor ligand activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0016779,nucleotidyltransferase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0016717,"oxidoreductase activity, acting on paired donors, with oxidation of a pair of donors resulting in the reduction of molecular oxygen to two molecules of water",2,TreeGrafter
+IEA,GO_REF:0000118,GO:0106335,tRNA (5-carboxymethyluridine(34)-5-O)-methyltransferase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0044550,secondary metabolite biosynthetic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0009740,gibberellic acid mediated signaling pathway,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0051016,barbed-end actin filament capping,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0060213,positive regulation of nuclear-transcribed mRNA poly(A) tail shortening,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0005987,sucrose catabolic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0005960,glycine cleavage complex,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004844,uracil DNA N-glycosylase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004382,GDP phosphatase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006369,termination of RNA polymerase II transcription,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0047631,ADP-ribose diphosphatase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0031593,polyubiquitin modification-dependent protein binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0048476,Holliday junction resolvase complex,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0030639,polyketide biosynthetic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0050577,GDP-L-fucose synthase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0000064,L-ornithine transmembrane transporter activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0033993,response to lipid,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0045003,double-strand break repair via synthesis-dependent strand annealing,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0038023,signaling receptor activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0004053,arginase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:1990481,mRNA pseudouridine synthesis,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0022841,potassium ion leak channel activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0000287,magnesium ion binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0019379,"sulfate assimilation, phosphoadenylyl sulfate reduction by phosphoadenylyl-sulfate reductase (thioredoxin)",2,TreeGrafter
+IEA,GO_REF:0000118,GO:0016818,"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides",2,TreeGrafter
+IEA,GO_REF:0000118,GO:0043041,amino acid activation for nonribosomal peptide biosynthetic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0052689,carboxylic ester hydrolase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0070628,proteasome binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0008998,ribonucleoside-triphosphate reductase (thioredoxin) activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0017111,ribonucleoside triphosphate phosphatase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0048257,3'-flap endonuclease activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006168,adenine salvage,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0048040,UDP-glucuronate decarboxylase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0008999,protein-N-terminal-alanine acetyltransferase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0003961,O-acetylhomoserine aminocarboxypropyltransferase activity,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0016594,glycine binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006021,inositol biosynthetic process,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0006869,lipid transport,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0001848,complement binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0097120,receptor localization to synapse,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0042393,histone binding,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0045037,protein import into chloroplast stroma,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0045332,phospholipid translocation,2,TreeGrafter
+IEA,GO_REF:0000118,GO:0034975,protein folding in endoplasmic reticulum,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0071947,protein deubiquitination involved in ubiquitin-dependent protein catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0003999,adenine phosphoribosyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004175,endopeptidase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0005506,iron ion binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004896,cytokine receptor activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0070914,UV-damage excision repair,1,TreeGrafter
+IEA,GO_REF:0000118,GO:1990573,potassium ion import across plasma membrane,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019815,B cell receptor complex,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030505,inorganic diphosphate transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0034432,bis(5'-adenosyl)-pentaphosphatase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0034638,phosphatidylcholine catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0032446,protein modification by small protein conjugation,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004523,RNA-DNA hybrid ribonuclease activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0061136,regulation of proteasomal protein catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0070198,"protein localization to chromosome, telomeric region",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004610,phosphoacetylglucosamine mutase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004362,glutathione-disulfide reductase (NADPH) activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004354,glutamate dehydrogenase (NADP+) activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:2000660,negative regulation of interleukin-1-mediated signaling pathway,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0051607,defense response to virus,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004551,dinucleotide phosphatase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0003924,GTPase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0005412,D-glucose:sodium symporter activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006283,transcription-coupled nucleotide-excision repair,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0034039,"8-oxo-7,8-dihydroguanine DNA N-glycosylase activity",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004613,phosphoenolpyruvate carboxykinase (GTP) activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:1902495,transmembrane transporter complex,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0035435,phosphate ion transmembrane transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0017171,serine hydrolase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0070530,K63-linked polyubiquitin modification-dependent protein binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019748,secondary metabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015485,cholesterol binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0031490,chromatin DNA binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030621,U4 snRNA binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008486,diphosphoinositol-polyphosphate diphosphatase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009398,FMN biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0000286,alanine dehydrogenase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0090559,regulation of membrane permeability,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0048024,"regulation of mRNA splicing, via spliceosome",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015293,symporter activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0045121,membrane raft,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006552,L-leucine catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0005911,cell-cell junction,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0042609,CD4 receptor binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006887,exocytosis,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006312,mitotic recombination,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0044718,siderophore transmembrane transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0046100,hypoxanthine metabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0044183,protein folding chaperone,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0098797,plasma membrane protein complex,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0016881,acid-amino acid ligase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0016837,"carbon-oxygen lyase activity, acting on polysaccharides",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006289,nucleotide-excision repair,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019432,triglyceride biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0017118,lipoyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006654,phosphatidic acid biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0034454,microtubule anchoring at centrosome,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0046512,sphingosine biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0033549,MAP kinase phosphatase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0017025,TBP-class protein binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008240,tripeptidyl-peptidase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0052837,thiazole biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0050892,intestinal absorption,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0031125,rRNA 3'-end processing,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030490,maturation of SSU-rRNA,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0022904,respiratory electron transport chain,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004181,metallocarboxypeptidase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:1990116,ribosome-associated ubiquitin-dependent protein catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:1901911,adenosine 5'-(hexahydrogen pentaphosphate) catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0071543,diphosphoinositol polyphosphate metabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0002939,tRNA N1-guanine methylation,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0071218,cellular response to misfolded protein,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008173,RNA methyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004758,serine C-palmitoyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0075512,clathrin-dependent endocytosis of virus by host cell,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004386,helicase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0032933,SREBP signaling pathway,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019448,L-cysteine catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008758,"UDP-2,3-diacylglucosamine hydrolase activity",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0050201,fucokinase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008720,D-lactate dehydrogenase (NAD+) activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006865,amino acid transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0001817,regulation of cytokine production,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0098968,neurotransmitter receptor transport postsynaptic membrane to endosome,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0031460,glycine betaine transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:1990444,F-box domain binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0001680,tRNA 3'-terminal CCA addition,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0002100,tRNA wobble adenosine to inosine editing,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0033188,sphingomyelin synthase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004419,hydroxymethylglutaryl-CoA lyase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004046,aminoacylase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0016125,sterol metabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015707,nitrite transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019221,cytokine-mediated signaling pathway,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019209,kinase activator activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0071951,conversion of methionyl-tRNA to N-formyl-methionyl-tRNA,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015031,protein transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0043822,ribonuclease M5 activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0033627,cell adhesion mediated by integrin,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0050780,dopamine receptor binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006207,'de novo' pyrimidine nucleobase biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0047627,adenylylsulfatase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004556,alpha-amylase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0016655,"oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0070006,metalloaminopeptidase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0070973,protein localization to endoplasmic reticulum exit site,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0071797,LUBAC complex,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0046521,sphingoid catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0046503,glycerolipid catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0043774,coenzyme F420-2 alpha-glutamyl ligase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0043422,protein kinase B binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004816,asparagine-tRNA ligase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008168,methyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008532,"N-acetyllactosaminide beta-1,3-N-acetylglucosaminyltransferase activity",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006537,glutamate biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0005324,long-chain fatty acid transmembrane transporter activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009450,gamma-aminobutyric acid catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008305,integrin complex,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008239,dipeptidyl-peptidase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006635,fatty acid beta-oxidation,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0050853,B cell receptor signaling pathway,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0051131,chaperone-mediated protein complex assembly,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030688,"preribosome, small subunit precursor",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0003691,double-stranded telomeric DNA binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0031464,Cul4A-RING E3 ubiquitin ligase complex,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019878,lysine biosynthetic process via aminoadipic acid,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004605,phosphatidate cytidylyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006183,GTP biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0000272,polysaccharide catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0072393,microtubule anchoring at microtubule organizing center,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019843,rRNA binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030311,poly-N-acetyllactosamine biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0032264,IMP salvage,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015689,molybdate ion transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0016936,galactoside binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008378,galactosyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015871,choline transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015862,uridine transmembrane transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0018279,protein N-linked glycosylation via asparagine,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0042542,response to hydrogen peroxide,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0042760,very long-chain fatty acid catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009061,anaerobic respiration,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0005391,P-type sodium:potassium-exchanging transporter activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0005152,interleukin-1 receptor antagonist activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015297,antiporter activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0016279,protein-lysine N-methyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019171,(3R)-hydroxyacyl-[acyl-carrier-protein] dehydratase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0010269,response to selenium ion,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0047493,ceramide cholinephosphotransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0047372,monoacylglycerol lipase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009063,amino acid catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0000455,enzyme-directed rRNA pseudouridine synthesis,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0016024,CDP-diacylglycerol biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015990,electron transport coupled proton transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0045002,double-strand break repair via single-strand annealing,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0042262,DNA protection,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0034355,NAD+ biosynthetic process via the salvage pathway,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0035336,long-chain fatty-acyl-CoA metabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006493,protein O-linked glycosylation,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0051880,G-quadruplex DNA binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0050859,negative regulation of B cell receptor signaling pathway,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0051765,inositol tetrakisphosphate kinase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008757,S-adenosylmethionine-dependent methyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009653,anatomical structure morphogenesis,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008251,tRNA-specific adenosine deaminase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0046464,acylglycerol catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0043024,ribosomal small subunit binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0070492,oligosaccharide binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009691,cytokinin biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0002937,tRNA 4-thiouridine biosynthesis,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0007160,cell-matrix adhesion,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006506,GPI anchor biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0005956,protein kinase CK2 complex,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006335,DNA replication-dependent chromatin assembly,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008440,"inositol-1,4,5-trisphosphate 3-kinase activity",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0034431,bis(5'-adenosyl)-hexaphosphatase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0003990,acetylcholinesterase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008154,actin polymerization or depolymerization,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008117,sphinganine-1-phosphate aldolase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0005109,frizzled binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004530,deoxyribonuclease I activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0031210,phosphatidylcholine binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0031072,heat shock protein binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019695,choline metabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006364,rRNA processing,1,TreeGrafter
+IEA,GO_REF:0000118,GO:1901255,nucleotide-excision repair involved in interstrand cross-link repair,1,TreeGrafter
+IEA,GO_REF:0000118,GO:1902600,proton transmembrane transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0062026,negative regulation of SCF-dependent proteasomal ubiquitin-dependent catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0032449,CBM complex,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006351,DNA-templated transcription,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006581,acetylcholine catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006636,unsaturated fatty acid biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0000398,"mRNA splicing, via spliceosome",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0042352,GDP-L-fucose salvage,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006048,UDP-N-acetylglucosamine biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030163,protein catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008459,chondroitin 6-sulfotransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0035539,"8-oxo-7,8-dihydrodeoxyguanosine triphosphate pyrophosphatase activity",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008047,enzyme activator activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006508,proteolysis,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004621,glycosylphosphatidylinositol phospholipase D activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0003841,1-acylglycerol-3-phosphate O-acyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004798,dTMP kinase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030544,Hsp70 protein binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:1901909,diadenosine hexaphosphate catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0047391,alkylglycerophosphoethanolamine phosphodiesterase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004839,ubiquitin activating enzyme activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0046790,virion binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0016814,"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amidines",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0017172,cysteine dioxygenase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015220,choline transmembrane transporter activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015199,amino-acid betaine transmembrane transporter activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0000715,"nucleotide-excision repair, DNA damage recognition",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0043047,single-stranded telomeric DNA binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0042632,cholesterol homeostasis,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0036376,sodium ion export across plasma membrane,1,TreeGrafter
+IEA,GO_REF:0000118,GO:1904355,positive regulation of telomere capping,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009150,purine ribonucleotide metabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009143,nucleoside triphosphate catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0050852,T cell receptor signaling pathway,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0060070,canonical Wnt signaling pathway,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0050839,cell adhesion molecule binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009390,dimethyl sulfoxide reductase complex,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0042799,histone H4K20 methyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004768,stearoyl-CoA 9-desaturase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0036498,IRE1-mediated unfolded protein response,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0046034,ATP metabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015513,high-affinity secondary active nitrite transmembrane transporter activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0032263,GMP salvage,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030992,intraciliary transport particle B,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030973,molybdate ion binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0001730,2'-5'-oligoadenylate synthetase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009411,response to UV,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0009389,dimethyl sulfoxide reductase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008175,tRNA methyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0051205,protein insertion into membrane,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006742,NADP+ catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008395,steroid hydroxylase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004559,alpha-mannosidase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0033691,sialic acid binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006798,polyphosphate catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006783,heme biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004746,riboflavin synthase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0070507,regulation of microtubule cytoskeleton organization,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030497,fatty acid elongation,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019677,NAD+ catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0030833,regulation of actin filament polymerization,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0035312,5'-3' DNA exonuclease activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0005509,calcium ion binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006178,guanine salvage,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0001228,"DNA-binding transcription activator activity, RNA polymerase II-specific",1,TreeGrafter
+IEA,GO_REF:0000118,GO:0061024,membrane organization,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0004422,hypoxanthine phosphoribosyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0017059,serine palmitoyltransferase complex,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0016799,"hydrolase activity, hydrolyzing N-glycosyl compounds",1,TreeGrafter
+IEA,GO_REF:0000118,GO:1901907,diadenosine pentaphosphate catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0005912,adherens junction,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0001716,L-amino-acid oxidase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019903,protein phosphatase binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0001046,core promoter sequence-specific DNA binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006657,CDP-choline pathway,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0048193,Golgi vesicle transport,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0046951,ketone body biosynthetic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0007031,peroxisome organization,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0008781,N-acylneuraminate cytidylyltransferase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0019148,D-cysteine desulfhydrase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0018169,ribosomal S6-glutamic acid ligase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0017070,U6 snRNA binding,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0045071,negative regulation of viral genome replication,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0006524,alanine catabolic process,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0031543,peptidyl-proline dioxygenase activity,1,TreeGrafter
+IEA,GO_REF:0000118,GO:0015187,glycine transmembrane transporter activity,1,TreeGrafter

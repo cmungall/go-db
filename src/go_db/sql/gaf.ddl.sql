@@ -3,7 +3,8 @@ CREATE SEQUENCE IF NOT EXISTS gaf_sequence;
 CREATE TABLE IF NOT EXISTS gaf_association_flat (
         db TEXT NOT NULL,
         db_object_id TEXT NOT NULL,
-        db_object_symbol TEXT NOT NULL,
+        --- db_object_symbol TEXT NOT NULL, --- NCBI GAFs sometimes lack a symbol
+        db_object_symbol TEXT,
         qualifiers VARCHAR,
         ontology_class_ref TEXT NOT NULL,
         supporting_references TEXT,

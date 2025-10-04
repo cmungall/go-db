@@ -1,0 +1,54 @@
+Species,Method,GO_REF,Unique Terms,Total Associations,Avg per Term,Top Term,Top Term Count
+Archaea,ARBA,GO_REF:0000117,215,"30,165",140.3,GO:0016491 (oxidoreductase activity),"2,722"
+Archaea,EC2GO,GO_REF:0000003,1054,"20,981",19.9,GO:0004673 (protein histidine kinase activity),"1,384"
+Archaea,InterPro2GO,GO_REF:0000002,1364,"281,452",206.3,GO:0016887 (ATP hydrolysis activity),"14,541"
+Archaea,Logical Inference,GO_REF:0000108,3,278,92.7,GO:0016020 (membrane),273
+Archaea,Manual Transfer,GO_REF:0000104,219,"43,749",199.8,GO:0000287 (magnesium ion binding),"6,661"
+Archaea,Rhea Mappings,GO_REF:0000116,75,"3,768",50.2,GO:0016887 (ATP hydrolysis activity),389
+Archaea,TreeGrafter,GO_REF:0000118,1596,"197,244",123.6,GO:0005829 (cytosol),"20,427"
+Archaea,UniProt Keywords,GO_REF:0000043,209,"186,801",893.8,GO:0046872 (metal ion binding),"35,650"
+Archaea,UniProt Subcellular,GO_REF:0000044,20,"32,416",1620.8,GO:0005886 (plasma membrane),"18,331"
+Archaea,UniProt UniPathway,GO_REF:0000041,63,"3,140",49.8,GO:0006189 ('de novo' IMP biosynthetic process),230
+Clostridium,ARBA,GO_REF:0000117,321,"92,131",287.0,GO:0005737 (cytoplasm),"8,769"
+Clostridium,EC2GO,GO_REF:0000003,1265,"51,080",40.4,GO:0009003 (signal peptidase activity),"1,291"
+Clostridium,InterPro2GO,GO_REF:0000002,1645,"802,876",488.1,GO:0016887 (ATP hydrolysis activity),"45,259"
+Clostridium,Logical Inference,GO_REF:0000108,2,"2,704",1352.0,GO:0016020 (membrane),"2,694"
+Clostridium,Manual Transfer,GO_REF:0000104,273,"100,452",368.0,GO:0000287 (magnesium ion binding),"13,082"
+Clostridium,Rhea Mappings,GO_REF:0000116,50,"10,144",202.9,GO:0016887 (ATP hydrolysis activity),"2,965"
+Clostridium,TreeGrafter,GO_REF:0000118,1846,"644,165",349.0,GO:0005829 (cytosol),"106,357"
+Clostridium,UniProt Keywords,GO_REF:0000043,246,"513,019",2085.4,GO:0046872 (metal ion binding),"91,089"
+Clostridium,UniProt Subcellular,GO_REF:0000044,34,"107,627",3165.5,GO:0005886 (plasma membrane),"68,767"
+Clostridium,UniProt UniPathway,GO_REF:0000041,88,"9,210",104.7,GO:0015970 (guanosine tetraphosphate biosynthetic pr...),"1,022"
+Fly,InterPro2GO,GO_REF:0000002,828,"5,783",7.0,GO:0005524 (ATP binding),639
+Fly,Rfam,GO_REF:0000115,23,413,18.0,GO:0016442 (RISC complex),86
+Fungi,ARBA,GO_REF:0000117,1755,"1,092,506",622.5,GO:0005634 (nucleus),"31,774"
+Fungi,Compara,GO_REF:0000107,4580,"845,079",184.5,GO:0005737 (cytoplasm),"10,375"
+Fungi,EC2GO,GO_REF:0000003,1320,"284,511",215.5,GO:0008843 (endochitinase activity),"14,851"
+Fungi,InterPro2GO,GO_REF:0000002,2950,"5,176,986",1754.9,GO:0008270 (zinc ion binding),"260,802"
+Fungi,Logical Inference,GO_REF:0000108,16,"77,521",4845.1,GO:0005829 (cytosol),"31,491"
+Fungi,Manual Transfer,GO_REF:0000104,326,"236,639",725.9,GO:0033290 (eukaryotic 48S preinitiation complex),"12,734"
+Fungi,Rhea Mappings,GO_REF:0000116,134,"34,726",259.1,GO:0016887 (ATP hydrolysis activity),"12,323"
+Fungi,TreeGrafter,GO_REF:0000118,4292,"9,621,520",2241.7,GO:0005737 (cytoplasm),"547,378"
+Fungi,UniProt Keywords,GO_REF:0000043,316,"3,077,699",9739.6,GO:0046872 (metal ion binding),"627,100"
+Fungi,UniProt Subcellular,GO_REF:0000044,117,"1,265,727",10818.2,GO:0005634 (nucleus),"245,161"
+Fungi,UniProt UniPathway,GO_REF:0000041,117,"51,093",436.7,GO:0016567 (protein ubiquitination),"5,586"
+Virus,ARBA,GO_REF:0000117,90,"2,555",28.4,GO:0001897 (symbiont-mediated cytolysis of host cell),"1,065"
+Virus,EC2GO,GO_REF:0000003,135,"2,112",15.6,GO:0004748 (ribonucleoside-diphosphate reductase act...),464
+Virus,InterPro2GO,GO_REF:0000002,745,"62,918",84.5,GO:0003677 (DNA binding),"7,076"
+Virus,Logical Inference,GO_REF:0000108,5,"1,761",352.2,GO:0043657 (host cell),"1,707"
+Virus,Manual Transfer,GO_REF:0000104,84,"6,419",76.4,GO:0006351 (DNA-templated transcription),748
+Virus,Rhea Mappings,GO_REF:0000116,12,587,48.9,GO:0016887 (ATP hydrolysis activity),371
+Virus,TreeGrafter,GO_REF:0000118,982,"17,084",17.4,GO:0006302 (double-strand break repair),839
+Virus,UniProt Keywords,GO_REF:0000043,282,"80,218",284.5,GO:0044423 (virion component),"5,850"
+Virus,UniProt Subcellular,GO_REF:0000044,56,"14,410",257.3,GO:0030430 (host cell cytoplasm),"3,249"
+Virus,UniProt UniPathway,GO_REF:0000041,25,140,5.6,GO:0016567 (protein ubiquitination),60
+Yeast,ARBA,GO_REF:0000117,20,33,1.6,GO:0031298 (replication fork protection complex),8
+Yeast,EC2GO,GO_REF:0000003,25,82,3.3,GO:0004523 (RNA-DNA hybrid ribonuclease activity),46
+Yeast,InterPro2GO,GO_REF:0000002,370,"1,264",3.4,GO:0016887 (ATP hydrolysis activity),56
+Yeast,Logical Inference,GO_REF:0000108,13,184,14.2,GO:0005829 (cytosol),90
+Yeast,Manual Transfer,GO_REF:0000104,48,74,1.5,GO:0016282 (eukaryotic 43S preinitiation complex),6
+Yeast,Rfam,GO_REF:0000115,12,43,3.6,GO:0030533 (triplet codon-amino acid adaptor activit...),21
+Yeast,Rhea Mappings,GO_REF:0000116,77,297,3.9,GO:0106310 (protein serine kinase activity),120
+Yeast,UniProt Keywords,GO_REF:0000043,177,"2,470",14.0,GO:0046872 (metal ion binding),225
+Yeast,UniProt Subcellular,GO_REF:0000044,57,680,11.9,GO:0005789 (endoplasmic reticulum membrane),166
+Yeast,UniProt UniPathway,GO_REF:0000041,41,124,3.0,GO:0006486 (protein glycosylation),24
