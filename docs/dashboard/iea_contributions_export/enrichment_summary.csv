@@ -1,0 +1,86 @@
+Species,Method,GO_REF,Enriched Terms,Top Term,Top Fold Enrichment,Top P-adjusted,Avg Fold Enrichment
+Archaea,TreeGrafter,GO_REF:0000118,1271,GO:0044715 (8-oxo-dGDP phosphatase activit...),7.29,1.70e-06,5.18
+Archaea,EC2GO,GO_REF:0000003,1028,GO:0034480 (phosphatidylcholine phospholip...),27.05,1.19e-07,16.03
+Archaea,InterPro2GO,GO_REF:0000002,855,GO:2001129 (methane biosynthetic process f...),3.33,1.39e-07,2.53
+Archaea,Manual Transfer,GO_REF:0000104,576,GO:0008655 (pyrimidine-containing compound...),8.65,8.82e-106,3.17
+Archaea,Rhea Mappings,GO_REF:0000116,479,GO:0034061 (DNA polymerase activity),55.99,0.00e+00,15.57
+Archaea,ARBA,GO_REF:0000117,321,GO:1990234 (transferase complex),26.01,3.69e-06,13.09
+Archaea,UniProt Keywords,GO_REF:0000043,157,GO:1990077 (primosome complex),3.44,0.00e+00,2.32
+Archaea,Logical Inference,GO_REF:0000108,99,GO:0035442 (dipeptide transmembrane transp...),77.73,2.50e-87,60.32
+Archaea,UniProt UniPathway,GO_REF:0000041,97,GO:0019288 (isopentenyl diphosphate biosyn...),77.89,2.01e-04,35.26
+Archaea,UniProt Subcellular,GO_REF:0000044,16,GO:0005765 (lysosomal membrane),27.21,9.09e-51,19.40
+Clostridium,TreeGrafter,GO_REF:0000118,1563,GO:0006516 (glycoprotein catabolic process),6.67,6.06e-109,4.54
+Clostridium,EC2GO,GO_REF:0000003,1314,GO:0090486 (small RNA 2'-O-methyltransfera...),29.93,7.25e-11,17.61
+Clostridium,InterPro2GO,GO_REF:0000002,1061,GO:0009294 (DNA-mediated transformation),3.34,1.38e-274,2.45
+Clostridium,Manual Transfer,GO_REF:0000104,841,GO:0051258 (protein polymerization),8.70,0.00e+00,3.03
+Clostridium,Rhea Mappings,GO_REF:0000116,624,GO:0051992 (UDP-N-acetylmuramoyl-L-alanyl-...),63.81,0.00e+00,14.23
+Clostridium,ARBA,GO_REF:0000117,478,GO:0015966 (diadenosine tetraphosphate bio...),22.12,0.00e+00,9.90
+Clostridium,UniProt Keywords,GO_REF:0000043,190,GO:0008156 (negative regulation of DNA rep...),3.67,2.58e-34,2.35
+Clostridium,UniProt UniPathway,GO_REF:0000041,136,GO:0006054 (N-acetylneuraminate metabolic ...),83.87,1.66e-27,33.57
+Clostridium,Logical Inference,GO_REF:0000108,116,GO:0015755 (fructose transmembrane transpo...),71.41,0.00e+00,53.06
+Clostridium,UniProt Subcellular,GO_REF:0000044,31,GO:0055040 (periplasmic flagellum),23.06,2.24e-03,16.44
+Fly,Rfam,GO_REF:0000115,27,GO:0000353 (formation of quadruple SL/U4/U...),20.16,2.51e-18,17.48
+Fly,InterPro2GO,GO_REF:0000002,12,GO:0003676 (nucleic acid binding),1.05,1.58e-06,1.05
+Fungi,Compara,GO_REF:0000107,3879,GO:0010447 (response to acidic pH),37.00,2.21e-97,21.46
+Fungi,TreeGrafter,GO_REF:0000118,3319,GO:0075306 (regulation of conidium formati...),3.65,1.33e-143,2.69
+Fungi,InterPro2GO,GO_REF:0000002,1729,GO:0043708 (cell adhesion involved in biof...),3.79,2.60e-03,2.35
+Fungi,ARBA,GO_REF:0000117,1619,GO:0009891 (positive regulation of biosynt...),16.58,4.19e-238,7.78
+Fungi,EC2GO,GO_REF:0000003,1222,GO:1990931 (mRNA N6-methyladenosine dioxyg...),41.43,0.00e+00,21.56
+Fungi,Manual Transfer,GO_REF:0000104,724,GO:0006253 (dCTP catabolic process),22.99,5.62e-36,5.64
+Fungi,Rhea Mappings,GO_REF:0000116,513,GO:0106356 (4-hydroxybenzoate 3-monooxygen...),215.99,9.37e-03,60.06
+Fungi,UniProt Keywords,GO_REF:0000043,255,GO:0030030 (cell projection organization),4.58,5.14e-303,2.83
+Fungi,Logical Inference,GO_REF:0000108,191,GO:0035349 (coenzyme A transmembrane trans...),66.47,0.00e+00,46.75
+Fungi,UniProt UniPathway,GO_REF:0000041,148,GO:0009686 (gibberellin biosynthetic proce...),243.25,2.58e-17,100.17
+Fungi,UniProt Subcellular,GO_REF:0000044,98,GO:0120293 (dynein axonemal particle),15.50,4.37e-54,8.49
+Human,Compara,GO_REF:0000107,2534,GO:0000038 (very long-chain fatty acid met...),3.64,2.55e-04,3.36
+Human,ARBA,GO_REF:0000117,694,GO:0045321 (leukocyte activation),13.26,3.16e-09,8.53
+Human,InterPro2GO,GO_REF:0000002,624,GO:0016531 (copper chaperone activity),9.09,7.37e-03,6.13
+Human,Rhea Mappings,GO_REF:0000116,544,GO:0090556 (phosphatidylserine floppase ac...),85.45,2.58e-16,42.49
+Human,EC2GO,GO_REF:0000003,457,GO:0004353 (glutamate dehydrogenase [NAD(P...),87.14,6.95e-04,33.82
+Human,UniProt Keywords,GO_REF:0000043,256,GO:0006547 (L-histidine metabolic process),3.93,6.85e-03,2.71
+Human,Logical Inference,GO_REF:0000108,184,GO:1990822 (basic amino acid transmembrane...),54.44,1.71e-10,34.54
+Human,UniProt Subcellular,GO_REF:0000044,171,GO:0120293 (dynein axonemal particle),10.32,1.29e-20,5.72
+Human,Manual Transfer,GO_REF:0000104,136,GO:1990838 (poly(U)-specific exoribonuclea...),376.66,7.15e-03,180.35
+Human,UniProt UniPathway,GO_REF:0000041,128,GO:0019483 (beta-alanine biosynthetic proc...),253.75,2.71e-05,132.49
+Human,Rfam,GO_REF:0000115,56,GO:0006452 (translational frameshifting),7.13,6.13e-04,6.03
+Mouse,Compara,GO_REF:0000107,1702,GO:0009611 (response to wounding),3.14,1.12e-07,2.82
+Mouse,ARBA,GO_REF:0000117,552,GO:0032426 (stereocilium tip),12.50,8.66e-06,8.57
+Mouse,Rhea Mappings,GO_REF:0000116,473,GO:0106438 (protein-glutamic acid ligase a...),82.25,1.91e-12,38.22
+Mouse,InterPro2GO,GO_REF:0000002,432,GO:0004935 (adrenergic receptor activity),7.44,2.58e-07,4.81
+Mouse,EC2GO,GO_REF:0000003,395,GO:0004522 (ribonuclease A activity),82.23,1.84e-05,30.65
+Mouse,UniProt Keywords,GO_REF:0000043,227,GO:0007599 (hemostasis),3.46,2.05e-24,2.41
+Mouse,Logical Inference,GO_REF:0000108,179,GO:1990822 (basic amino acid transmembrane...),75.99,4.01e-04,43.63
+Mouse,UniProt Subcellular,GO_REF:0000044,172,GO:0120293 (dynein axonemal particle),9.63,4.59e-17,5.20
+Mouse,UniProt UniPathway,GO_REF:0000041,119,GO:0019563 (glycerol catabolic process),237.31,7.16e-12,119.89
+Mouse,Manual Transfer,GO_REF:0000104,98,GO:0031314 (extrinsic component of mitocho...),229.84,4.54e-11,68.26
+Mouse,Rfam,GO_REF:0000115,40,GO:0005692 (U11 snRNP),34.82,3.69e-11,26.65
+Virus,TreeGrafter,GO_REF:0000118,617,GO:0000018 (regulation of DNA recombinatio...),12.93,9.07e-41,10.22
+Virus,InterPro2GO,GO_REF:0000002,352,GO:0015969 (guanosine tetraphosphate metab...),3.34,2.32e-04,2.69
+Virus,UniProt Keywords,GO_REF:0000043,180,GO:0016168 (chlorophyll binding),2.29,3.29e-42,1.95
+Virus,EC2GO,GO_REF:0000003,161,GO:0033892 (deoxyribonuclease (pyrimidine ...),34.90,2.22e-06,17.86
+Virus,Manual Transfer,GO_REF:0000104,156,GO:1990970 (trans-activation response elem...),13.34,1.21e-22,5.62
+Virus,ARBA,GO_REF:0000117,109,GO:1990380 (K48-linked deubiquitinase acti...),71.35,7.75e-15,44.73
+Virus,UniProt Subcellular,GO_REF:0000044,55,GO:0120149 (host cell peroxisome),22.07,2.16e-03,17.77
+Virus,Logical Inference,GO_REF:0000108,46,GO:0001172 (RNA-templated transcription),58.11,0.00e+00,43.72
+Virus,UniProt UniPathway,GO_REF:0000041,38,GO:0000050 (urea cycle),1454.35,8.65e-04,776.30
+Virus,Rhea Mappings,GO_REF:0000116,31,GO:0106331 (sialate 4-O-acetylesterase act...),153.34,1.75e-17,55.90
+Worm,InterPro2GO,GO_REF:0000002,267,GO:0046983 (protein dimerization activity),3.59,8.70e-33,3.23
+Worm,ARBA,GO_REF:0000117,252,GO:0000070 (mitotic sister chromatid segre...),17.46,1.04e-04,14.34
+Worm,UniProt Keywords,GO_REF:0000043,128,GO:0030030 (cell projection organization),2.36,5.84e-13,1.90
+Worm,EC2GO,GO_REF:0000003,114,GO:0004312 (fatty acid synthase activity),50.43,1.09e-04,26.28
+Worm,UniProt Subcellular,GO_REF:0000044,97,GO:0010494 (cytoplasmic stress granule),8.74,3.64e-05,6.64
+Worm,Rhea Mappings,GO_REF:0000116,87,GO:0004340 (glucokinase activity),64.84,6.97e-05,33.40
+Worm,Logical Inference,GO_REF:0000108,84,GO:0060078 (regulation of postsynaptic mem...),29.76,4.02e-122,23.58
+Worm,UniProt UniPathway,GO_REF:0000041,75,GO:2001295 (malonyl-CoA biosynthetic proce...),161.68,7.33e-05,112.51
+Worm,Manual Transfer,GO_REF:0000104,60,GO:0046033 (AMP metabolic process),36.98,7.24e-03,19.00
+Worm,Rfam,GO_REF:0000115,25,GO:0006617 (SRP-dependent cotranslational ...),41.05,7.12e-20,33.73
+Yeast,ARBA,GO_REF:0000117,302,GO:0016125 (sterol metabolic process),8.80,1.35e-03,7.76
+Yeast,InterPro2GO,GO_REF:0000002,173,GO:0000015 (phosphopyruvate hydratase comp...),4.72,5.10e-03,3.90
+Yeast,UniProt Keywords,GO_REF:0000043,102,GO:0000023 (maltose metabolic process),2.34,5.25e-05,1.97
+Yeast,Rhea Mappings,GO_REF:0000116,81,GO:0034062 (5'-3' RNA polymerase activity),34.60,1.77e-09,23.92
+Yeast,UniProt UniPathway,GO_REF:0000041,80,GO:2001295 (malonyl-CoA biosynthetic proce...),89.53,2.15e-04,54.64
+Yeast,Logical Inference,GO_REF:0000108,78,GO:0035433 (acetate transmembrane transpor...),48.04,2.11e-05,41.50
+Yeast,EC2GO,GO_REF:0000003,74,GO:0047372 (monoacylglycerol lipase activi...),33.13,8.71e-03,18.92
+Yeast,UniProt Subcellular,GO_REF:0000044,62,GO:0032585 (multivesicular body membrane),7.41,3.46e-03,5.33
+Yeast,Manual Transfer,GO_REF:0000104,57,GO:0140042 (lipid droplet formation),83.33,1.08e-03,45.67
+Yeast,Rfam,GO_REF:0000115,9,GO:0006617 (SRP-dependent cotranslational ...),104.52,3.08e-04,51.22

@@ -1,0 +1,21 @@
+evidence_type,supporting_references,count_star(),label,reference_name
+IEA,GO_REF:0000043,7592,"GO_REF:0000043
+(UniProt Keywords)",UniProt Keywords
+IEA,GO_REF:0000002,6071,"GO_REF:0000002
+(InterPro2GO)",InterPro2GO
+IEA,GO_REF:0000115,1875,"GO_REF:0000115
+(Rfam)",Rfam
+IEA,GO_REF:0000044,1306,"GO_REF:0000044
+(UniProt Subcellular)",UniProt Subcellular
+IEA,GO_REF:0000117,766,"GO_REF:0000117
+(ARBA)",ARBA
+IEA,GO_REF:0000108,293,"GO_REF:0000108
+(Logical Inference)",Logical Inference
+IEA,GO_REF:0000116,248,"GO_REF:0000116
+(Rhea Mappings)",Rhea Mappings
+IEA,GO_REF:0000104,167,"GO_REF:0000104
+(Manual Transfer)",Manual Transfer
+IEA,GO_REF:0000003,146,"GO_REF:0000003
+(EC2GO)",EC2GO
+IEA,GO_REF:0000041,123,"GO_REF:0000041
+(UniProt UniPathway)",UniProt UniPathway

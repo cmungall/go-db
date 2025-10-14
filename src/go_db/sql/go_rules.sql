@@ -108,6 +108,16 @@ WHERE evidence_type = 'IPI'
     SELECT subject FROM entailed_is_a WHERE object = 'GO:0003824'
   );
 
+CREATE OR REPLACE VIEW GORULE_0000008_violations AS
+SELECT internal_id, 'GORULE:0000008' AS rule
+FROM gaf_association
+WHERE ontology_class_ref IN (
+    SELECT subject FROM statements
+                   WHERE predicate = 'oio:inSubset'
+                     AND object = 'obo:go#gocheck_do_not_annotate'
+
+  );
+
 CREATE VIEW IF NOT EXISTS GORULE_0000013_violations AS
 SELECT internal_id, 'GORULE:0000013' AS rule
 FROM gaf_association
@@ -189,6 +199,9 @@ FROM GORULE_0000006_violations
 UNION
 SELECT *
 FROM GORULE_0000007_violations
+UNION
+SELECT *
+FROM GORULE_0000008_violations
 UNION
 SELECT *
 FROM GORULE_0000013_violations

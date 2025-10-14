@@ -1,14 +1,16 @@
 """Main python file."""
+
 import logging
 from pathlib import Path
-from typing import List, Optional, Iterator
+from typing import Iterator, List, Optional, Union
 
 import duckdb
 from pydantic import BaseModel
 
-from go_db.sql import GAF_DDL_PATH, GO_RULES_PATH
+from go_db.sql import ADHOC_VIEWS_PATH, GAF_DDL_PATH, GO_RULES_PATH
 
 logger = logging.getLogger(__name__)
+
 
 class LoaderConfiguration(BaseModel):
     """Configuration for loading GO database."""
@@ -22,8 +24,11 @@ class LoaderConfiguration(BaseModel):
     gpi_sources: Optional[List[str]] = None
     """Names of GPI sources"""
 
-    go_db_path: Optional[str] = None
-    """Path to GO sqlite database (from semsql)."""
+    go_db_path: Optional[Union[str, List[str]]] = None
+    """Path to GO sqlite database (from semsql), or list of paths for multiple databases."""
+
+    additional_db_paths: Optional[List[str]] = None
+    """Additional paths to SQLite databases to attach (not loaded)"""
 
     append: Optional[bool] = False
     """If true, subsequent load calls will append"""
@@ -37,7 +42,19 @@ class LoaderConfiguration(BaseModel):
     def connection(self) -> duckdb.DuckDBPyConnection:
         """Get connection."""
         if self._connection is None:
-            self._connection = duckdb.connect(self.db)
+            logger.info(f"Connecting to database: {self.db}")
+            # Just use regular connection - DuckDB will handle read/write appropriately
+            try:
+                self._connection = duckdb.connect(self.db)
+            except duckdb.SerializationException as e:
+                logger.error(f"Failed to connect to database: {e}")
+                logger.error("Database may be from a different DuckDB version or corrupted.")
+                logger.error(f"Current DuckDB version: {duckdb.__version__}")
+                logger.error("Try recreating the database with: go-db load -d new_db.db ...")
+                raise
+            except Exception as e:
+                logger.error(f"Failed to connect to database: {e}")
+                raise
         return self._connection
 
     @property
@@ -83,19 +100,21 @@ def materialize_view(config: LoaderConfiguration, view_name: str) -> None:
 
 
 def load_ddl(config: LoaderConfiguration) -> None:
-    """Load SQL DDL (CREATE TABLE statements).
+    """
+    Load SQL DDL (CREATE TABLE statements).
 
     Example:
-
+    -------
     >>> config = LoaderConfiguration(db=":memory:")
     >>> from go_db import LoaderConfiguration, load_ddl
     >>> load_ddl(config)
     >>> connection = config.connection
+
     """
     connection = config.connection
     # load from GAF_DDL_PATH
     logger.info("Loading DDL data.")
-    ddls_files = [GAF_DDL_PATH, GO_RULES_PATH]
+    ddls_files = [GAF_DDL_PATH, GO_RULES_PATH, ADHOC_VIEWS_PATH]
     for ddl_file in ddls_files:
         with open(ddl_file) as f:
             ddl = f.read()
@@ -104,8 +123,9 @@ def load_ddl(config: LoaderConfiguration) -> None:
 
 
 def load_gaf(config: LoaderConfiguration) -> None:
-    """Load GAF data from a configuration
-    
+    """
+    Load GAF data from a configuration
+
     >>> config = LoaderConfiguration(db=":memory:", sources=["tests/input/test-uniprot.gaf"])
     >>> from go_db import LoaderConfiguration, load_ddl
     >>> load_ddl(config)
@@ -126,17 +146,25 @@ def load_gaf(config: LoaderConfiguration) -> None:
 
 
 def load_gpi(config: LoaderConfiguration) -> None:
-    """Load GPI data from configuration.
-    """
+    """Load GPI data from configuration."""
     logger.info(f"Loading GPI data: {config.gpi_sources}")
     for source in config.gpi_sources:
         load_gpi_source(config, source)
 
 
 def load_gaf_source(config: LoaderConfiguration, source: str) -> None:
-    """Load GAF data from a source."""
+    """Load GAF data from a source, supporting both regular and gzipped files."""
     logger.info(f"Loading GAF data from {source}.")
-    sql = f"INSERT INTO gaf_association_flat SELECT * FROM read_csv('{source}', delim='\t', header=false)"
+
+    # Check if the file is gzipped (ends with .gz)
+    is_gzipped = source.endswith(".gz")
+
+    # Adjust the SQL query based on whether the file is gzipped
+    if is_gzipped:
+        sql = f"INSERT INTO gaf_association_flat SELECT * FROM read_csv_auto('{source}', delim='\t', header=false, compression='gzip')"
+    else:
+        sql = f"INSERT INTO gaf_association_flat SELECT * FROM read_csv('{source}', delim='\t', header=false)"
+
     logger.debug(f"SQL: {sql}")
     config.connection.sql(sql)
 
@@ -148,9 +176,11 @@ def load_gpi_source(config: LoaderConfiguration, source: str) -> None:
     logger.debug(f"SQL: {sql}")
     config.connection.sql(sql)
 
+
 def load_derived_tables(config: LoaderConfiguration) -> None:
     """
     Load derived tables.
+
     >>> config = LoaderConfiguration(db=":memory:", sources=["tests/input/test-uniprot.gaf"])
     >>> from go_db import LoaderConfiguration, load_ddl
     >>> load_ddl(config)
@@ -164,7 +194,7 @@ def load_derived_tables(config: LoaderConfiguration) -> None:
     xxx
     """
     logger.info("Loading derived tables.")
-    #config.connection.sql(DERIVED_GAF)
+    # config.connection.sql(DERIVED_GAF)
     materialize_view(config, "gaf_association")
     materialize_view(config, "gpi")
 
@@ -206,6 +236,7 @@ def validate_db_iter(config: LoaderConfiguration) -> Iterator[str]:
             row = row.to_dict()
             yield f"{view}: {row}"
 
+
 def validate_db(config: LoaderConfiguration) -> None:
     """
     Validate the database.
@@ -236,7 +267,9 @@ def bulk_load_sqlite_to_duckdb(config: LoaderConfiguration, sqlite_db: str, tabl
 
     # Bulk load the data from SQLite tables to DuckDB tables
     for table in tables:
-        con.execute(f"USE semsql; CREATE TABLE {config.name}.{table} AS SELECT * FROM semsql.{table}")
+        sql = f"USE semsql; CREATE TABLE {config.name}.{table} AS SELECT * FROM semsql.{table}"
+        print(f"Executing SQL: {sql}")
+        con.execute(sql)
         print(f"Table '{table}' bulk loaded successfully.")
 
     # Verify the data loaded into DuckDB tables
@@ -247,9 +280,63 @@ def bulk_load_sqlite_to_duckdb(config: LoaderConfiguration, sqlite_db: str, tabl
     con.execute("DETACH DATABASE semsql")
 
 
+def bulk_load_sqlite_to_duckdb_multi(config: LoaderConfiguration, sqlite_dbs: List[str], tables: List[str]):
+    """
+    Bulk load multiple SQLite databases to DuckDB.
+
+    Creates tables from the first database and inserts from subsequent ones.
+
+    :param config: Loader configuration
+    :param sqlite_dbs: List of SQLite database paths
+    :param tables: List of table names to load
+    :return:
+    """
+    if not sqlite_dbs:
+        raise ValueError("At least one SQLite database path is required.")
+
+    con = config.connection
+
+    # Install SQLite extension once
+    con.execute("INSTALL sqlite")
+    con.execute("LOAD sqlite")
+
+    for idx, sqlite_db in enumerate(sqlite_dbs):
+        print(f"Processing SQLite database {idx + 1}/{len(sqlite_dbs)}: {sqlite_db}")
+        if not sqlite_db:
+            logger.warning(f"Skipping empty SQLite database path at index {idx}")
+            continue
+
+        logger.info(f"Processing SQLite database {idx + 1}/{len(sqlite_dbs)}: {sqlite_db}")
+
+        # Attach the SQLite database
+        alias = f"semsql_{idx}"
+        con.execute(f"ATTACH DATABASE '{sqlite_db}' AS {alias}")
+        con.execute(f"USE {alias}")
+
+        # Process each table
+        for table in tables:
+            if idx == 0:
+                # First database: CREATE TABLE
+                con.execute(f"USE {alias}; CREATE TABLE {config.name}.{table} AS SELECT * FROM {alias}.{table}")
+                logger.info(f"Table '{table}' created and loaded from first database.")
+            else:
+                # Subsequent databases: INSERT INTO
+                con.execute(f"USE {alias}; INSERT INTO {config.name}.{table} SELECT * FROM {alias}.{table}")
+                logger.info(f"Table '{table}' appended from database {idx + 1}.")
+
+        # Detach the database
+        con.execute(f"USE {config.name}")
+        con.execute(f"DETACH DATABASE {alias}")
+
+    # Verify the data loaded into DuckDB tables
+    for table in tables:
+        count = con.execute(f"SELECT COUNT(*) as cnt FROM {table}").fetchone()[0]
+        logger.info(f"Table '{table}' contains {count} rows after loading from {len(sqlite_dbs)} databases.")
+
+
 def bulk_load_go_db(config: LoaderConfiguration):
     """
-    Bulk load GO Sqlite ontology database.
+    Bulk load GO Sqlite ontology database(s).
 
     :param config:
     :return:
@@ -257,5 +344,8 @@ def bulk_load_go_db(config: LoaderConfiguration):
     # Define the SQLite database and tables
     tables = ["edge", "entailed_edge", "statements", "rdfs_subclass_of_statement"]
 
-    # Bulk load SQLite database to DuckDB
-    bulk_load_sqlite_to_duckdb(config, config.go_db_path, tables)
+    sqlite_dbs = [config.go_db_path]
+    if config.additional_db_paths:
+        sqlite_dbs.extend(config.additional_db_paths)
+    bulk_load_sqlite_to_duckdb_multi(config, sqlite_dbs, tables)
+

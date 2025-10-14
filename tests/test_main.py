@@ -1,16 +1,18 @@
 from typing import List
 
 import pytest
-
 from go_db import LoaderConfiguration, load_ddl, load_gaf
-from go_db.main import load_derived_tables, bulk_load_go_db
+from go_db.main import bulk_load_go_db, load_derived_tables
+
 from tests import INPUT_DIR
 
 TEST_ONTOLOGY_DB = str(INPUT_DIR / "go-nucleus.db")
 
+
 @pytest.fixture
 def sources() -> List[str]:
     return [str(INPUT_DIR / "test-uniprot-cytosol.gaf")]
+
 
 def test_load_ddl():
     config = LoaderConfiguration(db=":memory:", go_db_path=TEST_ONTOLOGY_DB)
