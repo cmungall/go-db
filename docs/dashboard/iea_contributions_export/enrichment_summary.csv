@@ -19,8 +19,16 @@ Clostridium,UniProt Keywords,GO_REF:0000043,190,GO:0008156 (negative regulation 
 Clostridium,UniProt UniPathway,GO_REF:0000041,136,GO:0006054 (N-acetylneuraminate metabolic ...),83.87,1.66e-27,33.57
 Clostridium,Logical Inference,GO_REF:0000108,116,GO:0015755 (fructose transmembrane transpo...),71.41,0.00e+00,53.06
 Clostridium,UniProt Subcellular,GO_REF:0000044,31,GO:0055040 (periplasmic flagellum),23.06,2.24e-03,16.44
-Fly,Rfam,GO_REF:0000115,27,GO:0000353 (formation of quadruple SL/U4/U...),20.16,2.51e-18,17.48
-Fly,InterPro2GO,GO_REF:0000002,12,GO:0003676 (nucleic acid binding),1.05,1.58e-06,1.05
+Fly,ARBA,GO_REF:0000117,310,GO:0000070 (mitotic sister chromatid segre...),8.90,2.06e-04,7.99
+Fly,InterPro2GO,GO_REF:0000002,224,GO:0005507 (copper ion binding),3.32,4.35e-09,2.96
+Fly,EC2GO,GO_REF:0000003,173,"GO:0004558 (alpha-1,4-glucosidase activity)",28.25,4.25e-15,19.06
+Fly,UniProt Keywords,GO_REF:0000043,146,GO:0007367 (segment polarity determination),3.14,1.39e-10,2.49
+Fly,UniProt Subcellular,GO_REF:0000044,115,GO:0120293 (dynein axonemal particle),7.16,2.18e-06,6.00
+Fly,Logical Inference,GO_REF:0000108,107,GO:1990822 (basic amino acid transmembrane...),44.67,8.93e-04,35.04
+Fly,UniProt UniPathway,GO_REF:0000041,79,GO:2001295 (malonyl-CoA biosynthetic proce...),152.02,8.74e-03,105.54
+Fly,Rhea Mappings,GO_REF:0000116,52,GO:0106310 (protein serine kinase activity),73.23,1.18e-175,31.43
+Fly,Manual Transfer,GO_REF:0000104,48,GO:0031314 (extrinsic component of mitocho...),26.59,2.44e-06,13.05
+Fly,Rfam,GO_REF:0000115,26,GO:0000353 (formation of quadruple SL/U4/U...),82.24,5.73e-25,59.11
 Fungi,Compara,GO_REF:0000107,3879,GO:0010447 (response to acidic pH),37.00,2.21e-97,21.46
 Fungi,TreeGrafter,GO_REF:0000118,3319,GO:0075306 (regulation of conidium formati...),3.65,1.33e-143,2.69
 Fungi,InterPro2GO,GO_REF:0000002,1729,GO:0043708 (cell adhesion involved in biof...),3.79,2.60e-03,2.35

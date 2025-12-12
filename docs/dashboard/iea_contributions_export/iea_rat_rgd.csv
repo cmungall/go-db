@@ -1,4 +1,6 @@
 evidence_type,supporting_references,count_star(),label,reference_name
+IBA,GO_REF:0000033,22604,"GO_REF:0000033
+(PAINT)",PAINT
 IEA,GO_REF:0000043,11463,"GO_REF:0000043
 (UniProt Keywords)",UniProt Keywords
 IEA,GO_REF:0000115,10891,"GO_REF:0000115

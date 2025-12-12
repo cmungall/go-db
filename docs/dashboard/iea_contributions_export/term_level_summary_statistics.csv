@@ -19,8 +19,16 @@ Clostridium,TreeGrafter,GO_REF:0000118,1846,"644,165",349.0,GO:0005829 (cytosol)
 Clostridium,UniProt Keywords,GO_REF:0000043,246,"513,019",2085.4,GO:0046872 (metal ion binding),"91,089"
 Clostridium,UniProt Subcellular,GO_REF:0000044,34,"107,627",3165.5,GO:0005886 (plasma membrane),"68,767"
 Clostridium,UniProt UniPathway,GO_REF:0000041,88,"9,210",104.7,GO:0015970 (guanosine tetraphosphate biosynthetic pr...),"1,022"
-Fly,InterPro2GO,GO_REF:0000002,828,"5,783",7.0,GO:0005524 (ATP binding),639
-Fly,Rfam,GO_REF:0000115,23,413,18.0,GO:0016442 (RISC complex),86
+Fly,ARBA,GO_REF:0000117,340,870,2.6,GO:0016485 (protein processing),21
+Fly,EC2GO,GO_REF:0000003,86,162,1.9,GO:0003925 (G protein activity),19
+Fly,InterPro2GO,GO_REF:0000002,673,"3,214",4.8,GO:0005506 (iron ion binding),129
+Fly,Logical Inference,GO_REF:0000108,23,279,12.1,GO:0045202 (synapse),72
+Fly,Manual Transfer,GO_REF:0000104,91,173,1.9,GO:0033290 (eukaryotic 48S preinitiation complex),16
+Fly,Rfam,GO_REF:0000115,23,490,21.3,GO:0016442 (RISC complex),105
+Fly,Rhea Mappings,GO_REF:0000116,29,162,5.6,GO:0106310 (protein serine kinase activity),94
+Fly,UniProt Keywords,GO_REF:0000043,198,"4,101",20.7,GO:0046872 (metal ion binding),"1,088"
+Fly,UniProt Subcellular,GO_REF:0000044,141,"2,211",15.7,GO:0005886 (plasma membrane),193
+Fly,UniProt UniPathway,GO_REF:0000041,32,91,2.8,GO:0016567 (protein ubiquitination),29
 Fungi,ARBA,GO_REF:0000117,1755,"1,092,506",622.5,GO:0005634 (nucleus),"31,774"
 Fungi,Compara,GO_REF:0000107,4580,"845,079",184.5,GO:0005737 (cytoplasm),"10,375"
 Fungi,EC2GO,GO_REF:0000003,1320,"284,511",215.5,GO:0008843 (endochitinase activity),"14,851"

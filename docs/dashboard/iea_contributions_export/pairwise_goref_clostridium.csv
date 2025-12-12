@@ -2,6 +2,9 @@ evidence_type,unique_ref_id,unique_ref_title,comparator_ref_id,comparator_ref_ti
 IEA,GO_REF:0000002,Gene Ontology annotation through association of InterPro records with GO terms.,GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,2035195,"GO_REF:0000002
 Gene Ontology annotation through association of InterPro records with GO terms.","GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping"
+IEA,GO_REF:0000002,Gene Ontology annotation through association of InterPro records with GO terms.,GO_REF:0000033,Annotation inferences using phylogenetic trees,2360086,"GO_REF:0000002
+Gene Ontology annotation through association of InterPro records with GO terms.","GO_REF:0000033
+Annotation inferences using phylogenetic trees"
 IEA,GO_REF:0000002,Gene Ontology annotation through association of InterPro records with GO terms.,GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,2303364,"GO_REF:0000002
 Gene Ontology annotation through association of InterPro records with GO terms.","GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping."
@@ -29,6 +32,9 @@ TreeGrafter-generated GO annotations"
 IEA,GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,GO_REF:0000002,Gene Ontology annotation through association of InterPro records with GO terms.,100048,"GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping","GO_REF:0000002
 Gene Ontology annotation through association of InterPro records with GO terms."
+IEA,GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,GO_REF:0000033,Annotation inferences using phylogenetic trees,263318,"GO_REF:0000003
+Gene Ontology annotation based on Enzyme Commission mapping","GO_REF:0000033
+Annotation inferences using phylogenetic trees"
 IEA,GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,263621,"GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping","GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping."
@@ -59,6 +65,9 @@ Gene Ontology annotation through association of InterPro records with GO terms."
 IEA,GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,91177,"GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping.","GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping"
+IEA,GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,GO_REF:0000033,Annotation inferences using phylogenetic trees,93988,"GO_REF:0000041
+Gene Ontology annotation based on UniPathway vocabulary mapping.","GO_REF:0000033
+Annotation inferences using phylogenetic trees"
 IEA,GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,GO_REF:0000043,Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping,51786,"GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping.","GO_REF:0000043
 Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping"
@@ -86,6 +95,9 @@ Gene Ontology annotation through association of InterPro records with GO terms."
 IEA,GO_REF:0000043,Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping,GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,1744374,"GO_REF:0000043
 Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping","GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping"
+IEA,GO_REF:0000043,Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping,GO_REF:0000033,Annotation inferences using phylogenetic trees,2146737,"GO_REF:0000043
+Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping","GO_REF:0000033
+Annotation inferences using phylogenetic trees"
 IEA,GO_REF:0000043,Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping,GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,2051331,"GO_REF:0000043
 Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping","GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping."
@@ -113,6 +125,9 @@ Gene Ontology annotation through association of InterPro records with GO terms."
 IEA,GO_REF:0000044,"Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.",GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,342162,"GO_REF:0000044
 Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.","GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping"
+IEA,GO_REF:0000044,"Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.",GO_REF:0000033,Annotation inferences using phylogenetic trees,341774,"GO_REF:0000044
+Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.","GO_REF:0000033
+Annotation inferences using phylogenetic trees"
 IEA,GO_REF:0000044,"Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.",GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,342162,"GO_REF:0000044
 Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.","GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping."
@@ -140,6 +155,9 @@ Gene Ontology annotation through association of InterPro records with GO terms."
 IEA,GO_REF:0000104,Electronic Gene Ontology annotations created by transferring manual GO annotations between related proteins based on shared sequence features.,GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,751299,"GO_REF:0000104
 Electronic Gene Ontology annotations created by transferring manual GO annotations between related proteins based on shared sequence features.","GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping"
+IEA,GO_REF:0000104,Electronic Gene Ontology annotations created by transferring manual GO annotations between related proteins based on shared sequence features.,GO_REF:0000033,Annotation inferences using phylogenetic trees,905714,"GO_REF:0000104
+Electronic Gene Ontology annotations created by transferring manual GO annotations between related proteins based on shared sequence features.","GO_REF:0000033
+Annotation inferences using phylogenetic trees"
 IEA,GO_REF:0000104,Electronic Gene Ontology annotations created by transferring manual GO annotations between related proteins based on shared sequence features.,GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,835127,"GO_REF:0000104
 Electronic Gene Ontology annotations created by transferring manual GO annotations between related proteins based on shared sequence features.","GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping."
@@ -167,6 +185,9 @@ Gene Ontology annotation through association of InterPro records with GO terms."
 IEA,GO_REF:0000108,"Automatic assignment of GO terms using logical inference, based on on inter-ontology links.",GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,86417,"GO_REF:0000108
 Automatic assignment of GO terms using logical inference, based on on inter-ontology links.","GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping"
+IEA,GO_REF:0000108,"Automatic assignment of GO terms using logical inference, based on on inter-ontology links.",GO_REF:0000033,Annotation inferences using phylogenetic trees,110304,"GO_REF:0000108
+Automatic assignment of GO terms using logical inference, based on on inter-ontology links.","GO_REF:0000033
+Annotation inferences using phylogenetic trees"
 IEA,GO_REF:0000108,"Automatic assignment of GO terms using logical inference, based on on inter-ontology links.",GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,110489,"GO_REF:0000108
 Automatic assignment of GO terms using logical inference, based on on inter-ontology links.","GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping."
@@ -194,6 +215,9 @@ Gene Ontology annotation through association of InterPro records with GO terms."
 IEA,GO_REF:0000116,Automatic Gene Ontology annotation based on Rhea mapping.,GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,17442,"GO_REF:0000116
 Automatic Gene Ontology annotation based on Rhea mapping.","GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping"
+IEA,GO_REF:0000116,Automatic Gene Ontology annotation based on Rhea mapping.,GO_REF:0000033,Annotation inferences using phylogenetic trees,123436,"GO_REF:0000116
+Automatic Gene Ontology annotation based on Rhea mapping.","GO_REF:0000033
+Annotation inferences using phylogenetic trees"
 IEA,GO_REF:0000116,Automatic Gene Ontology annotation based on Rhea mapping.,GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,123654,"GO_REF:0000116
 Automatic Gene Ontology annotation based on Rhea mapping.","GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping."
@@ -221,6 +245,9 @@ Gene Ontology annotation through association of InterPro records with GO terms."
 IEA,GO_REF:0000117,Electronic Gene Ontology annotations created by ARBA machine learning models,GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,278176,"GO_REF:0000117
 Electronic Gene Ontology annotations created by ARBA machine learning models","GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping"
+IEA,GO_REF:0000117,Electronic Gene Ontology annotations created by ARBA machine learning models,GO_REF:0000033,Annotation inferences using phylogenetic trees,356220,"GO_REF:0000117
+Electronic Gene Ontology annotations created by ARBA machine learning models","GO_REF:0000033
+Annotation inferences using phylogenetic trees"
 IEA,GO_REF:0000117,Electronic Gene Ontology annotations created by ARBA machine learning models,GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,337333,"GO_REF:0000117
 Electronic Gene Ontology annotations created by ARBA machine learning models","GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping."
@@ -248,6 +275,9 @@ Gene Ontology annotation through association of InterPro records with GO terms."
 IEA,GO_REF:0000118,TreeGrafter-generated GO annotations,GO_REF:0000003,Gene Ontology annotation based on Enzyme Commission mapping,1056013,"GO_REF:0000118
 TreeGrafter-generated GO annotations","GO_REF:0000003
 Gene Ontology annotation based on Enzyme Commission mapping"
+IEA,GO_REF:0000118,TreeGrafter-generated GO annotations,GO_REF:0000033,Annotation inferences using phylogenetic trees,1182363,"GO_REF:0000118
+TreeGrafter-generated GO annotations","GO_REF:0000033
+Annotation inferences using phylogenetic trees"
 IEA,GO_REF:0000118,TreeGrafter-generated GO annotations,GO_REF:0000041,Gene Ontology annotation based on UniPathway vocabulary mapping.,1145728,"GO_REF:0000118
 TreeGrafter-generated GO annotations","GO_REF:0000041
 Gene Ontology annotation based on UniPathway vocabulary mapping."
