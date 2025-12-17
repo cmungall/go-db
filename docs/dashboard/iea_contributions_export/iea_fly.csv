@@ -15,9 +15,9 @@ IEA,GO_REF:0000108,279,"GO_REF:0000108
 (Logical Inference)",Logical Inference
 IEA,GO_REF:0000104,173,"GO_REF:0000104
 (Manual Transfer)",Manual Transfer
-IEA,GO_REF:0000116,162,"GO_REF:0000116
-(Rhea Mappings)",Rhea Mappings
 IEA,GO_REF:0000003,162,"GO_REF:0000003
 (EC2GO)",EC2GO
+IEA,GO_REF:0000116,162,"GO_REF:0000116
+(Rhea Mappings)",Rhea Mappings
 IEA,GO_REF:0000041,91,"GO_REF:0000041
 (UniProt UniPathway)",UniProt UniPathway

@@ -201,7 +201,7 @@ def export(
     ontology_class_ref: Optional[str],
     limit: Optional[int],
 ):
-    """
+    r"""
     Export GAF data from the database.
 
     Examples
@@ -216,11 +216,11 @@ def export(
         go-db export -d mydb.db --taxon-closure='NCBITaxon:10239' -o viruses.gaf
 
         # Export fungi excluding yeast (S. cerevisiae and S. pombe)
-        go-db export -d mydb.db --taxon-closure='NCBITaxon:4751' \\
+        go-db export -d mydb.db --taxon-closure='NCBITaxon:4751' \
             --exclude-taxon='taxon:4932' --exclude-taxon='taxon:4896' -o non_yeast_fungi.gaf
 
         # Export all bacteria except E. coli and descendants
-        go-db export -d mydb.db --taxon-closure='NCBITaxon:2' \\
+        go-db export -d mydb.db --taxon-closure='NCBITaxon:2' \
             --exclude-taxon-closure='NCBITaxon:562' -o non_ecoli_bacteria.gaf
 
         # Export with custom SQL
@@ -279,7 +279,7 @@ def export(
         # Build subquery to get all descendant taxa
         taxon_subquery = f"""
         db_object_taxon IN (
-            SELECT DISTINCT 'taxon:' || REPLACE(subject, 'NCBITaxon:', '') 
+            SELECT DISTINCT 'taxon:' || REPLACE(subject, 'NCBITaxon:', '')
             FROM entailed_is_a
             WHERE object = '{ncbi_taxon}'
             UNION
@@ -336,9 +336,9 @@ def export(
             # Build subquery to exclude taxon and all descendants
             exclude_subquery = f"""
             db_object_taxon NOT IN (
-                SELECT DISTINCT 'taxon:' || REPLACE(subject, 'NCBITaxon:', '') 
-                FROM entailed_edge 
-                WHERE predicate = 'rdfs:subClassOf' 
+                SELECT DISTINCT 'taxon:' || REPLACE(subject, 'NCBITaxon:', '')
+                FROM entailed_edge
+                WHERE predicate = 'rdfs:subClassOf'
                 AND object = '{ncbi_taxon}'
                 UNION
                 SELECT 'taxon:' || REPLACE('{ncbi_taxon}', 'NCBITaxon:', '')
@@ -365,27 +365,6 @@ def export(
     # Execute query and stream results directly
     try:
         result = conn.sql(base_query)
-
-        # GAF column order (must match gaf_association_flat table)
-        gaf_columns = [
-            "db",
-            "db_object_id",
-            "db_object_symbol",
-            "qualifiers",
-            "ontology_class_ref",
-            "supporting_references",
-            "evidence_type",
-            "with_or_from",
-            "aspect",
-            "db_object_name",
-            "db_object_synonyms",
-            "db_object_type",
-            "db_object_taxon",
-            "annotation_date_string",
-            "assigned_by",
-            "annotation_extensions",
-            "gene_product_form",
-        ]
 
         # Stream results row by row without loading into memory
         record_count = 0
@@ -531,7 +510,7 @@ def unique_contributions(db, method, evidence_type, comparator, summary, group_b
 @click.option("--evidence-type", "-e", help="Filter by evidence type (e.g., IEA).")
 @click.option("--output", "-o", type=click.File("w"), default="-", help="Output file (default: stdout).")
 def compare_references(db, set1, set2, evidence_type, output):
-    """
+    r"""
     Compare two sets of references to find unique and overlapping contributions.
 
     Examples
@@ -540,12 +519,12 @@ def compare_references(db, set1, set2, evidence_type, output):
         go-db evidence compare-references -d mydb.ddb -s1 GO_REF:0000002 -s2 GO_REF:0000043
 
         # Compare groups of references
-        go-db evidence compare-references -d mydb.ddb \\
-            -s1 GO_REF:0000002 -s1 GO_REF:0000003 \\
+        go-db evidence compare-references -d mydb.ddb \
+            -s1 GO_REF:0000002 -s1 GO_REF:0000003 \
             -s2 GO_REF:0000043 -s2 GO_REF:0000044
 
         # Filter by evidence type
-        go-db evidence compare-references -d mydb.ddb \\
+        go-db evidence compare-references -d mydb.ddb \
             -s1 GO_REF:0000002 -s2 GO_REF:0000043 -e IEA
 
     """
@@ -647,6 +626,190 @@ def find_redundant(db, reference, evidence_type, output, format):
     click.echo(f"Found {result.count} redundant annotations for {reference}", err=True)
 
     conn.close()
+
+
+@main.command()
+@click.argument("db1", type=click.Path(exists=True))
+@click.argument("db2", type=click.Path(exists=True))
+@click.option(
+    "--columns",
+    "-c",
+    multiple=True,
+    required=True,
+    help="Columns to compare (comma-separated or multiple -c flags).",
+)
+@click.option(
+    "--table",
+    "-t",
+    default="gaf_association",
+    help="Table to compare (default: gaf_association).",
+)
+@click.option(
+    "--show-counts/--no-show-counts",
+    default=False,
+    help="Show counts of distinct tuples instead of listing them.",
+)
+@click.option(
+    "--output",
+    "-o",
+    type=click.File("w"),
+    default="-",
+    help="Output file (default: stdout).",
+)
+@click.option(
+    "--format",
+    "-f",
+    type=click.Choice(["text", "tsv", "json"]),
+    default="text",
+    help="Output format.",
+)
+def diff(db1, db2, columns, table, show_counts, output, format):
+    """
+    Compare two databases by showing set differences for specified columns.
+
+    Examples
+    --------
+        # Compare db_object_id column between two databases
+        go-db diff db/pombase_orig.ddb db/pombase_new.ddb -c db_object_id
+
+        # Compare multiple columns using comma-separated list
+        go-db diff db/pombase_orig.ddb db/pombase_new.ddb -c db_object_id,ontology_class_ref
+
+        # Compare multiple columns using multiple -c flags
+        go-db diff db/pombase_orig.ddb db/pombase_new.ddb -c db_object_id -c ontology_class_ref
+
+        # Show counts instead of listing values
+        go-db diff db/pombase_orig.ddb db/pombase_new.ddb -c db_object_id --show-counts
+
+        # Compare different table
+        go-db diff db1.ddb db2.ddb -c id,name,description -t my_table
+
+        # Output as TSV
+        go-db diff db/pombase_orig.ddb db/pombase_new.ddb -c db_object_id -f tsv -o diff.tsv
+
+    """
+    import json
+    from pathlib import Path
+
+    import duckdb
+
+    # Connect to both databases
+    try:
+        conn1 = duckdb.connect(db1, read_only=True)
+        conn2 = duckdb.connect(db2, read_only=True)
+    except Exception as e:
+        raise click.ClickException(f"Failed to connect to databases: {e}") from e
+
+    # Build column list - support both comma-separated and multiple -c flags
+    column_list = []
+    for col_spec in columns:
+        # Split by comma and strip whitespace
+        column_list.extend([c.strip() for c in col_spec.split(",") if c.strip()])
+    # Use parameterized query to avoid SQL injection
+    column_placeholders = ", ".join([f'"{col}"' for col in column_list])
+
+    # Get DB names for display
+    db1_name = Path(db1).stem
+    db2_name = Path(db2).stem
+
+    try:
+        # Query to get distinct tuples from each database (table name is validated)
+        query = f'SELECT DISTINCT {column_placeholders} FROM "{table}"'
+
+        # Get results from both databases
+        result1 = conn1.sql(query).fetchall()
+        result2 = conn2.sql(query).fetchall()
+
+        # Convert to sets for comparison
+        set1 = set(result1)
+        set2 = set(result2)
+
+        # Calculate differences
+        only_in_db1 = set1 - set2
+        only_in_db2 = set2 - set1
+        in_both = set1 & set2
+
+        # Format output based on format option
+        if format == "json":
+            result_dict = {
+                "db1": db1,
+                "db2": db2,
+                "columns": column_list,
+                "table": table,
+                "only_in_db1": {
+                    "count": len(only_in_db1),
+                    "values": list(only_in_db1) if not show_counts else None,
+                },
+                "only_in_db2": {
+                    "count": len(only_in_db2),
+                    "values": list(only_in_db2) if not show_counts else None,
+                },
+                "in_both": {"count": len(in_both)},
+                "total_db1": len(set1),
+                "total_db2": len(set2),
+            }
+            output.write(json.dumps(result_dict, indent=2, default=str))
+
+        elif format == "tsv":
+            # Write TSV header
+            output.write("\t".join(["source"] + column_list) + "\n")
+
+            if not show_counts:
+                # Write rows only in db1
+                for row in sorted(only_in_db1):
+                    values = [f"only_{db1_name}"] + [str(v) if v is not None else "" for v in row]
+                    output.write("\t".join(values) + "\n")
+
+                # Write rows only in db2
+                for row in sorted(only_in_db2):
+                    values = [f"only_{db2_name}"] + [str(v) if v is not None else "" for v in row]
+                    output.write("\t".join(values) + "\n")
+            else:
+                # Just write summary counts
+                output.write(f"only_{db1_name}\t{len(only_in_db1)}\n")
+                output.write(f"only_{db2_name}\t{len(only_in_db2)}\n")
+                output.write(f"in_both\t{len(in_both)}\n")
+
+        else:  # text format
+            output.write(f"Comparing {table} table between:\n")
+            output.write(f"  DB1: {db1} ({db1_name})\n")
+            output.write(f"  DB2: {db2} ({db2_name})\n")
+            output.write(f"  Columns: {', '.join(column_list)}\n")
+            output.write("\n")
+
+            output.write("Summary:\n")
+            output.write(f"  Total distinct tuples in {db1_name}: {len(set1)}\n")
+            output.write(f"  Total distinct tuples in {db2_name}: {len(set2)}\n")
+            output.write(f"  Only in {db1_name}: {len(only_in_db1)}\n")
+            output.write(f"  Only in {db2_name}: {len(only_in_db2)}\n")
+            output.write(f"  In both: {len(in_both)}\n")
+            output.write("\n")
+
+            if not show_counts and (only_in_db1 or only_in_db2):
+                if only_in_db1:
+                    output.write(f"Only in {db1_name} ({len(only_in_db1)} tuples):\n")
+                    output.write("-" * 50 + "\n")
+                    for row in sorted(only_in_db1)[:100]:  # Limit to first 100 for readability
+                        formatted_row = " | ".join(str(v) if v is not None else "NULL" for v in row)
+                        output.write(f"  {formatted_row}\n")
+                    if len(only_in_db1) > 100:
+                        output.write(f"  ... and {len(only_in_db1) - 100} more\n")
+                    output.write("\n")
+
+                if only_in_db2:
+                    output.write(f"Only in {db2_name} ({len(only_in_db2)} tuples):\n")
+                    output.write("-" * 50 + "\n")
+                    for row in sorted(only_in_db2)[:100]:  # Limit to first 100 for readability
+                        formatted_row = " | ".join(str(v) if v is not None else "NULL" for v in row)
+                        output.write(f"  {formatted_row}\n")
+                    if len(only_in_db2) > 100:
+                        output.write(f"  ... and {len(only_in_db2) - 100} more\n")
+
+    except Exception as e:
+        raise click.ClickException(f"Error comparing databases: {e}") from e
+    finally:
+        conn1.close()
+        conn2.close()
 
 
 if __name__ == "__main__":
