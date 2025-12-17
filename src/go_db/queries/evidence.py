@@ -388,4 +388,3 @@ class EvidenceRedundancyAnalyzer:
             reference_set2=reference_set2,
             evidence_type=evidence_type,
         )
-

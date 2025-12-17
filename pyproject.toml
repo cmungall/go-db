@@ -16,6 +16,7 @@ pandas = "^2.2.1"
 toml = "*"
 scipy = "^1.13.0"
 oaklib = "^0.6.1"
+papermill = "^2.6.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"

@@ -348,4 +348,3 @@ def bulk_load_go_db(config: LoaderConfiguration):
     if config.additional_db_paths:
         sqlite_dbs.extend(config.additional_db_paths)
     bulk_load_sqlite_to_duckdb_multi(config, sqlite_dbs, tables)
-

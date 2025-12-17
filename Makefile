@@ -15,6 +15,9 @@ TAXON_MAMMALIA = NCBITaxon:40674
 TAXON_EUKARYA = NCBITaxon:2759
 TAXON_PSEUDOMONADOTA = NCBITaxon:1224
 TAXON_CLOSTRIDIUM = NCBITaxon:186801
+TAXON_PSEPK = NCBITaxon:160488 # Pseudomonas putida KT2440
+TAXON_ANOGA = NCBITaxon:7165 # Anopheles gambiae
+TAXON_ZIKV = NCBITaxon:64320 # Zika virus
 
 GCRP_DB = db/goa_uniprot_gcrp.ddb
 
@@ -55,6 +58,23 @@ data/gaf/goa_uniprot_%.gaf.gz:
 	curl -L -s  https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_$*.gaf.gz > $@.tmp && mv $@.tmp $@
 .PPRECIOUS: data/gaf/goa_uniprot_%.gaf.gz
 
+data/gaf/pombase_new.gaf.gz:
+	curl -L -s https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/SCHPO_4896_UP000002485.gaf.gz  > $@.tmp && mv $@.tmp $@
+
+data/gaf/pombase_orig.gaf.gz:
+	curl -L -s https://www.pombase.org/data/annotations/Gene_ontology/gene_association.pombase.gz  > $@.tmp && mv $@.tmp $@
+
+data/gaf/ZIKV.gaf.gz:
+	curl -L -s https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/ZIKV_64320_UP000054557.gaf.gz > $@.tmp && mv $@.tmp $@
+
+data/gaf/ANOGA.gaf.gz:
+	curl -L -s https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/ANOGA_7165_UP000007062.gaf.gz > $@.tmp && mv $@.tmp $@
+
+data/gaf/BRADI.gaf.gz:
+	curl -L -s https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/BRADI_15368_UP000008810.gaf.gz > $@.tmp && mv $@.tmp $@
+
+data/gaf/SCHPO.gaf.gz:
+	curl -L -s https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/SCHPO_4896_UP000002485.gaf.gz > $@.tmp && mv $@.tmp $@
 
 data/gaf/%.gaf.gz:
 	curl -L -s  https://current.geneontology.org/annotations/$*.gaf.gz > $@.tmp && mv $@.tmp $@
@@ -116,6 +136,11 @@ data/gaf/clostridium.gaf: $(SOURCE_DB)
 	@mkdir -p data/gaf
 	@echo "Exporting Clostridium annotations from $(SOURCE_DB)..."
 	$(RUN) go-db export -d $(SOURCE_DB) --taxon-closure=$(TAXON_CLOSTRIDIUM) -o $@
+
+# note in GO reference species, so extract from GCRP
+data/gaf/PSEPK.gaf: $(GCRP_DB)
+	@mkdir -p data/gaf
+	$(RUN) go-db export -d $(GCRP_DB) --taxon-closure=$(TAXON_PSEPK) -o $@
 
 data/gaf/plant.gaf: $(SOURCE_DB)
 	@mkdir -p data/gaf
