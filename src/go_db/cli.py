@@ -9,6 +9,7 @@ from go_db.main import (
     LoaderConfiguration,
     bulk_load_sqlite_to_duckdb,
     load_all,
+    load_swissprot_ids,
     materialize_view,
     validate_db,
     validate_db_iter,
@@ -60,8 +61,26 @@ def main(verbose: int, quiet: bool):
     help="Additional SQLite database to load. Format: path:table1,table2,... Can be specified multiple times.",
 )
 @click.option("--validate/--no-validate", default=True, show_default=True)
+@click.option(
+    "--swissprot-ids/--no-swissprot-ids",
+    default=False,
+    show_default=True,
+    help="Load all SwissProt (reviewed UniProt) IDs for reference joins (creates swissprot table).",
+)
+@click.option(
+    "--swissprot-cache",
+    type=click.Path(),
+    default=None,
+    help="Path to cache file for SwissProt IDs. Default: ~/.cache/go-db/swissprot_ids.txt",
+)
+@click.option(
+    "--swissprot-refresh",
+    is_flag=True,
+    default=False,
+    help="Force re-fetch SwissProt IDs from server, ignoring cache.",
+)
 @click.argument("sources", nargs=-1)
-def load(sources, validate, go_db_path, sqlite_db, **kwargs):
+def load(sources, validate, go_db_path, sqlite_db, swissprot_ids, swissprot_cache, swissprot_refresh, **kwargs):
     """
     Load sources into a database based on a config file.
 
@@ -78,6 +97,9 @@ def load(sources, validate, go_db_path, sqlite_db, **kwargs):
 
         # Load multiple SQLite databases
         go-db load -s db1.sqlite:edges,nodes -s db2.sqlite data/mgi.gaf
+
+        # Load with SwissProt (reviewed) IDs for reference joins
+        go-db load -g db/go.db --swissprot-ids data/goa_uniprot.gaf
 
     """
     gaf_sources = [s for s in sources if ".gaf" in s]
@@ -125,6 +147,9 @@ def load(sources, validate, go_db_path, sqlite_db, **kwargs):
             bulk_load_sqlite_to_duckdb(config, db_path, tables)
 
     load_all(config)
+    if swissprot_ids:
+        count = load_swissprot_ids(config, cache_file=swissprot_cache, refresh=swissprot_refresh)
+        click.echo(f"Loaded {count} SwissProt IDs (pruned to entries in database)")
     if validate:
         validate_db(config)
 

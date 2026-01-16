@@ -4,6 +4,9 @@ DM = $(CODE)/datamodel
 DBS = filtered_goa_uniprot_all
 OBO = http://purl.obolibrary.org/obo
 
+# Default args for loading databases - includes SwissProt IDs for annotation source breakdown
+SP_ARGS = --swissprot-ids
+
 # NCBITaxon IDs for common organisms
 TAXON_VIRUS = NCBITaxon:10239
 TAXON_BACTERIA = NCBITaxon:2
@@ -41,7 +44,7 @@ doctest:
 	$(RUN) python -m doctest --option ELLIPSIS --option NORMALIZE_WHITESPACE $<
 
 db/%.ddb: data/gaf/%.gaf.gz
-	$(RUN) go-db load -d $@ -g db/go.db $<
+	$(RUN) go-db load -d $@ -g db/go.db $(SP_ARGS) $<
 
 db/%_lite.ddb: data/gaf/%.gaf.gz
 	$(RUN) go-db load -d $@ $<
@@ -168,37 +171,37 @@ data/gaf/taxon_%.gaf: $(SOURCE_DB)
 
 db/virus.ddb: data/gaf/virus.gaf
 	@echo "Creating virus database..."
-	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $<
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
 
 db/bacteria.ddb: data/gaf/bacteria.gaf
 	@echo "Creating bacteria database..."
-	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $<
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
 
 db/archaea.ddb: data/gaf/archaea.gaf
 	@echo "Creating archaea database..."
-	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $<
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
 
 db/fungi.ddb: data/gaf/fungi.gaf
 	@echo "Creating fungi database..."
-	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $<
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
 
 db/plant.ddb: data/gaf/plant.gaf
 	@echo "Creating plant database..."
-	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $<
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
 
 
 db/pseudomonadota.ddb: data/gaf/pseudomonadota.gaf
 	@echo "Creating Pseudomonadota database..."
-	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $<
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
 
 db/clostridium.ddb: data/gaf/clostridium.gaf
 	@echo "Creating Clostridium database..."
-	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $<
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
 
 # Generic rule for any taxon database - usage: make db/taxon_12345.ddb
 db/taxon_%.ddb: data/gaf/taxon_%.gaf
 	@echo "Creating database for taxon $*..."
-	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $<
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
 
 # ================================================================================
 # CONVENIENCE TARGETS

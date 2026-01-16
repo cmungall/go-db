@@ -1,8 +1,10 @@
 """Main python file."""
 
 import logging
+import tempfile
 from pathlib import Path
 from typing import Iterator, List, Optional, Union
+from urllib.request import urlopen
 
 import duckdb
 from pydantic import BaseModel
@@ -348,3 +350,261 @@ def bulk_load_go_db(config: LoaderConfiguration):
     if config.additional_db_paths:
         sqlite_dbs.extend(config.additional_db_paths)
     bulk_load_sqlite_to_duckdb_multi(config, sqlite_dbs, tables)
+
+
+SWISSPROT_URL = "https://rest.uniprot.org/uniprotkb/stream?query=reviewed:true&format=list"
+SWISSPROT_CACHE_DIR = Path.home() / ".cache" / "go-db"
+SWISSPROT_CACHE_FILE = SWISSPROT_CACHE_DIR / "swissprot_ids.txt"
+
+# Mapping of GAF db prefix to UniProt xref field name and organism ID
+# Format: db_prefix -> (uniprot_xref_field, organism_id, id_prefix_in_gaf)
+UNIPROT_XREF_MAPPINGS = {
+    "FB": ("xref_flybase", 7227, "FB"),           # Drosophila melanogaster
+    "MGI": ("xref_mgi", 10090, "MGI"),            # Mus musculus
+    "RGD": ("xref_rgd", 10116, "RGD"),            # Rattus norvegicus
+    "ZFIN": ("xref_zfin", 7955, "ZFIN"),          # Danio rerio
+    "WB": ("xref_wormbase", 6239, "WB"),          # Caenorhabditis elegans
+    "SGD": ("xref_sgd", 559292, "SGD"),           # Saccharomyces cerevisiae S288C
+    "PomBase": ("xref_pombase", 284812, "PomBase"),  # Schizosaccharomyces pombe
+}
+
+
+def load_swissprot_ids(
+    config: LoaderConfiguration,
+    url: Optional[str] = None,
+    cache_file: Optional[Union[str, Path]] = None,
+    refresh: bool = False,
+) -> int:
+    """
+    Load SwissProt mapping table keyed by GAF subject.
+
+    Creates a unified `swissprot` table that maps GAF subjects to SwissProt accessions.
+    Works for both:
+    - UniProtKB entries: directly matched by accession
+    - MOD entries (FB, MGI, etc.): matched via UniProt cross-references
+
+    Table columns:
+    - subject: GAF subject as it appears (e.g., "UniProtKB:O14733" or "FB:FBgn0027570")
+    - uniprot_accession: The SwissProt accession
+
+    This allows simple joins in queries:
+        SELECT g.*, s.subject IS NOT NULL as is_swissprot
+        FROM gaf_association g
+        LEFT JOIN swissprot s ON g.subject = s.subject
+
+    :param config: Loader configuration with database connection
+    :param url: Optional URL to fetch IDs from (defaults to UniProt REST API)
+    :param cache_file: Path to cache file. If exists, uses cached data. Defaults to ~/.cache/go-db/
+    :param refresh: If True, re-fetch from URL even if cache exists
+    :return: Number of entries in swissprot table
+
+    """
+    if url is None:
+        url = SWISSPROT_URL
+
+    if cache_file is None:
+        cache_file = SWISSPROT_CACHE_FILE
+    else:
+        cache_file = Path(cache_file)
+
+    # Check if we can use cached data
+    if cache_file.exists() and not refresh:
+        logger.info(f"Using cached SwissProt IDs from {cache_file}")
+        tmp_path = str(cache_file)
+    else:
+        logger.info(f"Fetching SwissProt IDs from {url}")
+
+        # Fetch the ID list from UniProt
+        with urlopen(url) as response:
+            content = response.read().decode("utf-8")
+
+        # Ensure cache directory exists
+        cache_file.parent.mkdir(parents=True, exist_ok=True)
+
+        # Write to cache file
+        cache_file.write_text(content)
+        logger.info(f"Cached SwissProt IDs to {cache_file}")
+        tmp_path = str(cache_file)
+
+    conn = config.connection
+
+    # Drop tables if exist (for idempotency)
+    conn.sql("DROP TABLE IF EXISTS swissprot")
+    conn.sql("DROP TABLE IF EXISTS _swissprot_all")
+
+    # Load all SwissProt accessions into temp table
+    conn.sql(f"""
+    CREATE TABLE _swissprot_all AS
+    SELECT column0 AS accession
+    FROM read_csv('{tmp_path}', header=false, columns={{'column0': 'VARCHAR'}})
+    """)
+
+    total_count = conn.sql("SELECT COUNT(*) FROM _swissprot_all").fetchone()[0]
+    logger.info(f"Loaded {total_count} SwissProt accessions from cache")
+
+    # Create swissprot table keyed by GAF subject
+    # Start with direct UniProtKB matches
+    conn.sql("""
+    CREATE TABLE swissprot AS
+    SELECT DISTINCT
+        g.subject,
+        s.accession as uniprot_accession
+    FROM gaf_association g
+    JOIN _swissprot_all s ON g.subject = 'UniProtKB:' || s.accession
+    """)
+
+    direct_count = conn.sql("SELECT COUNT(*) FROM swissprot").fetchone()[0]
+    logger.info(f"Found {direct_count} direct UniProtKB SwissProt matches")
+
+    # Clean up temp table
+    conn.sql("DROP TABLE _swissprot_all")
+
+    # Now auto-detect and load xref mappings for non-UniProtKB databases
+    xref_count = load_uniprot_xrefs(config, refresh=refresh)
+    if xref_count > 0:
+        # Add MOD entries via xref mappings
+        conn.sql("""
+        INSERT INTO swissprot (subject, uniprot_accession)
+        SELECT DISTINCT x.xref_id, x.uniprot_accession
+        FROM uniprot_xref x
+        WHERE EXISTS (
+            SELECT 1 FROM gaf_association g WHERE g.subject = x.xref_id
+        )
+        AND NOT EXISTS (
+            SELECT 1 FROM swissprot s WHERE s.subject = x.xref_id
+        )
+        """)
+        xref_added = conn.sql("SELECT COUNT(*) FROM swissprot").fetchone()[0] - direct_count
+        logger.info(f"Added {xref_added} entries via xref mappings")
+
+    # Create index for efficient joins
+    conn.sql("CREATE INDEX swissprot_subject_idx ON swissprot(subject)")
+    conn.sql("CREATE INDEX swissprot_accession_idx ON swissprot(uniprot_accession)")
+
+    # Get final count
+    count = conn.sql("SELECT COUNT(*) FROM swissprot").fetchone()[0]
+    logger.info(f"Total swissprot entries: {count}")
+
+    return count
+
+
+def fetch_uniprot_xrefs(
+    db_prefix: str,
+    xref_field: str,
+    organism_id: int,
+    cache_dir: Path = SWISSPROT_CACHE_DIR,
+    refresh: bool = False,
+) -> Path:
+    """
+    Fetch UniProt cross-references for a specific database and cache locally.
+
+    :param db_prefix: Database prefix (e.g., "FB", "MGI")
+    :param xref_field: UniProt xref field name (e.g., "xref_flybase")
+    :param organism_id: NCBI taxonomy ID
+    :param cache_dir: Directory for caching
+    :param refresh: Force re-fetch even if cached
+    :return: Path to cached TSV file
+    """
+    cache_file = cache_dir / f"uniprot_xref_{db_prefix.lower()}.tsv"
+
+    if cache_file.exists() and not refresh:
+        logger.info(f"Using cached UniProt xrefs for {db_prefix} from {cache_file}")
+        return cache_file
+
+    url = (
+        f"https://rest.uniprot.org/uniprotkb/stream?"
+        f"query=reviewed:true+AND+organism_id:{organism_id}&format=tsv&fields=accession,{xref_field}"
+    )
+    logger.info(f"Fetching UniProt xrefs for {db_prefix} from {url}")
+
+    with urlopen(url) as response:
+        content = response.read().decode("utf-8")
+
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    cache_file.write_text(content)
+    logger.info(f"Cached UniProt xrefs for {db_prefix} to {cache_file}")
+
+    return cache_file
+
+
+def load_uniprot_xrefs(
+    config: LoaderConfiguration,
+    refresh: bool = False,
+) -> int:
+    """
+    Auto-detect database prefixes in GAF and load UniProt cross-reference mappings.
+
+    Creates table `uniprot_xref` with columns:
+    - uniprot_accession: UniProt accession (e.g., "A0A0B4K692")
+    - db_prefix: Source database (e.g., "FB")
+    - xref_id: Cross-reference ID as it appears in GAF subject (e.g., "FB:FBgn0027570")
+
+    :param config: Loader configuration
+    :param refresh: Force re-fetch from UniProt
+    :return: Total number of xref mappings loaded
+    """
+    conn = config.connection
+
+    # Detect which db prefixes are present in the GAF
+    result = conn.sql("SELECT DISTINCT db FROM gaf_association_flat").fetchall()
+    db_prefixes = {row[0] for row in result}
+
+    # Find which prefixes have UniProt xref mappings
+    mappings_to_load = []
+    for prefix in db_prefixes:
+        if prefix in UNIPROT_XREF_MAPPINGS:
+            mappings_to_load.append((prefix, *UNIPROT_XREF_MAPPINGS[prefix]))
+
+    if not mappings_to_load:
+        logger.info("No UniProt xref mappings needed for this database")
+        return 0
+
+    logger.info(f"Loading UniProt xrefs for: {[m[0] for m in mappings_to_load]}")
+
+    # Create or replace xref table
+    conn.sql("DROP TABLE IF EXISTS uniprot_xref")
+    conn.sql("""
+    CREATE TABLE uniprot_xref (
+        uniprot_accession VARCHAR,
+        db_prefix VARCHAR,
+        xref_id VARCHAR
+    )
+    """)
+
+    total_count = 0
+    for db_prefix, xref_field, organism_id, gaf_prefix in mappings_to_load:
+        cache_file = fetch_uniprot_xrefs(db_prefix, xref_field, organism_id, refresh=refresh)
+
+        # Load TSV and expand semicolon-separated xrefs
+        # UniProt format: accession<TAB>xref1;xref2;...
+        conn.sql(f"""
+        INSERT INTO uniprot_xref
+        SELECT
+            column0 as uniprot_accession,
+            '{db_prefix}' as db_prefix,
+            '{gaf_prefix}:' || trim(unnest(string_split(column1, ';'))) as xref_id
+        FROM read_csv('{cache_file}', delim='\t', header=true, columns={{'column0': 'VARCHAR', 'column1': 'VARCHAR'}})
+        WHERE column1 IS NOT NULL AND column1 != ''
+        """)
+
+        count = conn.sql(f"SELECT COUNT(*) FROM uniprot_xref WHERE db_prefix = '{db_prefix}'").fetchone()[0]
+        logger.info(f"Loaded {count} UniProt xrefs for {db_prefix}")
+        total_count += count
+
+    # Prune to only xrefs that appear in gaf_association
+    before_count = conn.sql("SELECT COUNT(*) FROM uniprot_xref").fetchone()[0]
+    conn.sql("""
+    DELETE FROM uniprot_xref
+    WHERE NOT EXISTS (
+        SELECT 1 FROM gaf_association g
+        WHERE g.subject = uniprot_xref.xref_id
+    )
+    """)
+    after_count = conn.sql("SELECT COUNT(*) FROM uniprot_xref").fetchone()[0]
+    logger.info(f"Pruned uniprot_xref from {before_count} to {after_count} (keeping only IDs in GAF)")
+
+    # Create index
+    conn.sql("CREATE INDEX uniprot_xref_xref_id_idx ON uniprot_xref(xref_id)")
+    conn.sql("CREATE INDEX uniprot_xref_accession_idx ON uniprot_xref(uniprot_accession)")
+
+    return after_count

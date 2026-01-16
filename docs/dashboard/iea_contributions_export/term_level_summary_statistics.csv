@@ -40,6 +40,28 @@ Fungi,TreeGrafter,GO_REF:0000118,4292,"9,621,520",2241.7,GO:0005737 (cytoplasm),
 Fungi,UniProt Keywords,GO_REF:0000043,316,"3,077,699",9739.6,GO:0046872 (metal ion binding),"627,100"
 Fungi,UniProt Subcellular,GO_REF:0000044,117,"1,265,727",10818.2,GO:0005634 (nucleus),"245,161"
 Fungi,UniProt UniPathway,GO_REF:0000041,117,"51,093",436.7,GO:0016567 (protein ubiquitination),"5,586"
+Human,ARBA,GO_REF:0000117,292,730,2.5,GO:0007399 (nervous system development),31
+Human,Compara,GO_REF:0000107,7852,"40,245",5.1,GO:0098978 (glutamatergic synapse),460
+Human,EC2GO,GO_REF:0000003,65,198,3.0,GO:0003925 (G protein activity),37
+Human,InterPro2GO,GO_REF:0000002,903,"4,797",5.3,GO:0005509 (calcium ion binding),356
+Human,Logical Inference,GO_REF:0000108,28,677,24.2,GO:0045202 (synapse),158
+Human,Manual Transfer,GO_REF:0000104,66,115,1.7,GO:0033290 (eukaryotic 48S preinitiation complex),14
+Human,Rfam,GO_REF:0000115,87,"53,692",617.1,GO:0005730 (nucleolus),"5,801"
+Human,Rhea Mappings,GO_REF:0000116,157,707,4.5,GO:0106310 (protein serine kinase activity),340
+Human,UniProt Keywords,GO_REF:0000043,280,"11,415",40.8,GO:0046872 (metal ion binding),"2,288"
+Human,UniProt Subcellular,GO_REF:0000044,194,"6,704",34.6,GO:0016020 (membrane),550
+Human,UniProt UniPathway,GO_REF:0000041,55,234,4.3,GO:0016567 (protein ubiquitination),113
+Mouse,ARBA,GO_REF:0000117,433,"1,438",3.3,GO:0007606 (sensory perception of chemical stimulus),187
+Mouse,Compara,GO_REF:0000107,1579,"4,944",3.1,GO:0009410 (response to xenobiotic stimulus),107
+Mouse,EC2GO,GO_REF:0000003,80,213,2.7,GO:0003925 (G protein activity),32
+Mouse,InterPro2GO,GO_REF:0000002,934,"5,292",5.7,GO:0005509 (calcium ion binding),299
+Mouse,Logical Inference,GO_REF:0000108,30,613,20.4,GO:0045202 (synapse),90
+Mouse,Manual Transfer,GO_REF:0000104,67,141,2.1,GO:0033290 (eukaryotic 48S preinitiation complex),14
+Mouse,Rfam,GO_REF:0000115,46,"8,381",182.2,GO:0006396 (RNA processing),"1,251"
+Mouse,Rhea Mappings,GO_REF:0000116,148,668,4.5,GO:0106310 (protein serine kinase activity),342
+Mouse,UniProt Keywords,GO_REF:0000043,283,"11,417",40.3,GO:0046872 (metal ion binding),"2,299"
+Mouse,UniProt Subcellular,GO_REF:0000044,193,"6,711",34.8,GO:0005886 (plasma membrane),609
+Mouse,UniProt UniPathway,GO_REF:0000041,56,227,4.1,GO:0016567 (protein ubiquitination),107
 Virus,ARBA,GO_REF:0000117,90,"2,555",28.4,GO:0001897 (symbiont-mediated cytolysis of host cell),"1,065"
 Virus,EC2GO,GO_REF:0000003,135,"2,112",15.6,GO:0004748 (ribonucleoside-diphosphate reductase act...),464
 Virus,InterPro2GO,GO_REF:0000002,745,"62,918",84.5,GO:0003677 (DNA binding),"7,076"

@@ -40,28 +40,28 @@ Fungi,UniProt Keywords,GO_REF:0000043,255,GO:0030030 (cell projection organizati
 Fungi,Logical Inference,GO_REF:0000108,191,GO:0035349 (coenzyme A transmembrane trans...),66.47,0.00e+00,46.75
 Fungi,UniProt UniPathway,GO_REF:0000041,148,GO:0009686 (gibberellin biosynthetic proce...),243.25,2.58e-17,100.17
 Fungi,UniProt Subcellular,GO_REF:0000044,98,GO:0120293 (dynein axonemal particle),15.50,4.37e-54,8.49
-Human,Compara,GO_REF:0000107,2534,GO:0000038 (very long-chain fatty acid met...),3.64,2.55e-04,3.36
-Human,ARBA,GO_REF:0000117,694,GO:0045321 (leukocyte activation),13.26,3.16e-09,8.53
-Human,InterPro2GO,GO_REF:0000002,624,GO:0016531 (copper chaperone activity),9.09,7.37e-03,6.13
-Human,Rhea Mappings,GO_REF:0000116,544,GO:0090556 (phosphatidylserine floppase ac...),85.45,2.58e-16,42.49
-Human,EC2GO,GO_REF:0000003,457,GO:0004353 (glutamate dehydrogenase [NAD(P...),87.14,6.95e-04,33.82
-Human,UniProt Keywords,GO_REF:0000043,256,GO:0006547 (L-histidine metabolic process),3.93,6.85e-03,2.71
-Human,Logical Inference,GO_REF:0000108,184,GO:1990822 (basic amino acid transmembrane...),54.44,1.71e-10,34.54
-Human,UniProt Subcellular,GO_REF:0000044,171,GO:0120293 (dynein axonemal particle),10.32,1.29e-20,5.72
-Human,Manual Transfer,GO_REF:0000104,136,GO:1990838 (poly(U)-specific exoribonuclea...),376.66,7.15e-03,180.35
-Human,UniProt UniPathway,GO_REF:0000041,128,GO:0019483 (beta-alanine biosynthetic proc...),253.75,2.71e-05,132.49
-Human,Rfam,GO_REF:0000115,56,GO:0006452 (translational frameshifting),7.13,6.13e-04,6.03
-Mouse,Compara,GO_REF:0000107,1702,GO:0009611 (response to wounding),3.14,1.12e-07,2.82
-Mouse,ARBA,GO_REF:0000117,552,GO:0032426 (stereocilium tip),12.50,8.66e-06,8.57
-Mouse,Rhea Mappings,GO_REF:0000116,473,GO:0106438 (protein-glutamic acid ligase a...),82.25,1.91e-12,38.22
-Mouse,InterPro2GO,GO_REF:0000002,432,GO:0004935 (adrenergic receptor activity),7.44,2.58e-07,4.81
-Mouse,EC2GO,GO_REF:0000003,395,GO:0004522 (ribonuclease A activity),82.23,1.84e-05,30.65
-Mouse,UniProt Keywords,GO_REF:0000043,227,GO:0007599 (hemostasis),3.46,2.05e-24,2.41
-Mouse,Logical Inference,GO_REF:0000108,179,GO:1990822 (basic amino acid transmembrane...),75.99,4.01e-04,43.63
-Mouse,UniProt Subcellular,GO_REF:0000044,172,GO:0120293 (dynein axonemal particle),9.63,4.59e-17,5.20
-Mouse,UniProt UniPathway,GO_REF:0000041,119,GO:0019563 (glycerol catabolic process),237.31,7.16e-12,119.89
-Mouse,Manual Transfer,GO_REF:0000104,98,GO:0031314 (extrinsic component of mitocho...),229.84,4.54e-11,68.26
-Mouse,Rfam,GO_REF:0000115,40,GO:0005692 (U11 snRNP),34.82,3.69e-11,26.65
+Human,Compara,GO_REF:0000107,2037,GO:0060008 (Sertoli cell differentiation),3.45,1.27e-03,3.17
+Human,ARBA,GO_REF:0000117,670,GO:0098588 (bounding membrane of organelle),11.95,2.90e-22,7.88
+Human,InterPro2GO,GO_REF:0000002,531,GO:0016272 (prefoldin complex),8.21,5.23e-06,5.50
+Human,Rhea Mappings,GO_REF:0000116,516,GO:0000210 (NAD+ diphosphatase activity),76.56,8.37e-04,37.56
+Human,EC2GO,GO_REF:0000003,455,GO:0103068 (leukotriene C4 gamma-glutamyl ...),72.05,8.85e-09,29.78
+Human,UniProt Keywords,GO_REF:0000043,270,GO:0034707 (chloride channel complex),6.33,1.26e-42,4.22
+Human,Logical Inference,GO_REF:0000108,185,GO:1990822 (basic amino acid transmembrane...),46.12,4.68e-10,29.25
+Human,UniProt Subcellular,GO_REF:0000044,173,GO:0030658 (transport vesicle membrane),9.23,7.85e-38,5.59
+Human,Manual Transfer,GO_REF:0000104,133,GO:0016282 (eukaryotic 43S preinitiation c...),337.04,6.59e-34,167.42
+Human,UniProt UniPathway,GO_REF:0000041,127,GO:0006198 (cAMP catabolic process),260.09,1.77e-21,136.79
+Human,Rfam,GO_REF:0000115,55,GO:0000171 (ribonuclease MRP activity),5.47,9.97e-14,4.92
+Mouse,Compara,GO_REF:0000107,1326,GO:0036295 (cellular response to increased...),2.79,3.14e-03,2.50
+Mouse,ARBA,GO_REF:0000117,480,GO:0098687 (chromosomal region),10.94,8.57e-03,7.95
+Mouse,Rhea Mappings,GO_REF:0000116,444,GO:0120548 (phosphatidylinositol phospholi...),71.42,2.40e-10,32.74
+Mouse,InterPro2GO,GO_REF:0000002,390,"GO:0016714 (oxidoreductase activity, actin...)",6.55,4.81e-03,4.35
+Mouse,EC2GO,GO_REF:0000003,381,GO:0106429 (11-cis-retinol dehydrogenase (...),64.84,1.30e-03,25.81
+Mouse,UniProt Keywords,GO_REF:0000043,257,GO:0019363 (pyridine nucleotide biosynthet...),5.25,2.50e-08,3.57
+Mouse,Logical Inference,GO_REF:0000108,187,GO:0098734 (macromolecule depalmitoylation),62.22,4.83e-09,37.17
+Mouse,UniProt Subcellular,GO_REF:0000044,170,GO:0120293 (dynein axonemal particle),8.37,4.50e-16,4.93
+Mouse,UniProt UniPathway,GO_REF:0000041,117,GO:0033512 (L-lysine catabolic process to ...),236.64,2.14e-07,118.33
+Mouse,Manual Transfer,GO_REF:0000104,97,GO:0031314 (extrinsic component of mitocho...),200.67,9.76e-11,62.07
+Mouse,Rfam,GO_REF:0000115,39,GO:0006617 (SRP-dependent cotranslational ...),30.54,5.88e-30,23.96
 Virus,TreeGrafter,GO_REF:0000118,617,GO:0000018 (regulation of DNA recombinatio...),12.93,9.07e-41,10.22
 Virus,InterPro2GO,GO_REF:0000002,352,GO:0015969 (guanosine tetraphosphate metab...),3.34,2.32e-04,2.69
 Virus,UniProt Keywords,GO_REF:0000043,180,GO:0016168 (chlorophyll binding),2.29,3.29e-42,1.95

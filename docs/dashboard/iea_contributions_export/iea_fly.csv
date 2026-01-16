@@ -1,23 +1,12 @@
-evidence_type,supporting_references,count_star(),label,reference_name
-IBA,GO_REF:0000033,13230,"GO_REF:0000033
-(PAINT)",PAINT
-IEA,GO_REF:0000043,4101,"GO_REF:0000043
-(UniProt Keywords)",UniProt Keywords
-IEA,GO_REF:0000002,3214,"GO_REF:0000002
-(InterPro2GO)",InterPro2GO
-IEA,GO_REF:0000044,2211,"GO_REF:0000044
-(UniProt Subcellular)",UniProt Subcellular
-IEA,GO_REF:0000117,870,"GO_REF:0000117
-(ARBA)",ARBA
-IEA,GO_REF:0000115,490,"GO_REF:0000115
-(Rfam)",Rfam
-IEA,GO_REF:0000108,279,"GO_REF:0000108
-(Logical Inference)",Logical Inference
-IEA,GO_REF:0000104,173,"GO_REF:0000104
-(Manual Transfer)",Manual Transfer
-IEA,GO_REF:0000003,162,"GO_REF:0000003
-(EC2GO)",EC2GO
-IEA,GO_REF:0000116,162,"GO_REF:0000116
-(Rhea Mappings)",Rhea Mappings
-IEA,GO_REF:0000041,91,"GO_REF:0000041
-(UniProt UniPathway)",UniProt UniPathway
+evidence_type,supporting_references,count_star(),swissprot_count,other_count,reference_name
+IBA,GO_REF:0000033,13300,4501,8799,PAINT
+IEA,GO_REF:0000043,4129,2075,2054,UniProt Keywords
+IEA,GO_REF:0000002,3219,1150,2069,InterPro2GO
+IEA,GO_REF:0000044,2217,1019,1198,UniProt Subcellular
+IEA,GO_REF:0000117,870,82,788,ARBA
+IEA,GO_REF:0000115,490,0,490,Rfam
+IEA,GO_REF:0000108,283,135,148,Logical Inference
+IEA,GO_REF:0000104,173,136,37,Manual Transfer
+IEA,GO_REF:0000116,163,138,25,Rhea Mappings
+IEA,GO_REF:0000003,162,30,132,EC2GO
+IEA,GO_REF:0000041,94,38,56,UniProt UniPathway
