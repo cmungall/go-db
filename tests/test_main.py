@@ -1,9 +1,9 @@
 from typing import List
 
 import pytest
+
 from go_db import LoaderConfiguration, load_ddl, load_gaf
 from go_db.main import bulk_load_go_db, load_derived_tables
-
 from tests import INPUT_DIR
 
 TEST_ONTOLOGY_DB = str(INPUT_DIR / "go-nucleus.db")

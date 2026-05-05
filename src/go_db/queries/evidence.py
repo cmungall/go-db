@@ -337,12 +337,12 @@ class EvidenceRedundancyAnalyzer:
         SELECT COUNT(DISTINCT db_object_id || ':' || ontology_class_ref) as unique_annotations
         FROM gaf_association
         {evidence_filter}
-        {'AND' if evidence_filter else 'WHERE'} {set1_clause}
+        {"AND" if evidence_filter else "WHERE"} {set1_clause}
         AND NOT EXISTS (
             SELECT 1 FROM gaf_association a2
             WHERE a2.db_object_id = gaf_association.db_object_id
             AND a2.ontology_class_ref = gaf_association.ontology_class_ref
-            AND {set2_clause.replace('supporting_references', 'a2.supporting_references')}
+            AND {set2_clause.replace("supporting_references", "a2.supporting_references")}
         )
         """
 
@@ -350,12 +350,12 @@ class EvidenceRedundancyAnalyzer:
         SELECT COUNT(DISTINCT db_object_id || ':' || ontology_class_ref) as unique_annotations
         FROM gaf_association
         {evidence_filter}
-        {'AND' if evidence_filter else 'WHERE'} {set2_clause}
+        {"AND" if evidence_filter else "WHERE"} {set2_clause}
         AND NOT EXISTS (
             SELECT 1 FROM gaf_association a2
             WHERE a2.db_object_id = gaf_association.db_object_id
             AND a2.ontology_class_ref = gaf_association.ontology_class_ref
-            AND {set1_clause.replace('supporting_references', 'a2.supporting_references')}
+            AND {set1_clause.replace("supporting_references", "a2.supporting_references")}
         )
         """
 
@@ -369,7 +369,7 @@ class EvidenceRedundancyAnalyzer:
             a1.db_object_id = a2.db_object_id
             AND a1.ontology_class_ref = a2.ontology_class_ref
         WHERE
-            {'a1.evidence_type = ' + "'" + evidence_type + "' AND " if evidence_type else ''}
+            {"a1.evidence_type = " + "'" + evidence_type + "' AND " if evidence_type else ""}
             {set1_clause_a1}
             AND {set2_clause_a2}
         """

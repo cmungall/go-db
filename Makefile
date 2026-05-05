@@ -1,4 +1,4 @@
-RUN = poetry run
+RUN = uv run
 CODE = src/go_db
 DM = $(CODE)/datamodel
 DBS = filtered_goa_uniprot_all

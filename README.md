@@ -8,14 +8,14 @@ go-db is a Python package that provides a convenient way to load Gene Ontology (
 Currently you must have the repo checked out and be in the root directory.
 
 ```
-poetry install
-poetry run go-db --help
+uv sync
+uv run go-db --help
 ```
 
 To see all options:
 
 ```
-poetry run go-db --help
+uv run go-db --help
 ```
 
 You must also place a copy of `go.db` in the `db` directory.
@@ -25,7 +25,7 @@ You must also place a copy of `go.db` in the `db` directory.
 Given `data/mgi.gaf` as input:
 
 ```
-poetry run go-db load -d db/mgi.db data/mgi.gaf
+uv run go-db load -d db/mgi.db data/mgi.gaf
 ```
 
 Note that the (very smart) duckdb auto-CSV detector seems to do the right thing with GAFs
@@ -49,7 +49,7 @@ This is done automatically after loading, unless `--no-validate` is passed
 It can also be run at any time with:
 
 ```
-poetry run go-db validate -d mgi.db
+uv run go-db validate -d mgi.db
 ```
 
 This is just a simple wrapper for the SQL views here:
@@ -74,7 +74,7 @@ attach 'db/go.semsql.db';
 This is currently incomplete but to give a sense, to load a 6G (compressed) GAF:
 
 ```
-tome poetry run go-db -load -d gcrp.db goa_uniprot_gcrp.gaf.gz 
+time uv run go-db -load -d gcrp.db goa_uniprot_gcrp.gaf.gz
 2197.27s user 110.23s system 664% cpu 5:47.33 total
 ```
 

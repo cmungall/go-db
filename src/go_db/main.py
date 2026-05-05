@@ -1,7 +1,6 @@
 """Main python file."""
 
 import logging
-import tempfile
 from pathlib import Path
 from typing import Iterator, List, Optional, Union
 from urllib.request import urlopen
@@ -359,12 +358,12 @@ SWISSPROT_CACHE_FILE = SWISSPROT_CACHE_DIR / "swissprot_ids.txt"
 # Mapping of GAF db prefix to UniProt xref field name and organism ID
 # Format: db_prefix -> (uniprot_xref_field, organism_id, id_prefix_in_gaf)
 UNIPROT_XREF_MAPPINGS = {
-    "FB": ("xref_flybase", 7227, "FB"),           # Drosophila melanogaster
-    "MGI": ("xref_mgi", 10090, "MGI"),            # Mus musculus
-    "RGD": ("xref_rgd", 10116, "RGD"),            # Rattus norvegicus
-    "ZFIN": ("xref_zfin", 7955, "ZFIN"),          # Danio rerio
-    "WB": ("xref_wormbase", 6239, "WB"),          # Caenorhabditis elegans
-    "SGD": ("xref_sgd", 559292, "SGD"),           # Saccharomyces cerevisiae S288C
+    "FB": ("xref_flybase", 7227, "FB"),  # Drosophila melanogaster
+    "MGI": ("xref_mgi", 10090, "MGI"),  # Mus musculus
+    "RGD": ("xref_rgd", 10116, "RGD"),  # Rattus norvegicus
+    "ZFIN": ("xref_zfin", 7955, "ZFIN"),  # Danio rerio
+    "WB": ("xref_wormbase", 6239, "WB"),  # Caenorhabditis elegans
+    "SGD": ("xref_sgd", 559292, "SGD"),  # Saccharomyces cerevisiae S288C
     "PomBase": ("xref_pombase", 284812, "PomBase"),  # Schizosaccharomyces pombe
 }
 
