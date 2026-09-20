@@ -3,6 +3,27 @@
 go-db is a Python package that provides a convenient way to load Gene Ontology (GO) annotations from GAF files into a DuckDB database for efficient querying and analysis. It includes scripts for loading data, validating the loaded data against GO rules, and running common queries.
 
 
+## Install the agent skill
+
+With Node.js and npm installed, use the [Skills CLI](https://skills.sh/docs/cli)
+from the project where you want to use the skill:
+
+```bash
+# List available skills without installing
+npx skills add cmungall/go-db --list
+
+# Install one skill for Claude Code in the current project
+npx skills add cmungall/go-db --skill go-db-query -a claude-code
+```
+
+Use `-a codex` to target Codex instead, or omit `-a` to choose agents.
+Installation is project-scoped by default; add `-g` for a user-wide install
+available across projects.
+
+This installs the skill instructions, not the `go-db` CLI or GO databases.
+Follow the usage and data-loading instructions below to prepare those.
+It does not register a Claude plugin, hooks, MCP servers, or plugin commands.
+
 ## Usage
 
 Currently you must have the repo checked out and be in the root directory.
