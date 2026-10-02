@@ -1,0 +1,6 @@
+evidence_type,supporting_references,count_star(),swissprot_count,other_count,reference_name
+IEA,GO_REF:0000043,20,20,0,UniProt Keywords
+IEA,GO_REF:0000044,7,7,0,UniProt Subcellular
+IEA,GO_REF:0000002,5,5,0,InterPro2GO
+IEA,GO_REF:0000115,1,0,1,Rfam
+IEA,GO_REF:0000116,1,1,0,Rhea Mappings

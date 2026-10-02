@@ -1,0 +1,2647 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "d6a55b5e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012136,
+     "end_time": "2025-10-14T08:16:58.555460",
+     "exception": false,
+     "start_time": "2025-10-14T08:16:58.543324",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# IEA Contributions Dashboard\n",
+    "\n",
+    "This notebook visualizes IEA (Inferred from Electronic Annotation) contributions across different GO databases, showing the distribution of annotations by supporting references (GO_REFs)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ef73e47e",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:09.725886Z",
+     "start_time": "2025-09-11T17:30:09.675161Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:16:58.570172Z",
+     "iopub.status.busy": "2025-10-14T08:16:58.569931Z",
+     "iopub.status.idle": "2025-10-14T08:17:01.900051Z",
+     "shell.execute_reply": "2025-10-14T08:17:01.899689Z"
+    },
+    "papermill": {
+     "duration": 3.338112,
+     "end_time": "2025-10-14T08:17:01.901276",
+     "exception": false,
+     "start_time": "2025-10-14T08:16:58.563164",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "from itertools import pairwise\n",
+    "\n",
+    "import duckdb\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "import seaborn as sns\n",
+    "from pathlib import Path\n",
+    "import numpy as np\n",
+    "\n",
+    "# Set style for better-looking charts\n",
+    "sns.set_style(\"whitegrid\")\n",
+    "plt.rcParams['figure.figsize'] = (12, 6)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6afef477",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:09.735550Z",
+     "start_time": "2025-09-11T17:30:09.733301Z"
+    },
+    "papermill": {
+     "duration": 0.00377,
+     "end_time": "2025-10-14T08:17:01.909760",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:01.905990",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "4fb4b9fa",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:09.885018Z",
+     "start_time": "2025-09-11T17:30:09.880966Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:01.918224Z",
+     "iopub.status.busy": "2025-10-14T08:17:01.918024Z",
+     "iopub.status.idle": "2025-10-14T08:17:01.920700Z",
+     "shell.execute_reply": "2025-10-14T08:17:01.920451Z"
+    },
+    "papermill": {
+     "duration": 0.007712,
+     "end_time": "2025-10-14T08:17:01.921525",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:01.913813",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# GO_REF name mappings for better readability\n",
+    "GO_REF_NAMES = {\n",
+    "    'GO_REF:0000002': 'InterPro2GO',\n",
+    "    'GO_REF:0000003': 'EC2GO',\n",
+    "    'GO_REF:0000041': 'UniProt UniPathway',\n",
+    "    'GO_REF:0000043': 'UniProt Keywords',\n",
+    "    'GO_REF:0000044': 'UniProt Subcellular',\n",
+    "    'GO_REF:0000104': 'Manual Transfer',\n",
+    "    'GO_REF:0000107': 'Compara',\n",
+    "    'GO_REF:0000108': 'Logical Inference',\n",
+    "    'GO_REF:0000115': 'Rfam',\n",
+    "    'GO_REF:0000116': 'Rhea Mappings',\n",
+    "    'GO_REF:0000117': 'ARBA',\n",
+    "    'GO_REF:0000118': 'TreeGrafter',\n",
+    "    'GO_REF:0000119': 'AGR',\n",
+    "    'GO_REF:0000120': 'Multiple IEA',\n",
+    "}\n",
+    "\n",
+    "def get_ref_label(ref):\n",
+    "    \"\"\"Get human-readable label for GO_REF\"\"\"\n",
+    "    if ref in GO_REF_NAMES:\n",
+    "        return f\"{ref}\\n({GO_REF_NAMES[ref]})\"\n",
+    "    return ref"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "a393d681",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:09.907211Z",
+     "start_time": "2025-09-11T17:30:09.904153Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:01.929129Z",
+     "iopub.status.busy": "2025-10-14T08:17:01.928996Z",
+     "iopub.status.idle": "2025-10-14T08:17:01.931833Z",
+     "shell.execute_reply": "2025-10-14T08:17:01.931557Z"
+    },
+    "papermill": {
+     "duration": 0.007485,
+     "end_time": "2025-10-14T08:17:01.932665",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:01.925180",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def get_iea_contributions(db_path):\n",
+    "    \"\"\"\n",
+    "    Query IEA contributions from a database\n",
+    "    \n",
+    "    Args:\n",
+    "        db_path: Path to the DuckDB database file\n",
+    "    \n",
+    "    Returns:\n",
+    "        DataFrame with IEA contribution data\n",
+    "    \"\"\"\n",
+    "    conn = duckdb.connect(str(db_path), read_only=True)\n",
+    "    \n",
+    "    # Try the summary view first, fall back to manual aggregation if needed\n",
+    "    queries = [\n",
+    "        \"\"\"\n",
+    "        SELECT * FROM gaf_unique_reference_contrib_summary \n",
+    "        WHERE evidence_type='IEA'\n",
+    "        ORDER BY count_star() DESC\n",
+    "        \"\"\",\n",
+    "        \"\"\"\n",
+    "        SELECT \n",
+    "            evidence_type,\n",
+    "            supporting_references,\n",
+    "            COUNT(*) as \"count_star()\"\n",
+    "        FROM gaf_unique_reference_contrib \n",
+    "        WHERE evidence_type='IEA' \n",
+    "        GROUP BY evidence_type, supporting_references\n",
+    "        ORDER BY \"count_star()\" DESC\n",
+    "        \"\"\"\n",
+    "    ]\n",
+    "    \n",
+    "    for query in queries:\n",
+    "        try:\n",
+    "            df = conn.execute(query).df()\n",
+    "            conn.close()\n",
+    "            return df\n",
+    "        except Exception as e:\n",
+    "            continue\n",
+    "    \n",
+    "    print(f\"Error querying {db_path}: Could not retrieve IEA contributions\")\n",
+    "    conn.close()\n",
+    "    return pd.DataFrame()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "905b783a",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:09.917572Z",
+     "start_time": "2025-09-11T17:30:09.913493Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:01.940901Z",
+     "iopub.status.busy": "2025-10-14T08:17:01.940690Z",
+     "iopub.status.idle": "2025-10-14T08:17:01.944260Z",
+     "shell.execute_reply": "2025-10-14T08:17:01.944003Z"
+    },
+    "papermill": {
+     "duration": 0.008369,
+     "end_time": "2025-10-14T08:17:01.945004",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:01.936635",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def plot_iea_contributions(df, title, ax=None):\n",
+    "    \"\"\"\n",
+    "    Create a bar chart for IEA contributions\n",
+    "    \n",
+    "    Args:\n",
+    "        df: DataFrame with IEA contribution data\n",
+    "        title: Title for the chart\n",
+    "        ax: Matplotlib axis (optional)\n",
+    "    \"\"\"\n",
+    "    if df.empty:\n",
+    "        print(f\"No data available for {title}\")\n",
+    "        return\n",
+    "    \n",
+    "    if ax is None:\n",
+    "        fig, ax = plt.subplots(figsize=(12, 6))\n",
+    "    \n",
+    "    # Add human-readable labels\n",
+    "    df['label'] = df['supporting_references'].apply(get_ref_label)\n",
+    "    \n",
+    "    # Create bar chart\n",
+    "    bars = ax.bar(range(len(df)), df['count_star()'], color='steelblue')\n",
+    "    \n",
+    "    # Customize chart\n",
+    "    ax.set_xlabel('Supporting Reference', fontsize=12)\n",
+    "    ax.set_ylabel('Number of Annotations', fontsize=12)\n",
+    "    ax.set_title(title, fontsize=14, fontweight='bold')\n",
+    "    ax.set_xticks(range(len(df)))\n",
+    "    ax.set_xticklabels(df['label'], rotation=45, ha='right')\n",
+    "    \n",
+    "    # Add value labels on bars\n",
+    "    for i, (bar, val) in enumerate(zip(bars, df['count_star()'])):\n",
+    "        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(df['count_star()'])*0.01,\n",
+    "                f'{val:,}', ha='center', va='bottom', fontsize=10)\n",
+    "    \n",
+    "    # Format y-axis\n",
+    "    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{int(x):,}'))\n",
+    "    \n",
+    "    plt.tight_layout()\n",
+    "    return ax"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "79004d74",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003333,
+     "end_time": "2025-10-14T08:17:01.952278",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:01.948945",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Available Databases\n",
+    "\n",
+    "Let's check which databases are available and analyze their IEA contributions."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "97408430",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003322,
+     "end_time": "2025-10-14T08:17:01.958966",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:01.955644",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Taxonomic Diversity Analysis\n",
+    "\n",
+    "Let's examine the number of distinct taxa represented in each database to understand the taxonomic coverage."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "8b9524f1",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:09.937152Z",
+     "start_time": "2025-09-11T17:30:09.932701Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:01.966859Z",
+     "iopub.status.busy": "2025-10-14T08:17:01.966722Z",
+     "iopub.status.idle": "2025-10-14T08:17:01.969887Z",
+     "shell.execute_reply": "2025-10-14T08:17:01.969593Z"
+    },
+    "papermill": {
+     "duration": 0.008177,
+     "end_time": "2025-10-14T08:17:01.970620",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:01.962443",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "✗ Not found: Human GOA (db/goa_human.ddb)\n",
+      "✗ Not found: Mouse MGI (db/mgi.ddb)\n",
+      "✗ Not found: Rat RGD (db/rgd.ddb)\n",
+      "✗ Not found: Zebrafish (db/zfin.ddb)\n",
+      "✗ Not found: Fly (db/fb.ddb)\n",
+      "✗ Not found: Worm (db/wb.ddb)\n",
+      "✗ Not found: Yeast (db/sgd.ddb)\n",
+      "✗ Not found: Archaea (db/archaea.ddb)\n",
+      "✗ Not found: Fungi (db/fungi.ddb)\n",
+      "✗ Not found: Virus (db/virus.ddb)\n",
+      "✗ Not found: Clostridium (db/clostridium.ddb)\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Define database paths and their display names\n",
+    "# Adjust these paths based on your actual database locations\n",
+    "databases = {\n",
+    "    #'Plant': 'db/plant.ddb',\n",
+    "    'Human GOA': 'db/goa_human.ddb',\n",
+    "    'Mouse MGI': 'db/mgi.ddb',\n",
+    "    'Rat RGD': 'db/rgd.ddb',\n",
+    "    'Zebrafish': 'db/zfin.ddb',\n",
+    "    'Fly': 'db/fb.ddb',\n",
+    "    'Worm': 'db/wb.ddb',\n",
+    "    'Yeast': 'db/sgd.ddb',\n",
+    "    #'Bacteria': 'db/bacteria.ddb',\n",
+    "    'Archaea': 'db/archaea.ddb',\n",
+    "    'Fungi': 'db/fungi.ddb',\n",
+    "    'Virus': 'db/virus.ddb',\n",
+    "    'Clostridium': 'db/clostridium.ddb',\n",
+    "    #'Mammal': 'db/mammal.ddb',\n",
+    "}\n",
+    "\n",
+    "# Check which databases exist\n",
+    "base_path = Path('../../')  # Adjust based on notebook location\n",
+    "available_dbs = {}\n",
+    "for name, db_path in databases.items():\n",
+    "    full_path = base_path / db_path\n",
+    "    if full_path.exists():\n",
+    "        available_dbs[name] = full_path\n",
+    "        print(f\"✓ Found: {name} ({db_path})\")\n",
+    "    else:\n",
+    "        print(f\"✗ Not found: {name} ({db_path})\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "1d94b180",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:10.264604Z",
+     "start_time": "2025-09-11T17:30:09.970505Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:01.979394Z",
+     "iopub.status.busy": "2025-10-14T08:17:01.979005Z",
+     "iopub.status.idle": "2025-10-14T08:17:01.982234Z",
+     "shell.execute_reply": "2025-10-14T08:17:01.981932Z"
+    },
+    "papermill": {
+     "duration": 0.008093,
+     "end_time": "2025-10-14T08:17:01.982921",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:01.974828",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Total databases analyzed: 0\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Query distinct taxa from each database\n",
+    "taxa_counts = {}\n",
+    "\n",
+    "for name, db_path in available_dbs.items():\n",
+    "    try:\n",
+    "        conn = duckdb.connect(str(db_path), read_only=True)\n",
+    "        \n",
+    "        # Query for distinct NCBITaxon IDs\n",
+    "        query = \"\"\"\n",
+    "        SELECT COUNT(DISTINCT db_object_taxon) as distinct_taxa\n",
+    "        FROM gaf_association_flat\n",
+    "        WHERE db_object_taxon NOT LIKE '%|%'\n",
+    "        \"\"\"\n",
+    "        \n",
+    "        result = conn.execute(query).df()\n",
+    "        taxa_count = result['distinct_taxa'].iloc[0] if not result.empty else 0\n",
+    "        taxa_counts[name] = taxa_count\n",
+    "        \n",
+    "        conn.close()\n",
+    "        print(f\"{name}: {taxa_count:,} distinct taxa\")\n",
+    "    except Exception as e:\n",
+    "        print(f\"Error querying {name}: {e}\")\n",
+    "        taxa_counts[name] = 0\n",
+    "\n",
+    "print(f\"\\nTotal databases analyzed: {len(taxa_counts)}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8da68538",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003667,
+     "end_time": "2025-10-14T08:17:01.990373",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:01.986706",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Individual Database Analysis\n",
+    "\n",
+    "Let's create bar charts for each available database showing their IEA contributions."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "cb350300",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:27.128530Z",
+     "start_time": "2025-09-11T17:30:10.281971Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:01.998626Z",
+     "iopub.status.busy": "2025-10-14T08:17:01.998477Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.000717Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.000488Z"
+    },
+    "papermill": {
+     "duration": 0.007214,
+     "end_time": "2025-10-14T08:17:02.001433",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:01.994219",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Analyze each database individually\n",
+    "all_data = {}\n",
+    "\n",
+    "for name, db_path in available_dbs.items():\n",
+    "    print(f\"\\nAnalyzing {name}...\")\n",
+    "    df = get_iea_contributions(db_path)\n",
+    "    \n",
+    "    if not df.empty:\n",
+    "        all_data[name] = df\n",
+    "        print(f\"  Total IEA annotations: {df['count_star()'].sum():,}\")\n",
+    "        print(f\"  Number of GO_REFs: {len(df)}\")\n",
+    "        \n",
+    "        # Create individual plot\n",
+    "        plt.figure(figsize=(12, 6))\n",
+    "        plot_iea_contributions(df, f'IEA Contributions - {name}')\n",
+    "        plt.show()\n",
+    "    else:\n",
+    "        print(f\"  No data available\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "fe6661b0",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:27.357200Z",
+     "start_time": "2025-09-11T17:30:27.140456Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.023126Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.022963Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.025745Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.025472Z"
+    },
+    "papermill": {
+     "duration": 0.021098,
+     "end_time": "2025-10-14T08:17:02.026495",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.005397",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Total databases analyzed: 0\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Query distinct taxa from each database\n",
+    "taxa_counts = {}\n",
+    "\n",
+    "for name, db_path in available_dbs.items():\n",
+    "    try:\n",
+    "        conn = duckdb.connect(str(db_path), read_only=True)\n",
+    "        \n",
+    "        # Query for distinct NCBITaxon IDs\n",
+    "        query = \"\"\"\n",
+    "        SELECT COUNT(DISTINCT db_object_taxon) as distinct_taxa\n",
+    "        FROM gaf_association_flat\n",
+    "        \"\"\"\n",
+    "        \n",
+    "        result = conn.execute(query).df()\n",
+    "        taxa_count = result['distinct_taxa'].iloc[0] if not result.empty else 0\n",
+    "        taxa_counts[name] = taxa_count\n",
+    "        \n",
+    "        conn.close()\n",
+    "        print(f\"{name}: {taxa_count:,} distinct taxa\")\n",
+    "    except Exception as e:\n",
+    "        print(f\"Error querying {name}: {e}\")\n",
+    "        taxa_counts[name] = 0\n",
+    "\n",
+    "print(f\"\\nTotal databases analyzed: {len(taxa_counts)}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "38f0ad84",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003483,
+     "end_time": "2025-10-14T08:17:02.034003",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.030520",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Comparative Analysis\n",
+    "\n",
+    "Now let's compare IEA contributions across all available databases."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "66790c02",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:27.698675Z",
+     "start_time": "2025-09-11T17:30:27.371871Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.042221Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.042082Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.045294Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.044954Z"
+    },
+    "papermill": {
+     "duration": 0.008119,
+     "end_time": "2025-10-14T08:17:02.046091",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.037972",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "if all_data:\n",
+    "    # Prepare data for comparison\n",
+    "    comparison_data = []\n",
+    "    \n",
+    "    for db_name, df in all_data.items():\n",
+    "        for _, row in df.iterrows():\n",
+    "            comparison_data.append({\n",
+    "                'Database': db_name,\n",
+    "                'GO_REF': row['supporting_references'],\n",
+    "                'Count': row['count_star()']\n",
+    "            })\n",
+    "    \n",
+    "    comparison_df = pd.DataFrame(comparison_data)\n",
+    "    \n",
+    "    # Create pivot table for heatmap\n",
+    "    pivot_df = comparison_df.pivot(index='GO_REF', columns='Database', values='Count').fillna(0)\n",
+    "    \n",
+    "    # Add readable names to index\n",
+    "    pivot_df.index = [f\"{ref}\\n({GO_REF_NAMES.get(ref, 'Unknown')})\" for ref in pivot_df.index]\n",
+    "    \n",
+    "    # Create heatmap\n",
+    "    plt.figure(figsize=(14, 8))\n",
+    "    sns.heatmap(pivot_df, annot=True, fmt='.0f', cmap='YlOrRd', \n",
+    "                cbar_kws={'label': 'Number of Annotations'})\n",
+    "    plt.title('IEA Contributions Heatmap - All Databases', fontsize=14, fontweight='bold')\n",
+    "    plt.xlabel('Database', fontsize=12)\n",
+    "    plt.ylabel('GO Reference', fontsize=12)\n",
+    "    plt.tight_layout()\n",
+    "    plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "ba56b987",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:27.952115Z",
+     "start_time": "2025-09-11T17:30:27.709120Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.054120Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.053956Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.057691Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.057416Z"
+    },
+    "papermill": {
+     "duration": 0.009738,
+     "end_time": "2025-10-14T08:17:02.059512",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.049774",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "if all_data:\n",
+    "    # Stacked bar chart comparison\n",
+    "    fig, ax = plt.subplots(figsize=(14, 8))\n",
+    "    \n",
+    "    # Get unique GO_REFs across all databases\n",
+    "    all_refs = set()\n",
+    "    for df in all_data.values():\n",
+    "        all_refs.update(df['supporting_references'].values)\n",
+    "    all_refs = sorted(all_refs)\n",
+    "    \n",
+    "    # Prepare data for stacked bars\n",
+    "    bar_width = 0.8 / len(all_data)\n",
+    "    x = np.arange(len(all_refs))\n",
+    "    \n",
+    "    for i, (db_name, df) in enumerate(all_data.items()):\n",
+    "        values = []\n",
+    "        for ref in all_refs:\n",
+    "            val = df[df['supporting_references'] == ref]['count_star()'].values\n",
+    "            values.append(val[0] if len(val) > 0 else 0)\n",
+    "        \n",
+    "        ax.bar(x + i * bar_width, values, bar_width, label=db_name)\n",
+    "    \n",
+    "    # Customize chart\n",
+    "    ax.set_xlabel('Supporting Reference', fontsize=12)\n",
+    "    ax.set_ylabel('Number of Annotations', fontsize=12)\n",
+    "    ax.set_title('IEA Contributions Comparison - All Databases', fontsize=14, fontweight='bold')\n",
+    "    ax.set_xticks(x + bar_width * (len(all_data) - 1) / 2)\n",
+    "    ax.set_xticklabels([get_ref_label(ref) for ref in all_refs], rotation=45, ha='right')\n",
+    "    ax.legend(title='Database', bbox_to_anchor=(1.05, 1), loc='upper left')\n",
+    "    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{int(x):,}'))\n",
+    "    \n",
+    "    plt.tight_layout()\n",
+    "    plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "3370dc14",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:29.128572Z",
+     "start_time": "2025-09-11T17:30:27.962901Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.067667Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.067504Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.073317Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.073059Z"
+    },
+    "papermill": {
+     "duration": 0.010416,
+     "end_time": "2025-10-14T08:17:02.073986",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.063570",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "if all_data:\n",
+    "    # Get all unique GO_REFs across all databases\n",
+    "    all_refs = set()\n",
+    "    for df in all_data.values():\n",
+    "        all_refs.update(df['supporting_references'].values)\n",
+    "    all_refs = sorted(all_refs)\n",
+    "    \n",
+    "    # Determine grid layout\n",
+    "    n_refs = len(all_refs)\n",
+    "    n_cols = 2  # Two columns for better readability\n",
+    "    n_rows = (n_refs + n_cols - 1) // n_cols\n",
+    "    \n",
+    "    fig, axes = plt.subplots(n_rows, n_cols, figsize=(14, 5*n_rows))\n",
+    "    \n",
+    "    # Flatten axes for easier iteration\n",
+    "    if n_refs == 1:\n",
+    "        axes = [axes]\n",
+    "    else:\n",
+    "        axes = axes.flatten()\n",
+    "    \n",
+    "    # Create a bar chart for each GO_REF\n",
+    "    for idx, ref in enumerate(all_refs):\n",
+    "        ax = axes[idx]\n",
+    "        \n",
+    "        # Collect data for this GO_REF across all databases\n",
+    "        ref_data = []\n",
+    "        for db_name, df in all_data.items():\n",
+    "            val = df[df['supporting_references'] == ref]['count_star()'].values\n",
+    "            count = val[0] if len(val) > 0 else 0\n",
+    "            if count > 0:  # Only include databases with data for this GO_REF\n",
+    "                ref_data.append({'Database': db_name, 'Count': count})\n",
+    "        \n",
+    "        if ref_data:\n",
+    "            ref_df = pd.DataFrame(ref_data).sort_values('Count', ascending=False)\n",
+    "            \n",
+    "            # Create bar chart\n",
+    "            bars = ax.bar(range(len(ref_df)), ref_df['Count'], color='steelblue')\n",
+    "            \n",
+    "            # Customize chart\n",
+    "            ref_name = GO_REF_NAMES.get(ref, 'Unknown')\n",
+    "            ax.set_title(f'{ref}\\\\n{ref_name}', fontsize=11, fontweight='bold')\n",
+    "            ax.set_xlabel('Database', fontsize=10)\n",
+    "            ax.set_ylabel('Annotations', fontsize=10)\n",
+    "            ax.set_xticks(range(len(ref_df)))\n",
+    "            ax.set_xticklabels(ref_df['Database'], rotation=45, ha='right', fontsize=9)\n",
+    "            \n",
+    "            # Add value labels on bars\n",
+    "            for bar, val in zip(bars, ref_df['Count']):\n",
+    "                height = bar.get_height()\n",
+    "                ax.text(bar.get_x() + bar.get_width()/2, height + max(ref_df['Count'])*0.01,\n",
+    "                       f'{val:,.0f}', ha='center', va='bottom', fontsize=8)\n",
+    "            \n",
+    "            # Format y-axis\n",
+    "            ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{int(x):,}'))\n",
+    "            \n",
+    "            # Set y-axis to start at 0\n",
+    "            ax.set_ylim(bottom=0)\n",
+    "        else:\n",
+    "            ax.text(0.5, 0.5, 'No data', ha='center', va='center', transform=ax.transAxes)\n",
+    "            ax.set_title(f'{ref}\\\\n{GO_REF_NAMES.get(ref, \"Unknown\")}', fontsize=11, fontweight='bold')\n",
+    "            ax.set_xticks([])\n",
+    "            ax.set_yticks([])\n",
+    "    \n",
+    "    # Hide empty subplots\n",
+    "    for idx in range(n_refs, len(axes)):\n",
+    "        axes[idx].axis('off')\n",
+    "    \n",
+    "    plt.suptitle('IEA Contributions by GO_REF Across All Databases', \n",
+    "                 fontsize=16, fontweight='bold', y=1.001)\n",
+    "    plt.tight_layout()\n",
+    "    plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2112a736",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003622,
+     "end_time": "2025-10-14T08:17:02.081591",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.077969",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Per-GO_REF Analysis\n",
+    "\n",
+    "Individual bar charts for each GO_REF showing contributions across all species/databases."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e4dc9e93",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003612,
+     "end_time": "2025-10-14T08:17:02.089247",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.085635",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Summary Statistics"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "8d7b7e93",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:29.158204Z",
+     "start_time": "2025-09-11T17:30:29.144970Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.097767Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.097641Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.100258Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.100019Z"
+    },
+    "papermill": {
+     "duration": 0.007691,
+     "end_time": "2025-10-14T08:17:02.100890",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.093199",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "if all_data:\n",
+    "    # Create summary table\n",
+    "    summary_data = []\n",
+    "    \n",
+    "    for db_name, df in all_data.items():\n",
+    "        total = df['count_star()'].sum()\n",
+    "        top_ref = df.iloc[0]['supporting_references'] if not df.empty else 'N/A'\n",
+    "        top_count = df.iloc[0]['count_star()'] if not df.empty else 0\n",
+    "        \n",
+    "        summary_data.append({\n",
+    "            'Database': db_name,\n",
+    "            'Total IEA Annotations': f\"{total:,}\",\n",
+    "            'Number of GO_REFs': len(df),\n",
+    "            'Top GO_REF': GO_REF_NAMES.get(top_ref, top_ref),\n",
+    "            'Top GO_REF Count': f\"{top_count:,}\",\n",
+    "            'Top GO_REF %': f\"{(top_count/total*100):.1f}%\" if total > 0 else '0%'\n",
+    "        })\n",
+    "    \n",
+    "    summary_df = pd.DataFrame(summary_data)\n",
+    "    summary_df = summary_df.sort_values('Database')\n",
+    "    \n",
+    "    print(\"\\n\" + \"=\"*80)\n",
+    "    print(\"SUMMARY OF IEA CONTRIBUTIONS ACROSS DATABASES\")\n",
+    "    print(\"=\"*80)\n",
+    "    display(summary_df)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fc872b39",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003636,
+     "end_time": "2025-10-14T08:17:02.108563",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.104927",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Distribution Analysis"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "a442d03e",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:29.623719Z",
+     "start_time": "2025-09-11T17:30:29.230224Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.116358Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.116225Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.120812Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.120562Z"
+    },
+    "papermill": {
+     "duration": 0.009307,
+     "end_time": "2025-10-14T08:17:02.121547",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.112240",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "if all_data:\n",
+    "    # Pie charts for top databases\n",
+    "    n_databases = len(all_data)\n",
+    "    n_cols = min(3, n_databases)\n",
+    "    n_rows = (n_databases + n_cols - 1) // n_cols\n",
+    "    \n",
+    "    fig, axes = plt.subplots(n_rows, n_cols, figsize=(6*n_cols, 6*n_rows))\n",
+    "    if n_databases == 1:\n",
+    "        axes = [axes]\n",
+    "    elif n_rows == 1:\n",
+    "        axes = axes.reshape(1, -1)\n",
+    "    \n",
+    "    for idx, (db_name, df) in enumerate(all_data.items()):\n",
+    "        row = idx // n_cols\n",
+    "        col = idx % n_cols\n",
+    "        \n",
+    "        if n_rows == 1:\n",
+    "            ax = axes[col]\n",
+    "        else:\n",
+    "            ax = axes[row, col]\n",
+    "        \n",
+    "        if not df.empty:\n",
+    "            # Take top 5 and group others\n",
+    "            top_n = 5\n",
+    "            if len(df) > top_n:\n",
+    "                top_df = df.head(top_n).copy()\n",
+    "                others_sum = df.iloc[top_n:]['count_star()'].sum()\n",
+    "                if others_sum > 0:\n",
+    "                    others_row = pd.DataFrame({\n",
+    "                        'supporting_references': ['Others'],\n",
+    "                        'count_star()': [others_sum]\n",
+    "                    })\n",
+    "                    plot_df = pd.concat([top_df, others_row], ignore_index=True)\n",
+    "                else:\n",
+    "                    plot_df = top_df\n",
+    "            else:\n",
+    "                plot_df = df.copy()\n",
+    "            \n",
+    "            # Create labels\n",
+    "            labels = [GO_REF_NAMES.get(ref, ref) if ref != 'Others' else 'Others' \n",
+    "                     for ref in plot_df['supporting_references']]\n",
+    "            \n",
+    "            # Create pie chart\n",
+    "            wedges, texts, autotexts = ax.pie(plot_df['count_star()'], \n",
+    "                                               labels=labels,\n",
+    "                                               autopct='%1.1f%%',\n",
+    "                                               startangle=90)\n",
+    "            ax.set_title(f'{db_name}\\n(Total: {df[\"count_star()\"].sum():,})', \n",
+    "                        fontsize=12, fontweight='bold')\n",
+    "            \n",
+    "            # Improve text readability\n",
+    "            for autotext in autotexts:\n",
+    "                autotext.set_color('white')\n",
+    "                autotext.set_fontsize(10)\n",
+    "                autotext.set_fontweight('bold')\n",
+    "    \n",
+    "    # Hide empty subplots\n",
+    "    for idx in range(n_databases, n_rows * n_cols):\n",
+    "        row = idx // n_cols\n",
+    "        col = idx % n_cols\n",
+    "        if n_rows == 1:\n",
+    "            axes[col].axis('off')\n",
+    "        else:\n",
+    "            axes[row, col].axis('off')\n",
+    "    \n",
+    "    plt.suptitle('IEA Contribution Distribution by Database', \n",
+    "                 fontsize=16, fontweight='bold', y=1.02)\n",
+    "    plt.tight_layout()\n",
+    "    plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "462beb75",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003541,
+     "end_time": "2025-10-14T08:17:02.129123",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.125582",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Export Data\n",
+    "\n",
+    "Export the summary data to CSV for further analysis."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "5b9dc4f7",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:29.649867Z",
+     "start_time": "2025-09-11T17:30:29.636897Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.136824Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.136709Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.139175Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.138949Z"
+    },
+    "papermill": {
+     "duration": 0.007124,
+     "end_time": "2025-10-14T08:17:02.139884",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.132760",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "if all_data:\n",
+    "    # Export individual database data\n",
+    "    export_dir = Path('iea_contributions_export')\n",
+    "    export_dir.mkdir(exist_ok=True)\n",
+    "    \n",
+    "    for db_name, df in all_data.items():\n",
+    "        # Add readable names column\n",
+    "        export_df = df.copy()\n",
+    "        export_df['reference_name'] = export_df['supporting_references'].apply(\n",
+    "            lambda x: GO_REF_NAMES.get(x, 'Unknown')\n",
+    "        )\n",
+    "        \n",
+    "        # Save to CSV\n",
+    "        filename = export_dir / f\"iea_{db_name.lower().replace(' ', '_')}.csv\"\n",
+    "        export_df.to_csv(filename, index=False)\n",
+    "        print(f\"Exported {db_name} to {filename}\")\n",
+    "    \n",
+    "    # Export comparison data\n",
+    "    if 'comparison_df' in locals():\n",
+    "        comparison_filename = export_dir / \"iea_all_databases_comparison.csv\"\n",
+    "        comparison_df.to_csv(comparison_filename, index=False)\n",
+    "        print(f\"\\nExported comparison data to {comparison_filename}\")\n",
+    "    \n",
+    "    print(f\"\\nAll data exported to {export_dir}/\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4023edca",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003478,
+     "end_time": "2025-10-14T08:17:02.146961",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.143483",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Pairwise GO_REF Analysis\n",
+    "\n",
+    "Now let's analyze pairwise combinations of GO_REFs to understand which references are commonly used together for IEA annotations."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "e9fd5d16",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:29.681128Z",
+     "start_time": "2025-09-11T17:30:29.677549Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.154434Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.154248Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.156708Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.156488Z"
+    },
+    "papermill": {
+     "duration": 0.006992,
+     "end_time": "2025-10-14T08:17:02.157413",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.150421",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def get_pairwise_goref_analysis(db_path, species_name):\n",
+    "    \"\"\"\n",
+    "    Query pairwise GO_REF combinations from the database\n",
+    "    \n",
+    "    Args:\n",
+    "        db_path: Path to the DuckDB database file\n",
+    "        species_name: Name of the species/database for display\n",
+    "    \n",
+    "    Returns:\n",
+    "        DataFrame with pairwise GO_REF data\n",
+    "    \"\"\"\n",
+    "    conn = duckdb.connect(str(db_path), read_only=True)\n",
+    "    \n",
+    "    combined_df = pd.DataFrame()\n",
+    "    for uref_id in GO_REF_NAMES.keys():\n",
+    "        for cref_id in GO_REF_NAMES.keys():\n",
+    "            # print(f\"Querying {species_name}: {uref_id} & {cref_id}\")\n",
+    "            \n",
+    "    \n",
+    "            query = f\"\"\"\n",
+    "            SELECT \n",
+    "                evidence_type,\n",
+    "                unique_ref_id,\n",
+    "                unique_ref_title,\n",
+    "                comparator_ref_id,\n",
+    "                comparator_ref_title,\n",
+    "                association_count\n",
+    "            FROM pairwise_gaf_unique_reference_contrib_summary\n",
+    "            WHERE evidence_type = 'IEA'\n",
+    "                AND unique_ref_id = '{uref_id}'\n",
+    "                AND comparator_ref_id = '{cref_id}'\n",
+    "            \"\"\"\n",
+    "    \n",
+    "            df = conn.execute(query).df()\n",
+    "            if not df.empty:\n",
+    "                combined_df = pd.concat([combined_df, df], ignore_index=True)\n",
+    "    conn.close()\n",
+    "    return combined_df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "7c8d7d46",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:30:29.699954Z",
+     "start_time": "2025-09-11T17:30:29.696745Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.164932Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.164829Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.167220Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.166970Z"
+    },
+    "papermill": {
+     "duration": 0.006909,
+     "end_time": "2025-10-14T08:17:02.167888",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.160979",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Analyzing pairwise GO_REF combinations for:\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Define subset of species to analyze (starting with human)\n",
+    "species_to_analyze = {\n",
+    "    'Virus': available_dbs.get('Virus'),\n",
+    "    #'Archaea': available_dbs.get('Archaea'),\n",
+    "    'Human': available_dbs.get('Human GOA'),\n",
+    "    'Mouse': available_dbs.get('Mouse MGI'),\n",
+    "    'Rat': available_dbs.get('Rat RGD'),\n",
+    "    'Worm': available_dbs.get('Worm'),\n",
+    "    'Fly': available_dbs.get('Fly'),\n",
+    "    'Clostridium': available_dbs.get('Clostridium'),\n",
+    "    #'Yeast': available_dbs.get('Yeast'),\n",
+    "    #'Pseudomonadota': available_dbs.get('Pseudomonadota'),\n",
+    "    #'Plant': available_dbs.get('Plant'),\n",
+    "    #'Fungi': available_dbs.get('Fungi'),\n",
+    "    \n",
+    "\n",
+    "}\n",
+    "\n",
+    "# Remove None values\n",
+    "species_to_analyze = {k: v for k, v in species_to_analyze.items() if v is not None}\n",
+    "\n",
+    "print(\"Analyzing pairwise GO_REF combinations for:\")\n",
+    "for species in species_to_analyze.keys():\n",
+    "    print(f\"  - {species}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "204b5ba9",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:31:41.810392Z",
+     "start_time": "2025-09-11T17:30:29.726654Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.175959Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.175835Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.178261Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.178008Z"
+    },
+    "papermill": {
+     "duration": 0.007392,
+     "end_time": "2025-10-14T08:17:02.179058",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.171666",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Collect pairwise data for each species\n",
+    "pairwise_data = {}\n",
+    "\n",
+    "for species_name, db_path in species_to_analyze.items():\n",
+    "    print(f\"\\nAnalyzing {species_name}...\")\n",
+    "    df = get_pairwise_goref_analysis(db_path, species_name)\n",
+    "    \n",
+    "    if not df.empty:\n",
+    "        pairwise_data[species_name] = df\n",
+    "        print(f\"  Found {len(df)} pairwise GO_REF combinations\")\n",
+    "        print(f\"  Total pairwise associations: {df['association_count'].sum():,}\")\n",
+    "        \n",
+    "        # Show top 10 combinations\n",
+    "        print(f\"\\n  Top 10 GO_REF combinations for {species_name}:\")\n",
+    "        for idx, row in df.head(10).iterrows():\n",
+    "            print(f\"    {row['unique_ref_id']} ({row['unique_ref_title']}) & \"\n",
+    "                  f\"{row['comparator_ref_id']} ({row['comparator_ref_title']}): \"\n",
+    "                  f\"{row['association_count']:,} associations\")\n",
+    "    else:\n",
+    "        print(f\"  No pairwise data available\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "1d2efd61",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T23:22:11.996139Z",
+     "start_time": "2025-09-11T23:22:10.503230Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.187098Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.186954Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.191058Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.190815Z"
+    },
+    "papermill": {
+     "duration": 0.008831,
+     "end_time": "2025-10-14T08:17:02.191751",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.182920",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Visualize pairwise GO_REF combinations as network-style heatmaps\n",
+    "if pairwise_data:\n",
+    "    for species_name, df in pairwise_data.items():\n",
+    "        print(f\"\\nProcessing {species_name}...\")\n",
+    "        if df.empty:\n",
+    "            continue\n",
+    "        \n",
+    "        # Filter to only include GO_REFs that are in our dictionary\n",
+    "        df_filtered = df[\n",
+    "            (df['unique_ref_id'].isin(GO_REF_NAMES.keys())) & \n",
+    "            (df['comparator_ref_id'].isin(GO_REF_NAMES.keys()))\n",
+    "        ].copy()\n",
+    "        \n",
+    "        if df_filtered.empty:\n",
+    "            print(f\"No known GO_REFs found for {species_name}\")\n",
+    "            continue\n",
+    "            \n",
+    "        # Use short labels from GO_REF_NAMES dictionary\n",
+    "        df_filtered['unique_ref'] = df_filtered['unique_ref_id'].apply(lambda x: GO_REF_NAMES.get(x, x))\n",
+    "        df_filtered['comparator_ref'] = df_filtered['comparator_ref_id'].apply(lambda x: GO_REF_NAMES.get(x, x))\n",
+    "        \n",
+    "        # Get all unique GO_REF labels involved\n",
+    "        all_refs = sorted(set(df_filtered['unique_ref'].unique()) | set(df_filtered['comparator_ref'].unique()))\n",
+    "        \n",
+    "        # Create a square matrix with all refs on both axes\n",
+    "        matrix = pd.DataFrame(0, index=all_refs, columns=all_refs)\n",
+    "        \n",
+    "        # Fill in the values from the data - DO NOT make it symmetric!\n",
+    "        # Each row represents unique_ref, each column represents comparator_ref\n",
+    "        for _, row in df_filtered.iterrows():\n",
+    "            matrix.loc[row['unique_ref'], row['comparator_ref']] = row['association_count']\n",
+    "        \n",
+    "        # The diagonal should naturally be zero (a GO_REF compared with itself)\n",
+    "        # but let's ensure it\n",
+    "        np.fill_diagonal(matrix.values, 0)\n",
+    "        \n",
+    "        # Create much larger heatmap\n",
+    "        plt.figure(figsize=(13, 9))\n",
+    "        sns.heatmap(matrix, \n",
+    "                    annot=True, \n",
+    "                    fmt='g',\n",
+    "                    cmap='YlOrRd',\n",
+    "                    cbar_kws={'label': 'Number of Associations', 'shrink': 0.8},\n",
+    "                    square=True,\n",
+    "                    linewidths=0.5,\n",
+    "                    linecolor='gray',\n",
+    "                    vmin=0)\n",
+    "        \n",
+    "        plt.title(f'Pairwise GO_REF Combinations - {species_name}\\n(Row = Unique REF, Column = Comparator REF)', \n",
+    "                 fontsize=18, fontweight='bold', pad=20)\n",
+    "        plt.xlabel('Comparator GO_REF', fontsize=14)\n",
+    "        plt.ylabel('Unique GO_REF', fontsize=14)\n",
+    "        plt.xticks(rotation=45, ha='right', fontsize=11)\n",
+    "        plt.yticks(rotation=0, fontsize=11)\n",
+    "        plt.tight_layout()\n",
+    "        plt.show()\n",
+    "        \n",
+    "        print(f\"Heatmap for {species_name}: {len(all_refs)}x{len(all_refs)} matrix (asymmetric)\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "44dabbec",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T23:22:13.868903Z",
+     "start_time": "2025-09-11T23:22:12.012210Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.199939Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.199707Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.202664Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.202434Z"
+    },
+    "papermill": {
+     "duration": 0.007639,
+     "end_time": "2025-10-14T08:17:02.203301",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.195662",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Visualize pairwise GO_REF combinations as network-style heatmaps\n",
+    "if pairwise_data:\n",
+    "    for species_name, df in pairwise_data.items():\n",
+    "        if df.empty:\n",
+    "            continue\n",
+    "            \n",
+    "        # Create a pivot table for this species\n",
+    "        # Combine ref_id and title for better readability\n",
+    "        df['unique_ref'] = df['unique_ref_id'] + '\\n' + df['unique_ref_title']\n",
+    "        df['comparator_ref'] = df['comparator_ref_id'] + '\\n' + df['comparator_ref_title']\n",
+    "        \n",
+    "        # Create pivot table\n",
+    "        pivot = df.pivot_table(\n",
+    "            index='unique_ref',\n",
+    "            columns='comparator_ref',\n",
+    "            values='association_count',\n",
+    "            fill_value=0\n",
+    "        )\n",
+    "        \n",
+    "        # Create heatmap\n",
+    "        plt.figure(figsize=(12, 10))\n",
+    "        sns.heatmap(pivot, \n",
+    "                    annot=True, \n",
+    "                    fmt='g',\n",
+    "                    cmap='YlOrRd',\n",
+    "                    cbar_kws={'label': 'Number of Associations'},\n",
+    "                    square=True)\n",
+    "        \n",
+    "        plt.title(f'Pairwise GO_REF Combinations - {species_name}', \n",
+    "                 fontsize=14, fontweight='bold')\n",
+    "        plt.xlabel('Comparator GO_REF', fontsize=12)\n",
+    "        plt.ylabel('Unique GO_REF', fontsize=12)\n",
+    "        plt.xticks(rotation=45, ha='right', fontsize=8)\n",
+    "        plt.yticks(rotation=0, fontsize=8)\n",
+    "        plt.tight_layout()\n",
+    "        plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "83666641",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:31:45.150748Z",
+     "start_time": "2025-09-11T17:31:45.016227Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.211099Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.210988Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.214797Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.214549Z"
+    },
+    "papermill": {
+     "duration": 0.008417,
+     "end_time": "2025-10-14T08:17:02.215451",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.207034",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Create comparative bar chart of top pairwise combinations across species\n",
+    "if pairwise_data:\n",
+    "    # Collect top N combinations from each species\n",
+    "    top_n = 5\n",
+    "    comparison_records = []\n",
+    "    \n",
+    "    for species_name, df in pairwise_data.items():\n",
+    "        if not df.empty:\n",
+    "            top_combinations = df.head(top_n)\n",
+    "            for _, row in top_combinations.iterrows():\n",
+    "                comparison_records.append({\n",
+    "                    'Species': species_name,\n",
+    "                    'Combination': f\"{row['unique_ref_id']} & {row['comparator_ref_id']}\",\n",
+    "                    'Count': row['association_count']\n",
+    "                })\n",
+    "    \n",
+    "    if comparison_records:\n",
+    "        comparison_df = pd.DataFrame(comparison_records)\n",
+    "        \n",
+    "        # Create grouped bar chart\n",
+    "        fig, ax = plt.subplots(figsize=(14, 8))\n",
+    "        \n",
+    "        # Group by combination and create bars for each species\n",
+    "        combinations = comparison_df['Combination'].unique()\n",
+    "        species_list = comparison_df['Species'].unique()\n",
+    "        \n",
+    "        x = np.arange(len(combinations))\n",
+    "        width = 0.8 / len(species_list)\n",
+    "        \n",
+    "        for i, species in enumerate(species_list):\n",
+    "            species_data = comparison_df[comparison_df['Species'] == species]\n",
+    "            values = []\n",
+    "            for combo in combinations:\n",
+    "                val = species_data[species_data['Combination'] == combo]['Count'].values\n",
+    "                values.append(val[0] if len(val) > 0 else 0)\n",
+    "            \n",
+    "            ax.bar(x + i * width, values, width, label=species)\n",
+    "        \n",
+    "        ax.set_xlabel('GO_REF Combination', fontsize=12)\n",
+    "        ax.set_ylabel('Number of Associations', fontsize=12)\n",
+    "        ax.set_title('Top Pairwise GO_REF Combinations Across Species', \n",
+    "                    fontsize=14, fontweight='bold')\n",
+    "        ax.set_xticks(x + width * (len(species_list) - 1) / 2)\n",
+    "        ax.set_xticklabels(combinations, rotation=45, ha='right', fontsize=9)\n",
+    "        ax.legend(title='Species')\n",
+    "        ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{int(x):,}'))\n",
+    "        \n",
+    "        plt.tight_layout()\n",
+    "        plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "938a8cc3",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:31:45.180808Z",
+     "start_time": "2025-09-11T17:31:45.170174Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.223246Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.223131Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.225107Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.224902Z"
+    },
+    "papermill": {
+     "duration": 0.006639,
+     "end_time": "2025-10-14T08:17:02.225778",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.219139",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Export pairwise data to CSV\n",
+    "if pairwise_data:\n",
+    "    for species_name, df in pairwise_data.items():\n",
+    "        if not df.empty:\n",
+    "            # Export to CSV\n",
+    "            filename = export_dir / f\"pairwise_goref_{species_name.lower().replace(' ', '_')}.csv\"\n",
+    "            df.to_csv(filename, index=False)\n",
+    "            print(f\"Exported {species_name} pairwise data to {filename}\")\n",
+    "    \n",
+    "    print(f\"\\nAll pairwise data exported to {export_dir}/\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6cb656b6",
+   "metadata": {
+    "papermill": {
+     "duration": 0.00361,
+     "end_time": "2025-10-14T08:17:02.233181",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.229571",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Summary Statistics for Pairwise GO_REF Analysis"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "37698782",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T17:31:45.208623Z",
+     "start_time": "2025-09-11T17:31:45.200260Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.241141Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.241022Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.243906Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.243645Z"
+    },
+    "papermill": {
+     "duration": 0.007723,
+     "end_time": "2025-10-14T08:17:02.244608",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.236885",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Generate summary statistics for pairwise combinations\n",
+    "if pairwise_data:\n",
+    "    summary_stats = []\n",
+    "    \n",
+    "    for species_name, df in pairwise_data.items():\n",
+    "        if not df.empty:\n",
+    "            # Calculate statistics\n",
+    "            total_pairs = len(df)\n",
+    "            total_associations = df['association_count'].sum()\n",
+    "            avg_associations = df['association_count'].mean()\n",
+    "            max_associations = df['association_count'].max()\n",
+    "            \n",
+    "            # Get most common combination\n",
+    "            top_row = df.iloc[0]\n",
+    "            top_combo = f\"{top_row['unique_ref_id']} & {top_row['comparator_ref_id']}\"\n",
+    "            \n",
+    "            # Count unique GO_REFs involved\n",
+    "            unique_refs = set(df['unique_ref_id'].unique()) | set(df['comparator_ref_id'].unique())\n",
+    "            \n",
+    "            summary_stats.append({\n",
+    "                'Species': species_name,\n",
+    "                'Total Pairs': total_pairs,\n",
+    "                'Total Associations': f\"{total_associations:,}\",\n",
+    "                'Avg per Pair': f\"{avg_associations:.1f}\",\n",
+    "                'Max Associations': f\"{max_associations:,}\",\n",
+    "                'Top Combination': top_combo,\n",
+    "                'Unique GO_REFs': len(unique_refs)\n",
+    "            })\n",
+    "    \n",
+    "    if summary_stats:\n",
+    "        summary_stats_df = pd.DataFrame(summary_stats)\n",
+    "        print(\"\\n\" + \"=\"*80)\n",
+    "        print(\"PAIRWISE GO_REF COMBINATION STATISTICS\")\n",
+    "        print(\"=\"*80)\n",
+    "        display(summary_stats_df)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d68b94b9",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003796,
+     "end_time": "2025-10-14T08:17:02.252503",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.248707",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Term-Level Unique Contributions Analysis\n",
+    "\n",
+    "Analyze which specific GO terms each method uniquely contributes to, broken down by species."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "07f0b9f8",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-12T00:01:10.890206Z",
+     "start_time": "2025-09-12T00:01:10.887449Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.260818Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.260691Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.263130Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.262894Z"
+    },
+    "papermill": {
+     "duration": 0.007604,
+     "end_time": "2025-10-14T08:17:02.263823",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.256219",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def get_term_level_contributions(db_path, species_name, evidence_type='IEA', top_n=20):\n",
+    "    \"\"\"\n",
+    "    Query term-level unique contributions for each GO_REF method\n",
+    "    \n",
+    "    Args:\n",
+    "        db_path: Path to the DuckDB database file\n",
+    "        species_name: Name of the species/database for display\n",
+    "        evidence_type: Evidence type to filter (default 'IEA')\n",
+    "        top_n: Number of top terms to retrieve per method\n",
+    "    \n",
+    "    Returns:\n",
+    "        DataFrame with term-level contribution data\n",
+    "    \"\"\"\n",
+    "    conn = duckdb.connect(str(db_path), read_only=True)\n",
+    "    \n",
+    "    query = f\"\"\"\n",
+    "    SELECT \n",
+    "        evidence_type,\n",
+    "        supporting_references,\n",
+    "        id AS go_term,\n",
+    "        label AS go_term_label,\n",
+    "        association_count\n",
+    "    FROM gaf_unique_reference_contrib_term_l\n",
+    "    WHERE evidence_type = '{evidence_type}'\n",
+    "    ORDER BY supporting_references, association_count DESC\n",
+    "    \"\"\"\n",
+    "    \n",
+    "    try:\n",
+    "        df = conn.execute(query).df()\n",
+    "        conn.close()\n",
+    "        return df\n",
+    "    except Exception as e:\n",
+    "        print(f\"Error querying {species_name}: {e}\")\n",
+    "        conn.close()\n",
+    "        return pd.DataFrame()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "9618848d",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-12T00:15:07.556391Z",
+     "start_time": "2025-09-12T00:15:07.549900Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.272668Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.272542Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.275201Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.274960Z"
+    },
+    "papermill": {
+     "duration": 0.007695,
+     "end_time": "2025-10-14T08:17:02.275959",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.268264",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Analyzing term-level contributions for:\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Define species to analyze for term-level contributions\n",
+    "term_analysis_species = {\n",
+    "    'Human': available_dbs.get('Human GOA'),\n",
+    "    'Mouse': available_dbs.get('Mouse MGI'),\n",
+    "    'Fly': available_dbs.get('Fly'),\n",
+    "    'Worm': available_dbs.get('Worm'),\n",
+    "    'Yeast': available_dbs.get('Yeast'),\n",
+    "    'Plant': available_dbs.get('Plant'),\n",
+    "    'Clostridium': available_dbs.get('Clostridium'),\n",
+    "    'Virus': available_dbs.get('Virus'),\n",
+    "    'Fungi': available_dbs.get('Fungi'),\n",
+    "    'Archaea': available_dbs.get('Archaea'),\n",
+    "}\n",
+    "\n",
+    "# Remove None values\n",
+    "term_analysis_species = {k: v for k, v in term_analysis_species.items() if v is not None}\n",
+    "\n",
+    "print(\"Analyzing term-level contributions for:\")\n",
+    "for species in term_analysis_species.keys():\n",
+    "    print(f\"  - {species}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "1d099b9d",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-12T00:15:27.159429Z",
+     "start_time": "2025-09-12T00:15:08.198715Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.284305Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.284184Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.286381Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.286134Z"
+    },
+    "papermill": {
+     "duration": 0.007112,
+     "end_time": "2025-10-14T08:17:02.287081",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.279969",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Collect term-level data for each species\n",
+    "term_level_data = {}\n",
+    "\n",
+    "for species_name, db_path in term_analysis_species.items():\n",
+    "    print(f\"\\nAnalyzing {species_name}...\")\n",
+    "    df = get_term_level_contributions(db_path, species_name)\n",
+    "    \n",
+    "    if not df.empty:\n",
+    "        term_level_data[species_name] = df\n",
+    "        print(f\"  Found {len(df)} term-method combinations\")\n",
+    "        print(f\"  Unique GO_REFs: {df['supporting_references'].nunique()}\")\n",
+    "        print(f\"  Unique GO terms: {df['go_term'].nunique()}\")\n",
+    "        print(f\"  Total associations: {df['association_count'].sum():,}\")\n",
+    "    else:\n",
+    "        print(f\"  No term-level data available\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "37bf1eb6",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-12T00:15:32.731387Z",
+     "start_time": "2025-09-12T00:15:27.186041Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.295989Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.295720Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.301480Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.301063Z"
+    },
+    "papermill": {
+     "duration": 0.012417,
+     "end_time": "2025-10-14T08:17:02.303414",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.290997",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Create bar charts showing top terms per method, by species\n",
+    "if term_level_data:\n",
+    "    for species_name, df in term_level_data.items():\n",
+    "        if df.empty:\n",
+    "            continue\n",
+    "        \n",
+    "        # Get unique GO_REFs that are in our dictionary\n",
+    "        go_refs_in_data = df['supporting_references'].unique()\n",
+    "        go_refs_to_plot = [ref for ref in go_refs_in_data if ref in GO_REF_NAMES]\n",
+    "        \n",
+    "        if not go_refs_to_plot:\n",
+    "            print(f\"No known GO_REFs found in term-level data for {species_name}\")\n",
+    "            continue\n",
+    "        \n",
+    "        # Determine grid layout\n",
+    "        n_refs = len(go_refs_to_plot)\n",
+    "        n_cols = min(2, n_refs)\n",
+    "        n_rows = (n_refs + n_cols - 1) // n_cols\n",
+    "        \n",
+    "        fig, axes = plt.subplots(n_rows, n_cols, figsize=(8*n_cols, 6*n_rows))\n",
+    "        \n",
+    "        # Handle single plot case\n",
+    "        if n_refs == 1:\n",
+    "            axes = [axes]\n",
+    "        elif n_rows == 1 and n_cols > 1:\n",
+    "            axes = axes.flatten()\n",
+    "        elif n_rows > 1:\n",
+    "            axes = axes.flatten()\n",
+    "        \n",
+    "        for idx, ref in enumerate(go_refs_to_plot):\n",
+    "            ax = axes[idx]\n",
+    "            \n",
+    "            # Get top terms for this GO_REF\n",
+    "            ref_data = df[df['supporting_references'] == ref].head(15)\n",
+    "            \n",
+    "            if not ref_data.empty:\n",
+    "                # Create bar chart\n",
+    "                y_pos = np.arange(len(ref_data))\n",
+    "                bars = ax.barh(y_pos, ref_data['association_count'], color='steelblue')\n",
+    "                \n",
+    "                # Add term labels (truncate if too long)\n",
+    "                labels = [f\"{row['go_term']}: {row['go_term_label'][:30]}...\" \n",
+    "                         if len(row['go_term_label']) > 30 \n",
+    "                         else f\"{row['go_term']}: {row['go_term_label']}\"\n",
+    "                         for _, row in ref_data.iterrows()]\n",
+    "                \n",
+    "                ax.set_yticks(y_pos)\n",
+    "                ax.set_yticklabels(labels, fontsize=8)\n",
+    "                ax.set_xlabel('Number of Unique Associations', fontsize=10)\n",
+    "                ax.set_title(f'{GO_REF_NAMES.get(ref, ref)}\\n({ref})', \n",
+    "                           fontsize=11, fontweight='bold')\n",
+    "                \n",
+    "                # Add value labels on bars\n",
+    "                for bar, val in zip(bars, ref_data['association_count']):\n",
+    "                    width = bar.get_width()\n",
+    "                    ax.text(width + max(ref_data['association_count'])*0.01, \n",
+    "                           bar.get_y() + bar.get_height()/2,\n",
+    "                           f'{val:,}', \n",
+    "                           ha='left', va='center', fontsize=8)\n",
+    "                \n",
+    "                # Format x-axis\n",
+    "                ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{int(x):,}'))\n",
+    "                ax.set_xlim(0, max(ref_data['association_count']) * 1.15)\n",
+    "            else:\n",
+    "                ax.text(0.5, 0.5, 'No data', ha='center', va='center', \n",
+    "                       transform=ax.transAxes)\n",
+    "                ax.set_title(f'{GO_REF_NAMES.get(ref, ref)}', \n",
+    "                           fontsize=11, fontweight='bold')\n",
+    "        \n",
+    "        # Hide empty subplots\n",
+    "        for idx in range(n_refs, len(axes)):\n",
+    "            axes[idx].axis('off')\n",
+    "        \n",
+    "        plt.suptitle(f'Top GO Terms by Method - {species_name}', \n",
+    "                    fontsize=16, fontweight='bold', y=1.02)\n",
+    "        plt.tight_layout()\n",
+    "        plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7714dcb9",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004588,
+     "end_time": "2025-10-14T08:17:02.313732",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.309144",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Summary Statistics for Term-Level Analysis"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "8eb1b60b",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-12T00:15:32.804160Z",
+     "start_time": "2025-09-12T00:15:32.756184Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.328537Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.328371Z",
+     "iopub.status.idle": "2025-10-14T08:17:02.332626Z",
+     "shell.execute_reply": "2025-10-14T08:17:02.332300Z"
+    },
+    "papermill": {
+     "duration": 0.014693,
+     "end_time": "2025-10-14T08:17:02.333379",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.318686",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Generate summary statistics for term-level contributions\n",
+    "if term_level_data:\n",
+    "    term_summary_stats = []\n",
+    "    \n",
+    "    for species_name, df in term_level_data.items():\n",
+    "        if not df.empty:\n",
+    "            # Get statistics per GO_REF\n",
+    "            for ref in df['supporting_references'].unique():\n",
+    "                if ref in GO_REF_NAMES:\n",
+    "                    ref_data = df[df['supporting_references'] == ref]\n",
+    "                    \n",
+    "                    # Get most contributed term\n",
+    "                    top_term = ref_data.iloc[0] if not ref_data.empty else None\n",
+    "                    \n",
+    "                    term_summary_stats.append({\n",
+    "                        'Species': species_name,\n",
+    "                        'Method': GO_REF_NAMES.get(ref, ref),\n",
+    "                        'GO_REF': ref,\n",
+    "                        'Unique Terms': ref_data['go_term'].nunique(),\n",
+    "                        'Total Associations': f\"{ref_data['association_count'].sum():,}\",\n",
+    "                        'Avg per Term': f\"{ref_data['association_count'].mean():.1f}\",\n",
+    "                        'Top Term': f\"{top_term['go_term']} ({top_term['go_term_label'][:40]}...)\" \n",
+    "                                   if top_term is not None and len(top_term['go_term_label']) > 40\n",
+    "                                   else f\"{top_term['go_term']} ({top_term['go_term_label']})\"\n",
+    "                                   if top_term is not None else 'N/A',\n",
+    "                        'Top Term Count': f\"{top_term['association_count']:,}\" if top_term is not None else 'N/A'\n",
+    "                    })\n",
+    "    \n",
+    "    if term_summary_stats:\n",
+    "        term_summary_df = pd.DataFrame(term_summary_stats)\n",
+    "        term_summary_df = term_summary_df.sort_values(['Species', 'Method'])\n",
+    "        \n",
+    "        print(\"\\n\" + \"=\"*100)\n",
+    "        print(\"TERM-LEVEL UNIQUE CONTRIBUTION STATISTICS BY METHOD AND SPECIES\")\n",
+    "        print(\"=\"*100)\n",
+    "        display(term_summary_df)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1abbaeb1",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004072,
+     "end_time": "2025-10-14T08:17:02.341839",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.337767",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## GO Term Enrichment Analysis\n",
+    "\n",
+    "Statistical analysis to identify which GO terms are significantly enriched for each method within each species."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "8399ae14",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-12T22:46:36.904783Z",
+     "start_time": "2025-09-12T22:46:32.852174Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:02.351255Z",
+     "iopub.status.busy": "2025-10-14T08:17:02.351100Z",
+     "iopub.status.idle": "2025-10-14T08:17:04.799999Z",
+     "shell.execute_reply": "2025-10-14T08:17:04.799374Z"
+    },
+    "papermill": {
+     "duration": 2.454929,
+     "end_time": "2025-10-14T08:17:04.801313",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:02.346384",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: statsmodels in /Users/cjm/Library/Caches/pypoetry/virtualenvs/go-db-4-kZDovR-py3.10/lib/python3.10/site-packages (0.14.5)\r\n",
+      "Requirement already satisfied: patsy>=0.5.6 in /Users/cjm/Library/Caches/pypoetry/virtualenvs/go-db-4-kZDovR-py3.10/lib/python3.10/site-packages (from statsmodels) (1.0.1)\r\n",
+      "Requirement already satisfied: scipy!=1.9.2,>=1.8 in /Users/cjm/Library/Caches/pypoetry/virtualenvs/go-db-4-kZDovR-py3.10/lib/python3.10/site-packages (from statsmodels) (1.13.1)\r\n",
+      "Requirement already satisfied: packaging>=21.3 in /Users/cjm/Library/Caches/pypoetry/virtualenvs/go-db-4-kZDovR-py3.10/lib/python3.10/site-packages (from statsmodels) (24.2)\r\n",
+      "Requirement already satisfied: pandas!=2.1.0,>=1.4 in /Users/cjm/Library/Caches/pypoetry/virtualenvs/go-db-4-kZDovR-py3.10/lib/python3.10/site-packages (from statsmodels) (2.2.3)\r\n",
+      "Requirement already satisfied: numpy<3,>=1.22.3 in /Users/cjm/Library/Caches/pypoetry/virtualenvs/go-db-4-kZDovR-py3.10/lib/python3.10/site-packages (from statsmodels) (2.0.2)\r\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: tzdata>=2022.7 in /Users/cjm/Library/Caches/pypoetry/virtualenvs/go-db-4-kZDovR-py3.10/lib/python3.10/site-packages (from pandas!=2.1.0,>=1.4->statsmodels) (2025.1)\r\n",
+      "Requirement already satisfied: pytz>=2020.1 in /Users/cjm/Library/Caches/pypoetry/virtualenvs/go-db-4-kZDovR-py3.10/lib/python3.10/site-packages (from pandas!=2.1.0,>=1.4->statsmodels) (2025.1)\r\n",
+      "Requirement already satisfied: python-dateutil>=2.8.2 in /Users/cjm/Library/Caches/pypoetry/virtualenvs/go-db-4-kZDovR-py3.10/lib/python3.10/site-packages (from pandas!=2.1.0,>=1.4->statsmodels) (2.9.0.post0)\r\n",
+      "Requirement already satisfied: six>=1.5 in /Users/cjm/Library/Caches/pypoetry/virtualenvs/go-db-4-kZDovR-py3.10/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas!=2.1.0,>=1.4->statsmodels) (1.17.0)\r\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\r\n",
+      "\u001b[1m[\u001b[0m\u001b[34;49mnotice\u001b[0m\u001b[1;39;49m]\u001b[0m\u001b[39;49m A new release of pip is available: \u001b[0m\u001b[31;49m23.0.1\u001b[0m\u001b[39;49m -> \u001b[0m\u001b[32;49m25.2\u001b[0m\r\n",
+      "\u001b[1m[\u001b[0m\u001b[34;49mnotice\u001b[0m\u001b[1;39;49m]\u001b[0m\u001b[39;49m To update, run: \u001b[0m\u001b[32;49mpip install --upgrade pip\u001b[0m\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install statsmodels"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "bbfb85e4",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-12T22:51:19.055932Z",
+     "start_time": "2025-09-12T22:51:19.053265Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:04.814035Z",
+     "iopub.status.busy": "2025-10-14T08:17:04.813866Z",
+     "iopub.status.idle": "2025-10-14T08:17:04.822444Z",
+     "shell.execute_reply": "2025-10-14T08:17:04.822164Z"
+    },
+    "papermill": {
+     "duration": 0.015789,
+     "end_time": "2025-10-14T08:17:04.823451",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:04.807662",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "from scipy import stats\n",
+    "from statsmodels.stats.multitest import multipletests\n",
+    "\n",
+    "def get_all_term_annotations(db_path, evidence_type='IEA'):\n",
+    "    \"\"\"\n",
+    "    Get all term annotations for background calculation\n",
+    "    \"\"\"\n",
+    "    conn = duckdb.connect(str(db_path), read_only=True)\n",
+    "    \n",
+    "    query = f\"\"\"\n",
+    "    SELECT \n",
+    "        ontology_class_ref AS go_term,\n",
+    "        term_label.label AS go_term_label,\n",
+    "        supporting_references,\n",
+    "        COUNT(*) as annotation_count\n",
+    "    FROM gaf_association_flat\n",
+    "     INNER JOIN term_label ON gaf_association_flat.ontology_class_ref = term_label.id\n",
+    "    WHERE evidence_type = '{evidence_type}'\n",
+    "    GROUP BY go_term, go_term_label, supporting_references\n",
+    "    \"\"\"\n",
+    "    \n",
+    "    try:\n",
+    "        df = conn.execute(query).df()\n",
+    "        conn.close()\n",
+    "        return df\n",
+    "    except Exception as e:\n",
+    "        print(f\"Error querying: {e}\")\n",
+    "        conn.close()\n",
+    "        return pd.DataFrame()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "0cce8562",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-12T22:52:17.598810Z",
+     "start_time": "2025-09-12T22:52:17.593251Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:04.833467Z",
+     "iopub.status.busy": "2025-10-14T08:17:04.833327Z",
+     "iopub.status.idle": "2025-10-14T08:17:04.837797Z",
+     "shell.execute_reply": "2025-10-14T08:17:04.837533Z"
+    },
+    "papermill": {
+     "duration": 0.010263,
+     "end_time": "2025-10-14T08:17:04.838524",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:04.828261",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def calculate_enrichment(all_annotations_df, method_ref, p_cutoff=0.05):\n",
+    "    \"\"\"\n",
+    "    Calculate enrichment for GO terms for a specific method using hypergeometric test\n",
+    "    \n",
+    "    Args:\n",
+    "        all_annotations_df: DataFrame with all annotations\n",
+    "        method_ref: The GO_REF to test for enrichment\n",
+    "        p_cutoff: P-value cutoff after FDR correction\n",
+    "    \n",
+    "    Returns:\n",
+    "        DataFrame with enrichment results\n",
+    "    \"\"\"\n",
+    "    # Get method-specific annotations\n",
+    "    method_annotations = all_annotations_df[all_annotations_df['supporting_references'] == method_ref].copy()\n",
+    "    \n",
+    "    if method_annotations.empty:\n",
+    "        return pd.DataFrame()\n",
+    "    \n",
+    "    # Calculate totals\n",
+    "    total_annotations = all_annotations_df['annotation_count'].sum()\n",
+    "    method_total = method_annotations['annotation_count'].sum()\n",
+    "    \n",
+    "    # Get all unique terms\n",
+    "    all_terms = all_annotations_df.groupby(['go_term', 'go_term_label'])['annotation_count'].sum().reset_index()\n",
+    "    \n",
+    "    enrichment_results = []\n",
+    "    \n",
+    "    for _, term_row in all_terms.iterrows():\n",
+    "        term = term_row['go_term']\n",
+    "        term_label = term_row['go_term_label']\n",
+    "        term_total = term_row['annotation_count']\n",
+    "        \n",
+    "        # Get method-specific count for this term\n",
+    "        method_term_data = method_annotations[method_annotations['go_term'] == term]\n",
+    "        method_term_count = method_term_data['annotation_count'].sum() if not method_term_data.empty else 0\n",
+    "        \n",
+    "        if method_term_count == 0:\n",
+    "            continue\n",
+    "        \n",
+    "        # Hypergeometric test\n",
+    "        # M = total population (all annotations)\n",
+    "        # n = success states in population (annotations with this term)\n",
+    "        # N = number of draws (method annotations)\n",
+    "        # k = observed successes (method annotations with this term)\n",
+    "        \n",
+    "        # Calculate p-value for enrichment (over-representation)\n",
+    "        p_value = stats.hypergeom.sf(method_term_count - 1, total_annotations, term_total, method_total)\n",
+    "        \n",
+    "        # Calculate fold enrichment\n",
+    "        expected = (method_total * term_total) / total_annotations\n",
+    "        fold_enrichment = method_term_count / expected if expected > 0 else 0\n",
+    "        \n",
+    "        enrichment_results.append({\n",
+    "            'go_term': term,\n",
+    "            'go_term_label': term_label,\n",
+    "            'method_count': method_term_count,\n",
+    "            'method_total': method_total,\n",
+    "            'term_total': term_total,\n",
+    "            'total_annotations': total_annotations,\n",
+    "            'fold_enrichment': fold_enrichment,\n",
+    "            'p_value': p_value\n",
+    "        })\n",
+    "    \n",
+    "    if not enrichment_results:\n",
+    "        return pd.DataFrame()\n",
+    "    \n",
+    "    results_df = pd.DataFrame(enrichment_results)\n",
+    "    \n",
+    "    # Apply FDR correction\n",
+    "    if len(results_df) > 0:\n",
+    "        _, p_adjusted, _, _ = multipletests(results_df['p_value'], method='fdr_bh')\n",
+    "        results_df['p_adjusted'] = p_adjusted\n",
+    "        \n",
+    "        # Filter by adjusted p-value\n",
+    "        results_df = results_df[results_df['p_adjusted'] < p_cutoff]\n",
+    "        \n",
+    "        # Sort by fold enrichment\n",
+    "        results_df = results_df.sort_values('fold_enrichment', ascending=False)\n",
+    "    \n",
+    "    return results_df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "b6073829",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-13T21:12:55.349381Z",
+     "start_time": "2025-09-13T21:10:58.578917Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:04.847552Z",
+     "iopub.status.busy": "2025-10-14T08:17:04.847437Z",
+     "iopub.status.idle": "2025-10-14T08:17:04.850835Z",
+     "shell.execute_reply": "2025-10-14T08:17:04.850576Z"
+    },
+    "papermill": {
+     "duration": 0.008651,
+     "end_time": "2025-10-14T08:17:04.851550",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:04.842899",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Perform enrichment analysis for selected species\n",
+    "enrichment_species = {\n",
+    "    'Human': available_dbs.get('Human GOA'),\n",
+    "    'Mouse': available_dbs.get('Mouse MGI'),\n",
+    "    'Yeast': available_dbs.get('Yeast'),\n",
+    "    'Fly': available_dbs.get('Fly'),\n",
+    "    'Worm': available_dbs.get('Worm'),\n",
+    "    'Plant': available_dbs.get('Plant'),\n",
+    "    'Clostridium': available_dbs.get('Clostridium'),\n",
+    "    'Virus': available_dbs.get('Virus'),\n",
+    "    'Fungi': available_dbs.get('Fungi'),\n",
+    "    'Archaea': available_dbs.get('Archaea'),\n",
+    "}\n",
+    "\n",
+    "# Remove None values\n",
+    "enrichment_species = {k: v for k, v in enrichment_species.items() if v is not None}\n",
+    "\n",
+    "enrichment_results = {}\n",
+    "\n",
+    "for species_name, db_path in enrichment_species.items():\n",
+    "    print(f\"\\nPerforming enrichment analysis for {species_name}...\")\n",
+    "    \n",
+    "    # Get all annotations for background\n",
+    "    all_annotations = get_all_term_annotations(db_path)\n",
+    "    \n",
+    "    if all_annotations.empty:\n",
+    "        print(f\"  No annotation data available for {species_name}\")\n",
+    "        continue\n",
+    "    \n",
+    "    species_enrichments = {}\n",
+    "    \n",
+    "    # Test each GO_REF method\n",
+    "    go_refs_to_test = [ref for ref in all_annotations['supporting_references'].unique() \n",
+    "                       if ref in GO_REF_NAMES]\n",
+    "    \n",
+    "    print(f\"  Testing {len(go_refs_to_test)} methods...\")\n",
+    "    \n",
+    "    for ref in go_refs_to_test:\n",
+    "        enriched_terms = calculate_enrichment(all_annotations, ref, p_cutoff=0.01)\n",
+    "        \n",
+    "        if not enriched_terms.empty:\n",
+    "            species_enrichments[ref] = enriched_terms\n",
+    "            print(f\"    {GO_REF_NAMES[ref]}: {len(enriched_terms)} enriched terms\")\n",
+    "        else:\n",
+    "            print(f\"    {GO_REF_NAMES[ref]}: No significantly enriched terms\")\n",
+    "    \n",
+    "    if species_enrichments:\n",
+    "        enrichment_results[species_name] = species_enrichments"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "8a9dcca2",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-13T21:13:04.415989Z",
+     "start_time": "2025-09-13T21:12:55.355257Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:04.860022Z",
+     "iopub.status.busy": "2025-10-14T08:17:04.859914Z",
+     "iopub.status.idle": "2025-10-14T08:17:04.865591Z",
+     "shell.execute_reply": "2025-10-14T08:17:04.865354Z"
+    },
+    "papermill": {
+     "duration": 0.010627,
+     "end_time": "2025-10-14T08:17:04.866247",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:04.855620",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Visualize top enriched terms for each method/species\n",
+    "if enrichment_results:\n",
+    "    for species_name, species_data in enrichment_results.items():\n",
+    "        if not species_data:\n",
+    "            print(f\"No enrichment results for {species_name}\")\n",
+    "            continue\n",
+    "        \n",
+    "        # Get methods with enriched terms\n",
+    "        methods_with_enrichment = list(species_data.keys())\n",
+    "        \n",
+    "        if not methods_with_enrichment:\n",
+    "            print(f\"No enriched terms for any method in {species_name}\")\n",
+    "            continue\n",
+    "        \n",
+    "        # Determine grid layout\n",
+    "        n_methods = len(methods_with_enrichment)\n",
+    "        n_cols = min(2, n_methods)\n",
+    "        n_rows = (n_methods + n_cols - 1) // n_cols\n",
+    "        \n",
+    "        fig, axes = plt.subplots(n_rows, n_cols, figsize=(8*n_cols, 6*n_rows))\n",
+    "        \n",
+    "        # Handle single plot case\n",
+    "        if n_methods == 1:\n",
+    "            axes = [axes]\n",
+    "        elif n_rows == 1 and n_cols > 1:\n",
+    "            axes = axes.flatten()\n",
+    "        elif n_rows > 1:\n",
+    "            axes = axes.flatten()\n",
+    "        \n",
+    "        for idx, ref in enumerate(methods_with_enrichment):\n",
+    "            ax = axes[idx]\n",
+    "            enriched_df = species_data[ref].head(15)  # Top 15 enriched terms\n",
+    "            \n",
+    "            if not enriched_df.empty:\n",
+    "                # Create bar chart with fold enrichment\n",
+    "                y_pos = np.arange(len(enriched_df))\n",
+    "                bars = ax.barh(y_pos, enriched_df['fold_enrichment'], \n",
+    "                             color=['darkred' if p < 0.001 else 'red' if p < 0.01 else 'orange' \n",
+    "                                   for p in enriched_df['p_adjusted']])\n",
+    "                \n",
+    "                # Add term labels\n",
+    "                labels = [f\"{row['go_term']}: {row['go_term_label'][:25]}...\" \n",
+    "                         if len(row['go_term_label']) > 25 \n",
+    "                         else f\"{row['go_term']}: {row['go_term_label']}\"\n",
+    "                         for _, row in enriched_df.iterrows()]\n",
+    "                \n",
+    "                ax.set_yticks(y_pos)\n",
+    "                ax.set_yticklabels(labels, fontsize=8)\n",
+    "                ax.set_xlabel('Fold Enrichment', fontsize=10)\n",
+    "                ax.set_title(f'{GO_REF_NAMES.get(ref, ref)}\\n({ref})\\n{len(species_data[ref])} enriched terms', \n",
+    "                           fontsize=11, fontweight='bold')\n",
+    "                \n",
+    "                # Add value labels and significance markers\n",
+    "                for bar, fold, p_val in zip(bars, enriched_df['fold_enrichment'], \n",
+    "                                           enriched_df['p_adjusted']):\n",
+    "                    width = bar.get_width()\n",
+    "                    sig_marker = '***' if p_val < 0.001 else '**' if p_val < 0.01 else '*'\n",
+    "                    ax.text(width + max(enriched_df['fold_enrichment'])*0.01, \n",
+    "                           bar.get_y() + bar.get_height()/2,\n",
+    "                           f'{fold:.1f}{sig_marker}', \n",
+    "                           ha='left', va='center', fontsize=7)\n",
+    "                \n",
+    "                # Add vertical line at fold enrichment = 1\n",
+    "                ax.axvline(x=1, color='gray', linestyle='--', alpha=0.5)\n",
+    "                ax.set_xlim(0, max(enriched_df['fold_enrichment']) * 1.2)\n",
+    "            else:\n",
+    "                ax.text(0.5, 0.5, 'No enriched terms', ha='center', va='center', \n",
+    "                       transform=ax.transAxes)\n",
+    "                ax.set_title(f'{GO_REF_NAMES.get(ref, ref)}', \n",
+    "                           fontsize=11, fontweight='bold')\n",
+    "        \n",
+    "        # Hide empty subplots\n",
+    "        for idx in range(n_methods, len(axes)):\n",
+    "            axes[idx].axis('off')\n",
+    "        \n",
+    "        # Add legend for significance markers\n",
+    "        fig.text(0.5, 0.01, '* p<0.01, ** p<0.001, *** p<0.0001 (FDR corrected)', \n",
+    "                ha='center', fontsize=10, style='italic')\n",
+    "        \n",
+    "        plt.suptitle(f'GO Term Enrichment Analysis - {species_name}', \n",
+    "                    fontsize=16, fontweight='bold', y=1.02)\n",
+    "        plt.tight_layout()\n",
+    "        plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "4423d748",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-13T21:13:04.463983Z",
+     "start_time": "2025-09-13T21:13:04.450327Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:04.874615Z",
+     "iopub.status.busy": "2025-10-14T08:17:04.874507Z",
+     "iopub.status.idle": "2025-10-14T08:17:04.877361Z",
+     "shell.execute_reply": "2025-10-14T08:17:04.877115Z"
+    },
+    "papermill": {
+     "duration": 0.007846,
+     "end_time": "2025-10-14T08:17:04.878100",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:04.870254",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Create summary of enrichment analysis\n",
+    "if enrichment_results:\n",
+    "    enrichment_summary = []\n",
+    "    \n",
+    "    for species_name, species_data in enrichment_results.items():\n",
+    "        for ref, enriched_df in species_data.items():\n",
+    "            if not enriched_df.empty:\n",
+    "                top_term = enriched_df.iloc[0]\n",
+    "                \n",
+    "                enrichment_summary.append({\n",
+    "                    'Species': species_name,\n",
+    "                    'Method': GO_REF_NAMES.get(ref, ref),\n",
+    "                    'GO_REF': ref,\n",
+    "                    'Enriched Terms': len(enriched_df),\n",
+    "                    'Top Term': f\"{top_term['go_term']} ({top_term['go_term_label'][:30]}...)\" \n",
+    "                               if len(top_term['go_term_label']) > 30\n",
+    "                               else f\"{top_term['go_term']} ({top_term['go_term_label']})\",\n",
+    "                    'Top Fold Enrichment': f\"{top_term['fold_enrichment']:.2f}\",\n",
+    "                    'Top P-adjusted': f\"{top_term['p_adjusted']:.2e}\",\n",
+    "                    'Avg Fold Enrichment': f\"{enriched_df['fold_enrichment'].mean():.2f}\"\n",
+    "                })\n",
+    "    \n",
+    "    if enrichment_summary:\n",
+    "        enrichment_summary_df = pd.DataFrame(enrichment_summary)\n",
+    "        enrichment_summary_df = enrichment_summary_df.sort_values(['Species', 'Enriched Terms'], \n",
+    "                                                                  ascending=[True, False])\n",
+    "        \n",
+    "        print(\"\\n\" + \"=\"*100)\n",
+    "        print(\"ENRICHMENT ANALYSIS SUMMARY\")\n",
+    "        print(\"=\"*100)\n",
+    "        display(enrichment_summary_df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "efe5223a",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-13T21:13:04.687689Z",
+     "start_time": "2025-09-13T21:13:04.495260Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:04.886510Z",
+     "iopub.status.busy": "2025-10-14T08:17:04.886406Z",
+     "iopub.status.idle": "2025-10-14T08:17:04.888802Z",
+     "shell.execute_reply": "2025-10-14T08:17:04.888583Z"
+    },
+    "papermill": {
+     "duration": 0.007354,
+     "end_time": "2025-10-14T08:17:04.889423",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:04.882069",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Export enrichment results\n",
+    "if enrichment_results:\n",
+    "    for species_name, species_data in enrichment_results.items():\n",
+    "        for ref, enriched_df in species_data.items():\n",
+    "            if not enriched_df.empty:\n",
+    "                # Add method name for clarity\n",
+    "                enriched_df['method_name'] = GO_REF_NAMES.get(ref, 'Unknown')\n",
+    "                \n",
+    "                # Export to CSV\n",
+    "                filename = export_dir / f\"enrichment_{species_name.lower()}_{ref.replace(':', '_')}.csv\"\n",
+    "                enriched_df.to_csv(filename, index=False)\n",
+    "                print(f\"Exported {species_name} {GO_REF_NAMES.get(ref, ref)} enrichment to {filename}\")\n",
+    "    \n",
+    "    # Export summary\n",
+    "    if 'enrichment_summary_df' in locals():\n",
+    "        summary_filename = export_dir / \"enrichment_summary.csv\"\n",
+    "        enrichment_summary_df.to_csv(summary_filename, index=False)\n",
+    "        print(f\"\\nExported enrichment summary to {summary_filename}\")\n",
+    "    \n",
+    "    print(f\"\\nAll enrichment data exported to {export_dir}/\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "f1f05b73",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-13T20:55:26.305091Z",
+     "start_time": "2025-09-12T22:50:27.250907Z"
+    },
+    "execution": {
+     "iopub.execute_input": "2025-10-14T08:17:04.897992Z",
+     "iopub.status.busy": "2025-10-14T08:17:04.897887Z",
+     "iopub.status.idle": "2025-10-14T08:17:04.900090Z",
+     "shell.execute_reply": "2025-10-14T08:17:04.899847Z"
+    },
+    "papermill": {
+     "duration": 0.007197,
+     "end_time": "2025-10-14T08:17:04.900806",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:04.893609",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Export term-level data to CSV\n",
+    "if term_level_data:\n",
+    "    for species_name, df in term_level_data.items():\n",
+    "        if not df.empty:\n",
+    "            # Add readable method names\n",
+    "            df['method_name'] = df['supporting_references'].apply(\n",
+    "                lambda x: GO_REF_NAMES.get(x, 'Unknown')\n",
+    "            )\n",
+    "            \n",
+    "            # Export to CSV\n",
+    "            filename = export_dir / f\"term_level_{species_name.lower().replace(' ', '_')}.csv\"\n",
+    "            df.to_csv(filename, index=False)\n",
+    "            print(f\"Exported {species_name} term-level data to {filename}\")\n",
+    "    \n",
+    "    # Export summary statistics\n",
+    "    if 'term_summary_df' in locals():\n",
+    "        summary_filename = export_dir / \"term_level_summary_statistics.csv\"\n",
+    "        term_summary_df.to_csv(summary_filename, index=False)\n",
+    "        print(f\"\\nExported term-level summary statistics to {summary_filename}\")\n",
+    "    \n",
+    "    print(f\"\\nAll term-level data exported to {export_dir}/\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bdccca11",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2025-09-11T23:56:54.201717Z",
+     "start_time": "2025-09-11T23:56:54.199925Z"
+    },
+    "papermill": {
+     "duration": 0.003886,
+     "end_time": "2025-10-14T08:17:04.908676",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:04.904790",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b0819a6a",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003977,
+     "end_time": "2025-10-14T08:17:04.916623",
+     "exception": false,
+     "start_time": "2025-10-14T08:17:04.912646",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 7.613927,
+   "end_time": "2025-10-14T08:17:05.137064",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "docs/dashboard/IEA-Contributions.ipynb",
+   "output_path": "docs/dashboard/IEA-Contributions.html",
+   "parameters": {},
+   "start_time": "2025-10-14T08:16:57.523137",
+   "version": "2.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

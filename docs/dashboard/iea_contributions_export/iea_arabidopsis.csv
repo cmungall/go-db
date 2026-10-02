@@ -1,0 +1,5 @@
+evidence_type,supporting_references,count_star(),reference_name
+IBA,GO_REF:0000033,40684,PAINT
+IEA,TAIR:AnalysisReference:501756966,8049,Unknown
+IEA,TAIR:AnalysisReference:501756967,833,Unknown
+IEA,TAIR:AnalysisReference:501757242,18,Unknown

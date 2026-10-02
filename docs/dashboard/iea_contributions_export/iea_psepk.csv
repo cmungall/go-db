@@ -1,0 +1,11 @@
+evidence_type,supporting_references,count_star(),swissprot_count,other_count,reference_name
+IEA,GO_REF:0000002,3033,391,2642,InterPro2GO
+IEA,GO_REF:0000118,2804,512,2292,TreeGrafter
+IEA,GO_REF:0000043,1648,327,1321,UniProt Keywords
+IEA,GO_REF:0000044,477,55,422,UniProt Subcellular
+IEA,GO_REF:0000104,361,232,129,Manual Transfer
+IEA,GO_REF:0000117,361,57,304,ARBA
+IEA,GO_REF:0000003,222,5,217,EC2GO
+IEA,GO_REF:0000116,62,33,29,Rhea Mappings
+IEA,GO_REF:0000041,51,14,37,UniProt UniPathway
+IEA,GO_REF:0000108,17,8,9,Logical Inference
