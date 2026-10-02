@@ -16,6 +16,88 @@ Use this skill when working with queries involving:
 - Computing annotation statistics by taxon, evidence, or other dimensions
 - Identifying unique or redundant annotations using ontological reasoning
 
+## Database Locations
+
+All databases are in `~/repos/go-db/db/*.ddb`:
+
+```bash
+# List available databases
+ls -lh ~/repos/go-db/db/*.ddb
+```
+
+### Common Databases
+
+| Database | Description | Approx Size |
+|----------|-------------|-------------|
+| `goa_human.ddb` | Human GOA annotations | ~400MB |
+| `mgi.ddb` | Mouse Genome Informatics | ~400MB |
+| `sgd.ddb` | Saccharomyces Genome Database (yeast) | ~300MB |
+| `pombase.ddb` | Fission yeast annotations | ~280MB |
+| `fb.ddb` | FlyBase (Drosophila) | ~300MB |
+| `zfin.ddb` | Zebrafish Information Network | ~300MB |
+| `rgd.ddb` | Rat Genome Database | ~300MB |
+| `wb.ddb` | WormBase (C. elegans) | ~300MB |
+| `tair.ddb` | Arabidopsis annotations | ~300MB |
+| `goa_uniprot_gcrp.ddb` | GOA GCRP (Gene-Centric Reference Proteome) | ~35GB |
+| `goa_uniprot_all.ddb` | All UniProt GO annotations | ~90GB |
+| `fungi.ddb` | All fungal annotations | ~10GB |
+| `bacteria.ddb` | All bacterial annotations | ~23GB |
+| `virus.ddb` | Viral annotations | varies |
+| `archaea.ddb` | Archaeal annotations | ~700MB |
+
+## Building New Databases
+
+To build or rebuild databases, use the Makefile in `~/repos/go-db`:
+
+```bash
+cd ~/repos/go-db
+
+# Build a specific organism database from GO annotation files
+make db/sgd.ddb
+make db/goa_human.ddb
+make db/pombase.ddb
+
+# Build taxonomic group databases
+make db/fungi.ddb
+make db/bacteria.ddb
+make db/virus.ddb
+
+# Convenience targets
+make human     # builds db/goa_human.ddb
+make fungi     # builds db/fungi.ddb
+make bacteria  # builds db/bacteria.ddb
+
+# Build for any taxon by ID
+make db/taxon_9606.ddb  # human by taxon ID
+```
+
+### Loading Custom GAF Files
+
+```bash
+cd ~/repos/go-db
+uv run go-db load -d db/mydb.ddb -g db/go.db path/to/annotations.gaf
+```
+
+## Executing Queries
+
+### Command Line Usage
+
+```bash
+# Query a specific database
+duckdb ~/repos/go-db/db/sgd.ddb "SELECT COUNT(*) FROM gaf_association"
+
+# Interactive mode
+duckdb ~/repos/go-db/db/sgd.ddb
+D SELECT * FROM term_label WHERE label LIKE '%kinase%' LIMIT 10;
+D .quit
+
+# Export results to CSV
+duckdb ~/repos/go-db/db/goa_human.ddb "COPY (SELECT ...) TO 'results.csv' (HEADER, DELIMITER ',')"
+
+# Read-only mode (recommended for large databases)
+duckdb -readonly ~/repos/go-db/db/goa_uniprot_gcrp.ddb
+```
+
 ## Core Concepts
 
 ### Closure Tables
@@ -23,9 +105,9 @@ Use this skill when working with queries involving:
 Closure tables are the heart of GO-DB querying. They contain the **transitive closure** of ontological relationships:
 
 - **isa_partof_closure**: Contains all is-a and part-of relationships, both direct and inferred
-  - Example: If "protein kinase" is-a "kinase" and "kinase" is-a "catalytic activity", the table includes all three relationships plus the transitive "protein kinase" → "catalytic activity"
+  - Example: If "protein kinase" is-a "kinase" and "kinase" is-a "catalytic activity", the table includes all three relationships plus the transitive "protein kinase" -> "catalytic activity"
 
-- **How to use**: Join annotations with closure tables to find all genes annotated to a term OR its descendants
+**How to use**: Join annotations with closure tables to find all genes annotated to a term OR its descendants
 
 ```sql
 -- Find all yeast kinases (including specific types like protein kinase)
@@ -36,20 +118,12 @@ WHERE ipc.object = 'GO:0016301'  -- kinase activity
   AND a.db_object_taxon LIKE '%559292%';  -- yeast
 ```
 
-### Database Structure
-
-Available databases are located in `db/*.ddb`:
-- Organism-specific: `sgd.ddb` (yeast), `fb.ddb` (fly), `pombase.ddb` (fission yeast)
-- Taxonomic groups: `mammal.ddb`, `fungi.ddb`, `plant.ddb`
-- GOA databases: `goa_human.ddb`, `goa_uniprot_all.ddb`
-
-## Query Patterns
+## Key Query Patterns
 
 ### 1. Finding Genes by GO Term (with Closure)
 
 The most common pattern: find all genes annotated to a term or its descendants.
 
-**Pattern:**
 ```sql
 SELECT DISTINCT
     a.db_object_symbol,
@@ -62,13 +136,8 @@ WHERE ipc.object = '<GO_TERM_ID>'
   AND a.db_object_taxon LIKE '%<TAXON_ID>%';
 ```
 
-**Why use closure:** Without the closure join, only direct annotations are found. The closure captures all annotations to descendant terms (e.g., "protein kinase", "lipid kinase" when searching for "kinase").
-
 ### 2. Counting and Grouping Annotations
 
-Aggregate annotations by dimensions like evidence type, taxon, or assigned_by.
-
-**Pattern:**
 ```sql
 SELECT
     evidence_type,
@@ -80,13 +149,10 @@ GROUP BY evidence_type
 ORDER BY annotation_count DESC;
 ```
 
-Combine with closure tables to count within ontology subtrees.
-
 ### 3. Finding Unique Contributions
 
 Identify annotations that are not redundant with more specific annotations from other sources.
 
-**Pattern:**
 ```sql
 SELECT a.*
 FROM gaf_association a
@@ -100,11 +166,7 @@ WHERE NOT EXISTS (
 );
 ```
 
-**Logic:** An annotation is unique if no child-term annotation exists from a different source for the same gene.
-
 ### 4. Exploring Term Hierarchies
-
-Navigate the ontology structure itself using edge and closure tables.
 
 **Find direct children:**
 ```sql
@@ -127,7 +189,6 @@ WHERE ipc.subject = '<GO_TERM_ID>';
 
 Find genes with annotations to both T1 and T2 (or their descendants).
 
-**Pattern:**
 ```sql
 SELECT DISTINCT a1.db_object_symbol, a1.db_object_id
 FROM gaf_association a1
@@ -138,42 +199,12 @@ WHERE ipc1.object = '<GO_TERM_1>'
   AND ipc2.object = '<GO_TERM_2>';
 ```
 
-**Logic:** Self-join gaf_association on gene ID, then join each side with closure tables to check ancestry.
-
-## Executing Queries
-
-### Command Line Usage
-
-```bash
-# Query a specific database
-duckdb db/sgd.ddb "SELECT COUNT(*) FROM gaf_association"
-
-# Interactive mode
-duckdb db/sgd.ddb
-D SELECT * FROM term_label WHERE label LIKE '%kinase%' LIMIT 10;
-D .quit
-
-# Export results to CSV
-duckdb db/goa_human.ddb "COPY (SELECT ...) TO 'results.csv' (HEADER, DELIMITER ',')"
-```
-
-### Finding the Right Database
-
-- **Organism-specific queries**: Use organism database (e.g., `sgd.ddb` for yeast)
-- **Cross-species analysis**: Use taxonomic group (e.g., `mammal.ddb`)
-- **Human-focused**: Use `goa_human.ddb`
-- **Comprehensive queries**: Use `goa_uniprot_all.ddb` (largest, >400M annotations)
-
-Check available databases:
-```bash
-ls -lh db/*.ddb
-```
-
 ## Key Tables Reference
 
 ### gaf_association
 Main annotation table with columns:
 - `db_object_symbol`, `db_object_id`: Gene identifier and symbol
+- `subject`: Full subject ID (e.g., "UniProtKB:P12345")
 - `ontology_class_ref`: GO term ID (e.g., "GO:0016301")
 - `evidence_type`: Evidence code (e.g., "IEA", "IDA")
 - `db_object_taxon`: NCBI taxon ID (e.g., "taxon:9606")
@@ -198,19 +229,6 @@ All ontology relationships (including inferred):
 
 For complete schema documentation, refer to `references/schema.md`.
 
-## Query Workflow
-
-When handling a query request:
-
-1. **Understand the question**: Identify what data is being requested
-2. **Determine if closure is needed**: Most queries benefit from closure tables to capture hierarchical relationships
-3. **Find the GO term ID**: Use term_label to search by label if needed
-4. **Select the right database**: Choose based on organism/scope
-5. **Build the query**: Start with the appropriate pattern from `references/common_queries.md`
-6. **Add filters**: Refine by taxon, evidence, date, etc.
-7. **Execute and verify**: Run via `duckdb` and check results make sense
-8. **Add labels for readability**: Join with term_label to show human-readable names
-
 ## Common Taxon IDs
 
 - 9606: Human
@@ -218,6 +236,9 @@ When handling a query request:
 - 559292: S. cerevisiae (yeast)
 - 7227: D. melanogaster (fly)
 - 284812: S. pombe (fission yeast)
+- 6239: C. elegans (worm)
+- 7955: D. rerio (zebrafish)
+- 10116: Rat
 
 ## Common Evidence Codes
 
@@ -225,33 +246,27 @@ When handling a query request:
 **Computational**: IEA, ISS, ISO, ISA, ISM, IBA
 **Curator/Author**: TAS, NAS, IC, ND
 
+## Common GO_REFs for IEA Annotations
+
+- `GO_REF:0000002`: InterPro2GO
+- `GO_REF:0000003`: EC2GO
+- `GO_REF:0000041`: UniProtKB-SubCell
+- `GO_REF:0000043`: UniProtKB-KW
+- `GO_REF:0000044`: UniProtKB-Seq
+- `GO_REF:0000104`: PAINT
+- `GO_REF:0000107`: Reactome
+- `GO_REF:0000108`: GOC IBA
+
 ## Resources
 
-### references/schema.md
-Complete schema documentation including:
-- Detailed table structures and column descriptions
-- Ontology table relationships
-- Closure table explanations
-- Index information
-- Database statistics
-
-### references/common_queries.md
-Comprehensive SQL examples for all query patterns:
-- Pattern 1: Find genes by term (with closure)
-- Pattern 2: Count/group annotations
-- Pattern 3: Find unique/redundant annotations
-- Pattern 4: Explore term hierarchies
-- Pattern 5: Genes with multiple term annotations
-- Pattern 6: Evidence analysis
-- Pattern 7: Reference/citation analysis
-
-Load these references when detailed examples or schema information is needed to construct queries.
+- `references/schema.md` - Complete schema documentation
+- `references/common_queries.md` - Comprehensive SQL examples
 
 ## Tips
 
 - **Start simple**: Begin with basic queries and add complexity incrementally
 - **Use EXPLAIN**: Check query plans for complex queries
 - **LIMIT during development**: Add LIMIT to test queries on large databases
-- **Check indices**: Closure tables have indices on subject/object pairs for performance
-- **Validate term IDs**: Verify GO term IDs exist in term_label before running queries
-- **Consider performance**: Closure joins can be expensive on very large databases; filter early when possible
+- **Check indices**: Closure tables have indices on subject/object pairs
+- **Validate term IDs**: Verify GO term IDs exist in term_label before running
+- **Use -readonly**: When querying large databases to avoid lock issues

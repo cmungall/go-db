@@ -1,0 +1,22 @@
+{
+  "name": "go-db-skills",
+  "owner": {
+    "name": "Chris Mungall",
+    "email": "cjmungall@lbl.gov"
+  },
+  "metadata": {
+    "description": "Skills for duckdb/SQL queries over GO",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "go-db-skills",
+      "description": "Skills for duckdb/SQL queries over GO",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/go-db-query"
+      ]
+    }
+  ]
+}

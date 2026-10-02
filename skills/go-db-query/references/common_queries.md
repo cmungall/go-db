@@ -108,6 +108,19 @@ GROUP BY assigned_by
 ORDER BY total_annotations DESC;
 ```
 
+### Example: IEA breakdown by GO_REF
+
+```sql
+SELECT
+    supporting_references,
+    COUNT(*) AS annotation_count,
+    COUNT(DISTINCT db_object_id) AS unique_genes
+FROM gaf_association
+WHERE evidence_type = 'IEA'
+GROUP BY supporting_references
+ORDER BY annotation_count DESC;
+```
+
 ## Pattern 3: Find Unique/Redundant Annotations
 
 Identify annotations that are unique contributions or redundant with more specific annotations.
@@ -144,7 +157,7 @@ WHERE a.supporting_references = 'GO_REF:0000108'  -- specific reference
 
 ### Example: Find redundant IEA annotations
 
-Find IEA (electronic) annotations that are redundant with experimental evidence on parent terms.
+Find IEA (electronic) annotations that are redundant with experimental evidence on child terms.
 
 ```sql
 SELECT
@@ -158,9 +171,9 @@ WHERE a.evidence_type = 'IEA'
   AND EXISTS (
     SELECT 1
     FROM gaf_association a2
-    INNER JOIN isa_partof_closure ipc ON a.ontology_class_ref = ipc.subject
+    INNER JOIN isa_partof_closure ipc ON a2.ontology_class_ref = ipc.subject
     WHERE a2.evidence_type IN ('IDA', 'IMP', 'IGI', 'IPI')  -- experimental evidence
-      AND ipc.object = a2.ontology_class_ref  -- a2 is to a parent term
+      AND ipc.object = a.ontology_class_ref  -- a2 is to a more specific term
       AND a2.db_object_id = a.db_object_id    -- same gene
   )
 LIMIT 100;
@@ -357,6 +370,32 @@ WHERE annotation_date >= '2024-01-01'
   AND annotation_date < '2024-02-01';
 ```
 
+## Pattern 8: Taxonomic Filtering with Closure
+
+Use entailed_edge for hierarchical taxon queries.
+
+### Example: All annotations for viruses (using taxon closure)
+
+```sql
+SELECT
+    a.db_object_symbol,
+    a.db_object_id,
+    a.db_object_taxon,
+    a.ontology_class_ref,
+    t.label
+FROM gaf_association a
+INNER JOIN term_label t ON a.ontology_class_ref = t.id
+WHERE a.db_object_taxon IN (
+    SELECT DISTINCT 'taxon:' || REPLACE(subject, 'NCBITaxon:', '')
+    FROM entailed_edge
+    WHERE predicate = 'rdfs:subClassOf'
+      AND object = 'NCBITaxon:10239'  -- Viruses
+    UNION
+    SELECT 'taxon:10239'
+)
+LIMIT 100;
+```
+
 ## Tips for Effective Queries
 
 1. **Always use closure tables for hierarchical queries** - Don't just match ontology_class_ref directly
@@ -366,6 +405,7 @@ WHERE annotation_date >= '2024-01-01'
 5. **Check for indices** - Most databases have indices on subject/object in closures
 6. **Limit large results** - Use LIMIT for exploratory queries on large databases
 7. **Use EXPLAIN** - Run `EXPLAIN` before complex queries to understand query plans
+8. **Use -readonly mode** - For large databases, open with `duckdb -readonly` to avoid lock issues
 
 ## Common Taxon IDs
 
@@ -376,6 +416,8 @@ WHERE annotation_date >= '2024-01-01'
 - 6239: Caenorhabditis elegans (worm)
 - 3702: Arabidopsis thaliana (plant)
 - 284812: Schizosaccharomyces pombe (fission yeast)
+- 7955: Danio rerio (zebrafish)
+- 10116: Rattus norvegicus (rat)
 
 ## Common Evidence Codes
 
@@ -399,3 +441,17 @@ WHERE annotation_date >= '2024-01-01'
 - NAS: Non-traceable Author Statement
 - IC: Inferred by Curator
 - ND: No biological Data available
+
+## Common GO_REFs
+
+- `GO_REF:0000002`: InterPro2GO
+- `GO_REF:0000003`: EC2GO
+- `GO_REF:0000041`: UniProtKB-SubCell
+- `GO_REF:0000043`: UniProtKB-KW
+- `GO_REF:0000044`: UniProtKB-Seq
+- `GO_REF:0000104`: PAINT
+- `GO_REF:0000107`: Reactome
+- `GO_REF:0000108`: GOC IBA
+- `GO_REF:0000115`: RNAcentral
+- `GO_REF:0000116`: ARBA
+- `GO_REF:0000117`: HAMAP
