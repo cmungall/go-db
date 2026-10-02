@@ -21,6 +21,9 @@ TAXON_CLOSTRIDIUM = NCBITaxon:186801
 TAXON_PSEPK = NCBITaxon:160488 # Pseudomonas putida KT2440
 TAXON_ANOGA = NCBITaxon:7165 # Anopheles gambiae
 TAXON_ZIKV = NCBITaxon:64320 # Zika virus
+TAXON_WHEAT = NCBITaxon:4565 # Triticum aestivum
+TAXON_MOUSE = NCBITaxon:10090 # Mus musculus
+TAXON_XENOPUS = NCBITaxon:8353 # Xenopus (genus, includes laevis 8355 and tropicalis 8364)
 
 GCRP_DB = db/goa_uniprot_gcrp.ddb
 
@@ -150,6 +153,21 @@ data/gaf/plant.gaf: $(SOURCE_DB)
 	@echo "Exporting plant annotations for NCBITaxon:33090 from GOA GCRP..."
 	$(RUN) go-db export -d $(SOURCE_DB) --taxon-closure=$(TAXON_PLANT) -o $@
 
+data/gaf/goa_wheat.gaf: $(GCRP_DB)
+	@mkdir -p data/gaf
+	@echo "Exporting wheat (Triticum aestivum) annotations from GOA GCRP..."
+	$(RUN) go-db export -d $(GCRP_DB) --taxon-closure=$(TAXON_WHEAT) -o $@
+
+data/gaf/goa_mouse.gaf: $(GCRP_DB)
+	@mkdir -p data/gaf
+	@echo "Exporting mouse (Mus musculus) annotations from GOA GCRP..."
+	$(RUN) go-db export -d $(GCRP_DB) --taxon-closure=$(TAXON_MOUSE) -o $@
+
+data/gaf/goa_xenopus.gaf: $(GCRP_DB)
+	@mkdir -p data/gaf
+	@echo "Exporting Xenopus (genus) annotations from GOA GCRP..."
+	$(RUN) go-db export -d $(GCRP_DB) --taxon-closure=$(TAXON_XENOPUS) -o $@
+
 # viruses not in GCRP
 data/gaf/virus.gaf: db/goa_uniprot_all.ddb
 	@mkdir -p data/gaf
@@ -189,6 +207,18 @@ db/plant.ddb: data/gaf/plant.gaf
 	@echo "Creating plant database..."
 	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
 
+db/goa_wheat.ddb: data/gaf/goa_wheat.gaf
+	@echo "Creating wheat (Triticum aestivum) database..."
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
+
+db/goa_mouse.ddb: data/gaf/goa_mouse.gaf
+	@echo "Creating mouse (Mus musculus) database..."
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
+
+db/goa_xenopus.ddb: data/gaf/goa_xenopus.gaf
+	@echo "Creating Xenopus (genus) database..."
+	$(RUN) go-db load -d $@ -f --go-db-path db/go.db $(SP_ARGS) $<
+
 
 db/pseudomonadota.ddb: data/gaf/pseudomonadota.gaf
 	@echo "Creating Pseudomonadota database..."
@@ -215,6 +245,9 @@ archaea: db/archaea.ddb
 fungi: db/fungi.ddb
 plant: db/plant.ddb
 human: db/goa_human.ddb
+wheat: db/goa_wheat.ddb
+mouse: db/goa_mouse.ddb
+xenopus: db/goa_xenopus.ddb
 
 # Export all major kingdom GAFs
 export-kingdoms: data/gaf/bacteria.gaf data/gaf/archaea.gaf data/gaf/fungi.gaf
@@ -229,4 +262,4 @@ clean-gaf:
 clean-taxon-db:
 	rm -f db/virus.ddb db/bacteria.ddb db/archaea.ddb db/fungi.ddb db/goa_human.ddb db/taxon_*.ddb $(GCRP_DB)
 
-.PHONY: gcrp virus bacteria archaea plant fungi human export-kingdoms build-kingdoms clean-gaf clean-taxon-db
+.PHONY: gcrp virus bacteria archaea plant fungi human wheat mouse xenopus export-kingdoms build-kingdoms clean-gaf clean-taxon-db
