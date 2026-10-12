@@ -79,6 +79,9 @@ select = [
 
 unfixable = []
 
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]  # pytest uses assert
+
 [tool.ruff.lint.mccabe]
 # Unlike Flake8, default to a complexity level of 10.
 max-complexity = 10

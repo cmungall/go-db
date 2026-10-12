@@ -1,0 +1,12 @@
+[
+	{"src":"PANTHER:PTN001160522","fam":"PTHR23502","an":"AN0","ann":253012,"grafts":717,"maxdepth":13,"terms":"plasma membrane; transmembrane transporter activity; transmembrane transport"},
+	{"src":"PANTHER:PTN000605491","fam":"PTHR23501","an":"AN0","ann":252072,"grafts":574,"maxdepth":14,"terms":"transmembrane transport; transmembrane transporter activity; plasma membrane"},
+	{"src":"PANTHER:PTN000627328","fam":"PTHR48022","an":"AN0","ann":246297,"grafts":820,"maxdepth":21,"terms":"membrane; carbohydrate transport; carbohydrate:proton symporter activity"},
+	{"src":"PANTHER:PTN000320364","fam":"PTHR13140","an":"AN1","ann":238631,"grafts":1579,"maxdepth":25,"terms":"actin cytoskeleton; cytoplasm; microfilament motor activity; membrane; actin filament organization"},
+	{"src":"PANTHER:PTN000344873","fam":"PTHR13710","an":"AN0","ann":198263,"grafts":1031,"maxdepth":26,"terms":"DNA repair; chromosome; 3'-5' DNA helicase activity; DNA recombination"},
+	{"src":"PANTHER:PTN000185014","fam":"PTHR43791","an":"AN0","ann":177626,"grafts":712,"maxdepth":14,"terms":"membrane; transmembrane transporter activity"},
+	{"src":"PANTHER:PTN000116141","fam":"PTHR11070","an":"AN1","ann":173000,"grafts":361,"maxdepth":22,"terms":"3'-5' DNA helicase activity; recombinational repair"},
+	{"src":"PANTHER:PTN000535793","fam":"PTHR22950","an":"AN0","ann":168063,"grafts":1762,"maxdepth":28,"terms":"membrane; L-amino acid transmembrane transporter activity; amino acid transmembrane transport"},
+	{"src":"PANTHER:PTN000657189","fam":"PTHR24221","an":"AN0","ann":167957,"grafts":1098,"maxdepth":30,"terms":"ATPase-coupled transmembrane transporter activity; transmembrane transport"},
+	{"src":"PANTHER:PTN002473914","fam":"PTHR45623","an":"AN1","ann":149543,"grafts":752,"maxdepth":24,"terms":"chromatin; chromatin binding; chromatin remodeling; ATP hydrolysis activity; ATP-dependent chromatin remodeler activity; nucleus"}
+]
