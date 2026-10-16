@@ -263,3 +263,27 @@ clean-taxon-db:
 	rm -f db/virus.ddb db/bacteria.ddb db/archaea.ddb db/fungi.ddb db/goa_human.ddb db/taxon_*.ddb $(GCRP_DB)
 
 .PHONY: gcrp virus bacteria archaea plant fungi human wheat mouse xenopus export-kingdoms build-kingdoms clean-gaf clean-taxon-db
+
+# ================================================================================
+# ANALYSIS: PomBase contribution to TreeGrafter annotations
+# ================================================================================
+# Traces each TreeGrafter (GO_REF:0000118) annotation up the PANTHER family tree to
+# the IBA that supplied its GO term. See analyses/treegrafter-pombase/README.md.
+# Override the database with: make treegrafter-pombase TG_DB=/path/to/goa_uniprot_all.ddb
+
+TG_DIR = tmp/treegrafter-pombase
+TG_ANALYSIS = analyses/treegrafter-pombase
+TG_DB ?= db/goa_uniprot_all.ddb
+
+$(TG_DIR)/PAINT_TreeGrafter_Annotations_TOTAL.txt.gz:
+	$(RUN) python $(TG_ANALYSIS)/panther_trees.py download $(TG_DIR)
+
+$(TG_DIR)/ptn_edges.tsv: $(TG_DIR)/PAINT_TreeGrafter_Annotations_TOTAL.txt.gz
+	$(RUN) python $(TG_ANALYSIS)/panther_trees.py edges $(TG_DIR) $@
+
+treegrafter-pombase: $(TG_DIR)/ptn_edges.tsv
+	duckdb -readonly $(TG_DB) < $(TG_ANALYSIS)/ptn_ancestry_contribution.sql
+	duckdb -readonly $(TG_DB) < $(TG_ANALYSIS)/viz/export_viz_data.sql
+	$(RUN) python $(TG_ANALYSIS)/build_page.py
+
+.PHONY: treegrafter-pombase

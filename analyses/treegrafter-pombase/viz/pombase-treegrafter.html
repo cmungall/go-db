@@ -1,0 +1,402 @@
+<title>PomBase via TreeGrafter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap">
+<style>
+:root {
+  --paper: #f4f5f1;
+  --panel: #ffffff;
+  --ink: #1b2321;
+  --muted: #5a6561;
+  --faint: #8c9692;
+  --rule: #d6dbd4;
+  --pombase: #0d6b5a;
+  --pombase-soft: #d5ebe4;
+  --graft: #b85d14;
+  --graft-soft: #f6e3d1;
+  --bar: #c4ccc7;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #111614; --panel: #18201d; --ink: #e2e8e4; --muted: #9ba7a1; --faint: #6f7b76;
+    --rule: #2b3531; --pombase: #43c2a5; --pombase-soft: #173a32; --graft: #f09a52; --graft-soft: #3d2a1a; --bar: #3a4541;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #111614; --panel: #18201d; --ink: #e2e8e4; --muted: #9ba7a1; --faint: #6f7b76;
+  --rule: #2b3531; --pombase: #43c2a5; --pombase-soft: #173a32; --graft: #f09a52; --graft-soft: #3d2a1a; --bar: #3a4541;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 15px/1.6 var(--sans); }
+.wrap { max-width: 1060px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 80px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 650; text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(30px, 4.4vw, 44px); letter-spacing: -0.01em; }
+h2 { font-size: 26px; margin-bottom: 10px; }
+h3 { font-size: 18px; margin-bottom: 6px; }
+p { margin: 0; max-width: 68ch; }
+.prose { display: grid; gap: 12px; }
+.eyebrow { font: 500 12px/1 var(--sans); letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); }
+code, .mono { font-family: var(--mono); font-size: 0.88em; }
+.lede { font-size: 17px; color: var(--muted); max-width: 66ch; }
+section { padding-block: 44px 8px; border-top: 1px solid var(--rule); margin-top: 44px; display: grid; gap: 18px; }
+header { display: grid; gap: 16px; }
+.figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border-block: 1px solid var(--rule); margin-top: 8px; }
+.fig { padding: 16px 18px 16px 0; display: grid; gap: 4px; align-content: start; }
+.fig + .fig { padding-left: 18px; border-left: 1px solid var(--rule); }
+.fig .num { font: 600 30px/1.1 var(--serif); font-variant-numeric: tabular-nums; }
+.fig .num.pb { color: var(--pombase); }
+.fig .cap { font-size: 13px; color: var(--muted); }
+.key { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; color: var(--muted); }
+.key span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 12px; height: 12px; display: inline-block; border-radius: 2px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.step { background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 16px; display: grid; gap: 8px; align-content: start; }
+.step .tag { font: 500 11px/1 var(--mono); color: var(--muted); }
+.row { font: 12px/1.5 var(--mono); background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: 8px 10px; overflow-x: auto; white-space: nowrap; }
+.row b { font-weight: 500; }
+.hl-g { background: var(--graft-soft); color: var(--graft); border-radius: 2px; padding: 0 2px; }
+.hl-p { background: var(--pombase-soft); color: var(--pombase); border-radius: 2px; padding: 0 2px; }
+.treebox { background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; display: grid; grid-template-columns: minmax(0, 1fr); }
+.treesvg { overflow-x: auto; padding: 12px 8px 12px 12px; }
+.treesvg svg { display: block; }
+.info { border-top: 1px solid var(--rule); padding: 16px; display: grid; gap: 10px; align-content: start; font-size: 13.5px; }
+.info dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; margin: 0; }
+.info dt { color: var(--muted); }
+.info dd { margin: 0; font-variant-numeric: tabular-nums; }
+.info ul { margin: 0; padding-left: 18px; display: grid; gap: 2px; }
+.badge { display: inline-block; font: 500 11px/1.6 var(--sans); padding: 0 7px; border-radius: 10px; background: var(--pombase-soft); color: var(--pombase); }
+.badge.only { background: var(--graft-soft); color: var(--graft); }
+.hint { font-size: 12.5px; color: var(--faint); }
+svg text { fill: var(--ink); font-family: var(--sans); }
+svg .lbl { font-size: 11.5px; }
+svg .lbl.sp { font-family: var(--mono); font-size: 11px; fill: var(--muted); }
+svg .lbl.pombe { fill: var(--pombase); font-weight: 600; }
+svg .an { font: 10px var(--mono); fill: var(--faint); }
+svg .edge { stroke: var(--bar); stroke-width: 1.4; fill: none; }
+svg .edge.on { stroke: var(--pombase); stroke-width: 3; }
+svg .graft { fill: var(--graft); fill-opacity: 0.85; stroke: var(--panel); stroke-width: 1.5; cursor: pointer; }
+svg .graft.sel { stroke: var(--ink); stroke-width: 2; }
+svg .graft:focus { outline: none; stroke: var(--ink); stroke-width: 2.5; }
+svg .src { fill: var(--pombase); }
+svg .dot { fill: var(--faint); }
+svg .axis { font-size: 11px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+svg .grid { stroke: var(--rule); stroke-width: 1; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 12px 7px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 500; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+td.r, th.r { text-align: right; }
+.tablewrap { overflow-x: auto; }
+.chart { overflow-x: auto; }
+.callout { border-left: 3px solid var(--graft); padding: 4px 0 4px 14px; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 6px; max-width: 70ch; }
+@media (max-width: 760px) {
+  .treebox { grid-template-columns: 1fr; }
+  .info { border-left: 0; border-top: 1px solid var(--rule); }
+  .fig + .fig { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
+}
+@media (prefers-reduced-motion: no-preference) { svg .edge { transition: stroke 0.15s; } }
+</style>
+<div class="wrap">
+<header>
+  <div class="eyebrow">GO-DB analysis · goa_uniprot_all rebuilt 2026-10-11 (TreeGrafter run 2026-07-27) · PANTHER 19 trees</div>
+  <h1>How much of TreeGrafter rests on PomBase evidence?</h1>
+  <p class="lede">TreeGrafter (GO_REF:0000118) annotates UniProt proteins by placing them onto PANTHER family trees and copying GO terms from annotated ancestral nodes. Those ancestral annotations (IBDs) are built from experimental annotations at the leaves. This page traces each TreeGrafter annotation back up the tree to the IBD it came from, and asks whether PomBase evidence is behind it.</p>
+  <div class="figures">
+    <div class="fig"><div class="num pb">21,391,336</div><div class="cap">TreeGrafter annotations whose source IBD cites a PomBase gene (12.8% of all)</div></div>
+    <div class="fig"><div class="num">992,787</div><div class="cap">of those where PomBase is the only experimental source cited</div></div>
+    <div class="fig"><div class="num">452,058</div><div class="cap">found without the tree: graft node and IBD node are the same PTN</div></div>
+    <div class="fig"><div class="num">166,795,534</div><div class="cap">TreeGrafter annotations in total; 90.1% trace to a same-term IBA</div></div>
+  </div>
+</header>
+
+<section>
+  <div class="eyebrow">Method</div>
+  <h2>Three records, joined through the tree</h2>
+  <p>A TreeGrafter row names the PTN its protein was grafted onto, not the node the GO term came from. The term usually comes from an ancestor several steps up. GO-DB has no PANTHER tree, so I built one: 3,549,262 child→parent PTN edges from the 15,683 PANTHER 19 family trees, with AN labels mapped to PTN IDs through PANTHER's annotation file. Every one of the 1,290,658 graft PTNs cited by TreeGrafter is in these trees.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="tag">1 · TreeGrafter row in GOA</div>
+      <h3>A protein is grafted onto a node</h3>
+      <div class="row">A0A1L9X520 AAH1 involved_in <b>GO:0043103</b> GO_REF:0000118 IEA <span class="hl-g">PANTHER:PTN002875723</span></div>
+      <p class="hint">Aspergillus aculeatus adenine deaminase, annotated to hypoxanthine salvage. The with/from column holds the graft node (PTHR43114 AN17).</p>
+    </div>
+    <div class="step">
+      <div class="tag">2 · PANTHER tree (new)</div>
+      <h3>Walk up to ancestors</h3>
+      <div class="row"><span class="hl-g">AN17</span> → AN16 → AN12 → AN11 → AN7 → <span class="hl-p">AN6</span></div>
+      <p class="hint">Five steps from the graft to PTN000150991 (AN6), the first ancestor with an IBA for the same GO term. A recursive query computes this for every graft.</p>
+    </div>
+    <div class="step">
+      <div class="tag">3 · IBA row in GOA</div>
+      <h3>Read the evidence behind the IBD</h3>
+      <div class="row">Q9P6I7 dea2 IBA <b>GO:0043103</b> <span class="hl-p">PANTHER:PTN000150991</span>|<span class="hl-p">PomBase:SPBC1198.02</span>|SGD:S000005085</div>
+      <p class="hint">IBA rows carry the IBD node plus the leaves with experimental evidence. Here: S. pombe dea2 and S. cerevisiae AAH1. PomBase contributed; it is shared with SGD.</p>
+    </div>
+  </div>
+  <div class="prose">
+    <p><b>Rules.</b> A TreeGrafter annotation is <i>PomBase-supported</i> if the graft node or one of its ancestors carries an IBA for the same GO term whose with/from cites a <code>PomBase:</code> ID. It is <i>PomBase-only</i> if no IBA for that term on the path cites any other non-PANTHER source. Taking the nearest same-term ancestor rather than any ancestor changes the total by 12,537 annotations (21,378,799 vs 21,391,336).</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Worked example 1 · PTHR43114 adenine deaminase</div>
+  <h2>One PomBase-backed node feeds a whole clade</h2>
+  <p>AN6 carries IBAs for adenine deaminase activity, adenine catabolism and hypoxanthine salvage, based on S. pombe dea2 (SPBC1198.02) and S. cerevisiae AAH1, plus UniProtKB evidence (A. nidulans, Pseudomonas, Streptomyces, and for the activity term Leishmania) for the first two. Hypoxanthine salvage rests on PomBase and SGD alone. Orange circles are graft nodes, sized by how many proteins TreeGrafter placed there. Select one to trace its path to the source.</p>
+  <div class="key">
+    <span><i class="sw" style="background:var(--pombase)"></i>IBD node with PomBase evidence</span>
+    <span><i class="sw" style="background:var(--graft);border-radius:50%"></i>TreeGrafter graft node</span>
+    <span><i class="sw" style="background:var(--pombase);height:3px;width:18px"></i>path from selected graft to its source</span>
+  </div>
+  <div class="treebox"><div class="treesvg" id="tree1"></div><div class="info" id="info1"></div></div>
+  <p class="hint">The AN1 clade (Chloroflexus, Streptomyces SCO4644/SCO5662) sits outside AN6 and has no IBA for these terms, so grafts there get nothing from it and are not drawn.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Worked example 2 · PTHR28283 cAMP phosphodiesterase</div>
+  <h2>TreeGrafter lags behind a refined PomBase-only IBD</h2>
+  <p>The root node AN0 now carries four IBAs. Both phosphodiesterase activities cite PomBase, CGD and dictyBase (cAMP also SGD). <i>Negative regulation of adenylate cyclase-activating glucose-activated G protein-coupled receptor signaling pathway</i> (GO:0110034) cites only <code>PomBase:SPCC285.09c</code> (cgs2). <i>Negative regulation of cAMP/PKA signal transduction</i> (GO:0141162) cites only CGD. Every graft in the family sits below the root, so the two phosphodiesterase terms reach all of them.</p>
+  <div class="treebox"><div class="treesvg" id="tree2"></div><div class="info" id="info2"></div></div>
+  <div class="callout prose">
+    <p>In the previous snapshot the PomBase-only IBD was the broader parent term GO:1902660, <i>negative regulation of glucose mediated signaling pathway</i>. PAINT has since refined it, but the TreeGrafter run still assigns the old parent term, and nothing in this build assigns GO:0110034 or GO:0141162 through TreeGrafter. For example, a Rhodoferax protein grafted onto AN4:</p>
+    <div class="row">Q21RG5 Rfer_3939 involved_in <b>GO:1902660</b> GO_REF:0000118 IEA <span class="hl-g">PANTHER:PTN002001421</span> taxon:338969</div>
+    <p class="hint">2,350 TreeGrafter annotations use GO:1902660 and none of them now matches an IBA for the same term, so this analysis leaves them unresolved, not PomBase-supported. They still carry a fungal glucose-signalling process term onto bacterial proteins. It is worth checking whether the IBD should sit lower in the tree or the term should be excluded from bacteria with a taxon constraint.</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Distance</div>
+  <h2>Most PomBase-supported annotations are many steps below the IBD</h2>
+  <p>PomBase-supported TreeGrafter annotations by the number of tree steps from graft node to source IBD. Step 0 is all the direct PTN match could see.</p>
+  <div class="chart" id="depthchart"></div>
+</section>
+
+<section>
+  <div class="eyebrow">By clade</div>
+  <h2>Where the PomBase-supported annotations land</h2>
+  <p>Organisms are assigned to clades with the NCBITaxon lineage in GO-DB. The bar shows the share of each clade's TreeGrafter annotations that are PomBase-supported; the darker segment is PomBase-only.</p>
+  <div class="chart" id="cladechart"></div>
+  <div class="tablewrap"><table id="cladetable"></table></div>
+</section>
+
+<section>
+  <div class="eyebrow">Largest sources</div>
+  <h2>PomBase-supported IBD nodes ranked by downstream annotations</h2>
+  <p>1,507 distinct IBD nodes with PomBase evidence act as the nearest same-term source for at least one TreeGrafter annotation. Deep nodes in large transporter, myosin and helicase families dominate. In the previous snapshot a cytochrome c oxidase node (PTHR10422 AN16) led with 1.76M annotations; in this build TreeGrafter assigns cytochrome-c oxidase activity to only 217,759 proteins in total, so it no longer ranks.</p>
+  <div class="tablewrap"><table id="toptable"></table></div>
+</section>
+
+<section>
+  <div class="eyebrow">Notes</div>
+  <h2>What these numbers do and don't say</h2>
+  <ul class="plain">
+    <li><b>Contribution, not dependency.</b> Most PomBase-supported IBDs also cite other groups. The PomBase-only figure (0.99M) is the part that would plausibly lose its experimental basis without PomBase.</li>
+    <li><b>Versions.</b> PANTHER 19 trees are matched against this build, whose TreeGrafter rows are dated 2026-07-27. All graft PTNs were found in the trees. This build is smaller than the September 2025 one (675M rows, against 962M) and has no TreeGrafter annotations for viruses; distinct taxa reached fell from about 848k to 91k, so absolute numbers are not comparable between the two.</li>
+    <li><b>Not modelled.</b> NOT annotations on intermediate nodes that would block inheritance, and UniProtKB IDs for pombe proteins cited instead of PomBase IDs (these would make the PomBase-only count slightly low).</li>
+    <li><b>Unresolved.</b> 9.9% (16.5M) of TreeGrafter annotations have no same-term IBA on their path. For 3.0M of them an ancestor has an IBA to a more specific term, as in example 2 (452k of those cite PomBase). 1.27M have no IBA ancestor at all. The rest have IBA ancestors only for unrelated terms, which most likely means IBDs that were removed or changed after the TreeGrafter run.</li>
+    <li><b>Reproduce.</b> <code>make treegrafter-pombase</code> in the go-db repository downloads the PANTHER trees, builds the PTN edge table, runs <code>analyses/treegrafter-pombase/ptn_ancestry_contribution.sql</code> and <code>viz/export_viz_data.sql</code> against <code>db/goa_uniprot_all.ddb</code>, and rebuilds this page.</li>
+  </ul>
+</section>
+</div>
+<script>
+const DATA = {"fams":{"PTHR43114":{"order":["AN2","AN4","AN5","AN3","AN1","AN9","AN10","AN8","AN14","AN15","AN13","AN18","AN19","AN17","AN21","AN22","AN20","AN16","AN12","AN23","AN11","AN7","AN25","AN27","AN28","AN29","AN30","AN26","AN24","AN6","AN0"],"nodes":{"AN2":{"an":"AN2","ptn":"PTN000151008","leaf":{"sp":"CHLAA","gene":"Caur_0504","up":"A9WE92"},"grafts":[],"iba":[],"parent":"AN1"},"AN4":{"an":"AN4","ptn":"PTN002454811","leaf":{"sp":"STRCO","gene":"SCO4644","up":"Q9L0L6"},"grafts":[],"iba":[],"parent":"AN3"},"AN5":{"an":"AN5","ptn":"PTN002454812","leaf":{"sp":"STRCO","gene":"SCO5662","up":"O86737"},"grafts":[],"iba":[],"parent":"AN3"},"AN3":{"an":"AN3","ptn":"PTN002454810","leaf":null,"grafts":[],"iba":[],"parent":"AN1"},"AN1":{"an":"AN1","ptn":"PTN008096932","leaf":null,"grafts":[],"iba":[],"parent":"AN0"},"AN9":{"an":"AN9","ptn":"PTN000892425","leaf":{"sp":"PHANO","gene":"SNOG_06288","up":"Q0UPM6"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":3,"n":547,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":3,"n":547,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":3,"n":547,"pombase":true}],"iba":[],"parent":"AN8"},"AN10":{"an":"AN10","ptn":"PTN000150999","leaf":{"sp":"SCHPO","gene":"SPBC1683.02","up":"Q9P6J8"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":3,"n":75,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":3,"n":75,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":3,"n":75,"pombase":true}],"iba":[],"parent":"AN8"},"AN8":{"an":"AN8","ptn":"PTN002454806","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":2,"n":411,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":2,"n":411,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":2,"n":411,"pombase":true}],"iba":[],"parent":"AN7"},"AN14":{"an":"AN14","ptn":"PTN000150996","leaf":{"sp":"YEAST","gene":"S000005085","up":"P53909"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":5,"n":46,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":5,"n":46,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":5,"n":46,"pombase":true}],"iba":[],"parent":"AN13"},"AN15":{"an":"AN15","ptn":"PTN000892427","leaf":{"sp":"CANAL","gene":"CAALFM_C206970WA","up":"Q59ZB1"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":5,"n":43,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":5,"n":43,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":5,"n":43,"pombase":true}],"iba":[],"parent":"AN13"},"AN13":{"an":"AN13","ptn":"PTN000892426","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":4,"n":200,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":4,"n":200,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":4,"n":200,"pombase":true}],"iba":[],"parent":"AN12"},"AN18":{"an":"AN18","ptn":"PTN000150997","leaf":{"sp":"EMENI","gene":"ANIA_06078","up":"Q8X1T6"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":6,"n":13,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":6,"n":13,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":6,"n":13,"pombase":true}],"iba":[],"parent":"AN17"},"AN19":{"an":"AN19","ptn":"PTN002875724","leaf":{"sp":"ASPFU","gene":"AFUA_2G09150","up":"Q4X1Q4"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":6,"n":137,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":6,"n":137,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":6,"n":137,"pombase":true}],"iba":[],"parent":"AN17"},"AN17":{"an":"AN17","ptn":"PTN002875723","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":5,"n":18,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":5,"n":18,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":5,"n":18,"pombase":true}],"iba":[],"parent":"AN16"},"AN21":{"an":"AN21","ptn":"PTN000892430","leaf":{"sp":"SCLS1","gene":"SS1G_00820","up":"A7E695"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":6,"n":137,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":6,"n":137,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":6,"n":137,"pombase":true}],"iba":[],"parent":"AN20"},"AN22":{"an":"AN22","ptn":"PTN000892431","leaf":{"sp":"PHANO","gene":"SNOG_03500","up":"Q0UXL4"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":6,"n":51,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":6,"n":51,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":6,"n":51,"pombase":true}],"iba":[],"parent":"AN20"},"AN20":{"an":"AN20","ptn":"PTN000892429","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":5,"n":5,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":5,"n":5,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":5,"n":5,"pombase":true}],"iba":[],"parent":"AN16"},"AN16":{"an":"AN16","ptn":"PTN002454807","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":4,"n":10,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":4,"n":10,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":4,"n":10,"pombase":true}],"iba":[],"parent":"AN12"},"AN12":{"an":"AN12","ptn":"PTN000150995","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":3,"n":72,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":3,"n":72,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":3,"n":72,"pombase":true}],"iba":[],"parent":"AN11"},"AN23":{"an":"AN23","ptn":"PTN002454808","leaf":{"sp":"SCHPO","gene":"SPBC1198.02","up":"Q9P6I7"},"grafts":[],"iba":[],"parent":"AN11"},"AN11":{"an":"AN11","ptn":"PTN000150994","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":2,"n":121,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":2,"n":121,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":2,"n":121,"pombase":true}],"iba":[],"parent":"AN7"},"AN7":{"an":"AN7","ptn":"PTN000150998","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":1,"n":14,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":1,"n":14,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":1,"n":14,"pombase":true}],"iba":[],"parent":"AN6"},"AN25":{"an":"AN25","ptn":"PTN000151001","leaf":{"sp":"LEIMA","gene":"LMJF_35_2160","up":"E9AF40"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":2,"n":19,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":2,"n":19,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":2,"n":19,"pombase":true}],"iba":[],"parent":"AN24"},"AN27":{"an":"AN27","ptn":"PTN008096935","leaf":{"sp":"SOLLC","gene":"Solyc00g031040.1","up":"A0A494G9A2"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":3,"n":304,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":3,"n":304,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":3,"n":304,"pombase":true}],"iba":[],"parent":"AN26"},"AN28":{"an":"AN28","ptn":"PTN002454813","leaf":{"sp":"STRCO","gene":"SCO2546","up":"Q9RDE5"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":3,"n":1484,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":3,"n":1484,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":3,"n":1484,"pombase":true}],"iba":[],"parent":"AN26"},"AN29":{"an":"AN29","ptn":"PTN002454815","leaf":{"sp":"PSEAE","gene":"PA0148","up":"Q9I6Y4"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":3,"n":63,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":3,"n":63,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":3,"n":63,"pombase":true}],"iba":[],"parent":"AN26"},"AN30":{"an":"AN30","ptn":"PTN005146131","leaf":{"sp":"CHLRE","gene":"CHLRE_05g246377v5","up":"A0A2K3DS52"},"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":3,"n":87,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":3,"n":87,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":3,"n":87,"pombase":true}],"iba":[],"parent":"AN26"},"AN26":{"an":"AN26","ptn":"PTN008096934","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":2,"n":434,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":2,"n":434,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":2,"n":434,"pombase":true}],"iba":[],"parent":"AN24"},"AN24":{"an":"AN24","ptn":"PTN008096933","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":1,"n":1290,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":1,"n":1290,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":1,"n":1290,"pombase":true}],"iba":[],"parent":"AN6"},"AN6":{"an":"AN6","ptn":"PTN000150991","leaf":null,"grafts":[{"term":"GO:0000034","label":"adenine deaminase activity","src":"AN6","depth":0,"n":785,"pombase":true},{"term":"GO:0006146","label":"adenine catabolic process","src":"AN6","depth":0,"n":785,"pombase":true},{"term":"GO:0043103","label":"hypoxanthine salvage","src":"AN6","depth":0,"n":785,"pombase":true}],"iba":[{"term":"GO:0043103","with":["PANTHER:PTN000150991","PomBase:SPBC1198.02","SGD:S000005085"]},{"term":"GO:0000034","with":["PANTHER:PTN000150991","PomBase:SPBC1198.02","SGD:S000005085","UniProtKB:E9AF40","UniProtKB:Q8X1T6","UniProtKB:Q9I6Y4","UniProtKB:Q9RDE5"]},{"term":"GO:0006146","with":["PANTHER:PTN000150991","PomBase:SPBC1198.02","SGD:S000005085","UniProtKB:Q8X1T6","UniProtKB:Q9RDE5"]}],"parent":"AN0"},"AN0":{"an":"AN0","ptn":"PTN008096931","leaf":null,"grafts":[],"iba":[],"parent":null}}},"PTHR28283":{"order":["AN3","AN9","AN10","AN8","AN11","AN7","AN12","AN6","AN15","AN16","AN14","AN19","AN20","AN18","AN21","AN17","AN13","AN5","AN23","AN24","AN22","AN4","AN2","AN26","AN27","AN25","AN1","AN30","AN31","AN29","AN33","AN34","AN35","AN32","AN28","AN0"],"nodes":{"AN3":{"an":"AN3","ptn":"PTN002001420","leaf":{"sp":"YERPE","gene":"YP_2500","up":"Q8ZD92"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":3,"n":687,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":3,"n":687,"pombase":true}],"iba":[],"parent":"AN2"},"AN9":{"an":"AN9","ptn":"PTN002001427","leaf":{"sp":"YEAST","gene":"S000003217","up":"P22434"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":8,"n":35,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":8,"n":35,"pombase":true}],"iba":[],"parent":"AN8"},"AN10":{"an":"AN10","ptn":"PTN002001428","leaf":{"sp":"EREGS","gene":"AGOS_AFR259W","up":"Q753R7"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":8,"n":19,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":8,"n":19,"pombase":true}],"iba":[],"parent":"AN8"},"AN8":{"an":"AN8","ptn":"PTN002001426","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":7,"n":43,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":7,"n":43,"pombase":true}],"iba":[],"parent":"AN7"},"AN11":{"an":"AN11","ptn":"PTN002001429","leaf":{"sp":"CANAL","gene":"CAL0000177603","up":"Q5AGE4"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":7,"n":50,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":7,"n":50,"pombase":true}],"iba":[],"parent":"AN7"},"AN7":{"an":"AN7","ptn":"PTN002001425","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":6,"n":43,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":6,"n":43,"pombase":true}],"iba":[],"parent":"AN6"},"AN12":{"an":"AN12","ptn":"PTN002001430","leaf":{"sp":"YARLI","gene":"YALI0_E32527g","up":"Q6C3S3"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":6,"n":2,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":6,"n":2,"pombase":true}],"iba":[],"parent":"AN6"},"AN6":{"an":"AN6","ptn":"PTN002001424","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":5,"n":2,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":5,"n":2,"pombase":true}],"iba":[],"parent":"AN5"},"AN15":{"an":"AN15","ptn":"PTN002001436","leaf":{"sp":"EMENI","gene":"ANIA_00829","up":"Q5BF51"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":7,"n":8,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":7,"n":8,"pombase":true}],"iba":[],"parent":"AN14"},"AN16":{"an":"AN16","ptn":"PTN002822017","leaf":{"sp":"ASPFU","gene":"AFUA_1G14890","up":"Q4WRW2"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":7,"n":122,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":7,"n":122,"pombase":true}],"iba":[],"parent":"AN14"},"AN14":{"an":"AN14","ptn":"PTN002822016","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":6,"n":106,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":6,"n":106,"pombase":true}],"iba":[],"parent":"AN13"},"AN19":{"an":"AN19","ptn":"PTN002001435","leaf":{"sp":"NEUCR","gene":"NCU00237","up":"Q7RZX4"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":8,"n":303,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":8,"n":303,"pombase":true}],"iba":[],"parent":"AN18"},"AN20":{"an":"AN20","ptn":"PTN002001434","leaf":{"sp":"SCLS1","gene":"SS1G_07412","up":"A7EQ12"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":8,"n":21,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":8,"n":21,"pombase":true}],"iba":[],"parent":"AN18"},"AN18":{"an":"AN18","ptn":"PTN002001433","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":7,"n":104,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":7,"n":104,"pombase":true}],"iba":[],"parent":"AN17"},"AN21":{"an":"AN21","ptn":"PTN002001432","leaf":{"sp":"PHANO","gene":"SNOG_02411","up":"Q0V0Q3"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":7,"n":85,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":7,"n":85,"pombase":true}],"iba":[],"parent":"AN17"},"AN17":{"an":"AN17","ptn":"PTN002001431","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":6,"n":33,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":6,"n":33,"pombase":true}],"iba":[],"parent":"AN13"},"AN13":{"an":"AN13","ptn":"PTN002407997","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":5,"n":19,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":5,"n":19,"pombase":true}],"iba":[],"parent":"AN5"},"AN5":{"an":"AN5","ptn":"PTN002001423","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":4,"n":8,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":4,"n":8,"pombase":true}],"iba":[],"parent":"AN4"},"AN23":{"an":"AN23","ptn":"PTN002001422","leaf":{"sp":"SCHPO","gene":"SPCC285.09c","up":"P36599"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":5,"n":3,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":5,"n":3,"pombase":true}],"iba":[],"parent":"AN22"},"AN24":{"an":"AN24","ptn":"PTN008623065","leaf":{"sp":"SCHJY","gene":"SJAG_02481","up":"B6K2L4"},"grafts":[],"iba":[],"parent":"AN22"},"AN22":{"an":"AN22","ptn":"PTN008623064","leaf":null,"grafts":[],"iba":[],"parent":"AN4"},"AN4":{"an":"AN4","ptn":"PTN002001421","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":3,"n":140,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":3,"n":140,"pombase":true}],"iba":[],"parent":"AN2"},"AN2":{"an":"AN2","ptn":"PTN004735479","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":2,"n":33,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":2,"n":33,"pombase":true}],"iba":[],"parent":"AN1"},"AN26":{"an":"AN26","ptn":"PTN002001437","leaf":{"sp":"CRYNJ","gene":"CNL05390","up":"Q5K8K1"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":3,"n":67,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":3,"n":67,"pombase":true}],"iba":[],"parent":"AN25"},"AN27":{"an":"AN27","ptn":"PTN002407999","leaf":{"sp":"USTMA","gene":"UMAG_10895","up":"A0A0D1DRR0"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":3,"n":33,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":3,"n":33,"pombase":true}],"iba":[],"parent":"AN25"},"AN25":{"an":"AN25","ptn":"PTN002407998","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":2,"n":222,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":2,"n":222,"pombase":true}],"iba":[],"parent":"AN1"},"AN1":{"an":"AN1","ptn":"PTN002001417","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":1,"n":137,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":1,"n":137,"pombase":true}],"iba":[],"parent":"AN0"},"AN30":{"an":"AN30","ptn":"PTN002001440","leaf":{"sp":"DICDI","gene":"DDB_G0289145","up":"Q54HY0"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":3,"n":1,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":3,"n":1,"pombase":true}],"iba":[],"parent":"AN29"},"AN31":{"an":"AN31","ptn":"PTN002001441","leaf":{"sp":"DICDI","gene":"DDB_G0285995","up":"P12019"},"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":3,"n":1,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":3,"n":1,"pombase":true}],"iba":[],"parent":"AN29"},"AN29":{"an":"AN29","ptn":"PTN002001439","leaf":null,"grafts":[],"iba":[],"parent":"AN28"},"AN33":{"an":"AN33","ptn":"PTN002001443","leaf":{"sp":"DICPU","gene":"DICPUDRAFT_91767","up":"F0ZGY4"},"grafts":[],"iba":[],"parent":"AN32"},"AN34":{"an":"AN34","ptn":"PTN002001444","leaf":{"sp":"DICPU","gene":"DICPUDRAFT_168741","up":"F0ZQ35"},"grafts":[],"iba":[],"parent":"AN32"},"AN35":{"an":"AN35","ptn":"PTN002001445","leaf":{"sp":"DICPU","gene":"DICPUDRAFT_98685","up":"F0ZSM9"},"grafts":[],"iba":[],"parent":"AN32"},"AN32":{"an":"AN32","ptn":"PTN002001442","leaf":null,"grafts":[],"iba":[],"parent":"AN28"},"AN28":{"an":"AN28","ptn":"PTN002001438","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":1,"n":10,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":1,"n":10,"pombase":true}],"iba":[],"parent":"AN0"},"AN0":{"an":"AN0","ptn":"PTN002001416","leaf":null,"grafts":[{"term":"GO:0004115","label":"3',5'-cyclic-AMP phosphodiesterase activity","src":"AN0","depth":0,"n":13,"pombase":true},{"term":"GO:0047555","label":"3',5'-cyclic-GMP phosphodiesterase activity","src":"AN0","depth":0,"n":13,"pombase":true}],"iba":[{"term":"GO:0004115","with":["CGD:CAL0000177603","PANTHER:PTN002001416","PomBase:SPCC285.09c","SGD:S000003217","dictyBase:DDB_G0285995","dictyBase:DDB_G0289145"]},{"term":"GO:0047555","with":["CGD:CAL0000177603","PANTHER:PTN002001416","PomBase:SPCC285.09c","dictyBase:DDB_G0285995","dictyBase:DDB_G0289145"]},{"term":"GO:0141162","with":["CGD:CAL0000177603","PANTHER:PTN002001416"]},{"term":"GO:0110034","with":["PANTHER:PTN002001416","PomBase:SPCC285.09c"]}],"parent":null}}}},"depth":[{"d":0,"pombase":452058,"total":4909008},{"d":1,"pombase":688266,"total":8690358},{"d":2,"pombase":992604,"total":11930296},{"d":3,"pombase":1403986,"total":14561167},{"d":4,"pombase":1734946,"total":16078069},{"d":5,"pombase":1741377,"total":13674537},{"d":6,"pombase":1459089,"total":10926256},{"d":7,"pombase":1308212,"total":9118993},{"d":8,"pombase":1310050,"total":8610313},{"d":9,"pombase":1416043,"total":8248814},{"d":10,"pombase":1394229,"total":7701624},{"d":11,"pombase":1250828,"total":6868211},{"d":12,"pombase":1142712,"total":6150449},{"d":13,"pombase":1046687,"total":5247545},{"d":14,"pombase":905862,"total":4351637},{"d":15,"pombase":3131850,"total":13207654}],"top":[{"src":"PANTHER:PTN001160522","fam":"PTHR23502","an":"AN0","ann":253012,"grafts":717,"maxdepth":13,"terms":"plasma membrane; transmembrane transporter activity; transmembrane transport"},{"src":"PANTHER:PTN000605491","fam":"PTHR23501","an":"AN0","ann":252072,"grafts":574,"maxdepth":14,"terms":"transmembrane transport; transmembrane transporter activity; plasma membrane"},{"src":"PANTHER:PTN000627328","fam":"PTHR48022","an":"AN0","ann":246297,"grafts":820,"maxdepth":21,"terms":"membrane; carbohydrate transport; carbohydrate:proton symporter activity"},{"src":"PANTHER:PTN000320364","fam":"PTHR13140","an":"AN1","ann":238631,"grafts":1579,"maxdepth":25,"terms":"actin cytoskeleton; cytoplasm; microfilament motor activity; membrane; actin filament organization"},{"src":"PANTHER:PTN000344873","fam":"PTHR13710","an":"AN0","ann":198263,"grafts":1031,"maxdepth":26,"terms":"DNA repair; chromosome; 3'-5' DNA helicase activity; DNA recombination"},{"src":"PANTHER:PTN000185014","fam":"PTHR43791","an":"AN0","ann":177626,"grafts":712,"maxdepth":14,"terms":"membrane; transmembrane transporter activity"},{"src":"PANTHER:PTN000116141","fam":"PTHR11070","an":"AN1","ann":173000,"grafts":361,"maxdepth":22,"terms":"3'-5' DNA helicase activity; recombinational repair"},{"src":"PANTHER:PTN000535793","fam":"PTHR22950","an":"AN0","ann":168063,"grafts":1762,"maxdepth":28,"terms":"membrane; L-amino acid transmembrane transporter activity; amino acid transmembrane transport"},{"src":"PANTHER:PTN000657189","fam":"PTHR24221","an":"AN0","ann":167957,"grafts":1098,"maxdepth":30,"terms":"ATPase-coupled transmembrane transporter activity; transmembrane transport"},{"src":"PANTHER:PTN002473914","fam":"PTHR45623","an":"AN1","ann":149543,"grafts":752,"maxdepth":24,"terms":"chromatin; chromatin binding; chromatin remodeling; ATP hydrolysis activity; ATP-dependent chromatin remodeler activity; nucleus"}],"clades":[{"clade":"ALL","treegrafter_total":166795534,"resolvable":150274931,"pombase_term":21391336,"pombase_only":992787,"pombase_any_term":43422443,"pct_resolvable":90.1,"pct_pombase_term":12.8,"pct_pombase_term_of_resolvable":14.2,"pct_pombase_only_of_resolvable":0.7,"taxa_reached":91494},{"clade":"Metazoa","treegrafter_total":67232552,"resolvable":60375333,"pombase_term":6866908,"pombase_only":234896,"pombase_any_term":15873873,"pct_resolvable":89.8,"pct_pombase_term":10.2,"pct_pombase_term_of_resolvable":11.4,"pct_pombase_only_of_resolvable":0.4,"taxa_reached":56067},{"clade":"Bacteria","treegrafter_total":60787857,"resolvable":55538354,"pombase_term":5101587,"pombase_only":162923,"pombase_any_term":9853575,"pct_resolvable":91.4,"pct_pombase_term":8.4,"pct_pombase_term_of_resolvable":9.2,"pct_pombase_only_of_resolvable":0.3,"taxa_reached":21162},{"clade":"Fungi","treegrafter_total":21205140,"resolvable":18885920,"pombase_term":6119593,"pombase_only":479348,"pombase_any_term":11178028,"pct_resolvable":89.1,"pct_pombase_term":28.9,"pct_pombase_term_of_resolvable":32.4,"pct_pombase_only_of_resolvable":2.5,"taxa_reached":5866},{"clade":"Viridiplantae","treegrafter_total":13497933,"resolvable":11854500,"pombase_term":2436015,"pombase_only":83522,"pombase_any_term":4814569,"pct_resolvable":87.8,"pct_pombase_term":18.0,"pct_pombase_term_of_resolvable":20.5,"pct_pombase_only_of_resolvable":0.7,"taxa_reached":4986},{"clade":"Other Eukaryota","treegrafter_total":3092083,"resolvable":2745950,"pombase_term":725671,"pombase_only":25540,"pombase_any_term":1429133,"pct_resolvable":88.8,"pct_pombase_term":23.5,"pct_pombase_term_of_resolvable":26.4,"pct_pombase_only_of_resolvable":0.9,"taxa_reached":2658},{"clade":"Archaea","treegrafter_total":977806,"resolvable":873145,"pombase_term":141362,"pombase_only":6557,"pombase_any_term":272692,"pct_resolvable":89.3,"pct_pombase_term":14.5,"pct_pombase_term_of_resolvable":16.2,"pct_pombase_only_of_resolvable":0.8,"taxa_reached":746},{"clade":"Unmapped","treegrafter_total":2163,"resolvable":1729,"pombase_term":200,"pombase_only":1,"pombase_any_term":573,"pct_resolvable":79.9,"pct_pombase_term":9.2,"pct_pombase_term_of_resolvable":11.6,"pct_pombase_only_of_resolvable":0.1,"taxa_reached":9}],"summary":{"resolved":150274931,"nearest_pombase":21378799,"any_pombase":21391336,"pombase_sources":1507}};
+const SPECIES = {
+  CHLAA: "Chloroflexus aurantiacus", STRCO: "Streptomyces coelicolor", PHANO: "Parastagonospora nodorum",
+  SCHPO: "Schizosaccharomyces pombe", YEAST: "Saccharomyces cerevisiae", CANAL: "Candida albicans",
+  EMENI: "Aspergillus nidulans", ASPFU: "Aspergillus fumigatus", SCLS1: "Sclerotinia sclerotiorum",
+  LEIMA: "Leishmania major", SOLLC: "Solanum lycopersicum", PSEAE: "Pseudomonas aeruginosa",
+  CHLRE: "Chlamydomonas reinhardtii", YERPE: "Yersinia pestis", EREGS: "Eremothecium gossypii",
+  YARLI: "Yarrowia lipolytica", NEUCR: "Neurospora crassa", SCHJY: "Schizosaccharomyces japonicus",
+  CRYNJ: "Cryptococcus neoformans", USTMA: "Ustilago maydis", DICDI: "Dictyostelium discoideum",
+  DICPU: "Dictyostelium purpureum"
+};
+const NS = "http://www.w3.org/2000/svg";
+const fmt = n => n.toLocaleString("en-US");
+function el(name, attrs, parent) {
+  const e = document.createElementNS(NS, name);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function drawTree(fam, svgHost, infoHost, initial) {
+  const { order, nodes } = DATA.fams[fam];
+  const kids = {};
+  let root;
+  for (const an of order) {
+    const p = nodes[an].parent;
+    if (p) (kids[p] = kids[p] || []).push(an); else root = an;
+  }
+  const level = {}, ypos = {};
+  const ROW = 22, COL = 58, LEFT = 22, TOP = 18;
+  let leafI = 0, maxLevel = 0;
+  (function place(an, lv) {
+    level[an] = lv; maxLevel = Math.max(maxLevel, lv);
+    const c = kids[an] || [];
+    if (!c.length) { ypos[an] = TOP + leafI++ * ROW; return; }
+    c.forEach(k => place(k, lv + 1));
+    ypos[an] = (ypos[c[0]] + ypos[c[c.length - 1]]) / 2;
+  })(root, 0);
+  const leafX = LEFT + maxLevel * COL;
+  const X = an => (kids[an] ? LEFT + level[an] * COL : leafX);
+  const W = leafX + 360, H = TOP + leafI * ROW;
+  const svg = el("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": `PANTHER tree ${fam}` }, svgHost);
+
+  const edgeEls = {};
+  for (const an of order) {
+    const p = nodes[an].parent;
+    if (!p) continue;
+    edgeEls[an] = el("path", { class: "edge", d: `M${X(p)},${ypos[p]} V${ypos[an]} H${X(an)}` }, svg);
+  }
+  const srcSet = new Set();
+  for (const an of order) if (nodes[an].iba.some(i => i.with.some(w => w.startsWith("PomBase:")))) srcSet.add(an);
+
+  for (const an of order) {
+    const node = nodes[an], x = X(an), y = ypos[an];
+    if (srcSet.has(an)) {
+      el("rect", { class: "src", x: x - 8, y: y - 8, width: 16, height: 16, rx: 2 }, svg);
+      const t = el("text", { class: "lbl", x: x - 8, y: y - 13, "font-weight": 600 }, svg);
+      t.textContent = `${an} · IBD`;
+      t.setAttribute("fill", "var(--pombase)");
+    } else if (kids[an]) {
+      el("circle", { class: "dot", cx: x, cy: y, r: 2.2 }, svg);
+      const t = el("text", { class: "an", x: x + 4, y: y - 5 }, svg);
+      t.textContent = an;
+    }
+    if (node.leaf) {
+      const pombe = node.leaf.sp === "SCHPO";
+      const t = el("text", { class: "lbl" + (pombe ? " pombe" : ""), x: x + 20, y: y + 4 }, svg);
+      t.textContent = `${SPECIES[node.leaf.sp] || node.leaf.sp} · ${node.leaf.gene}`;
+      const s = el("text", { class: "lbl sp", x: x - 4, y: y + 4, "text-anchor": "end" }, svg);
+      s.textContent = an;
+    }
+  }
+  const circles = {};
+  for (const an of order) {
+    const node = nodes[an];
+    if (!node.grafts.length) continue;
+    const n = Math.max(...node.grafts.map(g => g.n));
+    const r = Math.min(4 + Math.sqrt(n) / 2.2, 15);
+    const c = el("circle", { class: "graft", cx: X(an), cy: ypos[an], r, tabindex: 0, role: "button", "aria-label": `Graft ${an}, ${n} proteins` }, svg);
+    c.addEventListener("click", () => select(an));
+    c.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(an); } });
+    circles[an] = c;
+  }
+
+  function select(an) {
+    Object.values(edgeEls).forEach(e => e.classList.remove("on"));
+    Object.values(circles).forEach(c => c.classList.remove("sel"));
+    circles[an].classList.add("sel");
+    const node = nodes[an];
+    const src = node.grafts[0].src;
+    let cur = an; const path = [an];
+    while (cur !== src && nodes[cur].parent) { edgeEls[cur].classList.add("on"); cur = nodes[cur].parent; path.push(cur); }
+    const n = Math.max(...node.grafts.map(g => g.n));
+    const srcNode = nodes[src];
+    const terms = node.grafts.map(g => {
+      const ev = srcNode.iba.find(i => i.term === g.term);
+      const others = ev ? ev.with.filter(w => !w.startsWith("PANTHER:") && !w.startsWith("PomBase:")) : [];
+      const badge = g.pombase ? (others.length ? '<span class="badge">PomBase + others</span>' : '<span class="badge only">PomBase only</span>') : "";
+      return `<li>${esc(g.label)} <span class="mono" style="color:var(--faint)">${g.term}</span> ${badge}</li>`;
+    }).join("");
+    const leaf = node.leaf ? `<dt>Leaf</dt><dd>${esc(SPECIES[node.leaf.sp] || node.leaf.sp)} ${esc(node.leaf.gene)}</dd>` : "";
+    infoHost.innerHTML = `
+      <div class="eyebrow">Selected graft</div>
+      <h3 class="mono" style="font-family:var(--mono);font-size:15px">${an} · ${node.ptn}</h3>
+      <dl>
+        ${leaf}
+        <dt>Proteins grafted</dt><dd>${fmt(n)}</dd>
+        <dt>Annotations (these terms)</dt><dd>${fmt(node.grafts.reduce((a, g) => a + g.n, 0))}</dd>
+        <dt>Source IBD</dt><dd>${src} · ${srcNode.ptn}</dd>
+        <dt>Steps up</dt><dd>${node.grafts[0].depth}</dd>
+      </dl>
+      <div><div class="eyebrow" style="margin-bottom:6px">Path</div><div class="mono" style="font-size:12px">${path.join(" → ")}</div></div>
+      <div><div class="eyebrow" style="margin-bottom:6px">Inherited terms</div><ul>${terms}</ul></div>
+      <p class="hint">Select another orange circle to compare.</p>`;
+  }
+  select(initial);
+}
+
+function depthChart(host) {
+  const d = DATA.depth;
+  const W = 900, H = 300, L = 56, R = 12, T = 30, B = 46;
+  const max = Math.ceil(Math.max(...d.map(r => r.pombase)) / 5e5) * 5e5;
+  const bw = (W - L - R) / d.length;
+  const svg = el("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "PomBase-supported annotations by tree steps" }, host);
+  for (let v = 0; v <= max; v += 0.5e6) {
+    const y = T + (H - T - B) * (1 - v / max);
+    el("line", { class: "grid", x1: L, x2: W - R, y1: y, y2: y }, svg);
+    const t = el("text", { class: "axis", x: L - 8, y: y + 4, "text-anchor": "end" }, svg);
+    t.textContent = v === 0 ? "0" : (v / 1e6).toFixed(1) + "M";
+  }
+  d.forEach((r, i) => {
+    const h = (H - T - B) * r.pombase / max;
+    const x = L + i * bw + 4, y = H - B - h;
+    el("rect", { x, y, width: bw - 8, height: h, rx: 2, fill: i === 0 ? "var(--graft)" : "var(--pombase)" }, svg);
+    const share = el("text", { class: "axis", x: x + (bw - 8) / 2, y: y - 6, "text-anchor": "middle" }, svg);
+    share.textContent = (100 * r.pombase / r.total).toFixed(0) + "%";
+    const lab = el("text", { class: "axis", x: x + (bw - 8) / 2, y: H - B + 16, "text-anchor": "middle" }, svg);
+    lab.textContent = r.d === 15 ? "15+" : r.d;
+  });
+  const xl = el("text", { class: "axis", x: L + (W - L - R) / 2, y: H - 8, "text-anchor": "middle" }, svg);
+  xl.textContent = "steps from graft node up to source IBD  ·  % above bar = PomBase share of all annotations at that distance";
+  const d0 = el("text", { class: "axis", x: L + 4, y: T - 14 }, svg);
+  d0.textContent = `orange: step 0, the direct PTN match (${fmt(DATA.depth[0].pombase)})`;
+  d0.setAttribute("fill", "var(--graft)");
+}
+
+const CLADE_NAMES = {
+  Metazoa: "Animals", Viridiplantae: "Plants", "Other Eukaryota": "Other eukaryotes (protists)",
+  Unmapped: "Not placed in a clade"
+};
+const ALL = DATA.clades.find(c => c.clade === "ALL");
+const CLADES = DATA.clades.filter(c => c.clade !== "ALL")
+  .map(c => [CLADE_NAMES[c.clade] || c.clade, c.treegrafter_total, c.pombase_term, c.pombase_only, c.taxa_reached])
+  .sort((a, b) => b[2] / b[1] - a[2] / a[1]);
+function cladeChart(host) {
+  const W = 900, rowH = 30, L = 210, R = 120, T = 10;
+  const H = T + CLADES.length * rowH + 30;
+  const max = Math.ceil(Math.max(...CLADES.map(c => c[2] / c[1])) * 20) / 20 + 0.05;
+  const svg = el("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "PomBase-supported share by clade" }, host);
+  const sx = v => L + (W - L - R) * v / max;
+  for (let v = 0; v <= max + 1e-9; v += 0.05) {
+    el("line", { class: "grid", x1: sx(v), x2: sx(v), y1: T, y2: H - 24 }, svg);
+    const t = el("text", { class: "axis", x: sx(v), y: H - 8, "text-anchor": "middle" }, svg);
+    t.textContent = Math.round(v * 100) + "%";
+  }
+  CLADES.forEach(([name, total, pb, only], i) => {
+    const y = T + i * rowH + 6;
+    const lab = el("text", { class: "lbl", x: L - 10, y: y + 13, "text-anchor": "end" }, svg);
+    lab.textContent = name;
+    el("rect", { x: L, y, width: sx(pb / total) - L, height: 18, rx: 2, fill: "var(--pombase)", "fill-opacity": 0.45 }, svg);
+    el("rect", { x: L, y, width: Math.max(sx(only / total) - L, 1), height: 18, rx: 2, fill: "var(--pombase)" }, svg);
+    const v = el("text", { class: "axis", x: sx(pb / total) + 8, y: y + 13 }, svg);
+    v.textContent = `${(100 * pb / total).toFixed(1)}%  ·  ${(pb / 1e6).toFixed(2)}M`;
+  });
+}
+function cladeTable(t) {
+  const rows = CLADES.slice().sort((a, b) => b[2] - a[2]).map(([n, total, pb, only, taxa]) =>
+    `<tr><td>${n}</td><td class="r">${fmt(total)}</td><td class="r">${fmt(pb)}</td><td class="r">${(100 * pb / total).toFixed(1)}%</td><td class="r">${fmt(only)}</td><td class="r">${fmt(taxa)}</td></tr>`).join("");
+  t.innerHTML = `<thead><tr><th>Clade</th><th class="r">TreeGrafter</th><th class="r">PomBase-supported</th><th class="r">Share</th><th class="r">PomBase-only</th><th class="r">Taxa reached</th></tr></thead><tbody>${rows}
+  <tr><td><b>All</b></td><td class="r"><b>${fmt(ALL.treegrafter_total)}</b></td><td class="r"><b>${fmt(ALL.pombase_term)}</b></td><td class="r"><b>${ALL.pct_pombase_term.toFixed(1)}%</b></td><td class="r"><b>${fmt(ALL.pombase_only)}</b></td><td class="r"><b>${fmt(ALL.taxa_reached)}</b></td></tr></tbody>`;
+}
+function topTable(t) {
+  const rows = DATA.top.map(r => `<tr><td class="mono">${r.fam} ${r.an}<br><span style="color:var(--faint)">${r.src.replace("PANTHER:", "")}</span></td><td class="r">${fmt(r.ann)}</td><td class="r">${fmt(r.grafts)}</td><td class="r">${r.maxdepth}</td><td>${esc(r.terms)}</td></tr>`).join("");
+  t.innerHTML = `<thead><tr><th>IBD node</th><th class="r">Annotations</th><th class="r">Graft nodes</th><th class="r">Max steps</th><th>Terms</th></tr></thead><tbody>${rows}</tbody>`;
+}
+
+drawTree("PTHR43114", document.getElementById("tree1"), document.getElementById("info1"), "AN17");
+drawTree("PTHR28283", document.getElementById("tree2"), document.getElementById("info2"), "AN4");
+depthChart(document.getElementById("depthchart"));
+cladeChart(document.getElementById("cladechart"));
+cladeTable(document.getElementById("cladetable"));
+topTable(document.getElementById("toptable"));
+</script>
+
+
